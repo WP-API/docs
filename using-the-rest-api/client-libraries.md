@@ -6,7 +6,8 @@ The API can be used from any application by sending basic HTTP requests; however
 
 [info]To perform authenticated requests from outside of the WordPress admin, themes, or plugins, a separate [authentication plugin](https://developer.wordpress.org/rest-api/authentication/#authentication-plugins) is required.[/info]
 
-**JavaScript**
+
+## JavaScript
 
 The [Backbone.js client](https://developer.wordpress.org/rest-api/backbone-javascript-client/) is built in to WordPress core and provides Backbone.js models &amp; collections for working with REST API resources.
 
@@ -14,6 +15,7 @@ The [Backbone.js client](https://developer.wordpress.org/rest-api/backbone-javas
 
 [ember-wordpress](https://github.com/oskarrough/ember-wordpress) provides a connection between Ember Data and the REST API
 
-**Ruby**
+
+## Ruby
 
 [wp-api-client](https://github.com/duncanjbrown/wp-api-client): a read-only REST API client written in Ruby.

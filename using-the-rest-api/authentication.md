@@ -19,14 +19,14 @@ As an example, this is how the built-in Javascript client creates the nonce:
 ```php
 <?php
 wp_localize_script( 'wp-api', 'wpApiSettings', array(
-	'root' =&gt; esc_url_raw( rest_url() ),
-	'nonce' =&gt; wp_create_nonce( 'wp_rest' )
+	'root' => esc_url_raw( rest_url() ),
+	'nonce' => wp_create_nonce( 'wp_rest' )
 ) );
 ```
 
 This is then used in the base model:
 
-[javascript]
+```js
 options.beforeSend = function(xhr) {
 	xhr.setRequestHeader('X-WP-Nonce', wpApiSettings.nonce);
 
@@ -34,11 +34,11 @@ options.beforeSend = function(xhr) {
 		return beforeSend.apply(this, arguments);
 	}
 };
-[/javascript]
+```
 
 Here is an example of editing the title of a post, using jQuery AJAX:
 
-[javascript]
+```js
 $.ajax( {
 	url: wpApiSettings.root + 'wp/v2/posts/1',
 	method: 'POST',
@@ -51,7 +51,8 @@ $.ajax( {
 } ).done( function ( response ) {
 	console.log( response );
 } );
-[/javascript]
+```
+
 
 ## Authentication Plugins
 

@@ -1,33 +1,38 @@
 # Global Parameters
 
 The API includes a number of global parameters (also called "meta-parameters") which control how the API handles the request/response handling. These operate at a layer above the actual resources themselves, and are available on all resources.
+
+
 ## `_jsonp`
-The API natively supports [JSONP](https://en.wikipedia.org/wiki/JSONP) responses to allow cross-domain requests for legacy browsers and clients. This parameter takes a JavaScript callback function which will be prepended to the data. This URL can then be loaded via a `&lt;script&gt;` tag.
+
+The API natively supports [JSONP](https://en.wikipedia.org/wiki/JSONP) responses to allow cross-domain requests for legacy browsers and clients. This parameter takes a JavaScript callback function which will be prepended to the data. This URL can then be loaded via a `<script>` tag.
 
 The callback function can contain any alphanumeric, `_` (underscore), or `.` (period) character. Callbacks which contain invalid characters will receive a HTTP 400 error response, and the callback will not be called.
 
 [info]
 Modern browsers can use [Cross-Origin Resource Sharing (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) preflight requests for cross-domain requests, but JSONP can be used to ensure support with all browsers.
-<ul>
- 	<li>[Browser Support](http://caniuse.com/#feat=cors)</li>
- 	<li>[MDN Article on CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)</li>
-</ul>
+
+* [Browser Support](http://caniuse.com/#feat=cors)
+* [MDN Article on CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
+
 [/info]
 
 For example:
 
-[html]
-&amp;lt;script&amp;gt;
+```html
+<script>
 function receiveData( data ) {
   // Do something with the data here.
   // For demonstration purposes, we'll simply log it.
   console.log( data );
 }
-&amp;lt;/script&amp;gt;
-&amp;lt;script src=&quot;https://demo.wp-api.org/wp-json/?_jsonp=receiveData&quot;&amp;gt;&amp;lt;/script&amp;gt;
-[/html]
+</script>
+<script src="https://demo.wp-api.org/wp-json/?_jsonp=receiveData"></script>
+```
+
 
 ## `_method` (or `X-HTTP-Method-Override` header)
+
 Some servers and clients cannot correctly process some HTTP methods that the API makes use of. For example, all deletion requests on resources use the `DELETE` method, but some clients do not provide the ability to send this method.
 
 To ensure compatibility with these servers and clients, the API supports a method override. This can be passed either via a `_method` parameter or the `X-HTTP-Method-Override` header, with the value set to the HTTP method to use.
@@ -40,13 +45,15 @@ A `POST` to `/wp-json/wp/v2/posts/42?_method=DELETE` would be translated to a `D
 
 Similarly, the following POST request would become a DELETE:
 
-[code]
+```
 POST /wp-json/wp/v2/posts/42 HTTP/1.1
 Host: example.com
 X-HTTP-Method-Override: DELETE
-[/code]
+```
+
 
 ## `_envelope`
+
 Similarly to `_method`, some servers, clients, and proxies do not support accessing the full response data. The API supports passing an `_envelope` parameter, which sends all response data in the body, including headers and status code.
 
 Envelope mode is enabled if the `_envelope` parameter is passed in the query string (GET parameter). This parameter does not require a value (i.e. `?_envelope` is valid), but can be passed "1" as a value if required by a client library.
@@ -59,33 +66,35 @@ Enveloped responses include a "fake" HTTP 200 response code with no additional h
 
 For example, given the following response to a `GET` to `wp/v2/users/me`:
 
-[javascript]
+```
 HTTP/1.1 302 Found
 Location: http://example.com/wp-json/wp/v2/users/42
 
 {
-  &quot;id&quot;: 42,
+  "id": 42,
   ...
 }
-[/javascript]
+```
 
 The equivalent enveloped response (with a `GET` to `wp/v2/users/me?_envelope`) would be:
 
-[javascript]
+```
 HTTP/1.1 200 OK
 
 {
-  &quot;status&quot;: 302,
-  &quot;headers&quot;: {
-    &quot;Location&quot;: &quot;http://example.com/wp-json/wp/v2/users/42&quot;
+  "status": 302,
+  "headers": {
+    "Location": "http://example.com/wp-json/wp/v2/users/42"
   },
-  &quot;body&quot;: {
-    &quot;id&quot;: 42
+  "body": {
+    "id": 42
   }
 }
-[/javascript]
+```
+
 
 ## `_embed`
+
 Most resources include links to related resources. For example, a post can link to the parent post, or to comments on the post. To reduce the number of HTTP requests required, clients may wish to fetch a resource as well as the linked resources. The `_embed` parameter indicates to the server that the response should include these embedded resources.
 
 Embed mode is enabled if the `_embed` parameter is passed in the query string (GET parameter). This parameter does not require a value (i.e. `?_embed` is valid), however can be passed "1" as a value if required by a client library.

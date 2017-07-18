@@ -3,22 +3,26 @@
 The REST API includes a JavaScript/Backbone client library.
 
 The library provides an interface for the WP REST API by providing Backbone Models and Collections for all endpoints exposed the API Schema.
+
+
 ## Using
+
 Activate the WP-API plugin. Enqueue the script directly:
 
-[javascript]wp_enqueue_script( 'wp-api' );[/javascript]
+```php
+wp_enqueue_script( 'wp-api' );
+```
 
 or as a dependency for your script:
 
-[javascript]
+```php
 wp_enqueue_script( 'my_script', 'path/to/my/script', array( 'wp-api' ) );
-[/javascript]
+```
 
 The library parses the root endpoint (the 'Schema') and creates matching Backbone models and collections. You will now have two root objects available to you: `wp.api.models` and `wp.api.collections`.
 
 The models and collections include:
 
-`
 Models:
 * Category
 * Comment
@@ -50,11 +54,15 @@ Collections:
 * Types
 * Users
 
-You can use these endpoints as-is to read, update, create and delete items using standard Backbone methods (fetch, sync, save &amp; destroy for models, sync for collections). You can also extend these objects to make them your own, and build your views on top of them.
+You can use these endpoints as-is to read, update, create and delete items using standard Backbone methods (fetch, sync, save & destroy for models, sync for collections). You can also extend these objects to make them your own, and build your views on top of them.
+
+
 ### Default values
+
 Each model and collection includes a reference to its default values, for example:
 
-`wp.api.models.Post.prototype.args
+`wp.api.models.Post.prototype.args`
+
 * author: null
 * comment_status: null
 * content: null
@@ -70,19 +78,24 @@ Each model and collection includes a reference to its default values, for exampl
 * slug: null
 * status: null
 * sticky: null
-* title: null`
+* title: null
+
+
 ### Available methods
+
 Each model and collection contains a list of methods the corresponding endpoint supports. For example, models created from `wp.api.models.Post` have a methods array of:
 
-[javascript]
-[&quot;GET&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;PATCH&quot;, &quot;DELETE&quot;]
-[/javascript]
+```js
+["GET", "POST", "PUT", "PATCH", "DELETE"]
+```
+
 
 ### Accepted options
+
 Each model and collection contains a list of options the corresponding endpoint accepts (note that options are passed as the second parameter when creating models or collections), for example:
 
-[javascript]
-wp.api.collections.Posts.prototype.options
+`wp.api.collections.Posts.prototype.options`
+
 * author
 * context
 * filter
@@ -92,23 +105,29 @@ wp.api.collections.Posts.prototype.options
 * per_page
 * search
 * status
-[/javascript]
+
 
 ### Localizing the API Schema
+
 The client will accept and use a localized schema as part of the `wpApiSettings` object. The Schema is currently not passed by default; instead the client makes an ajax request to the API to load the Schema, then caches it in the browser's session storage (if available). Activating the client-js plugin with `SCRIPT_DEBUG` enabled uses a localized Schema. Check the [client-js example](https://github.com/WP-API/client-js/blob/master/client-js.php) or this branch which [attempts to only localize the schema once per client](https://github.com/WP-API/client-js/compare/features/only-localize-schma-once?expand=1).
+
+
 ### Waiting for the client to load
+
 Client startup is asynchronous. If the api schema is localized, the client can start immediately; if not the client makes an ajax request to load the schema. The client exposes a load promise for provide a reliable wait to wait for client to be ready:
 
-[javascript]
+```js
 wp.api.loadPromise.done( function() {
 //... use the client here
 } )
-[/javascript]
+```
+
 
 ### Model examples:
+
 To create a post and edit its categories, make sure you are logged in, then:
 
-[javascript]
+```js
 // Create a new post
 var post = new wp.api.models.Post( { title: 'This is a test post' } );
 post.save();
@@ -123,7 +142,7 @@ post.getCategories().done( function( postCategories ) {
 // ... do something with the categories.
 // The new post has an single Category: Uncategorized
 console.log( postCategories[0].name );
-// response -&amp;gt; &quot;Uncategorized&quot;
+// response -> "Uncategorized"
 } );
 
 // Get a posts author User model.
@@ -160,64 +179,68 @@ postCategories.at( 0 ).destroy();
 postCategories = post.getCategories();
 
 postCategories.at( 0 ).get( 'name' );
-// response -&amp;gt; &quot;apples&quot;
-[/javascript]
+// response -> "apples"
+```
+
 
 ### Collection examples:
+
 to get the last 10 posts:
 
-[javascript]
+```js
 var postsCollection = new wp.api.collections.Posts();
 postsCollection.fetch();
-[/javascript]
+```
 
 to get the last 25 posts:
 
-[javascript]
+```js
 postsCollection.fetch( { data: { per_page: 25 } } );
-[/javascript]
+```
 
-use filter to change the order &amp; orderby options:
+use filter to change the order & orderby options:
 
-[javascript]
+```js
 postsCollection.fetch( { data: { 'filter': { 'orderby': 'title', 'order': 'ASC' } } } );
-[/javascript]
+```
 
 All collections support pagination automatically, and you can get the next page of results using `more`:
 
-[javascript]
+```js
 postsCollection.more();
-[/javascript]
+```
 
 to get page 5 of a collection:
 
-[javascript]
+```js
 posts.fetch( { data: { page: 5 } } );
-[/javascript]
+```
 
 check if the collection has any more posts:
 
-[javascript]
+```js
 posts.hasMore();
-[/javascript]
+```
+
 
 ### Working With Revisions
+
 You can access post or page revisions using the PostRevisions or PageRevisions collections or through the Post or Page collection.
 
 For example, to get a collection of all revisions of post ID 1:
 
-[javascript]
+```js
 var revisions = new wp.api.collections.PostRevisions({}, { parent: 1 });
-[/javascript]
+```
 
 Revision collections can also be accessed via their parent's collection. This example makes 2 HTTP requests instead of one, but now the original post and its revisions are available:
 
-[javascript]
+```js
 var post = new wp.api.models.Post( { id: 1 } );
 post.fetch();
 post.getRevisions().done( function( revisions ){
 console.log( revisions );
 });
-[/javascript]
+```
 
 If you add custom endpoints to the api they will also become available as models/collections. For example, you will get new models and collections when you [add REST API support to your custom post type](http://v2.wp-api.org/extending/custom-content-types/). Note: because the schema is stored in the user's session cache to avoid re-fetching, you may need to open a new tab to get a new read of the Schema.

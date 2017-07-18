@@ -4,6 +4,7 @@ The WordPress REST API is more than just a set of default routes. It is also a t
 
 This document details how to create a totally custom route, with its own endpoints. We'll first work through a short example, then expand it out to the full controller pattern as used internally.
 
+
 ## Bare Basics
 
 So you want to add custom endpoints to the API? Fantastic! Let's get started with a simple example.
@@ -19,14 +20,14 @@ Let's start with a simple function that looks like this:
  */
 function my_awesome_func( $data ) {
   $posts = get_posts( array(
-    'author' =&gt; $data['id'],
+    'author' => $data['id'],
   ) );
 
   if ( empty( $posts ) ) {
     return null;
   }
 
-  return $posts[0]-&gt;post_title;
+  return $posts[0]->post_title;
 }
 ```
 
@@ -37,14 +38,15 @@ We need to pass in three things to `register_rest_route`: the namespace, the rou
 ```php
 <?php
 add_action( 'rest_api_init', function () {
-  register_rest_route( 'myplugin/v1', '/author/(?P&lt;id&gt;\d+)', array(
-    'methods' =&gt; 'GET',
-    'callback' =&gt; 'my_awesome_func',
+  register_rest_route( 'myplugin/v1', '/author/(?P<id>\d+)', array(
+    'methods' => 'GET',
+    'callback' => 'my_awesome_func',
   ) );
 } );
 ```
 
 Right now, we're only registering the one endpoint for the route. ("Route" is the URL, whereas "endpoint" is the function behind it that corresponds to a method *and* a URL. For more, see the [Glossary](/glossary.html).) If your site domain is `example.com` and you've kept the API path of `wp-json`, then the full URL would be `http://example.com/wp-json/myplugin/v1/author/(?P\d+)`. Each route can have any number of endpoints, and for each endpoint, you can define the HTTP methods allowed, a callback function for responding to the request and a permissions callback for creating custom permissions. In addition you can define allowed fields in the request and for each field specify a default value, a sanitization callback, a validation callback, and whether the field is required.
+
 
 ### Namespacing
 
@@ -58,19 +60,20 @@ An added benefit of using namespaces is that clients can detect support for your
 
 ```php
 {
-  &quot;name&quot;: &quot;WordPress Site&quot;,
-  &quot;description&quot;: &quot;Just another WordPress site&quot;,
-  &quot;url&quot;: &quot;http://example.com/&quot;,
-  &quot;namespaces&quot;: [
-    &quot;wp/v2&quot;,
-    &quot;vendor/v1&quot;,
-    &quot;myplugin/v1&quot;,
-    &quot;myplugin/v2&quot;,
+  "name": "WordPress Site",
+  "description": "Just another WordPress site",
+  "url": "http://example.com/",
+  "namespaces": [
+    "wp/v2",
+    "vendor/v1",
+    "myplugin/v1",
+    "myplugin/v2",
   ]
 }
 ```
 
 If a client wants to check that your API exists on a site, they can check against this list. (For more information, see the [Discovery guide](/guide/discovery/).)
+
 
 ### Arguments
 
@@ -83,20 +86,20 @@ function my_awesome_func( WP_REST_Request $request ) {
  $param = $request['some_param'];
 
   // Or via the helper method:
- $param = $request-&gt;get_param( 'some_param' );
+ $param = $request->get_param( 'some_param' );
 
   // You can get the combined, merged set of parameters:
- $parameters = $request-&gt;get_params();
+ $parameters = $request->get_params();
 
   // The individual sets of parameters are also available, if needed:
- $parameters = $request-&gt;get_url_params();
-  $parameters = $request-&gt;get_query_params();
-  $parameters = $request-&gt;get_body_params();
-  $parameters = $request-&gt;get_json_params();
-  $parameters = $request-&gt;get_default_params();
+ $parameters = $request->get_url_params();
+  $parameters = $request->get_query_params();
+  $parameters = $request->get_body_params();
+  $parameters = $request->get_json_params();
+  $parameters = $request->get_default_params();
 
   // Uploads aren't merged in, but can be accessed separately:
- $parameters = $request-&gt;get_file_params();
+ $parameters = $request->get_file_params();
 }
 ```
 
@@ -108,14 +111,10 @@ If the request has the `Content-type: application/json` header set and valid JSO
 
 Arguments are defined as a map in the key `args` for each endpoint (next to your `callback` option). This map uses the name of the argument of the key, with the value being a map of options for that argument. This array can contain a key for `default`, `required`, `sanitize_callback` and `validate_callback`.
 
-<ul>
-  <li>`default`: Used as the default value for the argument, if none is supplied.</li>
-  <li>
-    <p>`required`: If defined as true, and no value is passed for that argument, an error will be returned. No effect if a default value is set, as the argument will always have a value.</p>
-  </li>
-  <li>`validate_callback`: Used to pass a function that will be passed the value of the argument. That function should return true if the value is valid, and false if not.</li>
-  <li>`sanitize_callback`: Used to pass a function that is used to sanitize the value of the argument before passing it to the main callback.</li>
-</ul>
+* `default`: Used as the default value for the argument, if none is supplied.
+* `required`: If defined as true, and no value is passed for that argument, an error will be returned. No effect if a default value is set, as the argument will always have a value.
+* `validate_callback`: Used to pass a function that will be passed the value of the argument. That function should return true if the value is valid, and false if not.
+* `sanitize_callback`: Used to pass a function that is used to sanitize the value of the argument before passing it to the main callback.
 
 Using `sanitize_callback` and `validate_callback` allows the main callback to act only to process the request, and prepare data to be returned using the `WP_REST_Response` class. By using these two callbacks, you will be able to safely assume your inputs are valid and safe when processing.
 
@@ -124,12 +123,12 @@ Taking our previous example, we can ensure the parameter passed in is always a n
 ```php
 <?php
 add_action( 'rest_api_init', function () {
-  register_rest_route( 'myplugin/v1', '/author/(?P&lt;id&gt;\d+)', array(
-    'methods' =&gt; 'GET',
-    'callback' =&gt; 'my_awesome_func',
-    'args' =&gt; array(
-      'id' =&gt; array(
-        'validate_callback' =&gt; function($param, $request, $key) {
+  register_rest_route( 'myplugin/v1', '/author/(?P<id>\d+)', array(
+    'methods' => 'GET',
+    'callback' => 'my_awesome_func',
+    'args' => array(
+      'id' => array(
+        'validate_callback' => function($param, $request, $key) {
           return is_numeric( $param );
         }
       ),
@@ -140,7 +139,8 @@ add_action( 'rest_api_init', function () {
 
 You could also pass in a function name to `validate_callback`, but passing certain functions like `is_numeric` directly will not only throw a warning about having extra parameters passed to it, but will also return `NULL` causing the callback function to be called with invalid data. We hope to [eventually solve this problem in WordPress core](https://core.trac.wordpress.org/ticket/34659).
 
-We could also use something like `'sanitize_callback' =&gt; 'absint'` instead, but validation will throw an error, allowing clients to understand what they're doing wrong. Sanitization is useful when you would rather change the data being input rather than throwing an error (such as invalid HTML).
+We could also use something like `'sanitize_callback' => 'absint'` instead, but validation will throw an error, allowing clients to understand what they're doing wrong. Sanitization is useful when you would rather change the data being input rather than throwing an error (such as invalid HTML).
+
 
 ### Return Value
 
@@ -160,20 +160,20 @@ Taking our example from before, we can now return an error instance:
  */
 function my_awesome_func( $data ) {
   $posts = get_posts( array(
-    'author' =&gt; $data['id'],
+    'author' => $data['id'],
   ) );
 
   if ( empty( $posts ) ) {
-    return new WP_Error( 'awesome_no_author', 'Invalid author', array( 'status' =&gt; 404 ) );
+    return new WP_Error( 'awesome_no_author', 'Invalid author', array( 'status' => 404 ) );
   }
 
-  return $posts[0]-&gt;post_title;
+  return $posts[0]->post_title;
 }
 ```
 
 When an author doesn't have any posts belonging to them, this will return a 404 Not Found error to the client:
 
-`<pre>
+```
 HTTP/1.1 404 Not Found
 
 [{
@@ -181,7 +181,7 @@ HTTP/1.1 404 Not Found
    "message": "Invalid author",
    "data": { "status": 404 }
 }]
-</pre>`
+```
 
 For more advanced usage, you can return a `WP_REST_Response` object. This object "wraps" normal body data, but allows you to return a custom status code, or custom headers. You can also [add links to your response](https://developer.wordpress.org/rest-api/using-the-rest-api/linking-and-embedding/). The quickest way to use this is via the constructor:
 
@@ -193,13 +193,14 @@ $data = array( 'some', 'response', 'data' );
 $response = new WP_REST_Response( $data );
 
 // Add a custom status code
-$response-&gt;set_status( 201 );
+$response->set_status( 201 );
 
 // Add a custom header
-$response-&gt;header( 'Location', 'http://example.com/' );
+$response->header( 'Location', 'http://example.com/' );
 ```
 
 When wrapping existing callbacks, you should always use `rest_ensure_response()` on the return value. This will take raw data returned from an endpoint and automatically turn it into a `WP_REST_Response` for you. (Note that `WP_Error` is not converted to a `WP_REST_Response` to allow proper error handling.)
+
 
 ### Permissions Callback
 
@@ -214,15 +215,15 @@ Continuing with our previous example, we can make it so that only editors or abo
 ```php
 <?php
 add_action( 'rest_api_init', function () {
-  register_rest_route( 'myplugin/v1', '/author/(?P&lt;id&gt;\d+)', array(
-    'methods' =&gt; 'GET',
-    'callback' =&gt; 'my_awesome_func',
-    'args' =&gt; array(
-      'id' =&gt; array(
-        'validate_callback' =&gt; 'is_numeric'
+  register_rest_route( 'myplugin/v1', '/author/(?P<id>\d+)', array(
+    'methods' => 'GET',
+    'callback' => 'my_awesome_func',
+    'args' => array(
+      'id' => array(
+        'validate_callback' => 'is_numeric'
       ),
     ),
-    'permission_callback' =&gt; function () {
+    'permission_callback' => function () {
       return current_user_can( 'edit_others_posts' );
     }
   ) );
@@ -230,6 +231,7 @@ add_action( 'rest_api_init', function () {
 ```
 
 Note that the permission callback also receives the Request object as the first parameter, so you can do checks based on request arguments if you need to.
+
 
 ## The Controller Pattern
 
@@ -241,7 +243,8 @@ At their core, controllers are nothing more than a set of commonly named methods
 
 To use controllers, you first need to subclass the base controller. This gives you a base set of methods, ready for you to add your own behaviour into.
 
-Once we've subclassed the controller, we need to instantiate the class to get it working. This should be done inside of a callback hooked into `rest_api_init`, which ensures we only instantiate the class when we need to. The normal controller pattern is to call `$controller-&gt;register_routes()` inside this callback, where the class can then register its endpoints.
+Once we've subclassed the controller, we need to instantiate the class to get it working. This should be done inside of a callback hooked into `rest_api_init`, which ensures we only instantiate the class when we need to. The normal controller pattern is to call `$controller->register_routes()` inside this callback, where the class can then register its endpoints.
+
 
 ## Examples
 
@@ -261,51 +264,51 @@ class Slug_Custom_Route extends WP_REST_Controller {
     $base = 'route';
     register_rest_route( $namespace, '/' . $base, array(
       array(
-        'methods'         =&gt; WP_REST_Server::READABLE,
-        'callback'        =&gt; array( $this, 'get_items' ),
-        'permission_callback' =&gt; array( $this, 'get_items_permissions_check' ),
-        'args'            =&gt; array(
+        'methods'         => WP_REST_Server::READABLE,
+        'callback'        => array( $this, 'get_items' ),
+        'permission_callback' => array( $this, 'get_items_permissions_check' ),
+        'args'            => array(
 
         ),
       ),
       array(
-        'methods'         =&gt; WP_REST_Server::CREATABLE,
-        'callback'        =&gt; array( $this, 'create_item' ),
-        'permission_callback' =&gt; array( $this, 'create_item_permissions_check' ),
-        'args'            =&gt; $this-&gt;get_endpoint_args_for_item_schema( true ),
+        'methods'         => WP_REST_Server::CREATABLE,
+        'callback'        => array( $this, 'create_item' ),
+        'permission_callback' => array( $this, 'create_item_permissions_check' ),
+        'args'            => $this->get_endpoint_args_for_item_schema( true ),
       ),
     ) );
-    register_rest_route( $namespace, '/' . $base . '/(?P&lt;id&gt;[\d]+)', array(
+    register_rest_route( $namespace, '/' . $base . '/(?P<id>[\d]+)', array(
       array(
-        'methods'         =&gt; WP_REST_Server::READABLE,
-        'callback'        =&gt; array( $this, 'get_item' ),
-        'permission_callback' =&gt; array( $this, 'get_item_permissions_check' ),
-        'args'            =&gt; array(
-          'context'          =&gt; array(
-            'default'      =&gt; 'view',
+        'methods'         => WP_REST_Server::READABLE,
+        'callback'        => array( $this, 'get_item' ),
+        'permission_callback' => array( $this, 'get_item_permissions_check' ),
+        'args'            => array(
+          'context'          => array(
+            'default'      => 'view',
           ),
         ),
       ),
       array(
-        'methods'         =&gt; WP_REST_Server::EDITABLE,
-        'callback'        =&gt; array( $this, 'update_item' ),
-        'permission_callback' =&gt; array( $this, 'update_item_permissions_check' ),
-        'args'            =&gt; $this-&gt;get_endpoint_args_for_item_schema( false ),
+        'methods'         => WP_REST_Server::EDITABLE,
+        'callback'        => array( $this, 'update_item' ),
+        'permission_callback' => array( $this, 'update_item_permissions_check' ),
+        'args'            => $this->get_endpoint_args_for_item_schema( false ),
       ),
       array(
-        'methods'  =&gt; WP_REST_Server::DELETABLE,
-        'callback' =&gt; array( $this, 'delete_item' ),
-        'permission_callback' =&gt; array( $this, 'delete_item_permissions_check' ),
-        'args'     =&gt; array(
-          'force'    =&gt; array(
-            'default'      =&gt; false,
+        'methods'  => WP_REST_Server::DELETABLE,
+        'callback' => array( $this, 'delete_item' ),
+        'permission_callback' => array( $this, 'delete_item_permissions_check' ),
+        'args'     => array(
+          'force'    => array(
+            'default'      => false,
           ),
         ),
       ),
     ) );
     register_rest_route( $namespace, '/' . $base . '/schema', array(
-      'methods'         =&gt; WP_REST_Server::READABLE,
-      'callback'        =&gt; array( $this, 'get_public_item_schema' ),
+      'methods'         => WP_REST_Server::READABLE,
+      'callback'        => array( $this, 'get_public_item_schema' ),
     ) );
   }
 
@@ -319,8 +322,8 @@ class Slug_Custom_Route extends WP_REST_Controller {
     $items = array(); //do a query, call another class, etc
    $data = array();
     foreach( $items as $item ) {
-      $itemdata = $this-&gt;prepare_item_for_response( $item, $request );
-      $data[] = $this-&gt;prepare_response_for_collection( $itemdata );
+      $itemdata = $this->prepare_item_for_response( $item, $request );
+      $data[] = $this->prepare_response_for_collection( $itemdata );
     }
 
     return new WP_REST_Response( $data, 200 );
@@ -334,9 +337,9 @@ class Slug_Custom_Route extends WP_REST_Controller {
    */
   public function get_item( $request ) {
     //get parameters from request
-   $params = $request-&gt;get_params();
+   $params = $request->get_params();
     $item = array();//do a query, call another class, etc
-   $data = $this-&gt;prepare_item_for_response( $item, $request );
+   $data = $this->prepare_item_for_response( $item, $request );
 
     //return a response or error based on some conditional
    if ( 1 == 1 ) {
@@ -354,7 +357,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    */
   public function create_item( $request ) {
 
-    $item = $this-&gt;prepare_item_for_database( $request );
+    $item = $this->prepare_item_for_database( $request );
 
     if ( function_exists( 'slug_some_function_to_create_item')  ) {
       $data = slug_some_function_to_create_item( $item );
@@ -363,7 +366,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
       }
     }
 
-    return new WP_Error( 'cant-create', __( 'message', 'text-domain'), array( 'status' =&gt; 500 ) );
+    return new WP_Error( 'cant-create', __( 'message', 'text-domain'), array( 'status' => 500 ) );
   }
 
   /**
@@ -373,7 +376,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    * @return WP_Error|WP_REST_Request
    */
   public function update_item( $request ) {
-    $item = $this-&gt;prepare_item_for_database( $request );
+    $item = $this->prepare_item_for_database( $request );
 
     if ( function_exists( 'slug_some_function_to_update_item')  ) {
       $data = slug_some_function_to_update_item( $item );
@@ -382,7 +385,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
       }
     }
 
-    return new WP_Error( 'cant-update', __( 'message', 'text-domain'), array( 'status' =&gt; 500 ) );
+    return new WP_Error( 'cant-update', __( 'message', 'text-domain'), array( 'status' => 500 ) );
 
   }
 
@@ -393,7 +396,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    * @return WP_Error|WP_REST_Request
    */
   public function delete_item( $request ) {
-    $item = $this-&gt;prepare_item_for_database( $request );
+    $item = $this->prepare_item_for_database( $request );
 
     if ( function_exists( 'slug_some_function_to_delete_item')  ) {
       $deleted = slug_some_function_to_delete_item( $item );
@@ -402,7 +405,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
       }
     }
 
-    return new WP_Error( 'cant-delete', __( 'message', 'text-domain'), array( 'status' =&gt; 500 ) );
+    return new WP_Error( 'cant-delete', __( 'message', 'text-domain'), array( 'status' => 500 ) );
   }
 
   /**
@@ -412,7 +415,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    * @return WP_Error|bool
    */
   public function get_items_permissions_check( $request ) {
-    //return true; &lt;--use to make readable by all
+    //return true; <--use to make readable by all
    return current_user_can( 'edit_something' );
   }
 
@@ -423,7 +426,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    * @return WP_Error|bool
    */
   public function get_item_permissions_check( $request ) {
-    return $this-&gt;get_items_permissions_check( $request );
+    return $this->get_items_permissions_check( $request );
   }
 
   /**
@@ -443,7 +446,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    * @return WP_Error|bool
    */
   public function update_item_permissions_check( $request ) {
-    return $this-&gt;create_item_permissions_check( $request );
+    return $this->create_item_permissions_check( $request );
   }
 
   /**
@@ -453,7 +456,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    * @return WP_Error|bool
    */
   public function delete_item_permissions_check( $request ) {
-    return $this-&gt;create_item_permissions_check( $request );
+    return $this->create_item_permissions_check( $request );
   }
 
   /**
@@ -484,22 +487,22 @@ class Slug_Custom_Route extends WP_REST_Controller {
    */
   public function get_collection_params() {
     return array(
-      'page'     =&gt; array(
-        'description'        =&gt; 'Current page of the collection.',
-        'type'               =&gt; 'integer',
-        'default'            =&gt; 1,
-        'sanitize_callback'  =&gt; 'absint',
+      'page'     => array(
+        'description'        => 'Current page of the collection.',
+        'type'               => 'integer',
+        'default'            => 1,
+        'sanitize_callback'  => 'absint',
       ),
-      'per_page' =&gt; array(
-        'description'        =&gt; 'Maximum number of items to be returned in result set.',
-        'type'               =&gt; 'integer',
-        'default'            =&gt; 10,
-        'sanitize_callback'  =&gt; 'absint',
+      'per_page' => array(
+        'description'        => 'Maximum number of items to be returned in result set.',
+        'type'               => 'integer',
+        'default'            => 10,
+        'sanitize_callback'  => 'absint',
       ),
-      'search'   =&gt; array(
-        'description'        =&gt; 'Limit results to those matching a string.',
-        'type'               =&gt; 'string',
-        'sanitize_callback'  =&gt; 'sanitize_text_field',
+      'search'   => array(
+        'description'        => 'Limit results to those matching a string.',
+        'type'               => 'string',
+        'sanitize_callback'  => 'sanitize_text_field',
       ),
     );
   }
