@@ -2,7 +2,7 @@
 <?php
 
 $root = dirname( __DIR__ );
-$repo = 'rmccue/docs-testing';
+$repo = 'WP-API/docs';
 
 $manifest = array();
 $paths = array(
