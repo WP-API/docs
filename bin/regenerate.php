@@ -1,10 +1,12 @@
 <?php
 
+require dirname( __DIR__ ) . '/vendor/autoload.php';
+
 function add_simple_schemas() {
 	$objects = [];
 
-	$response = file_get_contents( 'http://demo.wp-api.org/wp-json/?context=help' );
-	$parsed_data = json_decode( $response, true );
+	$response = Requests::get( 'http://demo.wp-api.org/wp-json/?context=help' );
+	$parsed_data = json_decode( $response->body, true );
 
 	foreach ( $parsed_data['routes'] as $key => $route ) {
 		if ( ! isset( $route['schema'] ) ) {
@@ -38,12 +40,9 @@ function add_simple_schemas() {
 }
 
 function add_terms_schema() {
-	$context = stream_context_create([
-		'method' => 'OPTIONS',
-	]);
-	$response = file_get_contents( 'http://demo.wp-api.org/wp-json/wp/v2/terms/category', false, $context );
+	$response = Requests::options( 'http://demo.wp-api.org/wp-json/wp/v2/terms/category' );
 	$file = fopen( '_data/terms.json', 'w' );
-	$parsed_data = json_decode( $response );
+	$parsed_data = json_decode( $response->body );
 
 	# puts data
 	fwrite( $file, json_encode( $parsed_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
