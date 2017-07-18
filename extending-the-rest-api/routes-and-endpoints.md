@@ -20,7 +20,7 @@ For example, with the URL `http://example.com/wp-json/wp/v2/posts/123`:
  	* `DELETE` triggers a `delete_item` method, returning the now-deleted post data to the client.
 
 [alert]
-On sites without pretty permalinks, the route is instead added to the URL as the `rest_route` parameter. For the above example, the full URL would then be `http://example.com/?rest_route=/wp/v2/posts/123`
+On sites without pretty permalinks, the route is instead added to the URL as the `rest_route` parameter. For the above example, the full URL would then be <code>http://example.com/?rest_route=/wp/v2/posts/123</code>
 [/alert]
 
 
@@ -73,7 +73,7 @@ The override parameter does not really solve our problem either, as both routes 
 
 It is extremely important to add namespaces to your routes. The "core" endpoints use the `wp/v2` namespace.
 
-[warning]**Do not place anything into the `wp` namespace unless you are making endpoints with the intention of merging them into core.**[/warning]
+[warning]<strong>Do not place anything into the <code>wp</code> namespace unless you are making endpoints with the intention of merging them into core.</strong>[/warning]
 
 There are some key things to take notice of in the core endpoint namespace. The first part of the namespace is `wp`, which represents the vendor name; WordPress. For our plugins we will want to come up with unique names for what we call the vendor portion of the namespace. In the example above we used `hello-world`.
 

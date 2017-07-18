@@ -12,7 +12,7 @@ The links are an object containing a `href` property with an absolute URL to the
 For collection responses (those that return a list of objects rather than a top-level object), each item contains links, and the top-level response includes links via the `Link` header instead.
 
 [info]
-If your client library does not allow accessing headers, you can use the [`_envelope`](https://developer.wordpress.org/rest-api/global-parameters/#envelope) parameter to include the headers as body data instead.
+If your client library does not allow accessing headers, you can use the <a href="https://developer.wordpress.org/rest-api/global-parameters/#envelope"><code>_envelope</code></a> parameter to include the headers as body data instead.
 [/info]
 
 

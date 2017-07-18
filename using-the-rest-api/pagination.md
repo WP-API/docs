@@ -19,7 +19,7 @@ Any API response which contains multiple resources supports several common query
  	* `?per_page=5&amp;page=4` is equivalent to `?per_page=5&amp;offset=15`
 
 [tip]
-Large queries can hurt site performance, so `per_page` is **capped at 100 records**. If you wish to retrieve more than 100 records, for example to build a client-side list of all available categories, you may make multiple API requests and combine the results within your application.
+Large queries can hurt site performance, so <code>per_page</code> is <strong>capped at 100 records</strong>. If you wish to retrieve more than 100 records, for example to build a client-side list of all available categories, you may make multiple API requests and combine the results within your application.
 [/tip]
 
 To determine how many pages of data are available, the API returns two header fields with every paginated response:

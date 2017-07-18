@@ -10,10 +10,11 @@ The API natively supports [JSONP](https://en.wikipedia.org/wiki/JSONP) responses
 The callback function can contain any alphanumeric, `_` (underscore), or `.` (period) character. Callbacks which contain invalid characters will receive a HTTP 400 error response, and the callback will not be called.
 
 [info]
-Modern browsers can use [Cross-Origin Resource Sharing (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) preflight requests for cross-domain requests, but JSONP can be used to ensure support with all browsers.
+Modern browsers can use <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-Origin Resource Sharing (CORS)</a> preflight requests for cross-domain requests, but JSONP can be used to ensure support with all browsers.
 
-* [Browser Support](http://caniuse.com/#feat=cors)
-* [MDN Article on CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
+<ul>
+  <li><a href="http://caniuse.com/#feat=cors">Browser Support</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">MDN Article on CORS</a></li>
 
 [/info]
 

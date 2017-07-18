@@ -4,7 +4,7 @@ The API can be used from any application by sending basic HTTP requests; however
 
 [alert]Aside from the Backbone.js client, these libraries are not part of WordPress core, and are not necessarily maintained or endorsed by the WordPress REST API team.[/alert]
 
-[info]To perform authenticated requests from outside of the WordPress admin, themes, or plugins, a separate [authentication plugin](https://developer.wordpress.org/rest-api/authentication/#authentication-plugins) is required.[/info]
+[info]To perform authenticated requests from outside of the WordPress admin, themes, or plugins, a separate <a href="https://developer.wordpress.org/rest-api/authentication/#authentication-plugins">authentication plugin</a> is required.[/info]
 
 
 ## JavaScript
