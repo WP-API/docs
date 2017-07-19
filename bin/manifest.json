@@ -79,6 +79,11 @@
         "parent": "reference",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/media.md"
     },
+    "reference/page-revisions": {
+        "slug": "page-revisions",
+        "parent": "reference",
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/page-revisions.md"
+    },
     "reference/pages": {
         "slug": "pages",
         "parent": "reference",
