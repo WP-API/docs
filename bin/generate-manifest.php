@@ -12,6 +12,7 @@ $paths = array(
 );
 $excludes = array(
 	$root . '/README.md',
+	$root . '/bin/templates/endpoint.md',
 );
 foreach ( $paths as $path ) {
 	foreach ( glob( $path ) as $file ) {
