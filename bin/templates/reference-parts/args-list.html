@@ -1,0 +1,36 @@
+{% if args|length > 0 %}
+	<h3>Arguments</h3>
+	<table class="arguments">
+		{% for key, arg in args %}
+			<tr>
+				<td>
+					{% if link %}
+						<code><a href="#schema-{{ key }}">{{ key }}</a></code><br />
+					{% else %}
+						<code>{{ key }}</code><br />
+					{% endif %}
+				</td>
+				<td>
+					{% if arg.description %}
+						<p>{{ arg.description }}</p>
+					{% endif %}
+					{% if arg.required %}
+						<p class="required">
+							Required: {{ arg.required }}
+						</p>
+					{% endif %}
+					{% if arg.default %}
+						<p class="default">
+							Default: <code>{{ arg.default }}</code>
+						</p>
+					{% endif %}
+					{% if arg.enum %}
+						<p>One of: <code>{{ arg.enum | e | join("</code>, <code>") | raw }}</code></p>
+					{% endif %}
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% else %}
+	<p>There are no arguments for this endpoint.</p>
+{% endif %}

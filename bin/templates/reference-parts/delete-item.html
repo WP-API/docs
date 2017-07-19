@@ -1,0 +1,15 @@
+<section class="route">
+	<div class="primary">
+		<h2>Delete a {{ name | capitalize }}</h2>
+		{{ include( 'reference-parts/args-list.html', { args: endpoint.args } ) }}
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>DELETE {{ route.nicename }}</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json{{ route.nicename }}</code>
+	</div>
+</section>

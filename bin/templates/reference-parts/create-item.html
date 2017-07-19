@@ -1,0 +1,11 @@
+<section class="route">
+	<div class="primary">
+		<h2>Create a {{ name | capitalize }}</h2>
+		{{ include( 'reference-parts/args-list.html', { args: endpoint.args, link: true } ) }}
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>POST {{ route.nicename }}</code>
+	</div>
+</section>

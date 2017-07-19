@@ -1,0 +1,15 @@
+<section class="route">
+	<div class="primary">
+		<h2>Update a {{ name | capitalize }}</h2>
+		{{ include( 'reference-parts/args-list.html', { args: endpoint.args, link: true } ) }}
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>POST {{ route.nicename }}</code>
+
+		<h3>Example Request</h3>
+
+		<code>{{ include( 'reference-parts/examples/update-' ~ route.schema.title ~ '-curl.html', ignore_missing = true ) }}</code>
+	</div>
+</section>
