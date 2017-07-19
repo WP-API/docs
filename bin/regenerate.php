@@ -66,15 +66,15 @@ function add_simple_schemas() {
 				break;
 		}
 
-		if ( ! isset( $objects[ $plural ] ) ) {
-			$objects[ $plural ] = [
+		if ( ! isset( $objects[ $key ] ) ) {
+			$objects[ $key ] = [
 				'name' => $title,
 				'plural' => $plural,
 				'routes' => [ $route_nicename => update_route( $route ) ],
 				'schema' => $route['schema'],
 			];
 		} else {
-			$objects[ $plural ]['routes'][ $route_nicename ] = update_route( $route );
+			$objects[ $key ]['routes'][ $route_nicename ] = update_route( $route );
 		}
 	}
 
