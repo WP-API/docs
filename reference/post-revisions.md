@@ -24,7 +24,7 @@
 				<code>date</code><br />
 				<span class="type">
 					string,
-													datetime (ISO8601)
+													datetime ([details](https://core.trac.wordpress.org/ticket/41032))
 										</span>
 			</td>
 			<td>
@@ -37,7 +37,7 @@
 				<code>date_gmt</code><br />
 				<span class="type">
 					string,
-													datetime (ISO8601)
+													datetime ([details](https://core.trac.wordpress.org/ticket/41032))
 										</span>
 			</td>
 			<td>
@@ -73,7 +73,7 @@
 				<code>modified</code><br />
 				<span class="type">
 					string,
-													datetime (ISO8601)
+													datetime ([details](https://core.trac.wordpress.org/ticket/41032))
 										</span>
 			</td>
 			<td>
@@ -86,7 +86,7 @@
 				<code>modified_gmt</code><br />
 				<span class="type">
 					string,
-													datetime (ISO8601)
+													datetime ([details](https://core.trac.wordpress.org/ticket/41032))
 										</span>
 			</td>
 			<td>
