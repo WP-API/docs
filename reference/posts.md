@@ -1,570 +1,925 @@
+---
+---
+
 # Posts
 
 <section class="route">
-<div class="primary">
-## Schema
-The schema defines all the fields that exist for a post object.
+	<div class="primary">
+		<h2>Schema</h2>
+<p>The schema defines all the fields that exist for a post object.</p>
 <table class="attributes">
-<tbody>
-<tr id="schema-date">
-<td>`date`
-<span class="type">string, datetime ([details](https://core.trac.wordpress.org/ticket/41032))</span></td>
-<td>The date the object was published, in the site's timezone.
-<p class="context">Context: `view`, `edit`, `embed`</p>
-</td>
-</tr>
-<tr id="schema-date_gmt">
-<td>`date_gmt`
-<span class="type">string, datetime ([details](https://core.trac.wordpress.org/ticket/41032))</span></td>
-<td>The date the object was published, as GMT.
-<p class="context">Context: `view`, `edit`</p>
-</td>
-</tr>
-<tr id="schema-guid">
-<td>`guid`
-<span class="type">object</span></td>
-<td>The globally unique identifier for the object.
-<p class="read-only">Read only</p>
-<p class="context">Context: `view`, `edit`</p>
-</td>
-</tr>
-<tr id="schema-id">
-<td>`id`
-<span class="type">integer</span></td>
-<td>Unique identifier for the object.
-<p class="read-only">Read only</p>
-<p class="context">Context: `view`, `edit`, `embed`</p>
-</td>
-</tr>
-<tr id="schema-link">
-<td>`link`
-<span class="type">string, uri</span></td>
-<td>URL to the object.
-<p class="read-only">Read only</p>
-<p class="context">Context: `view`, `edit`, `embed`</p>
-</td>
-</tr>
-<tr id="schema-modified">
-<td>`modified`
-<span class="type">string, datetime ([details](https://core.trac.wordpress.org/ticket/41032))</span></td>
-<td>The date the object was last modified, in the site's timezone.
-<p class="read-only">Read only</p>
-<p class="context">Context: `view`, `edit`</p>
-</td>
-</tr>
-<tr id="schema-modified_gmt">
-<td>`modified_gmt`
-<span class="type">string, datetime ([details](https://core.trac.wordpress.org/ticket/41032))</span></td>
-<td>The date the object was last modified, as GMT.
-<p class="read-only">Read only</p>
-<p class="context">Context: `view`, `edit`</p>
-</td>
-</tr>
-<tr id="schema-slug">
-<td>`slug`
-<span class="type">string</span></td>
-<td>An alphanumeric identifier for the object unique to its type.
-<p class="context">Context: `view`, `edit`, `embed`</p>
-</td>
-</tr>
-<tr id="schema-status">
-<td>`status`
-<span class="type">string</span></td>
-<td>A named status for the object.
-<p class="context">Context: `edit`</p>
-One of: `publish`, `future`, `draft`, `pending`, `private`</td>
-</tr>
-<tr id="schema-type">
-<td>`type`
-<span class="type">string</span></td>
-<td>Type of Post for the object.
-<p class="read-only">Read only</p>
-<p class="context">Context: `view`, `edit`, `embed`</p>
-</td>
-</tr>
-<tr id="schema-password">
-<td>`password`
-<span class="type">string</span></td>
-<td>A password to protect access to the content and excerpt.
-<p class="context">Context: `edit`</p>
-</td>
-</tr>
-<tr id="schema-title">
-<td>`title`
-<span class="type">object</span></td>
-<td>The title for the object.
-<p class="context">Context: `view`, `edit`, `embed`</p>
-</td>
-</tr>
-<tr id="schema-content">
-<td>`content`
-<span class="type">object</span></td>
-<td>The content for the object.
-<p class="context">Context: `view`, `edit`</p>
-</td>
-</tr>
-<tr id="schema-author">
-<td>`author`
-<span class="type">integer</span></td>
-<td>The ID for the author of the object.
-<p class="context">Context: `view`, `edit`, `embed`</p>
-</td>
-</tr>
-<tr id="schema-excerpt">
-<td>`excerpt`
-<span class="type">object</span></td>
-<td>The excerpt for the object.
-<p class="context">Context: `view`, `edit`, `embed`</p>
-</td>
-</tr>
-<tr id="schema-featured_media">
-<td>`featured_media`
-<span class="type">integer</span></td>
-<td>The ID of the featured media for the object.
-<p class="context">Context: `view`, `edit`</p>
-</td>
-</tr>
-<tr id="schema-comment_status">
-<td>`comment_status`
-<span class="type">string</span></td>
-<td>Whether or not comments are open on the object.
-<p class="context">Context: `view`, `edit`</p>
-One of: `open`, `closed`</td>
-</tr>
-<tr id="schema-ping_status">
-<td>`ping_status`
-<span class="type">string</span></td>
-<td>Whether or not the object can be pinged.
-<p class="context">Context: `view`, `edit`</p>
-One of: `open`, `closed`</td>
-</tr>
-<tr id="schema-format">
-<td>`format`
-<span class="type">string</span></td>
-<td>The format for the object.
-<p class="context">Context: `view`, `edit`</p>
-One of: `standard`</td>
-</tr>
-<tr id="schema-meta">
-<td>`meta`
-<span class="type">object</span></td>
-<td>Meta fields.
-<p class="context">Context: `view`, `edit`</p>
-</td>
-</tr>
-<tr id="schema-sticky">
-<td>`sticky`
-<span class="type">boolean</span></td>
-<td>Whether or not the object should be treated as sticky.
-<p class="context">Context: `view`, `edit`</p>
-</td>
-</tr>
-<tr id="schema-template">
-<td>`template`
-<span class="type">string</span></td>
-<td>The theme file to use to display the object.
-<p class="context">Context: `view`, `edit`</p>
-One of: ``</td>
-</tr>
-<tr id="schema-categories">
-<td>`categories`
-<span class="type">array</span></td>
-<td>The terms assigned to the object in the category taxonomy.
-<p class="context">Context: `view`, `edit`</p>
-</td>
-</tr>
-<tr id="schema-tags">
-<td>`tags`
-<span class="type">array</span></td>
-<td>The terms assigned to the object in the post_tag taxonomy.
-<p class="context">Context: `view`, `edit`</p>
-</td>
-</tr>
-<tr id="schema-liveblog_likes">
-<td>`liveblog_likes`
-<span class="type">integer</span></td>
-<td>The number of Liveblog Likes the post has.
-<p class="context">Context: `view`, `edit`, `embed`</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Example Request
-`$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/posts`
+			<tr id="schema-date">
+			<td>
+				<code>date</code><br />
+				<span class="type">
+					string,
+													datetime (ISO8601)
+										</span>
+			</td>
+			<td>
+				<p>The date the object was published, in the site&#039;s timezone.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-date_gmt">
+			<td>
+				<code>date_gmt</code><br />
+				<span class="type">
+					string,
+													datetime (ISO8601)
+										</span>
+			</td>
+			<td>
+				<p>The date the object was published, as GMT.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-guid">
+			<td>
+				<code>guid</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>The globally unique identifier for the object.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-id">
+			<td>
+				<code>id</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>Unique identifier for the object.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-link">
+			<td>
+				<code>link</code><br />
+				<span class="type">
+					string,
+													uri
+										</span>
+			</td>
+			<td>
+				<p>URL to the object.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-modified">
+			<td>
+				<code>modified</code><br />
+				<span class="type">
+					string,
+													datetime (ISO8601)
+										</span>
+			</td>
+			<td>
+				<p>The date the object was last modified, in the site&#039;s timezone.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-modified_gmt">
+			<td>
+				<code>modified_gmt</code><br />
+				<span class="type">
+					string,
+													datetime (ISO8601)
+										</span>
+			</td>
+			<td>
+				<p>The date the object was last modified, as GMT.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-slug">
+			<td>
+				<code>slug</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>An alphanumeric identifier for the object unique to its type.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-status">
+			<td>
+				<code>status</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>A named status for the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+									<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
+							</td>
+		</tr>
+			<tr id="schema-type">
+			<td>
+				<code>type</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>Type of Post for the object.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-password">
+			<td>
+				<code>password</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>A password to protect access to the content and excerpt.</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-title">
+			<td>
+				<code>title</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>The title for the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-content">
+			<td>
+				<code>content</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>The content for the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-author">
+			<td>
+				<code>author</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>The ID for the author of the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-excerpt">
+			<td>
+				<code>excerpt</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>The excerpt for the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-featured_media">
+			<td>
+				<code>featured_media</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>The ID of the featured media for the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-comment_status">
+			<td>
+				<code>comment_status</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>Whether or not comments are open on the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+									<p>One of: <code>open</code>, <code>closed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-ping_status">
+			<td>
+				<code>ping_status</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>Whether or not the object can be pinged.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+									<p>One of: <code>open</code>, <code>closed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-format">
+			<td>
+				<code>format</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>The format for the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+									<p>One of: <code>standard</code>, <code>aside</code>, <code>chat</code>, <code>gallery</code>, <code>link</code>, <code>image</code>, <code>quote</code>, <code>status</code>, <code>video</code>, <code>audio</code></p>
+							</td>
+		</tr>
+			<tr id="schema-meta">
+			<td>
+				<code>meta</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>Meta fields.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-sticky">
+			<td>
+				<code>sticky</code><br />
+				<span class="type">
+					boolean				</span>
+			</td>
+			<td>
+				<p>Whether or not the object should be treated as sticky.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-template">
+			<td>
+				<code>template</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>The theme file to use to display the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+									<p>One of: <code></code></p>
+							</td>
+		</tr>
+			<tr id="schema-categories">
+			<td>
+				<code>categories</code><br />
+				<span class="type">
+					array				</span>
+			</td>
+			<td>
+				<p>The terms assigned to the object in the category taxonomy.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-tags">
+			<td>
+				<code>tags</code><br />
+				<span class="type">
+					array				</span>
+			</td>
+			<td>
+				<p>The terms assigned to the object in the post_tag taxonomy.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+	</table>
 
-</div>
-</section><section class="route">
-<div class="primary">
-## List Posts
-### Arguments
-<table class="arguments">
-<tbody>
-<tr>
-<td>`context`</td>
-<td>Scope under which the request is made; determines fields present in response.
-<p class="default">Default: `view`</p>
-One of: `view`, `embed`, `edit`</td>
-</tr>
-<tr>
-<td>`page`</td>
-<td>Current page of the collection.
-<p class="default">Default: `1`</p>
-</td>
-</tr>
-<tr>
-<td>`per_page`</td>
-<td>Maximum number of items to be returned in result set.
-<p class="default">Default: `10`</p>
-</td>
-</tr>
-<tr>
-<td>`search`</td>
-<td>Limit results to those matching a string.</td>
-</tr>
-<tr>
-<td>`after`</td>
-<td>Limit response to posts published after a given date ([details](https://core.trac.wordpress.org/ticket/41032)).</td>
-</tr>
-<tr>
-<td>`author`</td>
-<td>Limit result set to posts assigned to specific authors.
-<p class="default">Default: ``</p>
-</td>
-</tr>
-<tr>
-<td>`author_exclude`</td>
-<td>Ensure result set excludes posts assigned to specific authors.
-<p class="default">Default: ``</p>
-</td>
-</tr>
-<tr>
-<td>`before`</td>
-<td>Limit response to posts published before a given date ([details](https://core.trac.wordpress.org/ticket/41032)).</td>
-</tr>
-<tr>
-<td>`exclude`</td>
-<td>Ensure result set excludes specific IDs.
-<p class="default">Default: ``</p>
-</td>
-</tr>
-<tr>
-<td>`include`</td>
-<td>Limit result set to specific IDs.
-<p class="default">Default: ``</p>
-</td>
-</tr>
-<tr>
-<td>`offset`</td>
-<td>Offset the result set by a specific number of items.</td>
-</tr>
-<tr>
-<td>`order`</td>
-<td>Order sort attribute ascending or descending.
-<p class="default">Default: `desc`</p>
-One of: `asc`, `desc`</td>
-</tr>
-<tr>
-<td>`orderby`</td>
-<td>Sort collection by object attribute.
-<p class="default">Default: `date`</p>
-One of: `date`, `relevance`, `id`, `include`, `title`, `slug`</td>
-</tr>
-<tr>
-<td>`slug`</td>
-<td>Limit result set to posts with one or more specific slugs.</td>
-</tr>
-<tr>
-<td>`status`</td>
-<td>Limit result set to posts assigned one or more statuses.
-<p class="default">Default: `publish`</p>
-</td>
-</tr>
-<tr>
-<td>`categories`</td>
-<td>Limit result set to all items that have the specified term assigned in the categories taxonomy.
-<p class="default">Default: ``</p>
-</td>
-</tr>
-<tr>
-<td>`categories_exclude`</td>
-<td>Limit result set to all items except those that have the specified term assigned in the categories taxonomy.
-<p class="default">Default: ``</p>
-</td>
-</tr>
-<tr>
-<td>`tags`</td>
-<td>Limit result set to all items that have the specified term assigned in the tags taxonomy.
-<p class="default">Default: ``</p>
-</td>
-</tr>
-<tr>
-<td>`tags_exclude`</td>
-<td>Limit result set to all items except those that have the specified term assigned in the tags taxonomy.
-<p class="default">Default: ``</p>
-</td>
-</tr>
-<tr>
-<td>`sticky`</td>
-<td>Limit result set to items that are sticky.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Definition
-`GET /wp/v2/posts`
-### Example Request
-`$ curl http://demo.wp-api.org/wp-json/wp/v2/posts`
+	</div>
+	<div class="secondary">
+		<h3>Example Request</h3>
 
-</div>
-</section><section class="route">
-<div class="primary">
-## Retrieve a Post
-### Arguments
-<table class="arguments">
-<tbody>
-<tr>
-<td>`context`</td>
-<td>Scope under which the request is made; determines fields present in response.
-<p class="default">Default: `view`</p>
-One of: `view`, `embed`, `edit`</td>
-</tr>
-<tr>
-<td>`password`</td>
-<td>The password for the post if it is password protected.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Definition
-`GET /wp/v2/posts/&lt;id&gt;`
-### Example Request
-`$ curl http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;id&gt;`
-
-</div>
-</section><section class="route">
-<div class="primary">
-## Create a Post
-### Arguments
-<table class="arguments">
-<tbody>
-<tr>
-<td>`[date](#schema-date)`</td>
-<td>The date the object was published, in the site's timezone.</td>
-</tr>
-<tr>
-<td>`[date_gmt](#schema-date_gmt)`</td>
-<td>The date the object was published, as GMT.</td>
-</tr>
-<tr>
-<td>`[slug](#schema-slug)`</td>
-<td>An alphanumeric identifier for the object unique to its type.</td>
-</tr>
-<tr>
-<td>`[status](#schema-status)`</td>
-<td>A named status for the object.
-
-One of: `publish`, `future`, `draft`, `pending`, `private`</td>
-</tr>
-<tr>
-<td>`[password](#schema-password)`</td>
-<td>A password to protect access to the content and excerpt.</td>
-</tr>
-<tr>
-<td>`[title](#schema-title)`</td>
-<td>The title for the object.</td>
-</tr>
-<tr>
-<td>`[content](#schema-content)`</td>
-<td>The content for the object.</td>
-</tr>
-<tr>
-<td>`[author](#schema-author)`</td>
-<td>The ID for the author of the object.</td>
-</tr>
-<tr>
-<td>`[excerpt](#schema-excerpt)`</td>
-<td>The excerpt for the object.</td>
-</tr>
-<tr>
-<td>`[featured_media](#schema-featured_media)`</td>
-<td>The ID of the featured media for the object.</td>
-</tr>
-<tr>
-<td>`[comment_status](#schema-comment_status)`</td>
-<td>Whether or not comments are open on the object.
-
-One of: `open`, `closed`</td>
-</tr>
-<tr>
-<td>`[ping_status](#schema-ping_status)`</td>
-<td>Whether or not the object can be pinged.
-
-One of: `open`, `closed`</td>
-</tr>
-<tr>
-<td>`[format](#schema-format)`</td>
-<td>The format for the object.
-
-One of: `standard`</td>
-</tr>
-<tr>
-<td>`[meta](#schema-meta)`</td>
-<td>Meta fields.</td>
-</tr>
-<tr>
-<td>`[sticky](#schema-sticky)`</td>
-<td>Whether or not the object should be treated as sticky.</td>
-</tr>
-<tr>
-<td>`[template](#schema-template)`</td>
-<td>The theme file to use to display the object.
-
-One of: ``</td>
-</tr>
-<tr>
-<td>`[categories](#schema-categories)`</td>
-<td>The terms assigned to the object in the category taxonomy.</td>
-</tr>
-<tr>
-<td>`[tags](#schema-tags)`</td>
-<td>The terms assigned to the object in the post_tag taxonomy.</td>
-</tr>
-<tr>
-<td>`[liveblog_likes](#schema-liveblog_likes)`</td>
-<td>The number of Liveblog Likes the post has.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Definition
-`POST /wp/v2/posts`
-
-</div>
-</section><section class="route">
-<div class="primary">
-## Update a Post
-### Arguments
-<table class="arguments">
-<tbody>
-<tr>
-<td>`[date](#schema-date)`</td>
-<td>The date the object was published, in the site's timezone.</td>
-</tr>
-<tr>
-<td>`[date_gmt](#schema-date_gmt)`</td>
-<td>The date the object was published, as GMT.</td>
-</tr>
-<tr>
-<td>`[slug](#schema-slug)`</td>
-<td>An alphanumeric identifier for the object unique to its type.</td>
-</tr>
-<tr>
-<td>`[status](#schema-status)`</td>
-<td>A named status for the object.
-
-One of: `publish`, `future`, `draft`, `pending`, `private`</td>
-</tr>
-<tr>
-<td>`[password](#schema-password)`</td>
-<td>A password to protect access to the content and excerpt.</td>
-</tr>
-<tr>
-<td>`[title](#schema-title)`</td>
-<td>The title for the object.</td>
-</tr>
-<tr>
-<td>`[content](#schema-content)`</td>
-<td>The content for the object.</td>
-</tr>
-<tr>
-<td>`[author](#schema-author)`</td>
-<td>The ID for the author of the object.</td>
-</tr>
-<tr>
-<td>`[excerpt](#schema-excerpt)`</td>
-<td>The excerpt for the object.</td>
-</tr>
-<tr>
-<td>`[featured_media](#schema-featured_media)`</td>
-<td>The ID of the featured media for the object.</td>
-</tr>
-<tr>
-<td>`[comment_status](#schema-comment_status)`</td>
-<td>Whether or not comments are open on the object.
-
-One of: `open`, `closed`</td>
-</tr>
-<tr>
-<td>`[ping_status](#schema-ping_status)`</td>
-<td>Whether or not the object can be pinged.
-
-One of: `open`, `closed`</td>
-</tr>
-<tr>
-<td>`[format](#schema-format)`</td>
-<td>The format for the object.
-
-One of: `standard`</td>
-</tr>
-<tr>
-<td>`[meta](#schema-meta)`</td>
-<td>Meta fields.</td>
-</tr>
-<tr>
-<td>`[sticky](#schema-sticky)`</td>
-<td>Whether or not the object should be treated as sticky.</td>
-</tr>
-<tr>
-<td>`[template](#schema-template)`</td>
-<td>The theme file to use to display the object.
-
-One of: ``</td>
-</tr>
-<tr>
-<td>`[categories](#schema-categories)`</td>
-<td>The terms assigned to the object in the category taxonomy.</td>
-</tr>
-<tr>
-<td>`[tags](#schema-tags)`</td>
-<td>The terms assigned to the object in the post_tag taxonomy.</td>
-</tr>
-<tr>
-<td>`[liveblog_likes](#schema-liveblog_likes)`</td>
-<td>The number of Liveblog Likes the post has.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Definition
-`POST /wp/v2/posts/&lt;id&gt;`
-### Example Request
-`$ curl -X POST http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;id&gt; -d '{"title":"My New Title"}'`
-
-</div>
-</section><section class="route">
-<div class="primary">
-## Delete a Post
-### Arguments
-<table class="arguments">
-<tbody>
-<tr>
-<td>`force`</td>
-<td>Whether to bypass trash and force deletion.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Definition
-`DELETE /wp/v2/posts/&lt;id&gt;`
-### Example Request
-`$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;id&gt;`
-
-</div>
+		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/posts</code>
+	</div>
 </section>
+
+<div><section class="route">
+	<div class="primary">
+		<h2>List Posts</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
+						</p>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>page</code><br />
+									</td>
+				<td>
+											<p>Current page of the collection.</p>
+																					<p class="default">
+							Default: <code>1</code>
+						</p>
+														</td>
+			</tr>
+					<tr>
+				<td>
+											<code>per_page</code><br />
+									</td>
+				<td>
+											<p>Maximum number of items to be returned in result set.</p>
+																					<p class="default">
+							Default: <code>10</code>
+						</p>
+														</td>
+			</tr>
+					<tr>
+				<td>
+											<code>search</code><br />
+									</td>
+				<td>
+											<p>Limit results to those matching a string.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>after</code><br />
+									</td>
+				<td>
+											<p>Limit response to posts published after a given ISO8601 compliant date.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>author</code><br />
+									</td>
+				<td>
+											<p>Limit result set to posts assigned to specific authors.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>author_exclude</code><br />
+									</td>
+				<td>
+											<p>Ensure result set excludes posts assigned to specific authors.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>before</code><br />
+									</td>
+				<td>
+											<p>Limit response to posts published before a given ISO8601 compliant date.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>exclude</code><br />
+									</td>
+				<td>
+											<p>Ensure result set excludes specific IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>include</code><br />
+									</td>
+				<td>
+											<p>Limit result set to specific IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>offset</code><br />
+									</td>
+				<td>
+											<p>Offset the result set by a specific number of items.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>order</code><br />
+									</td>
+				<td>
+											<p>Order sort attribute ascending or descending.</p>
+																					<p class="default">
+							Default: <code>desc</code>
+						</p>
+																<p>One of: <code>asc</code>, <code>desc</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>orderby</code><br />
+									</td>
+				<td>
+											<p>Sort collection by object attribute.</p>
+																					<p class="default">
+							Default: <code>date</code>
+						</p>
+																<p>One of: <code>author</code>, <code>date</code>, <code>id</code>, <code>include</code>, <code>modified</code>, <code>parent</code>, <code>relevance</code>, <code>slug</code>, <code>title</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>slug</code><br />
+									</td>
+				<td>
+											<p>Limit result set to posts with one or more specific slugs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>status</code><br />
+									</td>
+				<td>
+											<p>Limit result set to posts assigned one or more statuses.</p>
+																					<p class="default">
+							Default: <code>publish</code>
+						</p>
+														</td>
+			</tr>
+					<tr>
+				<td>
+											<code>categories</code><br />
+									</td>
+				<td>
+											<p>Limit result set to all items that have the specified term assigned in the categories taxonomy.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>categories_exclude</code><br />
+									</td>
+				<td>
+											<p>Limit result set to all items except those that have the specified term assigned in the categories taxonomy.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>tags</code><br />
+									</td>
+				<td>
+											<p>Limit result set to all items that have the specified term assigned in the tags taxonomy.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>tags_exclude</code><br />
+									</td>
+				<td>
+											<p>Limit result set to all items except those that have the specified term assigned in the tags taxonomy.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>sticky</code><br />
+									</td>
+				<td>
+											<p>Limit result set to items that are sticky.</p>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>GET /wp/v2/posts</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/posts</code>
+	</div>
+</section>
+<section class="route">
+	<div class="primary">
+		<h2>Create a Post</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code><a href="#schema-date">date</a></code><br />
+									</td>
+				<td>
+											<p>The date the object was published, in the site&#039;s timezone.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
+									</td>
+				<td>
+											<p>The date the object was published, as GMT.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-slug">slug</a></code><br />
+									</td>
+				<td>
+											<p>An alphanumeric identifier for the object unique to its type.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-status">status</a></code><br />
+									</td>
+				<td>
+											<p>A named status for the object.</p>
+																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-password">password</a></code><br />
+									</td>
+				<td>
+											<p>A password to protect access to the content and excerpt.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-title">title</a></code><br />
+									</td>
+				<td>
+											<p>The title for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-content">content</a></code><br />
+									</td>
+				<td>
+											<p>The content for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author">author</a></code><br />
+									</td>
+				<td>
+											<p>The ID for the author of the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-excerpt">excerpt</a></code><br />
+									</td>
+				<td>
+											<p>The excerpt for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-featured_media">featured_media</a></code><br />
+									</td>
+				<td>
+											<p>The ID of the featured media for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-comment_status">comment_status</a></code><br />
+									</td>
+				<td>
+											<p>Whether or not comments are open on the object.</p>
+																										<p>One of: <code>open</code>, <code>closed</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-ping_status">ping_status</a></code><br />
+									</td>
+				<td>
+											<p>Whether or not the object can be pinged.</p>
+																										<p>One of: <code>open</code>, <code>closed</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-format">format</a></code><br />
+									</td>
+				<td>
+											<p>The format for the object.</p>
+																										<p>One of: <code>standard</code>, <code>aside</code>, <code>chat</code>, <code>gallery</code>, <code>link</code>, <code>image</code>, <code>quote</code>, <code>status</code>, <code>video</code>, <code>audio</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-meta">meta</a></code><br />
+									</td>
+				<td>
+											<p>Meta fields.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-sticky">sticky</a></code><br />
+									</td>
+				<td>
+											<p>Whether or not the object should be treated as sticky.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-template">template</a></code><br />
+									</td>
+				<td>
+											<p>The theme file to use to display the object.</p>
+																										<p>One of: <code></code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-categories">categories</a></code><br />
+									</td>
+				<td>
+											<p>The terms assigned to the object in the category taxonomy.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-tags">tags</a></code><br />
+									</td>
+				<td>
+											<p>The terms assigned to the object in the post_tag taxonomy.</p>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>POST /wp/v2/posts</code>
+	</div>
+</section>
+<section class="route">
+	<div class="primary">
+		<h2>Retrieve a Post</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>id</code><br />
+									</td>
+				<td>
+											<p>Unique identifier for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
+						</p>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>password</code><br />
+									</td>
+				<td>
+											<p>The password for the post if it is password protected.</p>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>GET /wp/v2/posts/&lt;id&gt;</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;id&gt;</code>
+	</div>
+</section>
+<section class="route">
+	<div class="primary">
+		<h2>Update a Post</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code><a href="#schema-id">id</a></code><br />
+									</td>
+				<td>
+											<p>Unique identifier for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-date">date</a></code><br />
+									</td>
+				<td>
+											<p>The date the object was published, in the site&#039;s timezone.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
+									</td>
+				<td>
+											<p>The date the object was published, as GMT.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-slug">slug</a></code><br />
+									</td>
+				<td>
+											<p>An alphanumeric identifier for the object unique to its type.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-status">status</a></code><br />
+									</td>
+				<td>
+											<p>A named status for the object.</p>
+																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-password">password</a></code><br />
+									</td>
+				<td>
+											<p>A password to protect access to the content and excerpt.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-title">title</a></code><br />
+									</td>
+				<td>
+											<p>The title for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-content">content</a></code><br />
+									</td>
+				<td>
+											<p>The content for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author">author</a></code><br />
+									</td>
+				<td>
+											<p>The ID for the author of the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-excerpt">excerpt</a></code><br />
+									</td>
+				<td>
+											<p>The excerpt for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-featured_media">featured_media</a></code><br />
+									</td>
+				<td>
+											<p>The ID of the featured media for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-comment_status">comment_status</a></code><br />
+									</td>
+				<td>
+											<p>Whether or not comments are open on the object.</p>
+																										<p>One of: <code>open</code>, <code>closed</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-ping_status">ping_status</a></code><br />
+									</td>
+				<td>
+											<p>Whether or not the object can be pinged.</p>
+																										<p>One of: <code>open</code>, <code>closed</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-format">format</a></code><br />
+									</td>
+				<td>
+											<p>The format for the object.</p>
+																										<p>One of: <code>standard</code>, <code>aside</code>, <code>chat</code>, <code>gallery</code>, <code>link</code>, <code>image</code>, <code>quote</code>, <code>status</code>, <code>video</code>, <code>audio</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-meta">meta</a></code><br />
+									</td>
+				<td>
+											<p>Meta fields.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-sticky">sticky</a></code><br />
+									</td>
+				<td>
+											<p>Whether or not the object should be treated as sticky.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-template">template</a></code><br />
+									</td>
+				<td>
+											<p>The theme file to use to display the object.</p>
+																										<p>One of: <code></code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-categories">categories</a></code><br />
+									</td>
+				<td>
+											<p>The terms assigned to the object in the category taxonomy.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-tags">tags</a></code><br />
+									</td>
+				<td>
+											<p>The terms assigned to the object in the post_tag taxonomy.</p>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>POST /wp/v2/posts/&lt;id&gt;</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl -X POST http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;id&gt; -d '{"title":"My New Title"}'
+</code>
+	</div>
+</section>
+<section class="route">
+	<div class="primary">
+		<h2>Delete a Post</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>id</code><br />
+									</td>
+				<td>
+											<p>Unique identifier for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>force</code><br />
+									</td>
+				<td>
+											<p>Whether to bypass trash and force deletion.</p>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>DELETE /wp/v2/posts/&lt;id&gt;</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;id&gt;</code>
+	</div>
+</section>
+</div>
+

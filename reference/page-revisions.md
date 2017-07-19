@@ -1,12 +1,12 @@
 ---
 ---
 
-# Post-revisions
+# Page-revisions
 
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist for a post-revision object.</p>
+<p>The schema defines all the fields that exist for a page-revision object.</p>
 <table class="attributes">
 			<tr id="schema-author">
 			<td>
@@ -155,13 +155,13 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;parent&gt;/revisions</code>
+		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/pages/&lt;parent&gt;/revisions</code>
 	</div>
 </section>
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Post-revision</h2>
+		<h2>Retrieve a Page-revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -190,16 +190,16 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>GET /wp/v2/posts/&lt;parent&gt;/revisions</code>
+		<code>GET /wp/v2/pages/&lt;parent&gt;/revisions</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;parent&gt;/revisions</code>
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/pages/&lt;parent&gt;/revisions</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Post-revision</h2>
+		<h2>Retrieve a Page-revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -236,16 +236,16 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>GET /wp/v2/posts/&lt;parent&gt;/revisions/&lt;id&gt;</code>
+		<code>GET /wp/v2/pages/&lt;parent&gt;/revisions/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;parent&gt;/revisions/&lt;id&gt;</code>
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/pages/&lt;parent&gt;/revisions/&lt;id&gt;</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Delete a Post-revision</h2>
+		<h2>Delete a Page-revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -278,11 +278,11 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>DELETE /wp/v2/posts/&lt;parent&gt;/revisions/&lt;id&gt;</code>
+		<code>DELETE /wp/v2/pages/&lt;parent&gt;/revisions/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;parent&gt;/revisions/&lt;id&gt;</code>
+		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/pages/&lt;parent&gt;/revisions/&lt;id&gt;</code>
 	</div>
 </section>
 </div>

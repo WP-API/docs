@@ -1,509 +1,763 @@
+---
+---
+
 # Comments
 
 <section class="route">
-<div class="primary">
-## Schema
-The schema defines all the fields that exist for a comment object.
+	<div class="primary">
+		<h2>Schema</h2>
+<p>The schema defines all the fields that exist for a comment object.</p>
 <table class="attributes">
-<tbody>
-<tr id="schema-id">
-<td>`id`
-<span class="type">
-integer
-</span></td>
-<td>Unique identifier for the object.
+			<tr id="schema-id">
+			<td>
+				<code>id</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>Unique identifier for the object.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-author">
+			<td>
+				<code>author</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>The ID of the user object, if author was a user.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-author_email">
+			<td>
+				<code>author_email</code><br />
+				<span class="type">
+					string,
+													email
+									</span>
+			</td>
+			<td>
+				<p>Email address for the object author.</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-author_ip">
+			<td>
+				<code>author_ip</code><br />
+				<span class="type">
+					string,
+													ip
+									</span>
+			</td>
+			<td>
+				<p>IP address for the object author.</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-author_name">
+			<td>
+				<code>author_name</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>Display name for the object author.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-author_url">
+			<td>
+				<code>author_url</code><br />
+				<span class="type">
+					string,
+													uri
+										</span>
+			</td>
+			<td>
+				<p>URL for the object author.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-author_user_agent">
+			<td>
+				<code>author_user_agent</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>User agent for the object author.</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-content">
+			<td>
+				<code>content</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>The content for the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-date">
+			<td>
+				<code>date</code><br />
+				<span class="type">
+					string,
+													datetime (ISO8601)
+										</span>
+			</td>
+			<td>
+				<p>The date the object was published, in the site&#039;s timezone.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-date_gmt">
+			<td>
+				<code>date_gmt</code><br />
+				<span class="type">
+					string,
+													datetime (ISO8601)
+										</span>
+			</td>
+			<td>
+				<p>The date the object was published, as GMT.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-link">
+			<td>
+				<code>link</code><br />
+				<span class="type">
+					string,
+													uri
+										</span>
+			</td>
+			<td>
+				<p>URL to the object.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-parent">
+			<td>
+				<code>parent</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>The ID for the parent of the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-post">
+			<td>
+				<code>post</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>The ID of the associated post object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-status">
+			<td>
+				<code>status</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>State of the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-type">
+			<td>
+				<code>type</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>Type of Comment for the object.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-author_avatar_urls">
+			<td>
+				<code>author_avatar_urls</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>Avatar URLs for the object author.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-meta">
+			<td>
+				<code>meta</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>Meta fields.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+	</table>
 
-*Read only*
+	</div>
+	<div class="secondary">
+		<h3>Example Request</h3>
 
-Context: `view`, `edit`, `embed`</td>
-</tr>
-<tr id="schema-author">
-<td>`author`
-<span class="type">
-integer
-</span></td>
-<td>The id of the user object, if author was a user.
-
-Context: `view`, `edit`, `embed`</td>
-</tr>
-<tr id="schema-author_email">
-<td>`author_email`
-<span class="type"><span class="type">
-string,
-email</span></span>&nbsp;</td>
-<td>Email address for the object author.
-
-Context: `edit`</td>
-</tr>
-<tr id="schema-author_ip">
-<td>`author_ip`
-<span class="type"><span class="type">
-string,
-ipv4</span></span>&nbsp;</td>
-<td>IP address for the object author.
-
-Context: `edit`</td>
-</tr>
-<tr id="schema-author_name">
-<td>`author_name`
-<span class="type">
-string
-</span></td>
-<td>Display name for the object author.
-
-Context: `view`, `edit`, `embed`</td>
-</tr>
-<tr id="schema-author_url">
-<td>`author_url`
-<span class="type"><span class="type">
-string,
-uri</span></span>&nbsp;</td>
-<td>URL for the object author.
-
-Context: `view`, `edit`, `embed`</td>
-</tr>
-<tr id="schema-author_user_agent">
-<td>`author_user_agent`
-<span class="type">
-string
-</span></td>
-<td>User agent for the object author.
-
-*Read only*
-
-Context: `edit`</td>
-</tr>
-<tr id="schema-content">
-<td>`content`
-<span class="type">
-object
-</span></td>
-<td>The content for the object.
-
-Context: `view`, `edit`, `embed`</td>
-</tr>
-<tr id="schema-date">
-<td>`date`
-<span class="type"><span class="type">
-string,
-datetime ([details](https://core.trac.wordpress.org/ticket/41032))</span></span>&nbsp;</td>
-<td>The date the object was published.
-
-Context: `view`, `edit`, `embed`</td>
-</tr>
-<tr id="schema-date_gmt">
-<td>`date_gmt`
-<span class="type"><span class="type">
-string,
-datetime ([details](https://core.trac.wordpress.org/ticket/41032))</span></span>
-
-&nbsp;</td>
-<td>The date the object was published as GMT.
-
-Context: `view`, `edit`</td>
-</tr>
-<tr id="schema-karma">
-<td>`karma`
-<span class="type">
-integer
-</span></td>
-<td>Karma for the object.
-
-Context: `edit`</td>
-</tr>
-<tr id="schema-link">
-<td>`link`
-<span class="type"><span class="type">
-string,
-uri</span></span>&nbsp;</td>
-<td>URL to the object.
-
-*Read only*
-
-Context: `view`, `edit`, `embed`</td>
-</tr>
-<tr id="schema-parent">
-<td>`parent`
-<span class="type">
-integer
-</span></td>
-<td>The id for the parent of the object.
-
-Context: `view`, `edit`, `embed`</td>
-</tr>
-<tr id="schema-post">
-<td>`post`
-<span class="type">
-integer
-</span></td>
-<td>The id of the associated post object.
-
-Context: `view`, `edit`</td>
-</tr>
-<tr id="schema-status">
-<td>`status`
-<span class="type">
-string
-</span></td>
-<td>State of the object.
-
-Context: `view`, `edit`</td>
-</tr>
-<tr id="schema-type">
-<td>`type`
-<span class="type">
-string
-</span></td>
-<td>Type of Comment for the object.
-
-Context: `view`, `edit`, `embed`</td>
-</tr>
-<tr id="schema-author_avatar_urls">
-<td>`author_avatar_urls`
-<span class="type">
-object
-</span></td>
-<td>Avatar URLs for the object author.
-
-*Read only*
-
-Context: `view`, `edit`, `embed`</td>
-</tr>
-<tr id="schema-meta">
-<td>`meta`
-<span class="type">
-object
-</span></td>
-<td>Meta fields.
-
-Context: `view`, `edit`</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Example Request
-`$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/comments`
-
-</div>
-</section><section class="route">
-<div class="primary">
-## List Comments
-### Arguments
-<table class="arguments">
-<tbody>
-<tr>
-<td>`context`</td>
-<td>Scope under which the request is made; determines fields present in response.
-
-Default: `view`
-
-One of: `view`, `embed`, `edit`</td>
-</tr>
-<tr>
-<td>`page`</td>
-<td>Current page of the collection.
-
-Default: `1`</td>
-</tr>
-<tr>
-<td>`per_page`</td>
-<td>Maximum number of items to be returned in result set.
-
-Default: `10`</td>
-</tr>
-<tr>
-<td>`search`</td>
-<td>Limit results to those matching a string.</td>
-</tr>
-<tr>
-<td>`after`</td>
-<td>Limit response to resources published after a given date ([details](https://core.trac.wordpress.org/ticket/41032)).</td>
-</tr>
-<tr>
-<td>`author`</td>
-<td>Limit result set to comments assigned to specific user ids. Requires authorization.</td>
-</tr>
-<tr>
-<td>`author_exclude`</td>
-<td>Ensure result set excludes comments assigned to specific user ids. Requires authorization.</td>
-</tr>
-<tr>
-<td>`author_email`</td>
-<td>Limit result set to that from a specific author email. Requires authorization.</td>
-</tr>
-<tr>
-<td>`before`</td>
-<td>Limit response to resources published before a given date ([details](https://core.trac.wordpress.org/ticket/41032)).</td>
-</tr>
-<tr>
-<td>`exclude`</td>
-<td>Ensure result set excludes specific ids.
-
-Default: ``</td>
-</tr>
-<tr>
-<td>`include`</td>
-<td>Limit result set to specific ids.
-
-Default: ``</td>
-</tr>
-<tr>
-<td>`karma`</td>
-<td>Limit result set to that of a particular comment karma. Requires authorization.</td>
-</tr>
-<tr>
-<td>`offset`</td>
-<td>Offset the result set by a specific number of comments.</td>
-</tr>
-<tr>
-<td>`order`</td>
-<td>Order sort attribute ascending or descending.
-
-Default: `desc`
-
-One of: `asc`, `desc`</td>
-</tr>
-<tr>
-<td>`orderby`</td>
-<td>Sort collection by object attribute.
-
-Default: `date_gmt`
-
-One of: `date`, `date_gmt`, `id`, `include`, `post`, `parent`, `type`</td>
-</tr>
-<tr>
-<td>`parent`</td>
-<td>Limit result set to resources of specific parent ids.
-
-Default: ``</td>
-</tr>
-<tr>
-<td>`parent_exclude`</td>
-<td>Ensure result set excludes specific parent ids.
-
-Default: ``</td>
-</tr>
-<tr>
-<td>`post`</td>
-<td>Limit result set to resources assigned to specific post ids.
-
-Default: ``</td>
-</tr>
-<tr>
-<td>`status`</td>
-<td>Limit result set to comments assigned a specific status. Requires authorization.
-
-Default: `approve`</td>
-</tr>
-<tr>
-<td>`type`</td>
-<td>Limit result set to comments assigned a specific type. Requires authorization.
-
-Default: `comment`</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Definition
-`GET /wp/v2/comments`
-### Example Request
-`$ curl http://demo.wp-api.org/wp-json/wp/v2/comments`
-
-</div>
-</section><section class="route">
-<div class="primary">
-## Retrieve a Comment
-### Arguments
-<table class="arguments">
-<tbody>
-<tr>
-<td>`context`</td>
-<td>Scope under which the request is made; determines fields present in response.
-
-Default: `view`
-
-One of: `view`, `embed`, `edit`</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Definition
-`GET /wp/v2/comments/&lt;id&gt;`
-### Example Request
-`$ curl http://demo.wp-api.org/wp-json/wp/v2/comments/&lt;id&gt;`
-
-</div>
-</section><section class="route">
-<div class="primary">
-## Create a Comment
-### Arguments
-<table class="arguments">
-<tbody>
-<tr>
-<td>`[author](#schema-author)`</td>
-<td>The id of the user object, if author was a user.</td>
-</tr>
-<tr>
-<td>`[author_email](#schema-author_email)`</td>
-<td>Email address for the object author.</td>
-</tr>
-<tr>
-<td>`[author_ip](#schema-author_ip)`</td>
-<td>IP address for the object author.
-
-Default: `127.0.0.1`</td>
-</tr>
-<tr>
-<td>`[author_name](#schema-author_name)`</td>
-<td>Display name for the object author.</td>
-</tr>
-<tr>
-<td>`[author_url](#schema-author_url)`</td>
-<td>URL for the object author.</td>
-</tr>
-<tr>
-<td>`[content](#schema-content)`</td>
-<td>The content for the object.</td>
-</tr>
-<tr>
-<td>`[date](#schema-date)`</td>
-<td>The date the object was published.</td>
-</tr>
-<tr>
-<td>`[date_gmt](#schema-date_gmt)`</td>
-<td>The date the object was published as GMT.</td>
-</tr>
-<tr>
-<td>`[karma](#schema-karma)`</td>
-<td>Karma for the object.</td>
-</tr>
-<tr>
-<td>`[parent](#schema-parent)`</td>
-<td>The id for the parent of the object.
-
-Default: `0`</td>
-</tr>
-<tr>
-<td>`[post](#schema-post)`</td>
-<td>The id of the associated post object.
-
-Default: `0`</td>
-</tr>
-<tr>
-<td>`[status](#schema-status)`</td>
-<td>State of the object.</td>
-</tr>
-<tr>
-<td>`[type](#schema-type)`</td>
-<td>Type of Comment for the object.
-
-Default: `comment`</td>
-</tr>
-<tr>
-<td>`[meta](#schema-meta)`</td>
-<td>Meta fields.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Definition
-`POST /wp/v2/comments`
-
-</div>
-</section><section class="route">
-<div class="primary">
-## Update a Comment
-### Arguments
-<table class="arguments">
-<tbody>
-<tr>
-<td>`[author](#schema-author)`</td>
-<td>The id of the user object, if author was a user.</td>
-</tr>
-<tr>
-<td>`[author_email](#schema-author_email)`</td>
-<td>Email address for the object author.</td>
-</tr>
-<tr>
-<td>`[author_ip](#schema-author_ip)`</td>
-<td>IP address for the object author.</td>
-</tr>
-<tr>
-<td>`[author_name](#schema-author_name)`</td>
-<td>Display name for the object author.</td>
-</tr>
-<tr>
-<td>`[author_url](#schema-author_url)`</td>
-<td>URL for the object author.</td>
-</tr>
-<tr>
-<td>`[content](#schema-content)`</td>
-<td>The content for the object.</td>
-</tr>
-<tr>
-<td>`[date](#schema-date)`</td>
-<td>The date the object was published.</td>
-</tr>
-<tr>
-<td>`[date_gmt](#schema-date_gmt)`</td>
-<td>The date the object was published as GMT.</td>
-</tr>
-<tr>
-<td>`[karma](#schema-karma)`</td>
-<td>Karma for the object.</td>
-</tr>
-<tr>
-<td>`[parent](#schema-parent)`</td>
-<td>The id for the parent of the object.</td>
-</tr>
-<tr>
-<td>`[post](#schema-post)`</td>
-<td>The id of the associated post object.</td>
-</tr>
-<tr>
-<td>`[status](#schema-status)`</td>
-<td>State of the object.</td>
-</tr>
-<tr>
-<td>`[type](#schema-type)`</td>
-<td>Type of Comment for the object.</td>
-</tr>
-<tr>
-<td>`[meta](#schema-meta)`</td>
-<td>Meta fields.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Definition
-`POST /wp/v2/comments/&lt;id&gt;`
-### Example Request
-``
-
-</div>
-</section><section class="route">
-<div class="primary">
-## Delete a Comment
-### Arguments
-<table class="arguments">
-<tbody>
-<tr>
-<td>`force`</td>
-<td>Whether to bypass trash and force deletion.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="secondary">
-### Definition
-`DELETE /wp/v2/comments/&lt;id&gt;`
-### Example Request
-`$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/comments/&lt;id&gt;`
-
-</div>
+		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/comments</code>
+	</div>
 </section>
+
+<div><section class="route">
+	<div class="primary">
+		<h2>List Comments</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
+						</p>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>page</code><br />
+									</td>
+				<td>
+											<p>Current page of the collection.</p>
+																					<p class="default">
+							Default: <code>1</code>
+						</p>
+														</td>
+			</tr>
+					<tr>
+				<td>
+											<code>per_page</code><br />
+									</td>
+				<td>
+											<p>Maximum number of items to be returned in result set.</p>
+																					<p class="default">
+							Default: <code>10</code>
+						</p>
+														</td>
+			</tr>
+					<tr>
+				<td>
+											<code>search</code><br />
+									</td>
+				<td>
+											<p>Limit results to those matching a string.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>after</code><br />
+									</td>
+				<td>
+											<p>Limit response to comments published after a given ISO8601 compliant date.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>author</code><br />
+									</td>
+				<td>
+											<p>Limit result set to comments assigned to specific user IDs. Requires authorization.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>author_exclude</code><br />
+									</td>
+				<td>
+											<p>Ensure result set excludes comments assigned to specific user IDs. Requires authorization.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>author_email</code><br />
+									</td>
+				<td>
+											<p>Limit result set to that from a specific author email. Requires authorization.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>before</code><br />
+									</td>
+				<td>
+											<p>Limit response to comments published before a given ISO8601 compliant date.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>exclude</code><br />
+									</td>
+				<td>
+											<p>Ensure result set excludes specific IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>include</code><br />
+									</td>
+				<td>
+											<p>Limit result set to specific IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>offset</code><br />
+									</td>
+				<td>
+											<p>Offset the result set by a specific number of items.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>order</code><br />
+									</td>
+				<td>
+											<p>Order sort attribute ascending or descending.</p>
+																					<p class="default">
+							Default: <code>desc</code>
+						</p>
+																<p>One of: <code>asc</code>, <code>desc</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>orderby</code><br />
+									</td>
+				<td>
+											<p>Sort collection by object attribute.</p>
+																					<p class="default">
+							Default: <code>date_gmt</code>
+						</p>
+																<p>One of: <code>date</code>, <code>date_gmt</code>, <code>id</code>, <code>include</code>, <code>post</code>, <code>parent</code>, <code>type</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>parent</code><br />
+									</td>
+				<td>
+											<p>Limit result set to comments of specific parent IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>parent_exclude</code><br />
+									</td>
+				<td>
+											<p>Ensure result set excludes specific parent IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>post</code><br />
+									</td>
+				<td>
+											<p>Limit result set to comments assigned to specific post IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>status</code><br />
+									</td>
+				<td>
+											<p>Limit result set to comments assigned a specific status. Requires authorization.</p>
+																					<p class="default">
+							Default: <code>approve</code>
+						</p>
+														</td>
+			</tr>
+					<tr>
+				<td>
+											<code>type</code><br />
+									</td>
+				<td>
+											<p>Limit result set to comments assigned a specific type. Requires authorization.</p>
+																					<p class="default">
+							Default: <code>comment</code>
+						</p>
+														</td>
+			</tr>
+					<tr>
+				<td>
+											<code>password</code><br />
+									</td>
+				<td>
+											<p>The password for the post if it is password protected.</p>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>GET /wp/v2/comments</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/comments</code>
+	</div>
+</section>
+<section class="route">
+	<div class="primary">
+		<h2>Create a Comment</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code><a href="#schema-author">author</a></code><br />
+									</td>
+				<td>
+											<p>The ID of the user object, if author was a user.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author_email">author_email</a></code><br />
+									</td>
+				<td>
+											<p>Email address for the object author.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author_ip">author_ip</a></code><br />
+									</td>
+				<td>
+											<p>IP address for the object author.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author_name">author_name</a></code><br />
+									</td>
+				<td>
+											<p>Display name for the object author.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author_url">author_url</a></code><br />
+									</td>
+				<td>
+											<p>URL for the object author.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author_user_agent">author_user_agent</a></code><br />
+									</td>
+				<td>
+											<p>User agent for the object author.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-content">content</a></code><br />
+									</td>
+				<td>
+											<p>The content for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-date">date</a></code><br />
+									</td>
+				<td>
+											<p>The date the object was published, in the site&#039;s timezone.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
+									</td>
+				<td>
+											<p>The date the object was published, as GMT.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-parent">parent</a></code><br />
+									</td>
+				<td>
+											<p>The ID for the parent of the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-post">post</a></code><br />
+									</td>
+				<td>
+											<p>The ID of the associated post object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-status">status</a></code><br />
+									</td>
+				<td>
+											<p>State of the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-meta">meta</a></code><br />
+									</td>
+				<td>
+											<p>Meta fields.</p>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>POST /wp/v2/comments</code>
+	</div>
+</section>
+<section class="route">
+	<div class="primary">
+		<h2>Retrieve a Comment</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>id</code><br />
+									</td>
+				<td>
+											<p>Unique identifier for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
+						</p>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>password</code><br />
+									</td>
+				<td>
+											<p>The password for the parent post of the comment (if the post is password protected).</p>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>GET /wp/v2/comments/&lt;id&gt;</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/comments/&lt;id&gt;</code>
+	</div>
+</section>
+<section class="route">
+	<div class="primary">
+		<h2>Update a Comment</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code><a href="#schema-id">id</a></code><br />
+									</td>
+				<td>
+											<p>Unique identifier for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author">author</a></code><br />
+									</td>
+				<td>
+											<p>The ID of the user object, if author was a user.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author_email">author_email</a></code><br />
+									</td>
+				<td>
+											<p>Email address for the object author.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author_ip">author_ip</a></code><br />
+									</td>
+				<td>
+											<p>IP address for the object author.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author_name">author_name</a></code><br />
+									</td>
+				<td>
+											<p>Display name for the object author.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author_url">author_url</a></code><br />
+									</td>
+				<td>
+											<p>URL for the object author.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author_user_agent">author_user_agent</a></code><br />
+									</td>
+				<td>
+											<p>User agent for the object author.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-content">content</a></code><br />
+									</td>
+				<td>
+											<p>The content for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-date">date</a></code><br />
+									</td>
+				<td>
+											<p>The date the object was published, in the site&#039;s timezone.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
+									</td>
+				<td>
+											<p>The date the object was published, as GMT.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-parent">parent</a></code><br />
+									</td>
+				<td>
+											<p>The ID for the parent of the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-post">post</a></code><br />
+									</td>
+				<td>
+											<p>The ID of the associated post object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-status">status</a></code><br />
+									</td>
+				<td>
+											<p>State of the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-meta">meta</a></code><br />
+									</td>
+				<td>
+											<p>Meta fields.</p>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>POST /wp/v2/comments/&lt;id&gt;</code>
+
+		<h3>Example Request</h3>
+
+		<code></code>
+	</div>
+</section>
+<section class="route">
+	<div class="primary">
+		<h2>Delete a Comment</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>id</code><br />
+									</td>
+				<td>
+											<p>Unique identifier for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>force</code><br />
+									</td>
+				<td>
+											<p>Whether to bypass trash and force deletion.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>password</code><br />
+									</td>
+				<td>
+											<p>The password for the parent post of the comment (if the post is password protected).</p>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>DELETE /wp/v2/comments/&lt;id&gt;</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/comments/&lt;id&gt;</code>
+	</div>
+</section>
+</div>
+

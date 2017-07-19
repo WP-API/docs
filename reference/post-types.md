@@ -1,207 +1,198 @@
-# Post Types
+---
+---
+
+# Types
 
 <section class="route">
 	<div class="primary">
-		## Schema
+		<h2>Schema</h2>
 <p>The schema defines all the fields that exist for a type object.</p>
 <table class="attributes">
-	
-		<tbody><tr id="schema-capabilities">
+			<tr id="schema-capabilities">
 			<td>
-				`capabilities`<br>
+				<code>capabilities</code><br />
 				<span class="type">
-					array
-				</span>
+					object				</span>
 			</td>
 			<td>
-				<p>All capabilities used by the resource.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `edit`</p>
-				
-			</td>
+				<p>All capabilities used by the post type.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-description">
+			<tr id="schema-description">
 			<td>
-				`description`<br>
+				<code>description</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
-				<p>A human-readable description of the resource.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+				<p>A human-readable description of the post type.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-hierarchical">
+			<tr id="schema-hierarchical">
 			<td>
-				`hierarchical`<br>
+				<code>hierarchical</code><br />
 				<span class="type">
-					boolean
-				</span>
+					boolean				</span>
 			</td>
 			<td>
-				<p>Whether or not the resource should have children.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+				<p>Whether or not the post type should have children.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-labels">
+			<tr id="schema-labels">
 			<td>
-				`labels`<br>
+				<code>labels</code><br />
 				<span class="type">
-					object
-				</span>
+					object				</span>
 			</td>
 			<td>
-				<p>Human-readable labels for the resource for various contexts.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `edit`</p>
-				
-			</td>
+				<p>Human-readable labels for the post type for various contexts.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-name">
+			<tr id="schema-name">
 			<td>
-				`name`<br>
+				<code>name</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
-				<p>The title for the resource.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`, `embed`</p>
-				
-			</td>
+				<p>The title for the post type.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-slug">
+			<tr id="schema-slug">
 			<td>
-				`slug`<br>
+				<code>slug</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
-				<p>An alphanumeric identifier for the resource.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`, `embed`</p>
-				
-			</td>
+				<p>An alphanumeric identifier for the post type.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-</tbody></table>
+			<tr id="schema-supports">
+			<td>
+				<code>supports</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>All features, supported by the post type.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-taxonomies">
+			<td>
+				<code>taxonomies</code><br />
+				<span class="type">
+					array				</span>
+			</td>
+			<td>
+				<p>Taxonomies associated with post type.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-rest_base">
+			<td>
+				<code>rest_base</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>REST base route for the post type.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+	</table>
 
 	</div>
 	<div class="secondary">
-		### Example Request
+		<h3>Example Request</h3>
 
-		`$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/types`
+		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/types</code>
+	</div>
+</section>
+
+<div><section class="route">
+	<div class="primary">
+		<h2>Retrieve a Type</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
+						</p>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>GET /wp/v2/types</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/types</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		## List Types
-		
-		
-	### Arguments
+		<h2>Retrieve a Type</h2>
+			<h3>Arguments</h3>
 	<table class="arguments">
-		
-			<tbody><tr>
+					<tr>
 				<td>
-					
-						`context`<br>
-					
-				</td>
+											<code>type</code><br />
+									</td>
 				<td>
-					
-						<p>Scope under which the request is made; determines fields present in response.</p>
-					
-					
-					
-						<p>
-							Default: `view`
-						</p>
-					
-					
-						<p>One of: `view`, `embed`, `edit`</p>
-					
-				</td>
+											<p>An alphanumeric identifier for the post type.</p>
+																								</td>
 			</tr>
-		
-	</tbody></table>
-
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
+						</p>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
+			</tr>
+			</table>
 
 	</div>
 	<div class="secondary">
-		### Definition
+		<h3>Definition</h3>
 
-		`GET /wp/v2/types`
+		<code>GET /wp/v2/types/&lt;type&gt;</code>
 
-		### Example Request
+		<h3>Example Request</h3>
 
-		`$ curl http://demo.wp-api.org/wp-json/wp/v2/types`
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/types/&lt;type&gt;</code>
 	</div>
 </section>
-<section class="route">
-	<div class="primary">
-		## Retrieve a Type
-		
-		
-	### Arguments
-	<table class="arguments">
-		
-			<tbody><tr>
-				<td>
-					
-						`context`<br>
-					
-				</td>
-				<td>
-					
-						<p>Scope under which the request is made; determines fields present in response.</p>
-					
-					
-					
-						<p>
-							Default: `view`
-						</p>
-					
-					
-						<p>One of: `view`, `embed`, `edit`</p>
-					
-				</td>
-			</tr>
-		
-	</tbody></table>
+</div>
 
-
-	</div>
-	<div class="secondary">
-		### Definition
-
-		`GET /wp/v2/types/&lt;type&gt;`
-
-		### Example Request
-
-		`$ curl http://demo.wp-api.org/wp-json/wp/v2/types/&lt;type&gt;`
-	</div>
-</section>

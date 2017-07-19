@@ -1,1379 +1,851 @@
+---
+---
+
 # Pages
 
 <section class="route">
 	<div class="primary">
-		## Schema
+		<h2>Schema</h2>
 <p>The schema defines all the fields that exist for a page object.</p>
 <table class="attributes">
-	
-		<tbody><tr id="schema-date">
+			<tr id="schema-date">
 			<td>
-				`date`<br>
+				<code>date</code><br />
 				<span class="type">
-					string, 
-							datetime (ISO8601)
-						
-				</span>
+					string,
+													datetime (ISO8601)
+										</span>
 			</td>
 			<td>
-				<p>The date the object was published, in the site's timezone.</p>
-				
-				<p>Context: `view`, `edit`, `embed`</p>
-				
-			</td>
+				<p>The date the object was published, in the site&#039;s timezone.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-date_gmt">
+			<tr id="schema-date_gmt">
 			<td>
-				`date_gmt`<br>
+				<code>date_gmt</code><br />
 				<span class="type">
-					string, 
-							datetime (ISO8601)
-						
-				</span>
+					string,
+													datetime (ISO8601)
+										</span>
 			</td>
 			<td>
 				<p>The date the object was published, as GMT.</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-guid">
+			<tr id="schema-guid">
 			<td>
-				`guid`<br>
+				<code>guid</code><br />
 				<span class="type">
-					object
-				</span>
+					object				</span>
 			</td>
 			<td>
 				<p>The globally unique identifier for the object.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-id">
+			<tr id="schema-id">
 			<td>
-				`id`<br>
+				<code>id</code><br />
 				<span class="type">
-					integer
-				</span>
+					integer				</span>
 			</td>
 			<td>
 				<p>Unique identifier for the object.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`, `embed`</p>
-				
-			</td>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-link">
+			<tr id="schema-link">
 			<td>
-				`link`<br>
+				<code>link</code><br />
 				<span class="type">
-					string, 
-							uri
-						
-				</span>
+					string,
+													uri
+										</span>
 			</td>
 			<td>
 				<p>URL to the object.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`, `embed`</p>
-				
-			</td>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-modified">
+			<tr id="schema-modified">
 			<td>
-				`modified`<br>
+				<code>modified</code><br />
 				<span class="type">
-					string, 
-							datetime (ISO8601)
-						
-				</span>
+					string,
+													datetime (ISO8601)
+										</span>
 			</td>
 			<td>
-				<p>The date the object was last modified, in the site's timezone.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+				<p>The date the object was last modified, in the site&#039;s timezone.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-modified_gmt">
+			<tr id="schema-modified_gmt">
 			<td>
-				`modified_gmt`<br>
+				<code>modified_gmt</code><br />
 				<span class="type">
-					string, 
-							datetime (ISO8601)
-						
-				</span>
+					string,
+													datetime (ISO8601)
+										</span>
 			</td>
 			<td>
 				<p>The date the object was last modified, as GMT.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-slug">
+			<tr id="schema-slug">
 			<td>
-				`slug`<br>
+				<code>slug</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
 				<p>An alphanumeric identifier for the object unique to its type.</p>
-				
-				<p>Context: `view`, `edit`, `embed`</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-status">
+			<tr id="schema-status">
 			<td>
-				`status`<br>
+				<code>status</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
 				<p>A named status for the object.</p>
-				
-				<p>Context: `edit`</p>
-				
-					<p>One of: `publish`, `future`, `draft`, `pending`, `private`</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+									<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-type">
+			<tr id="schema-type">
 			<td>
-				`type`<br>
+				<code>type</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
 				<p>Type of Post for the object.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`, `embed`</p>
-				
-			</td>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-parent">
+			<tr id="schema-password">
 			<td>
-				`parent`<br>
+				<code>password</code><br />
 				<span class="type">
-					integer
-				</span>
+					string				</span>
 			</td>
 			<td>
-				<p>The id for the parent of the object.</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+				<p>A password to protect access to the content and excerpt.</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-title">
+			<tr id="schema-parent">
 			<td>
-				`title`<br>
+				<code>parent</code><br />
 				<span class="type">
-					object
-				</span>
+					integer				</span>
+			</td>
+			<td>
+				<p>The ID for the parent of the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-title">
+			<td>
+				<code>title</code><br />
+				<span class="type">
+					object				</span>
 			</td>
 			<td>
 				<p>The title for the object.</p>
-				
-				<p>Context: `view`, `edit`, `embed`</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-content">
+			<tr id="schema-content">
 			<td>
-				`content`<br>
+				<code>content</code><br />
 				<span class="type">
-					object
-				</span>
+					object				</span>
 			</td>
 			<td>
 				<p>The content for the object.</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-author">
+			<tr id="schema-author">
 			<td>
-				`author`<br>
+				<code>author</code><br />
 				<span class="type">
-					integer
-				</span>
+					integer				</span>
 			</td>
 			<td>
-				<p>The id for the author of the object.</p>
-				
-				<p>Context: `view`, `edit`, `embed`</p>
-				
-			</td>
+				<p>The ID for the author of the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-excerpt">
+			<tr id="schema-excerpt">
 			<td>
-				`excerpt`<br>
+				<code>excerpt</code><br />
 				<span class="type">
-					object
-				</span>
+					object				</span>
 			</td>
 			<td>
 				<p>The excerpt for the object.</p>
-				
-				<p>Context: `view`, `edit`, `embed`</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-featured_media">
+			<tr id="schema-featured_media">
 			<td>
-				`featured_media`<br>
+				<code>featured_media</code><br />
 				<span class="type">
-					integer
-				</span>
+					integer				</span>
 			</td>
 			<td>
-				<p>The id of the featured media for the object.</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+				<p>The ID of the featured media for the object.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-comment_status">
+			<tr id="schema-comment_status">
 			<td>
-				`comment_status`<br>
+				<code>comment_status</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
 				<p>Whether or not comments are open on the object.</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-					<p>One of: `open`, `closed`</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+									<p>One of: <code>open</code>, <code>closed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-ping_status">
+			<tr id="schema-ping_status">
 			<td>
-				`ping_status`<br>
+				<code>ping_status</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
 				<p>Whether or not the object can be pinged.</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-					<p>One of: `open`, `closed`</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+									<p>One of: <code>open</code>, <code>closed</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-menu_order">
+			<tr id="schema-menu_order">
 			<td>
-				`menu_order`<br>
+				<code>menu_order</code><br />
 				<span class="type">
-					integer
-				</span>
+					integer				</span>
 			</td>
 			<td>
 				<p>The order of the object in relation to other object of its type.</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-meta">
+			<tr id="schema-meta">
 			<td>
-				`meta`<br>
+				<code>meta</code><br />
 				<span class="type">
-					object
-				</span>
+					object				</span>
 			</td>
 			<td>
 				<p>Meta fields.</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-template">
+			<tr id="schema-template">
 			<td>
-				`template`<br>
+				<code>template</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
 				<p>The theme file to use to display the object.</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-					<p>One of: ``</p>
-				
-			</td>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+									<p>One of: <code></code></p>
+							</td>
 		</tr>
-	
-</tbody></table>
+	</table>
 
 	</div>
 	<div class="secondary">
-		### Example Request
+		<h3>Example Request</h3>
 
-		`$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/pages`
+		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/pages</code>
+	</div>
+</section>
+
+<div><section class="route">
+	<div class="primary">
+		<h2>List Pages</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
+						</p>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>page</code><br />
+									</td>
+				<td>
+											<p>Current page of the collection.</p>
+																					<p class="default">
+							Default: <code>1</code>
+						</p>
+														</td>
+			</tr>
+					<tr>
+				<td>
+											<code>per_page</code><br />
+									</td>
+				<td>
+											<p>Maximum number of items to be returned in result set.</p>
+																					<p class="default">
+							Default: <code>10</code>
+						</p>
+														</td>
+			</tr>
+					<tr>
+				<td>
+											<code>search</code><br />
+									</td>
+				<td>
+											<p>Limit results to those matching a string.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>after</code><br />
+									</td>
+				<td>
+											<p>Limit response to posts published after a given ISO8601 compliant date.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>author</code><br />
+									</td>
+				<td>
+											<p>Limit result set to posts assigned to specific authors.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>author_exclude</code><br />
+									</td>
+				<td>
+											<p>Ensure result set excludes posts assigned to specific authors.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>before</code><br />
+									</td>
+				<td>
+											<p>Limit response to posts published before a given ISO8601 compliant date.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>exclude</code><br />
+									</td>
+				<td>
+											<p>Ensure result set excludes specific IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>include</code><br />
+									</td>
+				<td>
+											<p>Limit result set to specific IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>menu_order</code><br />
+									</td>
+				<td>
+											<p>Limit result set to posts with a specific menu_order value.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>offset</code><br />
+									</td>
+				<td>
+											<p>Offset the result set by a specific number of items.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>order</code><br />
+									</td>
+				<td>
+											<p>Order sort attribute ascending or descending.</p>
+																					<p class="default">
+							Default: <code>desc</code>
+						</p>
+																<p>One of: <code>asc</code>, <code>desc</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>orderby</code><br />
+									</td>
+				<td>
+											<p>Sort collection by object attribute.</p>
+																					<p class="default">
+							Default: <code>date</code>
+						</p>
+																<p>One of: <code>author</code>, <code>date</code>, <code>id</code>, <code>include</code>, <code>modified</code>, <code>parent</code>, <code>relevance</code>, <code>slug</code>, <code>title</code>, <code>menu_order</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>parent</code><br />
+									</td>
+				<td>
+											<p>Limit result set to items with particular parent IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>parent_exclude</code><br />
+									</td>
+				<td>
+											<p>Limit result set to all items except those of a particular parent ID.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>slug</code><br />
+									</td>
+				<td>
+											<p>Limit result set to posts with one or more specific slugs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>status</code><br />
+									</td>
+				<td>
+											<p>Limit result set to posts assigned one or more statuses.</p>
+																					<p class="default">
+							Default: <code>publish</code>
+						</p>
+														</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>GET /wp/v2/pages</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/pages</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		## List Pages
-		
-		
-	### Arguments
+		<h2>Create a Page</h2>
+			<h3>Arguments</h3>
 	<table class="arguments">
-		
-			<tbody><tr>
+					<tr>
 				<td>
-					
-						`context`<br>
-					
-				</td>
+											<code><a href="#schema-date">date</a></code><br />
+									</td>
 				<td>
-					
-						<p>Scope under which the request is made; determines fields present in response.</p>
-					
-					
-					
-						<p>
-							Default: `view`
-						</p>
-					
-					
-						<p>One of: `view`, `embed`, `edit`</p>
-					
-				</td>
+											<p>The date the object was published, in the site&#039;s timezone.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`page`<br>
-					
-				</td>
+											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
+									</td>
 				<td>
-					
-						<p>Current page of the collection.</p>
-					
-					
-					
-						<p>
-							Default: `1`
-						</p>
-					
-					
-				</td>
+											<p>The date the object was published, as GMT.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`per_page`<br>
-					
-				</td>
+											<code><a href="#schema-slug">slug</a></code><br />
+									</td>
 				<td>
-					
-						<p>Maximum number of items to be returned in result set.</p>
-					
-					
-					
-						<p>
-							Default: `10`
-						</p>
-					
-					
-				</td>
+											<p>An alphanumeric identifier for the object unique to its type.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`search`<br>
-					
-				</td>
+											<code><a href="#schema-status">status</a></code><br />
+									</td>
 				<td>
-					
-						<p>Limit results to those matching a string.</p>
-					
-					
-					
-					
-				</td>
+											<p>A named status for the object.</p>
+																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
+									</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`after`<br>
-					
-				</td>
+											<code><a href="#schema-password">password</a></code><br />
+									</td>
 				<td>
-					
-						<p>Limit response to resources published after a given ISO8601 compliant date.</p>
-					
-					
-					
-					
-				</td>
+											<p>A password to protect access to the content and excerpt.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`author`<br>
-					
-				</td>
+											<code><a href="#schema-parent">parent</a></code><br />
+									</td>
 				<td>
-					
-						<p>Limit result set to posts assigned to specific authors.</p>
-					
-					
-					
-						<p>
-							Default: ``
-						</p>
-					
-					
-				</td>
+											<p>The ID for the parent of the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`author_exclude`<br>
-					
-				</td>
+											<code><a href="#schema-title">title</a></code><br />
+									</td>
 				<td>
-					
-						<p>Ensure result set excludes posts assigned to specific authors.</p>
-					
-					
-					
-						<p>
-							Default: ``
-						</p>
-					
-					
-				</td>
+											<p>The title for the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`before`<br>
-					
-				</td>
+											<code><a href="#schema-content">content</a></code><br />
+									</td>
 				<td>
-					
-						<p>Limit response to resources published before a given ISO8601 compliant date.</p>
-					
-					
-					
-					
-				</td>
+											<p>The content for the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`exclude`<br>
-					
-				</td>
+											<code><a href="#schema-author">author</a></code><br />
+									</td>
 				<td>
-					
-						<p>Ensure result set excludes specific ids.</p>
-					
-					
-					
-						<p>
-							Default: ``
-						</p>
-					
-					
-				</td>
+											<p>The ID for the author of the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`include`<br>
-					
-				</td>
+											<code><a href="#schema-excerpt">excerpt</a></code><br />
+									</td>
 				<td>
-					
-						<p>Limit result set to specific ids.</p>
-					
-					
-					
-						<p>
-							Default: ``
-						</p>
-					
-					
-				</td>
+											<p>The excerpt for the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`menu_order`<br>
-					
-				</td>
+											<code><a href="#schema-featured_media">featured_media</a></code><br />
+									</td>
 				<td>
-					
-						<p>Limit result set to resources with a specific menu_order value.</p>
-					
-					
-					
-					
-				</td>
+											<p>The ID of the featured media for the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`offset`<br>
-					
-				</td>
+											<code><a href="#schema-comment_status">comment_status</a></code><br />
+									</td>
 				<td>
-					
-						<p>Offset the result set by a specific number of items.</p>
-					
-					
-					
-					
-				</td>
+											<p>Whether or not comments are open on the object.</p>
+																										<p>One of: <code>open</code>, <code>closed</code></p>
+									</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`order`<br>
-					
-				</td>
+											<code><a href="#schema-ping_status">ping_status</a></code><br />
+									</td>
 				<td>
-					
-						<p>Order sort attribute ascending or descending.</p>
-					
-					
-					
-						<p>
-							Default: `desc`
-						</p>
-					
-					
-						<p>One of: `asc`, `desc`</p>
-					
-				</td>
+											<p>Whether or not the object can be pinged.</p>
+																										<p>One of: <code>open</code>, <code>closed</code></p>
+									</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`orderby`<br>
-					
-				</td>
+											<code><a href="#schema-menu_order">menu_order</a></code><br />
+									</td>
 				<td>
-					
-						<p>Sort collection by object attribute.</p>
-					
-					
-					
-						<p>
-							Default: `date`
-						</p>
-					
-					
-						<p>One of: `date`, `relevance`, `id`, `include`, `title`, `slug`, `menu_order`</p>
-					
-				</td>
+											<p>The order of the object in relation to other object of its type.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`parent`<br>
-					
-				</td>
+											<code><a href="#schema-meta">meta</a></code><br />
+									</td>
 				<td>
-					
-						<p>Limit result set to those of particular parent ids.</p>
-					
-					
-					
-						<p>
-							Default: ``
-						</p>
-					
-					
-				</td>
+											<p>Meta fields.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`parent_exclude`<br>
-					
-				</td>
+											<code><a href="#schema-template">template</a></code><br />
+									</td>
 				<td>
-					
-						<p>Limit result set to all items except those of a particular parent id.</p>
-					
-					
-					
-						<p>
-							Default: ``
-						</p>
-					
-					
-				</td>
+											<p>The theme file to use to display the object.</p>
+																										<p>One of: <code></code></p>
+									</td>
 			</tr>
-		
-			<tr>
-				<td>
-					
-						`slug`<br>
-					
-				</td>
-				<td>
-					
-						<p>Limit result set to posts with a specific slug.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`status`<br>
-					
-				</td>
-				<td>
-					
-						<p>Limit result set to posts assigned a specific status; can be comma-delimited list of status types.</p>
-					
-					
-					
-						<p>
-							Default: `publish`
-						</p>
-					
-					
-						<p>One of: `publish`, `future`, `draft`, `pending`, `private`, `trash`, `auto-draft`, `inherit`, `any`</p>
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`filter`<br>
-					
-				</td>
-				<td>
-					
-						<p>Use WP Query arguments to modify the response; private query vars require appropriate authorization.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-	</tbody></table>
-
+			</table>
 
 	</div>
 	<div class="secondary">
-		### Definition
+		<h3>Definition</h3>
 
-		`GET /wp/v2/pages`
-
-		### Example Request
-
-		`$ curl http://demo.wp-api.org/wp-json/wp/v2/pages`
+		<code>POST /wp/v2/pages</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		## Retrieve a Page
-		
-		
-	### Arguments
+		<h2>Retrieve a Page</h2>
+			<h3>Arguments</h3>
 	<table class="arguments">
-		
-			<tbody><tr>
+					<tr>
 				<td>
-					
-						`context`<br>
-					
-				</td>
+											<code>id</code><br />
+									</td>
 				<td>
-					
-						<p>Scope under which the request is made; determines fields present in response.</p>
-					
-					
-					
-						<p>
-							Default: `view`
+											<p>Unique identifier for the object.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
 						</p>
-					
-					
-						<p>One of: `view`, `embed`, `edit`</p>
-					
-				</td>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`password`<br>
-					
-				</td>
+											<code>password</code><br />
+									</td>
 				<td>
-					
-						<p>The password for the post if it is password protected.</p>
-					
-					
-					
-					
-				</td>
+											<p>The password for the post if it is password protected.</p>
+																								</td>
 			</tr>
-		
-	</tbody></table>
-
+			</table>
 
 	</div>
 	<div class="secondary">
-		### Definition
+		<h3>Definition</h3>
 
-		`GET /wp/v2/pages/&lt;id&gt;`
+		<code>GET /wp/v2/pages/&lt;id&gt;</code>
 
-		### Example Request
+		<h3>Example Request</h3>
 
-		`$ curl http://demo.wp-api.org/wp-json/wp/v2/pages/&lt;id&gt;`
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/pages/&lt;id&gt;</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		## Create a Page
-		
-		
-	### Arguments
+		<h2>Update a Page</h2>
+			<h3>Arguments</h3>
 	<table class="arguments">
-		
-			<tbody><tr>
+					<tr>
 				<td>
-					
-						`[date](#schema-date)`<br>
-					
-				</td>
+											<code><a href="#schema-id">id</a></code><br />
+									</td>
 				<td>
-					
-						<p>The date the object was published, in the site's timezone.</p>
-					
-					
-					
-					
-				</td>
+											<p>Unique identifier for the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[date_gmt](#schema-date_gmt)`<br>
-					
-				</td>
+											<code><a href="#schema-date">date</a></code><br />
+									</td>
 				<td>
-					
-						<p>The date the object was published, as GMT.</p>
-					
-					
-					
-					
-				</td>
+											<p>The date the object was published, in the site&#039;s timezone.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[slug](#schema-slug)`<br>
-					
-				</td>
+											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
+									</td>
 				<td>
-					
-						<p>An alphanumeric identifier for the object unique to its type.</p>
-					
-					
-					
-					
-				</td>
+											<p>The date the object was published, as GMT.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[status](#schema-status)`<br>
-					
-				</td>
+											<code><a href="#schema-slug">slug</a></code><br />
+									</td>
 				<td>
-					
-						<p>A named status for the object.</p>
-					
-					
-					
-					
-						<p>One of: `publish`, `future`, `draft`, `pending`, `private`</p>
-					
-				</td>
+											<p>An alphanumeric identifier for the object unique to its type.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[parent](#schema-parent)`<br>
-					
-				</td>
+											<code><a href="#schema-status">status</a></code><br />
+									</td>
 				<td>
-					
-						<p>The id for the parent of the object.</p>
-					
-					
-					
-					
-				</td>
+											<p>A named status for the object.</p>
+																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
+									</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[title](#schema-title)`<br>
-					
-				</td>
+											<code><a href="#schema-password">password</a></code><br />
+									</td>
 				<td>
-					
-						<p>The title for the object.</p>
-					
-					
-					
-					
-				</td>
+											<p>A password to protect access to the content and excerpt.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[content](#schema-content)`<br>
-					
-				</td>
+											<code><a href="#schema-parent">parent</a></code><br />
+									</td>
 				<td>
-					
-						<p>The content for the object.</p>
-					
-					
-					
-					
-				</td>
+											<p>The ID for the parent of the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[author](#schema-author)`<br>
-					
-				</td>
+											<code><a href="#schema-title">title</a></code><br />
+									</td>
 				<td>
-					
-						<p>The id for the author of the object.</p>
-					
-					
-					
-					
-				</td>
+											<p>The title for the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[excerpt](#schema-excerpt)`<br>
-					
-				</td>
+											<code><a href="#schema-content">content</a></code><br />
+									</td>
 				<td>
-					
-						<p>The excerpt for the object.</p>
-					
-					
-					
-					
-				</td>
+											<p>The content for the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[featured_media](#schema-featured_media)`<br>
-					
-				</td>
+											<code><a href="#schema-author">author</a></code><br />
+									</td>
 				<td>
-					
-						<p>The id of the featured media for the object.</p>
-					
-					
-					
-					
-				</td>
+											<p>The ID for the author of the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[comment_status](#schema-comment_status)`<br>
-					
-				</td>
+											<code><a href="#schema-excerpt">excerpt</a></code><br />
+									</td>
 				<td>
-					
-						<p>Whether or not comments are open on the object.</p>
-					
-					
-					
-					
-						<p>One of: `open`, `closed`</p>
-					
-				</td>
+											<p>The excerpt for the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[ping_status](#schema-ping_status)`<br>
-					
-				</td>
+											<code><a href="#schema-featured_media">featured_media</a></code><br />
+									</td>
 				<td>
-					
-						<p>Whether or not the object can be pinged.</p>
-					
-					
-					
-					
-						<p>One of: `open`, `closed`</p>
-					
-				</td>
+											<p>The ID of the featured media for the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[menu_order](#schema-menu_order)`<br>
-					
-				</td>
+											<code><a href="#schema-comment_status">comment_status</a></code><br />
+									</td>
 				<td>
-					
-						<p>The order of the object in relation to other object of its type.</p>
-					
-					
-					
-					
-				</td>
+											<p>Whether or not comments are open on the object.</p>
+																										<p>One of: <code>open</code>, <code>closed</code></p>
+									</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[meta](#schema-meta)`<br>
-					
-				</td>
+											<code><a href="#schema-ping_status">ping_status</a></code><br />
+									</td>
 				<td>
-					
-						<p>Meta fields.</p>
-					
-					
-					
-					
-				</td>
+											<p>Whether or not the object can be pinged.</p>
+																										<p>One of: <code>open</code>, <code>closed</code></p>
+									</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[template](#schema-template)`<br>
-					
-				</td>
+											<code><a href="#schema-menu_order">menu_order</a></code><br />
+									</td>
 				<td>
-					
-						<p>The theme file to use to display the object.</p>
-					
-					
-					
-					
-						<p>One of: ``</p>
-					
-				</td>
+											<p>The order of the object in relation to other object of its type.</p>
+																								</td>
 			</tr>
-		
-	</tbody></table>
-
+					<tr>
+				<td>
+											<code><a href="#schema-meta">meta</a></code><br />
+									</td>
+				<td>
+											<p>Meta fields.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-template">template</a></code><br />
+									</td>
+				<td>
+											<p>The theme file to use to display the object.</p>
+																										<p>One of: <code></code></p>
+									</td>
+			</tr>
+			</table>
 
 	</div>
 	<div class="secondary">
-		### Definition
+		<h3>Definition</h3>
 
-		`POST /wp/v2/pages`
+		<code>POST /wp/v2/pages/&lt;id&gt;</code>
+
+		<h3>Example Request</h3>
+
+		<code></code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		## Update a Page
-		
-		
-	### Arguments
+		<h2>Delete a Page</h2>
+			<h3>Arguments</h3>
 	<table class="arguments">
-		
-			<tbody><tr>
+					<tr>
 				<td>
-					
-						`[date](#schema-date)`<br>
-					
-				</td>
+											<code>id</code><br />
+									</td>
 				<td>
-					
-						<p>The date the object was published, in the site's timezone.</p>
-					
-					
-					
-					
-				</td>
+											<p>Unique identifier for the object.</p>
+																								</td>
 			</tr>
-		
-			<tr>
+					<tr>
 				<td>
-					
-						`[date_gmt](#schema-date_gmt)`<br>
-					
-				</td>
+											<code>force</code><br />
+									</td>
 				<td>
-					
-						<p>The date the object was published, as GMT.</p>
-					
-					
-					
-					
-				</td>
+											<p>Whether to bypass trash and force deletion.</p>
+																								</td>
 			</tr>
-		
-			<tr>
-				<td>
-					
-						`[slug](#schema-slug)`<br>
-					
-				</td>
-				<td>
-					
-						<p>An alphanumeric identifier for the object unique to its type.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[status](#schema-status)`<br>
-					
-				</td>
-				<td>
-					
-						<p>A named status for the object.</p>
-					
-					
-					
-					
-						<p>One of: `publish`, `future`, `draft`, `pending`, `private`</p>
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[parent](#schema-parent)`<br>
-					
-				</td>
-				<td>
-					
-						<p>The id for the parent of the object.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[title](#schema-title)`<br>
-					
-				</td>
-				<td>
-					
-						<p>The title for the object.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[content](#schema-content)`<br>
-					
-				</td>
-				<td>
-					
-						<p>The content for the object.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[author](#schema-author)`<br>
-					
-				</td>
-				<td>
-					
-						<p>The id for the author of the object.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[excerpt](#schema-excerpt)`<br>
-					
-				</td>
-				<td>
-					
-						<p>The excerpt for the object.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[featured_media](#schema-featured_media)`<br>
-					
-				</td>
-				<td>
-					
-						<p>The id of the featured media for the object.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[comment_status](#schema-comment_status)`<br>
-					
-				</td>
-				<td>
-					
-						<p>Whether or not comments are open on the object.</p>
-					
-					
-					
-					
-						<p>One of: `open`, `closed`</p>
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[ping_status](#schema-ping_status)`<br>
-					
-				</td>
-				<td>
-					
-						<p>Whether or not the object can be pinged.</p>
-					
-					
-					
-					
-						<p>One of: `open`, `closed`</p>
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[menu_order](#schema-menu_order)`<br>
-					
-				</td>
-				<td>
-					
-						<p>The order of the object in relation to other object of its type.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[meta](#schema-meta)`<br>
-					
-				</td>
-				<td>
-					
-						<p>Meta fields.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-			<tr>
-				<td>
-					
-						`[template](#schema-template)`<br>
-					
-				</td>
-				<td>
-					
-						<p>The theme file to use to display the object.</p>
-					
-					
-					
-					
-						<p>One of: ``</p>
-					
-				</td>
-			</tr>
-		
-	</tbody></table>
-
+			</table>
 
 	</div>
 	<div class="secondary">
-		### Definition
+		<h3>Definition</h3>
 
-		`POST /wp/v2/pages/&lt;id&gt;`
+		<code>DELETE /wp/v2/pages/&lt;id&gt;</code>
 
-		### Example Request
-		
+		<h3>Example Request</h3>
 
-		``
+		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/pages/&lt;id&gt;</code>
 	</div>
 </section>
-<section class="route">
-	<div class="primary">
-		## Delete a Page
-		
-		
-	### Arguments
-	<table class="arguments">
-		
-			<tbody><tr>
-				<td>
-					
-						`force`<br>
-					
-				</td>
-				<td>
-					
-						<p>Whether to bypass trash and force deletion.</p>
-					
-					
-					
-					
-				</td>
-			</tr>
-		
-	</tbody></table>
+</div>
 
-
-	</div>
-	<div class="secondary">
-		### Definition
-
-		`DELETE /wp/v2/pages/&lt;id&gt;`
-
-		### Example Request
-
-		`$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/pages/&lt;id&gt;`
-	</div>
-</section>

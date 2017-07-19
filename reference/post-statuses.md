@@ -1,224 +1,174 @@
-# Post Statuses
+---
+---
+
+# Statuses
 
 <section class="route">
 	<div class="primary">
-		## Schema
+		<h2>Schema</h2>
 <p>The schema defines all the fields that exist for a status object.</p>
 <table class="attributes">
-	
-		<tbody><tr id="schema-name">
+			<tr id="schema-name">
 			<td>
-				`name`<br>
+				<code>name</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
-				<p>The title for the resource.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `embed`, `view`, `edit`</p>
-				
-			</td>
+				<p>The title for the status.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-private">
+			<tr id="schema-private">
 			<td>
-				`private`<br>
+				<code>private</code><br />
 				<span class="type">
-					boolean
-				</span>
+					boolean				</span>
 			</td>
 			<td>
-				<p>Whether posts with this resource should be private.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `edit`</p>
-				
-			</td>
+				<p>Whether posts with this status should be private.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-protected">
+			<tr id="schema-protected">
 			<td>
-				`protected`<br>
+				<code>protected</code><br />
 				<span class="type">
-					boolean
-				</span>
+					boolean				</span>
 			</td>
 			<td>
-				<p>Whether posts with this resource should be protected.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `edit`</p>
-				
-			</td>
+				<p>Whether posts with this status should be protected.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-public">
+			<tr id="schema-public">
 			<td>
-				`public`<br>
+				<code>public</code><br />
 				<span class="type">
-					boolean
-				</span>
+					boolean				</span>
 			</td>
 			<td>
-				<p>Whether posts of this resource should be shown in the front end of the site.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+				<p>Whether posts of this status should be shown in the front end of the site.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-queryable">
+			<tr id="schema-queryable">
 			<td>
-				`queryable`<br>
+				<code>queryable</code><br />
 				<span class="type">
-					boolean
-				</span>
+					boolean				</span>
 			</td>
 			<td>
-				<p>Whether posts with this resource should be publicly-queryable.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `view`, `edit`</p>
-				
-			</td>
+				<p>Whether posts with this status should be publicly-queryable.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-show_in_list">
+			<tr id="schema-show_in_list">
 			<td>
-				`show_in_list`<br>
+				<code>show_in_list</code><br />
 				<span class="type">
-					boolean
-				</span>
+					boolean				</span>
 			</td>
 			<td>
 				<p>Whether to include posts in the edit listing for their post type.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `edit`</p>
-				
-			</td>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
 		</tr>
-	
-		<tr id="schema-slug">
+			<tr id="schema-slug">
 			<td>
-				`slug`<br>
+				<code>slug</code><br />
 				<span class="type">
-					string
-				</span>
+					string				</span>
 			</td>
 			<td>
-				<p>An alphanumeric identifier for the resource.</p>
-				
-					<p>*Read only*</p>
-				
-				<p>Context: `embed`, `view`, `edit`</p>
-				
-			</td>
+				<p>An alphanumeric identifier for the status.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
 		</tr>
-	
-</tbody></table>
+	</table>
 
 	</div>
 	<div class="secondary">
-		### Example Request
+		<h3>Example Request</h3>
 
-		`$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/statuses`
+		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/statuses</code>
+	</div>
+</section>
+
+<div><section class="route">
+	<div class="primary">
+		<h2>Retrieve a Status</h2>
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
+						</p>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
+			</tr>
+			</table>
+
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>GET /wp/v2/statuses</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/statuses</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		## List Statuss
-		
-		
-	### Arguments
+		<h2>Retrieve a Status</h2>
+			<h3>Arguments</h3>
 	<table class="arguments">
-		
-			<tbody><tr>
+					<tr>
 				<td>
-					
-						`context`<br>
-					
-				</td>
+											<code>status</code><br />
+									</td>
 				<td>
-					
-						<p>Scope under which the request is made; determines fields present in response.</p>
-					
-					
-					
-						<p>
-							Default: `view`
-						</p>
-					
-					
-						<p>One of: `view`, `embed`, `edit`</p>
-					
-				</td>
+											<p>An alphanumeric identifier for the status.</p>
+																								</td>
 			</tr>
-		
-	</tbody></table>
-
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
+						</p>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
+			</tr>
+			</table>
 
 	</div>
 	<div class="secondary">
-		### Definition
+		<h3>Definition</h3>
 
-		`GET /wp/v2/statuses`
+		<code>GET /wp/v2/statuses/&lt;status&gt;</code>
 
-		### Example Request
+		<h3>Example Request</h3>
 
-		`$ curl http://demo.wp-api.org/wp-json/wp/v2/statuses`
+		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/statuses/&lt;status&gt;</code>
 	</div>
 </section>
-<section class="route">
-	<div class="primary">
-		## Retrieve a Status
-		
-		
-	### Arguments
-	<table class="arguments">
-		
-			<tbody><tr>
-				<td>
-					
-						`context`<br>
-					
-				</td>
-				<td>
-					
-						<p>Scope under which the request is made; determines fields present in response.</p>
-					
-					
-					
-						<p>
-							Default: `view`
-						</p>
-					
-					
-						<p>One of: `view`, `embed`, `edit`</p>
-					
-				</td>
-			</tr>
-		
-	</tbody></table>
+</div>
 
-
-	</div>
-	<div class="secondary">
-		### Definition
-
-		`GET /wp/v2/statuses/&lt;status&gt;`
-
-		### Example Request
-
-		`$ curl http://demo.wp-api.org/wp-json/wp/v2/statuses/&lt;status&gt;`
-	</div>
-</section>
