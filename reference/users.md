@@ -154,7 +154,7 @@
 				<code>registered_date</code><br />
 				<span class="type">
 					string,
-													datetime (ISO8601)
+													datetime ([details](https://core.trac.wordpress.org/ticket/41032))
 										</span>
 			</td>
 			<td>
