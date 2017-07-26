@@ -16,6 +16,21 @@ Adding fields is not dangerous, so if you need to modify data, it's much better 
 Note that the API cannot prevent you from changing responses, but the code is structured to strongly discourage this. Internally, field registration is powered by filters, and these can be used if you absolutely have no other choice.
 
 
+<h2 id="using-register_rest_field-vs-register_meta">Using <code>register_rest_field</code> vs <code>register_meta</code></h2>
+
+There are two methods which can be used to add data to WordPress REST API responses, `register_rest_field` and `register_meta`.
+
+`register_rest_field` may be used to add arbitrary fields to any REST API response, and can be used to both read and write data using the API. To register a new REST field you must provide your own callback functions to get or set the field's value, as well as manually specify your own schema definition for the field.
+
+`register_meta` is used to whitelist an existing custom meta value for access through the REST API. By setting a meta field's `show_in_rest` parameter to `true`, that field's value will be exposed on a `.meta` key in the endpoint response, and WordPress will handle setting up the callbacks for reading and writing to that meta key. This is much simpler than `register_rest_field`, with one caveat:
+
+[alert]
+Meta fields set to <code>show_in_rest</code> using <code>register_meta</code> are registered for all objects of a given type. If one custom post type shows a meta field, all custom post types will show that meta field.
+[/alert]
+
+This is because meta registration is currently handled at the base level of WordPress object (post, user, etc) and cannot be specified per "subtype" (**e.g.** custom post types). [This limitation may be improved](https://core.trac.wordpress.org/ticket/38323) in future versions of WordPress, but if you are trying to add a custom field to a specific API endpoint's response then `register_rest_field` is currently recommended over `register_meta`.
+
+
 <h2 id="what-register_rest_field-does">What <code>register_rest_field</code> Does</h2>
 
 In the infrastructure for responses, the global variable `$wp_rest_additional_fields` is used for holding the fields to be added to the responses for each object type. The REST API provides `register_rest_field` as a utility function for adding to this global variable. Adding to the global variable directly should be avoided to ensure maximum forward-compatibility.
