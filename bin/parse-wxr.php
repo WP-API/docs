@@ -21,6 +21,10 @@ $markdown_map = [
 	'“'         => '"',
 	'”'         => '"',
 	'’'         => "'",
+	'&lt;'      => '<',
+	'&gt;'      => '>',
+	'&quot;'    => '"',
+	'&amp;'     => '&',
 ];
 
 foreach ( $reader->channel->item as $item ) {
