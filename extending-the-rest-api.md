@@ -2,11 +2,11 @@
 
 ## Guides
 
+[Modifying responses](https://developer.wordpress.org/rest-api/extending-the-rest-api/modifying-responses/): add fields to REST API response objects using `register_rest_field`
+
 [Adding Endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/): create custom REST API endpoints for your plugin or application
 
 [Working with Custom Content Types](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-rest-api-support-for-custom-content-types/): learn how to interact with your [custom post types](https://developer.wordpress.org/plugins/post-types/) and [custom taxonomies](https://developer.wordpress.org/plugins/post-types/) through the REST API
-
-[Modifying responses](https://developer.wordpress.org/rest-api/extending-the-rest-api/modifying-responses/): add fields to REST API response objects using `register_rest_field`
 
 
 ## Resources
