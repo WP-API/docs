@@ -227,12 +227,12 @@ Instead, you should either create an entirely separate controller class, or make
 
 The WordPress REST API follows a deliberate design pattern for its internal classes, which may be categorized as either *infrastructure* or *endpoint* classes.
 
-Infrastructure classes support the endpoint classes. They handle the logic for the Wordpress REST API without performing any data transformation. Endpoint classes, on the other hand, encapsulate the functional logic necessary to perform CRUD operations on WordPress resources. More specifically, our infrastructure classes include `WP_REST_Server` and `WP_REST_Request`, where our endpoint classes include `WP_REST_Posts_Controller` and `WP_REST_Users_Controller`.
+Infrastructure classes support the endpoint classes. They handle the logic for the WordPress REST API without performing any data transformation. Endpoint classes, on the other hand, encapsulate the functional logic necessary to perform CRUD operations on WordPress resources. More specifically, our infrastructure classes include `WP_REST_Server` and `WP_REST_Request`, where our endpoint classes include `WP_REST_Posts_Controller` and `WP_REST_Users_Controller`.
 
 Let's dive into what each infrastructure class does:
 
 
-* `WP_REST_Server`: The main controller for the Wordpress REST API. Routes are registered to the server within WordPress. When `WP_REST_Server` is called upon to serve a request, it determines which route is to be called, and passes the route callback a `WP_REST_Request` object. `WP_REST_Server` also handles authentication, and can perform request validation and permissions checks.
+* `WP_REST_Server`: The main controller for the WordPress REST API. Routes are registered to the server within WordPress. When `WP_REST_Server` is called upon to serve a request, it determines which route is to be called, and passes the route callback a `WP_REST_Request` object. `WP_REST_Server` also handles authentication, and can perform request validation and permissions checks.
 * `WP_REST_Request`: An object to represent the nature of the request. This object includes request details like request headers, parameters, and method, as well as the route. It can also perform request validation and sanitization.
 * `WP_REST_Response`: An object to represent the nature of the response. This class extends `WP_HTTP_Response`, which includes headers, body, and status, and provides helper methods like `add_link()` for adding linked media, and `query_navigation_headers()` for getting query navigtion headers.
 
