@@ -127,10 +127,8 @@ function my_book_taxonomy() {
 }
 ```
 
-
 ## Adding REST API Support To Existing Content Types
-
-When a custom post type or custom taxonomy has been added by code that you do not control, for example a theme or plugin you are using, you may need to add REST API support after it has alredy been registered. The arguments are the same as in the previous examples, but need to be added to the global `$wp_post_types` and `$wp_taxonomies` arrays.
+When a custom post type or custom taxonomy has been added by code that you do not control, for example a theme or plugin you are using, you may need to add REST API support after it has already been registered. The arguments are the same as in the previous examples, but need to be added to the global `$wp_post_types` and `$wp_taxonomies` arrays.
 
 Here is an example of adding REST API support to an existing custom post type:
 

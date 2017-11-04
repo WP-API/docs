@@ -1,6 +1,12 @@
 # Changelog
 
 This document details changes to the WP REST API since its public release in version 4.7.0.
+## Version 4.8.1
+<ul>
+ 	<li>Add a filter to allow modifying the response after embedded data is added. [#](https://core.trac.wordpress.org/changeset/41093)</li>
+ 	<li>`wp-api.js` client: Correctly interpret `settings` resource as a model rather than a collection. [#](https://core.trac.wordpress.org/changeset/41126)</li>
+ 	<li>Fix `PUT` (and other) requests for nginx servers by tweaking REST API URLs. [#](https://core.trac.wordpress.org/changeset/41140)</li>
+</ul>
 ## Version 4.8.0
 <ul>
  	<li>Improve strings added after 4.7.0 string freeze. [#](https://core.trac.wordpress.org/changeset/40571), [#](https://core.trac.wordpress.org/changeset/40606)</li>
@@ -12,7 +18,7 @@ This document details changes to the WP REST API since its public release in ver
  	<li>Add endpoint for proxying requests to external oEmbed providers, and use it in the media modal instead of the `parse-embed` AJAX action.  **This is the first usage of the WP REST API in `wp-admin`.** [#](http://core.trac.wordpress.org/changeset/40628)</li>
  	<li>Do not set `X-WP-Deprecated*` headers as often. [#](https://core.trac.wordpress.org/changeset/40782)</li>
  	<li>Avoid sending blank `Last-Modified` headers with authenticated requests. [#](https://core.trac.wordpress.org/changeset/40805)</li>
- 	<li>Fix changing parameters with `$request-&gt;set_param()` for some requests. [#](https://core.trac.wordpress.org/changeset/40815)</li>
+ 	<li>Fix changing parameters with `$request->set_param()` for some requests. [#](https://core.trac.wordpress.org/changeset/40815)</li>
  	<li>In the admin area, ensure the REST API endpoint URL is forced to `https` when necessary. [#](https://core.trac.wordpress.org/changeset/40843)</li>
 </ul>
 ## Version 4.7.4

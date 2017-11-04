@@ -38,7 +38,7 @@ Models:
 * Tag
 * Taxonomy
 * Type
-* User`
+* User
 
 Collections:
 * Categories
@@ -139,38 +139,38 @@ post.fetch();
 // Get a collection of the post's categories (returns a promise)
 // Uses _embedded data if available, in which case promise resolves immediately.
 post.getCategories().done( function( postCategories ) {
-// ... do something with the categories.
-// The new post has an single Category: Uncategorized
-console.log( postCategories[0].name );
-// response -> "Uncategorized"
+  // ... do something with the categories.
+  // The new post has an single Category: Uncategorized
+  console.log( postCategories[0].name );
+  // response -> "Uncategorized"
 } );
 
 // Get a posts author User model.
 post.getAuthorUser().done( function( user ){
-// ... do something with user
-console.log( user.get( 'name' ) );
+  // ... do something with user
+  console.log( user.get( "name" ) );
 } );
 
 // Get a posts featured image Media model.
 post.getFeaturedImage().done( function( image ){
-// ... do something with image
-console.log( image );
+  // ... do something with image
+  console.log( image );
 } );
 
 // Set the post categories.
-post.setCategories( [ 'apples', 'oranges' ] );
+post.setCategories( [ "apples", "oranges" ] );
 
 // Get all the categories
 var allCategories = new wp.api.collections.Categories()
 allCategories.fetch();
 
-var appleCategory = allCategories.findWhere( { slug: 'apples' } );
+var appleCategory = allCategories.findWhere( { slug: "apples" } );
 
 // Add the category to the postCategories collection we previously fetched.
-appleCategory.set( 'parent_post', post.get( 'id' ) );
+appleCategory.set( "parent_post", post.get( "id" ) );
 
 // Use the POST method so Backbone will not PUT it even though it has an id.
-postCategories.create( appleCategory.toJSON(), { type: 'POST' } );
+postCategories.create( appleCategory.toJSON(), { type: "POST" } );
 
 // Remove the Uncategorized category
 postCategories.at( 0 ).destroy();
@@ -178,27 +178,25 @@ postCategories.at( 0 ).destroy();
 // Check the results - re-fetch
 postCategories = post.getCategories();
 
-postCategories.at( 0 ).get( 'name' );
+postCategories.at( 0 ).get( "name" );
 // response -> "apples"
 ```
 
-
 ### Collection examples:
-
-to get the last 10 posts:
+To get the last 10 posts:
 
 ```js
 var postsCollection = new wp.api.collections.Posts();
 postsCollection.fetch();
 ```
 
-to get the last 25 posts:
+To get the last 25 posts:
 
 ```js
 postsCollection.fetch( { data: { per_page: 25 } } );
 ```
 
-use filter to change the order & orderby options:
+Use filter to change the order & orderby options:
 
 ```js
 postsCollection.fetch( { data: { 'filter': { 'orderby': 'title', 'order': 'ASC' } } } );
@@ -210,13 +208,13 @@ All collections support pagination automatically, and you can get the next page 
 postsCollection.more();
 ```
 
-to get page 5 of a collection:
+To get page 5 of a collection:
 
 ```js
 posts.fetch( { data: { page: 5 } } );
 ```
 
-check if the collection has any more posts:
+Check if the collection has any more posts:
 
 ```js
 posts.hasMore();
@@ -239,8 +237,8 @@ Revision collections can also be accessed via their parent's collection. This ex
 var post = new wp.api.models.Post( { id: 1 } );
 post.fetch();
 post.getRevisions().done( function( revisions ){
-console.log( revisions );
+  console.log( revisions );
 });
 ```
 
-If you add custom endpoints to the api they will also become available as models/collections. For example, you will get new models and collections when you [add REST API support to your custom post type](http://v2.wp-api.org/extending/custom-content-types/). Note: because the schema is stored in the user's session cache to avoid re-fetching, you may need to open a new tab to get a new read of the Schema.
+If you add custom endpoints to the API they will also become available as models/collections. For example, you will get new models and collections when you [add REST API support to your custom post type](http://v2.wp-api.org/extending/custom-content-types/). Note: Because the schema is stored in the user's session cache to avoid re-fetching, you may need to open a new tab to get a new read of the Schema.

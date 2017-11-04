@@ -45,7 +45,11 @@ add_action( 'rest_api_init', function () {
 } );
 ```
 
-Right now, we're only registering the one endpoint for the route. ("Route" is the URL, whereas "endpoint" is the function behind it that corresponds to a method *and* a URL. For more, see the [Glossary](/glossary.html).) If your site domain is `example.com` and you've kept the API path of `wp-json`, then the full URL would be `http://example.com/wp-json/myplugin/v1/author/(?P\d+)`. Each route can have any number of endpoints, and for each endpoint, you can define the HTTP methods allowed, a callback function for responding to the request and a permissions callback for creating custom permissions. In addition you can define allowed fields in the request and for each field specify a default value, a sanitization callback, a validation callback, and whether the field is required.
+Right now, we're only registering the one endpoint for the route. The term "route" refers to the URL, whereas "endpoint" refers to the function behind it that corresponds to a method *and* a URL (for more information, see the [Glossary](https://developer.wordpress.org/rest-api/extending-the-rest-api/glossary/)).
+
+For example, if your site domain is `example.com` and you've kept the API path of `wp-json`, then the full URL would be `http://example.com/wp-json/myplugin/v1/author/(?P\d+)`.
+
+Each route can have any number of endpoints, and for each endpoint, you can define the HTTP methods allowed, a callback function for responding to the request and a permissions callback for creating custom permissions. In addition you can define allowed fields in the request and for each field specify a default value, a sanitization callback, a validation callback, and whether the field is required.
 
 
 ### Namespacing
@@ -54,7 +58,7 @@ Namespaces are the first part of the URL for the endpoint. They should be used a
 
 Namespaces in general should follow the pattern of `vendor/v1`, where `vendor` is typically your plugin or theme slug, and `v1` represents the first version of the API. If you ever need to break compatibility with new endpoints, you can then bump this to `v2`.
 
-The above scenario, two routes with the same name, from two different plugins, requires all vendors to use a unique namespace. Failing to do so is analagous to a failure to use a vendor function prefix, class prefix and/ or class namespace in a theme or plugin, which is very `_doing_it_wrong`.
+The above scenario, two routes with the same name, from two different plugins, requires all vendors to use a unique namespace. Failing to do so is analogous to a failure to use a vendor function prefix, class prefix and/ or class namespace in a theme or plugin, which is **very very bad**.
 
 An added benefit of using namespaces is that clients can detect support for your custom API. The API index lists out the available namespaces on a site:
 
@@ -72,8 +76,7 @@ An added benefit of using namespaces is that clients can detect support for your
 }
 ```
 
-If a client wants to check that your API exists on a site, they can check against this list. (For more information, see the [Discovery guide](/guide/discovery/).)
-
+If a client wants to check that your API exists on a site, they can check against this list. (For more information, see the [Discovery guide](https://developer.wordpress.org/rest-api/using-the-rest-api/discovery/).)
 
 ### Arguments
 
@@ -83,23 +86,23 @@ By default, routes receive all arguments passed in from the request. These are m
 <?php
 function my_awesome_func( WP_REST_Request $request ) {
   // You can access parameters via direct array access on the object:
- $param = $request['some_param'];
+  $param = $request['some_param'];
 
   // Or via the helper method:
- $param = $request->get_param( 'some_param' );
+  $param = $request->get_param( 'some_param' );
 
   // You can get the combined, merged set of parameters:
- $parameters = $request->get_params();
+  $parameters = $request->get_params();
 
   // The individual sets of parameters are also available, if needed:
- $parameters = $request->get_url_params();
+  $parameters = $request->get_url_params();
   $parameters = $request->get_query_params();
   $parameters = $request->get_body_params();
   $parameters = $request->get_json_params();
   $parameters = $request->get_default_params();
 
   // Uploads aren't merged in, but can be accessed separately:
- $parameters = $request->get_file_params();
+  $parameters = $request->get_file_params();
 }
 ```
 
@@ -206,7 +209,7 @@ When wrapping existing callbacks, you should always use `rest_ensure_response()`
 
 You can also register a permissions callback for the endpoint. This is a function that checks if the user can perform the action (reading, updating, etc) before the real callback is called. This allows the API to tell the client what actions they can perform on a given URL without needing to attempt the request first.
 
-This callback can be registered as `permission_callback`, again in the endpoint options next to your `callback` option. This callback should return a boolean or a `WP_Error` instance. If this function returns true, the response will be proccessed. If it returns false, a default error message will be returned and the request will not proceed with processing. If it returns a `WP_Error`, that error will be returned to the client.
+This callback can be registered as `permission_callback`, again in the endpoint options next to your `callback` option. This callback should return a boolean or a `WP_Error` instance. If this function returns true, the response will be processed. If it returns false, a default error message will be returned and the request will not proceed with processing. If it returns a `WP_Error`, that error will be returned to the client.
 
 The permissions callback is run after remote authentication, which sets the current user. This means you can use `current_user_can` to check if the user that has been authenticated has the appropriate capability for the action, or any other check based on current user ID. Where possible, you should always use `current_user_can`; instead of checking if the user is logged in (authentication), check whether they can perform the action (authorization).
 
@@ -320,7 +323,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    */
   public function get_items( $request ) {
     $items = array(); //do a query, call another class, etc
-   $data = array();
+    $data = array();
     foreach( $items as $item ) {
       $itemdata = $this->prepare_item_for_response( $item, $request );
       $data[] = $this->prepare_response_for_collection( $itemdata );
@@ -337,14 +340,14 @@ class Slug_Custom_Route extends WP_REST_Controller {
    */
   public function get_item( $request ) {
     //get parameters from request
-   $params = $request->get_params();
+    $params = $request->get_params();
     $item = array();//do a query, call another class, etc
-   $data = $this->prepare_item_for_response( $item, $request );
+    $data = $this->prepare_item_for_response( $item, $request );
 
     //return a response or error based on some conditional
-   if ( 1 == 1 ) {
+    if ( 1 == 1 ) {
       return new WP_REST_Response( $data, 200 );
-    }else{
+    } else {
       return new WP_Error( 'code', __( 'message', 'text-domain' ) );
     }
   }
@@ -356,7 +359,6 @@ class Slug_Custom_Route extends WP_REST_Controller {
    * @return WP_Error|WP_REST_Request
    */
   public function create_item( $request ) {
-
     $item = $this->prepare_item_for_database( $request );
 
     if ( function_exists( 'slug_some_function_to_create_item')  ) {
@@ -386,7 +388,6 @@ class Slug_Custom_Route extends WP_REST_Controller {
     }
 
     return new WP_Error( 'cant-update', __( 'message', 'text-domain'), array( 'status' => 500 ) );
-
   }
 
   /**
@@ -416,7 +417,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    */
   public function get_items_permissions_check( $request ) {
     //return true; <--use to make readable by all
-   return current_user_can( 'edit_something' );
+    return current_user_can( 'edit_something' );
   }
 
   /**

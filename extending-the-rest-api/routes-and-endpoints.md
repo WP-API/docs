@@ -166,7 +166,7 @@ function prefix_register_product_routes() {
 add_action( 'rest_api_init', 'prefix_register_product_routes' );
 ```
 
-The above example covers a lot. The important part to note is that in the second route we register, we add on a path variable `/(?P[\d]+)` to our resource path `/products`. The path variable is a regular expression. In this case it uses `[\d]+` to signify that should be any numerical character at least once. If you are using numeric IDs for your resources, then this is a great example of how to use a path variable. When using path variables, we now have to be careful around what can be matched as it is user input.
+The above example covers a lot. The important part to note is that in the second route we register, we add on a path variable `/(?P<id>[\d]+)` to our resource path `/products`. The path variable is a regular expression. In this case it uses `[\d]+` to signify that should be any numerical character at least once. If you are using numeric IDs for your resources, then this is a great example of how to use a path variable. When using path variables, we now have to be careful around what can be matched as it is user input.
 
 The regex luckily will filter out anything that is not numerical. However, what if the product for the requested ID doesn't exist. We need to do error handling. You can see the basic way we are handling errors in the code example above. When you return a `WP_Error` in your endpoint callbacks the API server will automatically handle serving the error to the client.
 

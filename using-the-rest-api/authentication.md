@@ -60,7 +60,7 @@ While cookie authentication is the only authentication mechanism available nativ
 
 [info]
 
-There's also a <a href="https://github.com/WP-API/Basic-Auth">Basic Authentication</a> plugin.
+There's also a [Basic Authentication](https://github.com/WP-API/Basic-Auth) plugin.
 
 Note that this plugin requires sending your username and password with every request, and should only be used for development and testing i.e. not in a production environment.
 

@@ -456,7 +456,7 @@ function prefix_validate_requests( $requests, $request, $param_key ) {
 			return new WP_Error( 'rest_invald_param', esc_html__( 'You must specify the method and route for each request.' ), array( 'status' => 400 ) );
 		}
 
-		if ( isset( $request['params'] ) &amp;&amp; ! is_array( $request['params'] ) ) {
+		if ( isset( $request['params'] ) && ! is_array( $request['params'] ) ) {
 			return new WP_Error( 'rest_invald_param', esc_html__( 'You must specify the params for each request as an array of named key value pairs.' ), array( 'status' => 400 ) );
 		}
 	}

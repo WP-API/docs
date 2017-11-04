@@ -41,8 +41,7 @@ One of the primary classes in the  WordPress REST API infrastructure is `WP_RES
 
 ### Responses
 
-Responses are the data you get back from the API. The `WP_REST_Response` provides a way to interact with the response data returned by endpoints. Responses can return the desired data, and they can also be used to return errors.
-
+Responses are the data you get back from the API. The `WP_REST_Response` class provides a way to interact with the response data returned by endpoints. Responses can return the desired data, and they can also be used to return errors.
 
 ### Schema
 
