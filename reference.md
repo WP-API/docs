@@ -16,52 +16,52 @@ This API reference provides information on the specific endpoints available thro
     <th>Base Route</th>
   </tr>
   <tr>
-    <td>[Posts](https://developer.wordpress.org/rest-api/reference/posts/)</td>
-    <td>`/wp/v2/posts`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/posts/">Posts</td>
+    <td><code>/wp/v2/posts</code></td>
   </tr>
   <tr>
-    <td>[Post Revisions](https://developer.wordpress.org/rest-api/reference/post-revisions/)</td>
-    <td>`/wp/v2/revisions`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/post-revisions/">Post Revisions</a></td>
+    <td><code>/wp/v2/revisions</code></td>
   </tr>
   <tr>
-    <td>[Categories](https://developer.wordpress.org/rest-api/reference/categories/)</td>
-    <td>`/wp/v2/categories`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/categories/">Categories</a></td>
+    <td><code>/wp/v2/categories</code></td>
   </tr>
   <tr>
-    <td>[Tags](https://developer.wordpress.org/rest-api/reference/tags/)</td>
-    <td>`/wp/v2/tags`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/tags/">Tags</a></td>
+    <td><code>/wp/v2/tags</code></td>
   </tr>
   <tr>
-    <td>[Pages](https://developer.wordpress.org/rest-api/reference/pages/)</td>
-    <td>`/wp/v2/pages`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/pages/">Pages</a></td>
+    <td><code>/wp/v2/pages</code></td>
   </tr>
   <tr>
-    <td>[Comments](https://developer.wordpress.org/rest-api/reference/comments/)</td>
-    <td>`/wp/v2/comments`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/comments/">Comments</a></td>
+    <td><code>/wp/v2/comments</code></td>
   </tr>
   <tr>
-    <td>[Taxonomies](https://developer.wordpress.org/rest-api/reference/taxonomies/)</td>
-    <td>`/wp/v2/taxonomies`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/taxonomies/">Taxonomies</a></td>
+    <td><code>/wp/v2/taxonomies</code></td>
   </tr>
   <tr>
-    <td>[Media](https://developer.wordpress.org/rest-api/reference/media/)</td>
-    <td>`/wp/v2/media`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/media/">Media</a></td>
+    <td><code>/wp/v2/media</code></td>
   </tr>
   <tr>
-    <td>[Users](https://developer.wordpress.org/rest-api/reference/users/)</td>
-    <td>`/wp/v2/users`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/users/">Users</a></td>
+    <td><code>/wp/v2/users</code></td>
   </tr>
   <tr>
-    <td>[Post Types](https://developer.wordpress.org/rest-api/reference/post-types/)</td>
-    <td>`/wp/v2/types`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/post-types/">Post Types</a></td>
+    <td><code>/wp/v2/types</code></td>
   </tr>
   <tr>
-    <td>[Post Statuses](https://developer.wordpress.org/rest-api/reference/post-statuses/)</td>
-    <td>`/wp/v2/statuses`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/post-statuses/">Post Statuses</a></td>
+    <td><code>/wp/v2/statuses</code></td>
   </tr>
   <tr>
-    <td>[Settings](https://developer.wordpress.org/rest-api/reference/settings/)</td>
-    <td>`/wp/v2/settings`</td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/settings/">Settings</a></td>
+    <td><code>/wp/v2/settings</code></td>
   </tr>
 </table>
 
