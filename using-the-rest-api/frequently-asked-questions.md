@@ -14,7 +14,7 @@ You can require authentication for all REST API requests by adding an `is_user_l
 
 ```php
 add_filter( 'rest_authentication_errors', function( $result ) {
-    if ( ! empty( $result ) ) {
+    if ( is_wp_error( $result ) ) {
         return $result;
     }
     if ( ! is_user_logged_in() ) {
