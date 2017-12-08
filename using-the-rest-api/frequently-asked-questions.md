@@ -10,17 +10,31 @@ You should not disable the REST API, because doing so would break future WordPre
 
 ## Require Authentication for All Reque&#8203;sts
 
-You can require authentication for all REST API requests by adding an `is_user_logged_in` check to the [`rest_authentication_errors`](https://developer.wordpress.org/reference/hooks/rest_authentication_errors/) filter:
+You can require authentication for all REST API requests by adding an `is_user_logged_in` check to the [`rest_authentication_errors`](https://developer.wordpress.org/reference/hooks/rest_authentication_errors/) filter.
+
+Note: The incoming callback parameter can be either null, WP_Error or a boolean. The type of the parameter indicates the state of authentication:
+
+ * null: indicates another authentication method should check instead (implies no authentication was performed before)
+ * boolean: indicates a previous authentication method check was performed. Boolean true would indicate successfully and the user is authenticated. Boolean false not.
+ * WP_Error: Some kind of error was encountered.
 
 ```php
 add_filter( 'rest_authentication_errors', function( $result ) {
-    if ( ! empty( $result ) ) {
+   
+   // A previous authentication check has been performed.
+   // No need for us to do it again. Return incoming parameter and be done with it.
+   if ( true === $result || is_wp_error( $result ) ) {
         return $result;
-    }
-    if ( ! is_user_logged_in() ) {
+   }
+
+   // No authentication performed yet.
+   // Check if the user is NOT logged in and return an error
+   if ( ! is_user_logged_in() ) {
         return new WP_Error( 'rest_not_logged_in', 'You are not currently logged in.', array( 'status' => 401 ) );
-    }
-    return $result;
+   }
+
+   return $result;
+   
 });
 ```
 
