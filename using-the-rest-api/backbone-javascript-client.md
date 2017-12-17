@@ -152,7 +152,7 @@ post.getAuthorUser().done( function( user ){
 } );
 
 // Get a posts featured image Media model.
-post.getFeaturedImage().done( function( image ){
+post.getFeaturedMedia().done( function( image ){
   // ... do something with image
   console.log( image );
 } );
