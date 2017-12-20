@@ -15,7 +15,7 @@ Modern browsers can use <a href="https://en.wikipedia.org/wiki/Cross-origin_reso
 <ul>
   <li><a href="http://caniuse.com/#feat=cors">Browser Support</a></li>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">MDN Article on CORS</a></li>
-
+</ul>
 [/info]
 
 For example:
