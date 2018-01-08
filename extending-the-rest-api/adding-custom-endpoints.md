@@ -167,7 +167,7 @@ function my_awesome_func( $data ) {
   ) );
 
   if ( empty( $posts ) ) {
-    return new WP_Error( 'awesome_no_author', 'Invalid author', array( 'status' => 404 ) );
+    return new WP_Error( 'no_author', 'Invalid author', array( 'status' => 404 ) );
   }
 
   return $posts[0]->post_title;
