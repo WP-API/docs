@@ -241,4 +241,4 @@ post.getRevisions().done( function( revisions ){
 });
 ```
 
-If you add custom endpoints to the API they will also become available as models/collections. For example, you will get new models and collections when you [add REST API support to your custom post type](http://v2.wp-api.org/extending/custom-content-types/). Note: Because the schema is stored in the user's session cache to avoid re-fetching, you may need to open a new tab to get a new read of the Schema.
+If you add custom endpoints to the API they will also become available as models/collections. For example, you will get new models and collections when you [add REST API support to your custom post type](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-rest-api-support-for-custom-content-types/). Note: Because the schema is stored in the user's session cache to avoid re-fetching, you may need to open a new tab to get a new read of the Schema.
