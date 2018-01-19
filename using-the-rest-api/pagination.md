@@ -16,7 +16,7 @@ Any API response which contains multiple resources supports several common query
 
 * `?offset=`: specify an arbitrary offset at which to start retrieving posts
  	* For example, `/wp/v2/posts?offset=6` will use the default number of posts per page, but start at the 6th post in the collection
- 	* `?per_page=5&amp;page=4` is equivalent to `?per_page=5&amp;offset=15`
+ 	* `?per_page=5&page=4` is equivalent to `?per_page=5&offset=15`
 
 [tip]
 Large queries can hurt site performance, so <code>per_page</code> is <strong>capped at 100 records</strong>. If you wish to retrieve more than 100 records, for example to build a client-side list of all available categories, you may make multiple API requests and combine the results within your application.
