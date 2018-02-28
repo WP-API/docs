@@ -235,6 +235,8 @@ add_action( 'rest_api_init', function () {
 
 Note that the permission callback also receives the Request object as the first parameter, so you can do checks based on request arguments if you need to.
 
+For user based permissions such as current_user_can() the app calling the REST endpoint must pass along the \_wpnonce argument that has been created with a wp_create_nonce( 'wp_rest' ) call.   Failure to do so will cause the REST API to treat the request as if it was from a logged out user.
+
 
 ## The Controller Pattern
 
