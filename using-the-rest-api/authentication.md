@@ -10,6 +10,8 @@ For developers using the built-in Javascript API, this is handled automatically 
 
 For developers making manual Ajax requests, the nonce will need to be passed with each request. The API uses nonces with the action set to `wp_rest`. These can then be passed to the API via the `_wpnonce` data parameter (either POST data or in the query for GET requests), or via the `X-WP-Nonce` header.
 
+If you do not pass the nonce, [`rest_cookie_check_for_errors`](https://developer.wordpress.org/reference/functions/rest_cookie_check_errors/) will set the current user to 0, turning the request into an **unauthenticated request**, even if you're logged into WordPress.
+
 Note: Until recently, most software had spotty support for `DELETE` requests. For instance, PHP doesn't transform the request body of a `DELETE` request into a super global. As such, supplying the nonce as a header is the most reliable approach.
 
 It is important to keep in mind that this authentication method relies on WordPress cookies. As a result this method is only applicable when the REST API is used inside of WordPress and the current user is logged in. In addition, the current user must have the appropriate capability to perform the action being performed.
