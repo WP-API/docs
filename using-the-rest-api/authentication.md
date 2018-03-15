@@ -8,9 +8,7 @@ However, the REST API includes a technique called [nonces](http://codex.wordpres
 
 For developers using the built-in Javascript API, this is handled automatically for you. This is the recommended way to use the API for plugins and themes. Custom data models can extend `wp.api.models.Base` to ensure this is sent correctly for any custom requests.
 
-For developers making manual Ajax requests, the nonce will need to be passed with each request. The API uses nonces with the action set to `wp_rest`. These can then be passed to the API via the `_wpnonce` data parameter (either POST data or in the query for GET requests), or via the `X-WP-Nonce` header.
-
-If you do not pass the nonce, [`rest_cookie_check_for_errors`](https://developer.wordpress.org/reference/functions/rest_cookie_check_errors/) will set the current user to 0, turning the request into an **unauthenticated request**, even if you're logged into WordPress.
+For developers making manual Ajax requests, the nonce will need to be passed with each request. The API uses nonces with the action set to `wp_rest`. These can then be passed to the API via the `_wpnonce` data parameter (either POST data or in the query for GET requests), or via the `X-WP-Nonce` header. If no nonce is provided the API will set the current user to 0, turning the request into an **unauthenticated request**, even if you're logged into WordPress.
 
 Note: Until recently, most software had spotty support for `DELETE` requests. For instance, PHP doesn't transform the request body of a `DELETE` request into a super global. As such, supplying the nonce as a header is the most reliable approach.
 
