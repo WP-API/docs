@@ -128,3 +128,88 @@ register_meta( $object_type, 'my_meta_key', $args1 );
 This example shows how to allow reading and writing of a post meta field. This will allow that field to be updated via a POST request to `wp-json/wp/v2/posts/<post-id>` or created along with a post via a POST request to `wp-json/wp/v2/posts/`.
 
 Note that for meta fields registered on custom post types, the post type must have `custom-fields` support. Otherwise the meta fields will not appear in the REST API.
+
+
+## Adding Links to the API Response
+WordPress generates a list of links associated with the queried resource to make it easier to navigate to related resources. The `embeddable` attribute controls whether the linked resource appears in the `_embedded` section of the repsonse.
+
+```json
+{
+ "_links": {
+    "self": [
+      {
+        "href": "https://make.wordpress.org/core/wp-json/wp/v2/posts/28312"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://make.wordpress.org/core/wp-json/wp/v2/posts"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://make.wordpress.org/core/wp-json/wp/v2/users/8670591"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://make.wordpress.org/core/wp-json/wp/v2/comments?post=28312"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "category",
+        "embeddable": true,
+        "href": "https://make.wordpress.org/core/wp-json/wp/v2/categories?post=28312"
+      },
+      {
+        "taxonomy": "post_tag",
+        "embeddable": true,
+        "href": "https://make.wordpress.org/core/wp-json/wp/v2/tags?post=28312"
+      }
+    ]
+  }
+}
+```
+_A sample of links from a Make.WordPress.org post_
+
+Custom links can be added to the response by using the `WP_REST_Response::add_link()` method. This method accepts three parameters, the link relation, the URL and optionally a list of link attributes. For example, to add the `author` and `wp:term` link.
+
+```php
+<?php
+$response->add_link( 'author', rest_url( "/wp/v2/users/{$post->post_author}" ), array(
+	'embeddable' => true
+) );
+
+$response->add_link( 'https://api.w.org/term', add_query_arg( 'post', $post->ID, rest_url( "/wp/v2/{$tax_base}" ) ), array(
+	'embeddable' => true
+) );
+```
+
+The link relation MUST be either a [registered link relation from the IANA](https://www.iana.org/assignments/link-relations/link-relations.xhtml) or a URL that is under your control.
+
+`author` is a registered link relation described as "the context's author", we use that to point to the WordPress user who wrote the post. No link relation exists that describes the terms associated with a post, so WordPress uses the `https://api.w.org/term` URL. This is transformed to `wp:term` when generating the response by using a CURIE.
+
+### Registering a CURIE
+
+WordPress version 4.5 introduced support for Compact URIs, or CURIEs. This makes it possible to reference links by a much simpler identifier than the full URL which could easily be quite lengthy.
+
+A CURIE is registered using the `rest_response_link_curies` filter. For example.
+
+```php
+<?php
+function my_plugin_prefix_register_curie( $curies ) {
+
+	$curies[] = array(
+		'name'      => 'my_plugin',
+		'href'      => 'https://api.mypluginurl.com/{rel}',
+		'templated' => true,
+	);
+
+	return $curies;
+}
+```
+
+This will convert link URLs from `https://api.mypluginurl.com/my_link` to `my_plugin:my_link` in the API response. The full URL must still be used when adding links using `WP_REST_Response::add_link`.
