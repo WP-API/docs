@@ -12,7 +12,7 @@ The first step of connecting to a site is finding out whether the site has the A
 
 The preferred way to handle discovery is to send a HEAD request to the supplied address. The REST API automatically adds a Link header to all front-end pages that looks like the following:
 
-	Link: <http://example.com/wp-json/>; rel="https://api.w.org/">
+	Link: <http://example.com/wp-json/>; rel="https://api.w.org/"
 
 This URL points to the root route (`/`) of the API, which is then used for further discovery steps.
 
