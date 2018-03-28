@@ -24,7 +24,7 @@ function my_book_cpt() {
 }
 ```
 
-You can optionally set the `rest_base` argument to change the base url, which will otherwise default to the post type's name. In the example below, "books" is used as the value of `rest_base`. This will make the URL for the route `wp-json/v2/books` instead of `wp-json/v2/book/`, which would have been the default.
+You can optionally set the `rest_base` argument to change the base url, which will otherwise default to the post type's name. In the example below, "books" is used as the value of `rest_base`. This will make the URL for the route `wp-json/wp/v2/books` instead of `wp-json/wp/v2/book/`, which would have been the default.
 
 In addition, you can pass an argument for `rest_controller_class`. This class must be a subclass of `WP_REST_Controller`. By default, `WP_REST_Posts_Controller` is used as the controller. If you are using a custom controller, then you likely will not be within the `wp/v2` namespace.
 
