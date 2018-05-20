@@ -267,51 +267,51 @@ class Slug_Custom_Route extends WP_REST_Controller {
     $base = 'route';
     register_rest_route( $namespace, '/' . $base, array(
       array(
-        'methods'         => WP_REST_Server::READABLE,
-        'callback'        => array( $this, 'get_items' ),
+        'methods'             => WP_REST_Server::READABLE,
+        'callback'            => array( $this, 'get_items' ),
         'permission_callback' => array( $this, 'get_items_permissions_check' ),
-        'args'            => array(
+        'args'                => array(
 
         ),
       ),
       array(
-        'methods'         => WP_REST_Server::CREATABLE,
-        'callback'        => array( $this, 'create_item' ),
+        'methods'             => WP_REST_Server::CREATABLE,
+        'callback'            => array( $this, 'create_item' ),
         'permission_callback' => array( $this, 'create_item_permissions_check' ),
-        'args'            => $this->get_endpoint_args_for_item_schema( true ),
+        'args'                => $this->get_endpoint_args_for_item_schema( true ),
       ),
     ) );
     register_rest_route( $namespace, '/' . $base . '/(?P<id>[\d]+)', array(
       array(
-        'methods'         => WP_REST_Server::READABLE,
-        'callback'        => array( $this, 'get_item' ),
+        'methods'             => WP_REST_Server::READABLE,
+        'callback'            => array( $this, 'get_item' ),
         'permission_callback' => array( $this, 'get_item_permissions_check' ),
-        'args'            => array(
-          'context'          => array(
-            'default'      => 'view',
+        'args'                => array(
+          'context' => array(
+            'default' => 'view',
           ),
         ),
       ),
       array(
-        'methods'         => WP_REST_Server::EDITABLE,
-        'callback'        => array( $this, 'update_item' ),
+        'methods'             => WP_REST_Server::EDITABLE,
+        'callback'            => array( $this, 'update_item' ),
         'permission_callback' => array( $this, 'update_item_permissions_check' ),
-        'args'            => $this->get_endpoint_args_for_item_schema( false ),
+        'args'                => $this->get_endpoint_args_for_item_schema( false ),
       ),
       array(
-        'methods'  => WP_REST_Server::DELETABLE,
-        'callback' => array( $this, 'delete_item' ),
+        'methods'             => WP_REST_Server::DELETABLE,
+        'callback'            => array( $this, 'delete_item' ),
         'permission_callback' => array( $this, 'delete_item_permissions_check' ),
-        'args'     => array(
-          'force'    => array(
-            'default'      => false,
+        'args'                => array(
+          'force' => array(
+            'default' => false,
           ),
         ),
       ),
     ) );
     register_rest_route( $namespace, '/' . $base . '/schema', array(
-      'methods'         => WP_REST_Server::READABLE,
-      'callback'        => array( $this, 'get_public_item_schema' ),
+      'methods'  => WP_REST_Server::READABLE,
+      'callback' => array( $this, 'get_public_item_schema' ),
     ) );
   }
 
@@ -361,14 +361,14 @@ class Slug_Custom_Route extends WP_REST_Controller {
   public function create_item( $request ) {
     $item = $this->prepare_item_for_database( $request );
 
-    if ( function_exists( 'slug_some_function_to_create_item')  ) {
+    if ( function_exists( 'slug_some_function_to_create_item' ) ) {
       $data = slug_some_function_to_create_item( $item );
       if ( is_array( $data ) ) {
         return new WP_REST_Response( $data, 200 );
       }
     }
 
-    return new WP_Error( 'cant-create', __( 'message', 'text-domain'), array( 'status' => 500 ) );
+    return new WP_Error( 'cant-create', __( 'message', 'text-domain' ), array( 'status' => 500 ) );
   }
 
   /**
@@ -380,14 +380,14 @@ class Slug_Custom_Route extends WP_REST_Controller {
   public function update_item( $request ) {
     $item = $this->prepare_item_for_database( $request );
 
-    if ( function_exists( 'slug_some_function_to_update_item')  ) {
+    if ( function_exists( 'slug_some_function_to_update_item' ) ) {
       $data = slug_some_function_to_update_item( $item );
       if ( is_array( $data ) ) {
         return new WP_REST_Response( $data, 200 );
       }
     }
 
-    return new WP_Error( 'cant-update', __( 'message', 'text-domain'), array( 'status' => 500 ) );
+    return new WP_Error( 'cant-update', __( 'message', 'text-domain' ), array( 'status' => 500 ) );
   }
 
   /**
@@ -399,14 +399,14 @@ class Slug_Custom_Route extends WP_REST_Controller {
   public function delete_item( $request ) {
     $item = $this->prepare_item_for_database( $request );
 
-    if ( function_exists( 'slug_some_function_to_delete_item')  ) {
+    if ( function_exists( 'slug_some_function_to_delete_item' ) ) {
       $deleted = slug_some_function_to_delete_item( $item );
-      if (  $deleted  ) {
+      if ( $deleted ) {
         return new WP_REST_Response( true, 200 );
       }
     }
 
-    return new WP_Error( 'cant-delete', __( 'message', 'text-domain'), array( 'status' => 500 ) );
+    return new WP_Error( 'cant-delete', __( 'message', 'text-domain' ), array( 'status' => 500 ) );
   }
 
   /**
@@ -489,21 +489,21 @@ class Slug_Custom_Route extends WP_REST_Controller {
   public function get_collection_params() {
     return array(
       'page'     => array(
-        'description'        => 'Current page of the collection.',
-        'type'               => 'integer',
-        'default'            => 1,
-        'sanitize_callback'  => 'absint',
+        'description'       => 'Current page of the collection.',
+        'type'              => 'integer',
+        'default'           => 1,
+        'sanitize_callback' => 'absint',
       ),
       'per_page' => array(
-        'description'        => 'Maximum number of items to be returned in result set.',
-        'type'               => 'integer',
-        'default'            => 10,
-        'sanitize_callback'  => 'absint',
+        'description'       => 'Maximum number of items to be returned in result set.',
+        'type'              => 'integer',
+        'default'           => 10,
+        'sanitize_callback' => 'absint',
       ),
       'search'   => array(
-        'description'        => 'Limit results to those matching a string.',
-        'type'               => 'string',
-        'sanitize_callback'  => 'sanitize_text_field',
+        'description'       => 'Limit results to those matching a string.',
+        'type'              => 'string',
+        'sanitize_callback' => 'sanitize_text_field',
       ),
     );
   }
