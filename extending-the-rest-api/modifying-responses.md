@@ -31,10 +31,10 @@ There are two methods which can be used to add data to WordPress REST API respon
 `register_meta` is used to whitelist an existing custom meta value for access through the REST API. By setting a meta field's `show_in_rest` parameter to `true`, that field's value will be exposed on a `.meta` key in the endpoint response, and WordPress will handle setting up the callbacks for reading and writing to that meta key. This is much simpler than `register_rest_field`, with one caveat:
 
 [alert]
-Meta fields set to `show_in_rest` using `register_meta` are registered for all objects of a given type. If one custom post type shows a meta field, all custom post types will show that meta field.
+Prior WordPress 4.9.8, meta fields set to `show_in_rest` using `register_meta` are registered for all objects of a given type. If one custom post type shows a meta field, all custom post types will show that meta field. As of WordPress 4.9.8 it's possible to use `register_meta` with the `object_subtype` argument that allows one to reduce the usage of the meta key to a particular post type.
 [/alert]
 
-This is because meta registration is currently handled at the base level of WordPress object (post, user, etc) and cannot be specified per "subtype" (**e.g.** custom post types). [This limitation may be improved](https://core.trac.wordpress.org/ticket/38323) in future versions of WordPress, but if you are trying to add a custom field to a specific API endpoint's response then `register_rest_field` is currently recommended over `register_meta`.
+The disadvantage of `register_meta` is that it can only handle scalar values wehreas `register_rest_field` can handle other object types as well.
 
 
 ## Adding Custom Fields to API Responses
