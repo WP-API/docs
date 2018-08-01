@@ -1,6 +1,12 @@
 # Changelog
 
 This document details changes to the WP REST API since its public release in version 4.7.0.
+
+## Version 4.9.8
+<ul>
+ <li>Add an `object_subtype` argument to the `$args` parameter for `register_meta()`: this parameter allows developers to specify the object subtypes (_i.e._ specific post types or taxonomies) for which the registered meta will appear when `show_in_rest` is true. Introduce new wrapper methods `register_post_meta()` and `register_term_meta()` which are recommended instead of `register_meta` when working with post or term meta. [#](https://core.trac.wordpress.org/changeset/43378)</li>
+</ul>
+
 ## Version 4.8.1
 <ul>
  	<li>Add a filter to allow modifying the response after embedded data is added. [#](https://core.trac.wordpress.org/changeset/41093)</li>
