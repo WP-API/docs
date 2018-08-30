@@ -140,9 +140,9 @@ add_filter( 'register_post_type_args', 'my_post_type_args', 10, 2 );
 function my_post_type_args( $args, $post_type ) {
 
 	if ( 'book' === $post_type ) {
-		$args['show_in_rest']          = true;
-        
-        // Optionally customize the rest_base or rest_controller_class
+		$args['show_in_rest'] = true;
+
+		// Optionally customize the rest_base or rest_controller_class
 		$args['rest_base']             = 'books';
 		$args['rest_controller_class'] = 'WP_REST_Posts_Controller';
 	}
@@ -163,9 +163,9 @@ add_filter( 'register_taxonomy_args', 'my_taxonomy_args', 10, 2 );
 function my_taxonomy_args( $args, $taxonomy_name ) {
 
 	if ( 'genre' === $taxonomy_name ) {
-		$args['show_in_rest']          = true;
-        
-        // Optionally customize the rest_base or rest_controller_class
+		$args['show_in_rest'] = true;
+
+		// Optionally customize the rest_base or rest_controller_class
 		$args['rest_base']             = 'genres';
 		$args['rest_controller_class'] = 'WP_REST_Terms_Controller';
 	}
