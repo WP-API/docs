@@ -151,29 +151,6 @@ function my_post_type_args( $args, $post_type ) {
 }
 ```
 
-Prior WordPress 4.6.0 you need to change the global variables `$wp_post_types` and `$wp_taxonomies` like shown in the code example below:
-
-```php
-/**
- * Add REST API support to an already registered post type.
- */
-add_action( 'init', 'my_custom_post_type_rest_support', 25 );
-
-function my_custom_post_type_rest_support() {
-	global $wp_post_types;
-
-	//be sure to set this to the name of your post type!
-	$post_type_name_singular = 'book';
-	$post_type_name_plural   = 'books';
-	if ( isset( $wp_post_types[ $post_type_name_singular ] ) ) {
-		$wp_post_types[ $post_type_name_singular ]->show_in_rest = true;
-		
-        // Optionally customize the rest_base or rest_controller_class
-		$wp_post_types[ $post_type_name_singular ]->rest_base             = $post_type_name_plural;
-		$wp_post_types[ $post_type_name_singular ]->rest_controller_class = 'WP_REST_Posts_Controller';
-	}
-}
-```
 
 For custom taxnomies it is almost the same. You can use the `register_taxonomy_args` filter that exists since WordPress version 4.4.0. 
 
@@ -196,33 +173,6 @@ function my_taxonomy_args( $args, $taxonomy_name ) {
 	return $args;
 }
 ```
-
-If you need to support versions lower then 4.4.0, you need to manipulate the global `$wp_taxonomies` variable.
-
-```php
-/**
- * Add REST API support to an already registered taxonomy.
- */
-add_action( 'init', 'my_custom_taxonomy_rest_support', 25 );
-function my_custom_taxonomy_rest_support() {
-	global $wp_taxonomies;
-
-	//be sure to set this to the name of your taxonomy!
-	$taxonomy_name_singular = 'planet_class';
-	$taxonomy_name_plural   = 'planet_class';
-
-	if ( isset( $wp_taxonomies[ $taxonomy_name_singular ] ) ) {
-		$wp_taxonomies[ $taxonomy_name_singular ]->show_in_rest = true;
-
-		// Optionally customize the rest_base or controller class
-		$wp_taxonomies[ $taxonomy_name_singular ]->rest_base             = $taxonomy_name_plural;
-		$wp_taxonomies[ $taxonomy_name_singular ]->rest_controller_class = 'WP_REST_Terms_Controller';
-	}
-}
-```
-
-If you are having trouble implementing either of these examples, be sure that you are adding these hooks with a sufficiently high priority. If the callback functions run before the post type or taxonomy is registered, then the `isset` check will prevent an error, but the support will not be added.
-
 
 ## Custom Link Relationships
 
