@@ -33,7 +33,7 @@ Each of these concepts play a crucial role in using and understanding the WordPr
 
 A route, in the context of the WordPress REST API, is a URI which can be mapped to different HTTP methods. The mapping of an individual HTTP method to a route is known as an "endpoint". To clarify: If we make a `GET` request to `http://oursite.com/wp-json/`, we will get a JSON response showing us what routes are available, and within each route, what endpoints are available. `/wp-json/` is a route itself and when a `GET` request is made it matches to the endpoint that displays what is known as the index for the WordPress REST API. We will learn how to register our own routes and endpoints in the following sections.
 
-[info]In order for the REST API routes to work, you should have [Pretty Permalinks](https://codex.wordpress.org/Using_Permalinks) enabled on your Wordpress site.[/info]
+[info]If you're using [Ugly Permalinks](https://codex.wordpress.org/Using_Permalinks), you should pass the REST API endpoint as a query string parameter. Endpoint `http://oursite.com/wp-json/` in the example above becomes `http://oursite.com/?rest_route=/` in such case. [/info]
 
 ### Requests
 
