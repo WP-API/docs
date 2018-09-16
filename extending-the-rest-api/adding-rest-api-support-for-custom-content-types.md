@@ -128,54 +128,51 @@ function my_book_taxonomy() {
 ```
 
 ## Adding REST API Support To Existing Content Types
-When a custom post type or custom taxonomy has been added by code that you do not control, for example a theme or plugin you are using, you may need to add REST API support after it has already been registered. The arguments are the same as in the previous examples, but need to be added to the global `$wp_post_types` and `$wp_taxonomies` arrays.
 
-Here is an example of adding REST API support to an existing custom post type:
+If you need to add REST API support for a custom post type or custom taxonomy you do not control, for example a theme or plugin you are using, you can use the `register_post_type_args` filter hook that exists since WordPress version 4.6.0.
 
 ```php
 /**
  * Add REST API support to an already registered post type.
  */
-add_action( 'init', 'my_custom_post_type_rest_support', 25 );
-function my_custom_post_type_rest_support() {
-  global $wp_post_types;
+add_filter( 'register_post_type_args', 'my_post_type_args', 10, 2 );
 
-  //be sure to set this to the name of your post type!
-  $post_type_name = 'planet';
-  if( isset( $wp_post_types[ $post_type_name ] ) ) {
-    $wp_post_types[$post_type_name]->show_in_rest = true;
-    // Optionally customize the rest_base or controller class
-    $wp_post_types[$post_type_name]->rest_base = $post_type_name;
-    $wp_post_types[$post_type_name]->rest_controller_class = 'WP_REST_Posts_Controller';
-  }
+function my_post_type_args( $args, $post_type ) {
+
+	if ( 'book' === $post_type ) {
+		$args['show_in_rest'] = true;
+
+		// Optionally customize the rest_base or rest_controller_class
+		$args['rest_base']             = 'books';
+		$args['rest_controller_class'] = 'WP_REST_Posts_Controller';
+	}
+
+	return $args;
 }
 ```
 
-Here is an example of how to add REST API support to an already registered custom taxonomy.
+
+For custom taxnomies it is almost the same. You can use the `register_taxonomy_args` filter that exists since WordPress version 4.4.0. 
 
 ```php
 /**
  * Add REST API support to an already registered taxonomy.
  */
-add_action( 'init', 'my_custom_taxonomy_rest_support', 25 );
-function my_custom_taxonomy_rest_support() {
-  global $wp_taxonomies;
+add_filter( 'register_taxonomy_args', 'my_taxonomy_args', 10, 2 );
 
-  //be sure to set this to the name of your taxonomy!
-  $taxonomy_name = 'planet_class';
+function my_taxonomy_args( $args, $taxonomy_name ) {
 
-  if ( isset( $wp_taxonomies[ $taxonomy_name ] ) ) {
-    $wp_taxonomies[ $taxonomy_name ]->show_in_rest = true;
+	if ( 'genre' === $taxonomy_name ) {
+		$args['show_in_rest'] = true;
 
-    // Optionally customize the rest_base or controller class
-    $wp_taxonomies[ $taxonomy_name ]->rest_base = $taxonomy_name;
-    $wp_taxonomies[ $taxonomy_name ]->rest_controller_class = 'WP_REST_Terms_Controller';
-  }
+		// Optionally customize the rest_base or rest_controller_class
+		$args['rest_base']             = 'genres';
+		$args['rest_controller_class'] = 'WP_REST_Terms_Controller';
+	}
+
+	return $args;
 }
 ```
-
-If you are having trouble implementing either of these examples, be sure that you are adding these hooks with a sufficiently high priority. If the callback functions run before the post type or taxonomy is registered, then the `isset` check will prevent an error, but the support will not be added.
-
 
 ## Custom Link Relationships
 
