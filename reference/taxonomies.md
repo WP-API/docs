@@ -128,7 +128,7 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Taxonomy</h2>
+		<h2>List Taxonomies</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>

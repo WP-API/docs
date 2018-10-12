@@ -104,7 +104,7 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Status</h2>
+		<h2>List Statuses</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
