@@ -70,3 +70,13 @@ If you're finding that you are sending Authentication headers but the request is
   SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 </IfModule>
 ```
+
+## Why is the REST API not verifying the incoming Origin header? 
+The current behaviour of reflecting the incoming Origin header as-is without verification, was an [intentional design decision](https://core.trac.wordpress.org/changeset/40600intentional). This allows **any Origin** to access the REST API resources. WordPress relies on 'nonces' for CSRF protection instead. 
+
+[According to @rmccue on 2018-12-05 paraphrased from Slack](https://wordpress.slack.com/archives/C02RQC26G/p1544026168009900): 
+*"CORS predates the REST API, so yes, it was designed that way intentionally, and nothing big has changed since. Nonces are used for CSRF protection instead. tl;dr: CORS is built for CSRF protection, but WordPress already has a system for that (nonces), so we "disable" CORS as it gets in the way of alternative authentication schemes. The REST API is treated as a public part of your site. It's a design decision to expose data from the REST API to all origins; you should be able to override in plugins easily"*
+
+An example of disabling CORS headers for non-verified Origins can be found here: https://bitbucket.org/BjornW/wp-no-auto-origin-header/src/master/
+
+
