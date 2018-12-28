@@ -5,7 +5,7 @@ This page provides solutions to some common questions and problems that may aris
 
 ## Can I disable the REST API?
 
-You should not disable the REST API, because doing so would break future WordPress Admin functionality that will depend on the API being active. However, you may use a filter to require that API consumers be authenticated, which effectively prevents anonymous external access. See below for more information.
+You should not disable the REST API, because doing so will break WordPress Admin functionality that depends on the API being active. However, you may use a filter to require that API consumers be authenticated, which effectively prevents anonymous external access. See below for more information.
 
 
 ## Require Authentication for All Reque&#8203;sts
