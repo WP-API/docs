@@ -53,7 +53,7 @@ $.ajax( {
 } );
 ```
 
-Note that you do not need to verify that the nonce in valid inside your custom end point. This is automatically done for you in 
+Note that you do not need to verify that the nonce is valid inside your custom end point. This is automatically done for you in 
 `rest_cookie_check_errors()`
 
 ## Authentication Plugins
