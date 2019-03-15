@@ -255,8 +255,8 @@ const CustomPosts = wp.api.collections.Posts.extend( {
   url: wpApiSettings.root + 'wp/v2/custom_post_slug',
   model: BLProduct,
 } );
-const someCustomPosts = new CustomPosts;
-someCustomPosts.fetch().then( ( posts ) ) => {
+const someCustomPosts = new CustomPosts();
+someCustomPosts.fetch().then( ( posts ) => {
   // do something with the custom posts
-}
+} );
 ```
