@@ -161,7 +161,7 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Page-revision</h2>
+		<h2>List Page-revisions</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>

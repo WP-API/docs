@@ -165,7 +165,7 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Settings</h2>
+		<h2>List Settings</h2>
 			<p>There are no arguments for this endpoint.</p>
 
 	</div>
