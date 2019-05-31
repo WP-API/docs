@@ -176,7 +176,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/settings</code>
+		<code>$ curl http://example.org/wp-json/wp/v2/settings?_wpnonce={valid 'wp_rest' nonce for logged in admin user}</code>
 	</div>
 </section>
 <section class="route">
