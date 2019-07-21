@@ -1,7 +1,7 @@
 ---
 ---
 
-# wp_block-revisions
+# wp_block Revisions
 
 <section class="route">
 	<div class="primary">
