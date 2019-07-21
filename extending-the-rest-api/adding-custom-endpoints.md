@@ -213,6 +213,8 @@ This callback can be registered as `permission_callback`, again in the endpoint 
 
 The permissions callback is run after remote authentication, which sets the current user. This means you can use `current_user_can` to check if the user that has been authenticated has the appropriate capability for the action, or any other check based on current user ID. Where possible, you should always use `current_user_can`; instead of checking if the user is logged in (authentication), check whether they can perform the action (authorization).
 
+Once you register a `permission_callback`, you will need to authenticate your requests (for example by including a nonce parameter) or you will receive a `rest_forbidden` error. See [Authentication](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/) for more details.
+
 Continuing with our previous example, we can make it so that only editors or above can view this author data. We can check a number of different capabilities here, but the best is `edit_others_posts`, which is really the core of what an editor is. To do this, we just need a callback here:
 
 ```php
