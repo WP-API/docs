@@ -21,7 +21,7 @@ This API reference provides information on the specific endpoints available thro
   </tr>
   <tr>
     <td><a href="https://developer.wordpress.org/rest-api/reference/post-revisions/">Post Revisions</a></td>
-    <td><code>/wp/v2/revisions</code></td>
+    <td><code>/wp/v2/posts/&lt;id&gt;/revisions</code></td>
   </tr>
   <tr>
     <td><a href="https://developer.wordpress.org/rest-api/reference/categories/">Categories</a></td>
@@ -34,6 +34,10 @@ This API reference provides information on the specific endpoints available thro
   <tr>
     <td><a href="https://developer.wordpress.org/rest-api/reference/pages/">Pages</a></td>
     <td><code>/wp/v2/pages</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/page-revisions/">Page Revisions</a></td>
+    <td><code>/wp/v2/pages/&lt;id&gt;/revisions</code></td>
   </tr>
   <tr>
     <td><a href="https://developer.wordpress.org/rest-api/reference/comments/">Comments</a></td>
@@ -62,6 +66,26 @@ This API reference provides information on the specific endpoints available thro
   <tr>
     <td><a href="https://developer.wordpress.org/rest-api/reference/settings/">Settings</a></td>
     <td><code>/wp/v2/settings</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/themes/">Themes</a></td>
+    <td><code>/wp/v2/themes</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/search-results/">Search</a></td>
+    <td><code>/wp/v2/search</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/wp_blocks/">Blocks</a></td>
+    <td><code>/wp/v2/blocks</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/wp_block-revisions/">Block Revisions</a></td>
+    <td><code>/wp/v2/blocks/&lt;id&gt;/autosaves/</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/rendered-blocks/">Block Renderer</a></td>
+    <td><code>/wp/v2/block-renderer</code></td>
   </tr>
 </table>
 
