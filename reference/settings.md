@@ -159,13 +159,13 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/settings</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/settings</code>
 	</div>
 </section>
 
 <div><section class="route">
 	<div class="primary">
-		<h2>List Settings</h2>
+		<h2>Retrieve a Settings</h2>
 			<p>There are no arguments for this endpoint.</p>
 
 	</div>
@@ -176,7 +176,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/settings</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/settings</code>
 	</div>
 </section>
 <section class="route">

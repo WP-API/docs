@@ -238,7 +238,7 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/users</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/users</code>
 	</div>
 </section>
 
@@ -334,7 +334,7 @@
 																					<p class="default">
 							Default: <code>name</code>
 						</p>
-																<p>One of: <code>id</code>, <code>include</code>, <code>name</code>, <code>registered_date</code>, <code>slug</code>, <code>email</code>, <code>url</code></p>
+																<p>One of: <code>id</code>, <code>include</code>, <code>name</code>, <code>registered_date</code>, <code>slug</code>, <code>include_slugs</code>, <code>email</code>, <code>url</code></p>
 									</td>
 			</tr>
 					<tr>
@@ -353,6 +353,15 @@
 											<p>Limit result set to users matching at least one specific role provided. Accepts csv list or single role.</p>
 																								</td>
 			</tr>
+					<tr>
+				<td>
+											<code>who</code><br />
+									</td>
+				<td>
+											<p>Limit result set to users who are considered authors.</p>
+																										<p>One of: <code>authors</code></p>
+									</td>
+			</tr>
 			</table>
 
 	</div>
@@ -363,7 +372,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/users</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/users</code>
 	</div>
 </section>
 <section class="route">
@@ -529,7 +538,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/users/&lt;id&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/users/&lt;id&gt;</code>
 	</div>
 </section>
 <section class="route">
@@ -705,7 +714,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/users/&lt;id&gt;</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/users/&lt;id&gt;</code>
 	</div>
 </section>
 <section class="route">
@@ -735,7 +744,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/users/me</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/users/me</code>
 	</div>
 </section>
 <section class="route">
@@ -895,7 +904,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/users/me</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/users/me</code>
 	</div>
 </section>
 </div>

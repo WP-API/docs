@@ -120,7 +120,7 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/categories</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/categories</code>
 	</div>
 </section>
 
@@ -208,7 +208,7 @@
 																					<p class="default">
 							Default: <code>name</code>
 						</p>
-																<p>One of: <code>id</code>, <code>include</code>, <code>name</code>, <code>slug</code>, <code>term_group</code>, <code>description</code>, <code>count</code></p>
+																<p>One of: <code>id</code>, <code>include</code>, <code>name</code>, <code>slug</code>, <code>include_slugs</code>, <code>term_group</code>, <code>description</code>, <code>count</code></p>
 									</td>
 			</tr>
 					<tr>
@@ -253,7 +253,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/categories</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/categories</code>
 	</div>
 </section>
 <section class="route">
@@ -348,7 +348,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/categories/&lt;id&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/categories/&lt;id&gt;</code>
 	</div>
 </section>
 <section class="route">
@@ -448,7 +448,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/categories/&lt;id&gt;</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/categories/&lt;id&gt;</code>
 	</div>
 </section>
 </div>

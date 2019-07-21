@@ -98,13 +98,13 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/statuses</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/statuses</code>
 	</div>
 </section>
 
 <div><section class="route">
 	<div class="primary">
-		<h2>List Statuses</h2>
+		<h2>Retrieve a Status</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -129,7 +129,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/statuses</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/statuses</code>
 	</div>
 </section>
 <section class="route">
@@ -167,7 +167,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/statuses/&lt;status&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/statuses/&lt;status&gt;</code>
 	</div>
 </section>
 </div>
