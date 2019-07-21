@@ -165,7 +165,7 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Settings</h2>
+		<h2>Retrieve Site Settings</h2>
 			<p>There are no arguments for this endpoint.</p>
 
 	</div>
@@ -181,7 +181,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Update a Settings</h2>
+		<h2>Update Site Settings</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>

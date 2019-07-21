@@ -1,7 +1,7 @@
 ---
 ---
 
-# Wp_block-revisions
+# wp_block-revisions
 
 <section class="route">
 	<div class="primary">
@@ -164,7 +164,7 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Wp_block-revision</h2>
+		<h2>Retrieve a wp_block-revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -202,7 +202,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Create a Wp_block-revision</h2>
+		<h2>Create a wp_block-revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -289,7 +289,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Wp_block-revision</h2>
+		<h2>Retrieve a wp_block-revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>

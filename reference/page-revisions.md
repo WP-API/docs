@@ -1,7 +1,7 @@
 ---
 ---
 
-# Page-revisions
+# Page Revisions
 
 <section class="route">
 	<div class="primary">
@@ -161,7 +161,7 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>List Page-revisions</h2>
+		<h2>List Page Revisions</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -274,7 +274,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Page-revision</h2>
+		<h2>Retrieve a Page Revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -320,7 +320,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Delete a Page-revision</h2>
+		<h2>Delete a Page Revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -362,7 +362,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Page-revision</h2>
+		<h2>Retrieve a Page Revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -400,7 +400,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Create a Page-revision</h2>
+		<h2>Create a Page Revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -545,7 +545,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Page-revision</h2>
+		<h2>Retrieve a Page Revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>

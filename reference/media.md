@@ -6,7 +6,7 @@
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist for a attachment object.</p>
+<p>The schema defines all the fields that exist for an attachment object.</p>
 <table class="attributes">
 			<tr id="schema-date">
 			<td>
