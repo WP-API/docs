@@ -28,7 +28,7 @@ function receiveData( data ) {
   console.log( data );
 }
 </script>
-<script src="https://demo.wp-api.org/wp-json/?_jsonp=receiveData"></script>
+<script src="https://example.com/wp-json/?_jsonp=receiveData"></script>
 ```
 
 

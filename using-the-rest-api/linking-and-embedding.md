@@ -26,12 +26,12 @@ A typical single post request (`/wp/v2/posts/42`):
   "_links": {
     "collection": [
       {
-        "href": "https://demo.wp-api.org/wp-json/wp/v2/posts"
+        "href": "https://example.com/wp-json/wp/v2/posts"
       }
     ],
     "author": [
       {
-        "href": "https://demo.wp-api.org/wp-json/wp/v2/users/1",
+        "href": "https://example.com/wp-json/wp/v2/users/1",
         "embeddable": true
       }
     ]
@@ -57,12 +57,12 @@ Only links with the `embedded` flag set to `true` can be embedded, and `_embed` 
   "_links": {
     "collection": [
       {
-        "href": "https://demo.wp-api.org/wp-json/wp/v2/posts"
+        "href": "https://example.com/wp-json/wp/v2/posts"
       }
     ],
     "author": [
       {
-        "href": "https://demo.wp-api.org/wp-json/wp/v2/users/1",
+        "href": "https://example.com/wp-json/wp/v2/users/1",
         "embeddable": true
       }
     ]
