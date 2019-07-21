@@ -71,12 +71,10 @@ If you're finding that you are sending Authentication headers but the request is
 </IfModule>
 ```
 
-## Why is the REST API not verifying the incoming Origin header? 
-The current behaviour of reflecting the incoming Origin header as-is without verification, was an [intentional design decision](https://core.trac.wordpress.org/changeset/40600). This allows **any Origin** to access the REST API resources. WordPress relies on 'nonces' for CSRF protection instead. 
+## Why is the REST API not verifying the incoming Origin header? Does this expose my site to CSRF attacks?
 
-[According to @rmccue on 2018-12-05 paraphrased from Slack](https://wordpress.slack.com/archives/C02RQC26G/p1544026168009900): 
-*"CORS predates the REST API, so yes, it was designed that way intentionally, and nothing big has changed since. Nonces are used for CSRF protection instead. tl;dr: CORS is built for CSRF protection, but WordPress already has a system for that (nonces), so we "disable" CORS as it gets in the way of alternative authentication schemes. The REST API is treated as a public part of your site. It's a design decision to expose data from the REST API to all origins; you should be able to override in plugins easily"*
+Cross-Origin Resource Sharing (CORS) is a mechanism which allows a website to control which Origins (originating external sites) are allowed to access your site's data. CORS prevents against a particular type of attack known as Cross-Site Request Forgery, or CSRF. However, WordPress has an existing CSRF protection mechanism which uses [nonces](https://developer.wordpress.org/plugins/security/nonces/). Tightening CORS restrictions would prevent some authentication methods, so the WordPress REST API uses nonces for CSRF protection instead of CORS.
 
-An example of disabling CORS headers for non-verified Origins can be found here: https://bitbucket.org/BjornW/wp-no-auto-origin-header/src/master/
+Because the WordPress REST API does not verify the Origin header of incoming requests, public REST API endpoints may therefore be accessed from any site.
 
-
+This is an [intentional design decision](https://core.trac.wordpress.org/changeset/40600), but if you wish to prevent your site from being accessed from unknown origins you may unhook the default [`rest_send_cors_headers` function](https://developer.wordpress.org/reference/functions/rest_send_cors_headers/) from the [`rest_pre_serve_request` filter hook](https://developer.wordpress.org/reference/hooks/rest_pre_serve_request/), then hook in your own function to that same filter to specify stricter CORS headers.
