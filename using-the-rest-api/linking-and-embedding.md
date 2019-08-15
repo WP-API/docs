@@ -48,6 +48,7 @@ Embedding is triggered by setting the [`_embed` query parameter](https://develop
 
 Only links with the `embedded` flag set to `true` can be embedded, and `_embed` will cause all embeddable links to be embedded. Only relations containing embedded responses are included in `_embedded`, however relations with mixed embeddable and unembeddable links will contain dummy responses for the unembeddable links to ensure numeric indexes match those in `_links`.
 
+When embedding a collection response, for instance `/wp/v2/posts?author=1`, the embeded collection will have the default pagination limits applied.
 
 ### Example Response
 
