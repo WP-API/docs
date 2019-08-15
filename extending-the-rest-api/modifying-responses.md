@@ -100,8 +100,7 @@ For each object type &mdash; posts, or users, terms, comments, etc. &mdash; `$wp
 
 ## Working with registered meta in the REST API
 
-The [`register_meta`](https://developer.wordpress.org/reference/functions/register_meta/) function simplifies the process of defining a meta field for a particular object type. By setting `'show_in_rest' => true` when registering a new meta key, that key will be accessible through the REST API. Note however that at this time **there is no way to register a meta field for a specific post type**: meta fields registered for the "post" object will appear on **all** custom post types, as well as the default post record. For this reason it is less broadly useful than `register_rest_field`.
-
+The [`register_meta`](https://developer.wordpress.org/reference/functions/register_meta/) function simplifies the process of defining a meta field for a particular object type. By setting `'show_in_rest' => true` when registering a new meta key, that key will be accessible through the REST API.
 
 ### Read and write a post meta field in post responses
 
@@ -128,6 +127,19 @@ register_meta( $object_type, 'my_meta_key', $args1 );
 This example shows how to allow reading and writing of a post meta field. This will allow that field to be updated via a POST request to `wp-json/wp/v2/posts/<post-id>` or created along with a post via a POST request to `wp-json/wp/v2/posts/`.
 
 Note that for meta fields registered on custom post types, the post type must have `custom-fields` support. Otherwise the meta fields will not appear in the REST API.
+
+### Post Type Specific Meta
+WordPress 4.9.8 adds support for registering meta for a specific post type or taxonomy by using the `register_post_meta` and `register_term_meta` functions. They follow the same rules as `register_meta` but require passing the desired object type as the first paramter. The following code would register the `my_meta_key` example above, but only for the `page` custom post type.
+
+```php
+$args1 = array(
+    'type'         => 'string',
+    'description'  => 'A meta key associated with a string meta value.',
+    'single'       => true,
+    'show_in_rest' => true,
+);
+register_post_meta( 'page', 'my_meta_key', $args1 );
+```
 
 
 ## Adding Links to the API Response
