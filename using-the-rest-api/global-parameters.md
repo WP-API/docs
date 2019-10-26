@@ -2,6 +2,39 @@
 
 The API includes a number of global parameters (also called "meta-parameters") which control how the API handles the request/response handling. These operate at a layer above the actual resources themselves, and are available on all resources.
 
+## `_fields`
+
+A REST resource like a Post contains a large quantity of data: basic information such as content, title, and author ID, but also [registered metadata and fields](https://developer.wordpress.org/rest-api/extending-the-rest-api/modifying-responses/), media information, and links to other resources. Your application may not need all of this information on every request.
+
+To instruct WordPress to return only a subset of the fields in a response, you may use the `_fields` query parameter. If for example you are building an archive view and only need the ID, title, permalink, author and excerpt for a collection of posts, you can restrict the response to only those properties with this fields query:
+
+```
+/wp/v2/posts?_fields=author,id,excerpt,title,link
+```
+
+You may alternatively provide that same list using query parameter array syntax instead of a comma-separated list:
+
+```
+/wp/v2/posts?_fields[]=author&_fields[]=id&_fields[]=excerpt&_fields[]=title&_fields[]=link
+```
+
+When `_fields` is provided then WordPress will skip unneeded fields when generating your response object, avoiding potentially expensive internal computation or queries for data you don't need. This also means the JSON object returned from the REST API will be smaller, requiring less time to download and less time to parse on your client device.
+
+Carefully design your queries to pull in only the needed properties from each resource to make your application faster to use and more efficient to run.
+
+As of WordPress 5.3 the `_fields` parameter supports nested properties. This can be useful if you have registered many meta keys, permitting you to request the value for only one of the registered meta properties:
+
+```
+?_fields=meta.one-of-many-keys
+```
+
+Only the meta value with the key `one-of-many-keys` will be returned, and others will be excluded.
+
+You can also request specific deeply-nested properties within a complex meta object:
+
+```
+?_fields=meta.key_name.nested_prop.deeply_nested_prop,meta.key_name.other_nested_prop
+```
 
 ## `_jsonp`
 
