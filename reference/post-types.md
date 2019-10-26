@@ -44,6 +44,18 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
+			<tr id="schema-viewable">
+			<td>
+				<code>viewable</code><br />
+				<span class="type">
+					boolean				</span>
+			</td>
+			<td>
+				<p>Whether or not the post type can be viewed.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
 			<tr id="schema-labels">
 			<td>
 				<code>labels</code><br />
@@ -122,7 +134,7 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/types</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/types</code>
 	</div>
 </section>
 
@@ -153,7 +165,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/types</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/types</code>
 	</div>
 </section>
 <section class="route">
@@ -191,7 +203,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/types/&lt;type&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/types/&lt;type&gt;</code>
 	</div>
 </section>
 </div>

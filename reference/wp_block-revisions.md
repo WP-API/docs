@@ -1,12 +1,12 @@
 ---
 ---
 
-# Page Revisions
+# wp_block Revisions
 
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist for a page-revision object.</p>
+<p>The schema defines all the fields that exist for a wp_block-revision object.</p>
 <table class="attributes">
 			<tr id="schema-author">
 			<td>
@@ -138,15 +138,18 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
-			<tr id="schema-excerpt">
+			<tr id="schema-preview_link">
 			<td>
-				<code>excerpt</code><br />
+				<code>preview_link</code><br />
 				<span class="type">
-					object				</span>
+					string,
+													uri
+										</span>
 			</td>
 			<td>
-				<p>The excerpt for the object.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+				<p>Preview link for the post.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 	</table>
@@ -155,214 +158,13 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/pages/&lt;parent&gt;/revisions</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/blocks/&lt;id&gt;/autosaves</code>
 	</div>
 </section>
 
 <div><section class="route">
 	<div class="primary">
-		<h2>List Page Revisions</h2>
-			<h3>Arguments</h3>
-	<table class="arguments">
-					<tr>
-				<td>
-											<code>parent</code><br />
-									</td>
-				<td>
-											<p>The ID for the parent of the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>context</code><br />
-									</td>
-				<td>
-											<p>Scope under which the request is made; determines fields present in response.</p>
-																					<p class="default">
-							Default: <code>view</code>
-						</p>
-																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code>page</code><br />
-									</td>
-				<td>
-											<p>Current page of the collection.</p>
-																					<p class="default">
-							Default: <code>1</code>
-						</p>
-														</td>
-			</tr>
-					<tr>
-				<td>
-											<code>per_page</code><br />
-									</td>
-				<td>
-											<p>Maximum number of items to be returned in result set.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>search</code><br />
-									</td>
-				<td>
-											<p>Limit results to those matching a string.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>exclude</code><br />
-									</td>
-				<td>
-											<p>Ensure result set excludes specific IDs.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>include</code><br />
-									</td>
-				<td>
-											<p>Limit result set to specific IDs.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>offset</code><br />
-									</td>
-				<td>
-											<p>Offset the result set by a specific number of items.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>order</code><br />
-									</td>
-				<td>
-											<p>Order sort attribute ascending or descending.</p>
-																					<p class="default">
-							Default: <code>desc</code>
-						</p>
-																<p>One of: <code>asc</code>, <code>desc</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code>orderby</code><br />
-									</td>
-				<td>
-											<p>Sort collection by object attribute.</p>
-																					<p class="default">
-							Default: <code>date</code>
-						</p>
-																<p>One of: <code>date</code>, <code>id</code>, <code>include</code>, <code>relevance</code>, <code>slug</code>, <code>include_slugs</code>, <code>title</code></p>
-									</td>
-			</tr>
-			</table>
-
-	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/pages/&lt;parent&gt;/revisions</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/pages/&lt;parent&gt;/revisions</code>
-	</div>
-</section>
-<section class="route">
-	<div class="primary">
-		<h2>Retrieve a Page Revision</h2>
-			<h3>Arguments</h3>
-	<table class="arguments">
-					<tr>
-				<td>
-											<code>parent</code><br />
-									</td>
-				<td>
-											<p>The ID for the parent of the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>id</code><br />
-									</td>
-				<td>
-											<p>Unique identifier for the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>context</code><br />
-									</td>
-				<td>
-											<p>Scope under which the request is made; determines fields present in response.</p>
-																					<p class="default">
-							Default: <code>view</code>
-						</p>
-																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
-									</td>
-			</tr>
-			</table>
-
-	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/pages/&lt;parent&gt;/revisions/&lt;id&gt;</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/pages/&lt;parent&gt;/revisions/&lt;id&gt;</code>
-	</div>
-</section>
-<section class="route">
-	<div class="primary">
-		<h2>Delete a Page Revision</h2>
-			<h3>Arguments</h3>
-	<table class="arguments">
-					<tr>
-				<td>
-											<code>parent</code><br />
-									</td>
-				<td>
-											<p>The ID for the parent of the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>id</code><br />
-									</td>
-				<td>
-											<p>Unique identifier for the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>force</code><br />
-									</td>
-				<td>
-											<p>Required to be true, as revisions do not support trashing.</p>
-																								</td>
-			</tr>
-			</table>
-
-	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>DELETE /wp/v2/pages/&lt;parent&gt;/revisions/&lt;id&gt;</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/pages/&lt;parent&gt;/revisions/&lt;id&gt;</code>
-	</div>
-</section>
-<section class="route">
-	<div class="primary">
-		<h2>Retrieve a Page Revision</h2>
+		<h2>Retrieve a wp_block-revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -391,16 +193,16 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>GET /wp/v2/pages/&lt;id&gt;/autosaves</code>
+		<code>GET /wp/v2/blocks/&lt;id&gt;/autosaves</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/pages/&lt;id&gt;/autosaves</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;id&gt;/autosaves</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Create a Page Revision</h2>
+		<h2>Create a wp_block-revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -470,64 +272,6 @@
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-author">author</a></code><br />
-									</td>
-				<td>
-											<p>The ID for the author of the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-excerpt">excerpt</a></code><br />
-									</td>
-				<td>
-											<p>The excerpt for the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-featured_media">featured_media</a></code><br />
-									</td>
-				<td>
-											<p>The ID of the featured media for the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-comment_status">comment_status</a></code><br />
-									</td>
-				<td>
-											<p>Whether or not comments are open on the object.</p>
-																										<p>One of: <code>open</code>, <code>closed</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-ping_status">ping_status</a></code><br />
-									</td>
-				<td>
-											<p>Whether or not the object can be pinged.</p>
-																										<p>One of: <code>open</code>, <code>closed</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-menu_order">menu_order</a></code><br />
-									</td>
-				<td>
-											<p>The order of the object in relation to other object of its type.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-meta">meta</a></code><br />
-									</td>
-				<td>
-											<p>Meta fields.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
 											<code><a href="#schema-template">template</a></code><br />
 									</td>
 				<td>
@@ -540,12 +284,12 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>POST /wp/v2/pages/&lt;id&gt;/autosaves</code>
+		<code>POST /wp/v2/blocks/&lt;id&gt;/autosaves</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Page Revision</h2>
+		<h2>Retrieve a wp_block-revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -582,11 +326,11 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>GET /wp/v2/pages/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
+		<code>GET /wp/v2/blocks/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/pages/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
 	</div>
 </section>
 </div>

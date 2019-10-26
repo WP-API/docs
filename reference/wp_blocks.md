@@ -1,12 +1,12 @@
 ---
 ---
 
-# Pages
+# wp_blocks
 
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist for a page object.</p>
+<p>The schema defines all the fields that exist for a wp_block object.</p>
 <table class="attributes">
 			<tr id="schema-date">
 			<td>
@@ -146,41 +146,6 @@
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
-			<tr id="schema-permalink_template">
-			<td>
-				<code>permalink_template</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Permalink template for the object.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>edit</code></p>
-							</td>
-		</tr>
-			<tr id="schema-generated_slug">
-			<td>
-				<code>generated_slug</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Slug automatically generated from the object title.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>edit</code></p>
-							</td>
-		</tr>
-			<tr id="schema-parent">
-			<td>
-				<code>parent</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The ID for the parent of the object.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-							</td>
-		</tr>
 			<tr id="schema-title">
 			<td>
 				<code>title</code><br />
@@ -203,85 +168,6 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
-			<tr id="schema-author">
-			<td>
-				<code>author</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The ID for the author of the object.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-excerpt">
-			<td>
-				<code>excerpt</code><br />
-				<span class="type">
-					object				</span>
-			</td>
-			<td>
-				<p>The excerpt for the object.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-featured_media">
-			<td>
-				<code>featured_media</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The ID of the featured media for the object.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-comment_status">
-			<td>
-				<code>comment_status</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Whether or not comments are open on the object.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-									<p>One of: <code>open</code>, <code>closed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-ping_status">
-			<td>
-				<code>ping_status</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Whether or not the object can be pinged.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-									<p>One of: <code>open</code>, <code>closed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-menu_order">
-			<td>
-				<code>menu_order</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The order of the object in relation to other object of its type.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-							</td>
-		</tr>
-			<tr id="schema-meta">
-			<td>
-				<code>meta</code><br />
-				<span class="type">
-					object				</span>
-			</td>
-			<td>
-				<p>Meta fields.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-							</td>
-		</tr>
 			<tr id="schema-template">
 			<td>
 				<code>template</code><br />
@@ -299,13 +185,13 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/pages</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/blocks</code>
 	</div>
 </section>
 
 <div><section class="route">
 	<div class="primary">
-		<h2>List Pages</h2>
+		<h2>List wp_blocks</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -360,22 +246,6 @@
 			</tr>
 					<tr>
 				<td>
-											<code>author</code><br />
-									</td>
-				<td>
-											<p>Limit result set to posts assigned to specific authors.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>author_exclude</code><br />
-									</td>
-				<td>
-											<p>Ensure result set excludes posts assigned to specific authors.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
 											<code>before</code><br />
 									</td>
 				<td>
@@ -396,14 +266,6 @@
 									</td>
 				<td>
 											<p>Limit result set to specific IDs.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>menu_order</code><br />
-									</td>
-				<td>
-											<p>Limit result set to posts with a specific menu_order value.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -435,24 +297,8 @@
 																					<p class="default">
 							Default: <code>date</code>
 						</p>
-																<p>One of: <code>author</code>, <code>date</code>, <code>id</code>, <code>include</code>, <code>modified</code>, <code>parent</code>, <code>relevance</code>, <code>slug</code>, <code>include_slugs</code>, <code>title</code>, <code>menu_order</code></p>
+																<p>One of: <code>author</code>, <code>date</code>, <code>id</code>, <code>include</code>, <code>modified</code>, <code>parent</code>, <code>relevance</code>, <code>slug</code>, <code>include_slugs</code>, <code>title</code></p>
 									</td>
-			</tr>
-					<tr>
-				<td>
-											<code>parent</code><br />
-									</td>
-				<td>
-											<p>Limit result set to items with particular parent IDs.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>parent_exclude</code><br />
-									</td>
-				<td>
-											<p>Limit result set to all items except those of a particular parent ID.</p>
-																								</td>
 			</tr>
 					<tr>
 				<td>
@@ -479,16 +325,16 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>GET /wp/v2/pages</code>
+		<code>GET /wp/v2/blocks</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/pages</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/blocks</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Create a Page</h2>
+		<h2>Create a wp_block</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -534,14 +380,6 @@
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-parent">parent</a></code><br />
-									</td>
-				<td>
-											<p>The ID for the parent of the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
 											<code><a href="#schema-title">title</a></code><br />
 									</td>
 				<td>
@@ -558,64 +396,6 @@
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-author">author</a></code><br />
-									</td>
-				<td>
-											<p>The ID for the author of the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-excerpt">excerpt</a></code><br />
-									</td>
-				<td>
-											<p>The excerpt for the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-featured_media">featured_media</a></code><br />
-									</td>
-				<td>
-											<p>The ID of the featured media for the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-comment_status">comment_status</a></code><br />
-									</td>
-				<td>
-											<p>Whether or not comments are open on the object.</p>
-																										<p>One of: <code>open</code>, <code>closed</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-ping_status">ping_status</a></code><br />
-									</td>
-				<td>
-											<p>Whether or not the object can be pinged.</p>
-																										<p>One of: <code>open</code>, <code>closed</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-menu_order">menu_order</a></code><br />
-									</td>
-				<td>
-											<p>The order of the object in relation to other object of its type.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-meta">meta</a></code><br />
-									</td>
-				<td>
-											<p>Meta fields.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
 											<code><a href="#schema-template">template</a></code><br />
 									</td>
 				<td>
@@ -628,12 +408,12 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>POST /wp/v2/pages</code>
+		<code>POST /wp/v2/blocks</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Page</h2>
+		<h2>Retrieve a wp_block</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -670,16 +450,16 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>GET /wp/v2/pages/&lt;id&gt;</code>
+		<code>GET /wp/v2/blocks/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/pages/&lt;id&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;id&gt;</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Update a Page</h2>
+		<h2>Update a wp_block</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -733,14 +513,6 @@
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-parent">parent</a></code><br />
-									</td>
-				<td>
-											<p>The ID for the parent of the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
 											<code><a href="#schema-title">title</a></code><br />
 									</td>
 				<td>
@@ -757,64 +529,6 @@
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-author">author</a></code><br />
-									</td>
-				<td>
-											<p>The ID for the author of the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-excerpt">excerpt</a></code><br />
-									</td>
-				<td>
-											<p>The excerpt for the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-featured_media">featured_media</a></code><br />
-									</td>
-				<td>
-											<p>The ID of the featured media for the object.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-comment_status">comment_status</a></code><br />
-									</td>
-				<td>
-											<p>Whether or not comments are open on the object.</p>
-																										<p>One of: <code>open</code>, <code>closed</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-ping_status">ping_status</a></code><br />
-									</td>
-				<td>
-											<p>Whether or not the object can be pinged.</p>
-																										<p>One of: <code>open</code>, <code>closed</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-menu_order">menu_order</a></code><br />
-									</td>
-				<td>
-											<p>The order of the object in relation to other object of its type.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-meta">meta</a></code><br />
-									</td>
-				<td>
-											<p>Meta fields.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
 											<code><a href="#schema-template">template</a></code><br />
 									</td>
 				<td>
@@ -827,7 +541,7 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>POST /wp/v2/pages/&lt;id&gt;</code>
+		<code>POST /wp/v2/blocks/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
@@ -836,7 +550,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Delete a Page</h2>
+		<h2>Delete a wp_block</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -861,11 +575,11 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>DELETE /wp/v2/pages/&lt;id&gt;</code>
+		<code>DELETE /wp/v2/blocks/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/pages/&lt;id&gt;</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/blocks/&lt;id&gt;</code>
 	</div>
 </section>
 </div>

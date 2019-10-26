@@ -116,13 +116,25 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
+			<tr id="schema-visibility">
+			<td>
+				<code>visibility</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>The visibility settings for the taxonomy.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
 	</table>
 
 	</div>
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/taxonomies</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/taxonomies</code>
 	</div>
 </section>
 
@@ -161,7 +173,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/taxonomies</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/taxonomies</code>
 	</div>
 </section>
 <section class="route">
@@ -199,7 +211,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/taxonomies/&lt;taxonomy&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/taxonomies/&lt;taxonomy&gt;</code>
 	</div>
 </section>
 </div>

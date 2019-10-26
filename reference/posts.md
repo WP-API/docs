@@ -146,6 +146,30 @@
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
+			<tr id="schema-permalink_template">
+			<td>
+				<code>permalink_template</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>Permalink template for the object.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-generated_slug">
+			<td>
+				<code>generated_slug</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>Slug automatically generated from the object title.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
 			<tr id="schema-title">
 			<td>
 				<code>title</code><br />
@@ -268,7 +292,6 @@
 			<td>
 				<p>The theme file to use to display the object.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-									<p>One of: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-categories">
@@ -299,7 +322,7 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/posts</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/posts</code>
 	</div>
 </section>
 
@@ -427,7 +450,7 @@
 																					<p class="default">
 							Default: <code>date</code>
 						</p>
-																<p>One of: <code>author</code>, <code>date</code>, <code>id</code>, <code>include</code>, <code>modified</code>, <code>parent</code>, <code>relevance</code>, <code>slug</code>, <code>title</code></p>
+																<p>One of: <code>author</code>, <code>date</code>, <code>id</code>, <code>include</code>, <code>modified</code>, <code>parent</code>, <code>relevance</code>, <code>slug</code>, <code>include_slugs</code>, <code>title</code></p>
 									</td>
 			</tr>
 					<tr>
@@ -499,7 +522,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/posts</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/posts</code>
 	</div>
 </section>
 <section class="route">
@@ -637,8 +660,7 @@
 									</td>
 				<td>
 											<p>The theme file to use to display the object.</p>
-																										<p>One of: <code></code></p>
-									</td>
+																								</td>
 			</tr>
 					<tr>
 				<td>
@@ -708,7 +730,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;id&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;id&gt;</code>
 	</div>
 </section>
 <section class="route">
@@ -854,8 +876,7 @@
 									</td>
 				<td>
 											<p>The theme file to use to display the object.</p>
-																										<p>One of: <code></code></p>
-									</td>
+																								</td>
 			</tr>
 					<tr>
 				<td>
@@ -883,7 +904,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X POST http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;id&gt; -d '{"title":"My New Title"}'
+		<code>$ curl -X POST https://example.com/wp-json/wp/v2/posts/&lt;id&gt; -d '{"title":"My New Title"}'
 </code>
 	</div>
 </section>
@@ -918,7 +939,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/posts/&lt;id&gt;</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/posts/&lt;id&gt;</code>
 	</div>
 </section>
 </div>

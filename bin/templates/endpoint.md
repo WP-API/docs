@@ -10,7 +10,7 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json{{ attribute( routes | first, 'nicename' ) }}</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json{{ attribute( routes | first, 'nicename' ) }}</code>
 	</div>
 </section>
 

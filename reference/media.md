@@ -6,7 +6,7 @@
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist for a attachment object.</p>
+<p>The schema defines all the fields that exist for an attachment object.</p>
 <table class="attributes">
 			<tr id="schema-date">
 			<td>
@@ -135,6 +135,30 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
+			<tr id="schema-permalink_template">
+			<td>
+				<code>permalink_template</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>Permalink template for the object.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-generated_slug">
+			<td>
+				<code>generated_slug</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>Slug automatically generated from the object title.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
 			<tr id="schema-title">
 			<td>
 				<code>title</code><br />
@@ -201,7 +225,6 @@
 			<td>
 				<p>The theme file to use to display the object.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-									<p>One of: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-alt_text">
@@ -305,7 +328,7 @@
 	<div class="secondary">
 		<h3>Example Request</h3>
 
-		<code>$ curl -X OPTIONS -i http://demo.wp-api.org/wp-json/wp/v2/media</code>
+		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/media</code>
 	</div>
 </section>
 
@@ -433,7 +456,7 @@
 																					<p class="default">
 							Default: <code>date</code>
 						</p>
-																<p>One of: <code>author</code>, <code>date</code>, <code>id</code>, <code>include</code>, <code>modified</code>, <code>parent</code>, <code>relevance</code>, <code>slug</code>, <code>title</code></p>
+																<p>One of: <code>author</code>, <code>date</code>, <code>id</code>, <code>include</code>, <code>modified</code>, <code>parent</code>, <code>relevance</code>, <code>slug</code>, <code>include_slugs</code>, <code>title</code></p>
 									</td>
 			</tr>
 					<tr>
@@ -498,7 +521,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/media</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/media</code>
 	</div>
 </section>
 <section class="route">
@@ -587,8 +610,7 @@
 									</td>
 				<td>
 											<p>The theme file to use to display the object.</p>
-																										<p>One of: <code></code></p>
-									</td>
+																								</td>
 			</tr>
 					<tr>
 				<td>
@@ -666,7 +688,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json/wp/v2/media/&lt;id&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/media/&lt;id&gt;</code>
 	</div>
 </section>
 <section class="route">
@@ -763,8 +785,7 @@
 									</td>
 				<td>
 											<p>The theme file to use to display the object.</p>
-																										<p>One of: <code></code></p>
-									</td>
+																								</td>
 			</tr>
 					<tr>
 				<td>
@@ -842,7 +863,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE http://demo.wp-api.org/wp-json/wp/v2/media/&lt;id&gt;</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/media/&lt;id&gt;</code>
 	</div>
 </section>
 </div>

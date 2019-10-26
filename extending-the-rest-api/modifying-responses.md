@@ -34,7 +34,7 @@ There are two methods which can be used to add data to WordPress REST API respon
 Prior WordPress 4.9.8, meta fields set to `show_in_rest` using `register_meta` are registered for all objects of a given type. If one custom post type shows a meta field, all custom post types will show that meta field. As of WordPress 4.9.8 it's possible to use `register_meta` with the `object_subtype` argument that allows one to reduce the usage of the meta key to a particular post type.
 [/alert]
 
-The disadvantage of `register_meta` is that it can only handle scalar values wehreas `register_rest_field` can handle other object types as well.
+The disadvantage of `register_meta` is that it can only handle scalar values whereas `register_rest_field` can handle other object types as well.
 
 
 ## Adding Custom Fields to API Responses
@@ -100,8 +100,7 @@ For each object type &mdash; posts, or users, terms, comments, etc. &mdash; `$wp
 
 ## Working with registered meta in the REST API
 
-The [`register_meta`](https://developer.wordpress.org/reference/functions/register_meta/) function simplifies the process of defining a meta field for a particular object type. By setting `'show_in_rest' => true` when registering a new meta key, that key will be accessible through the REST API. Note however that at this time **there is no way to register a meta field for a specific post type**: meta fields registered for the "post" object will appear on **all** custom post types, as well as the default post record. For this reason it is less broadly useful than `register_rest_field`.
-
+The [`register_meta`](https://developer.wordpress.org/reference/functions/register_meta/) function simplifies the process of defining a meta field for a particular object type. By setting `'show_in_rest' => true` when registering a new meta key, that key will be accessible through the REST API.
 
 ### Read and write a post meta field in post responses
 
@@ -111,7 +110,7 @@ The [`register_meta`](https://developer.wordpress.org/reference/functions/regist
 // for custom comment types, this is 'comment'. For user meta,
 // this is 'user'.
 $object_type = 'post';
-$args1 = array( // Validate and sanitize the meta value.
+$meta_args = array( // Validate and sanitize the meta value.
     // Note: currently (4.7) one of 'string', 'boolean', 'integer',
     // 'number' must be used as 'type'. The default is 'string'.
     'type'         => 'string',
@@ -122,12 +121,25 @@ $args1 = array( // Validate and sanitize the meta value.
     // Show in the WP REST API response. Default: false.
     'show_in_rest' => true,
 );
-register_meta( $object_type, 'my_meta_key', $args1 );
+register_meta( $object_type, 'my_meta_key', $meta_args );
 ```
 
 This example shows how to allow reading and writing of a post meta field. This will allow that field to be updated via a POST request to `wp-json/wp/v2/posts/<post-id>` or created along with a post via a POST request to `wp-json/wp/v2/posts/`.
 
 Note that for meta fields registered on custom post types, the post type must have `custom-fields` support. Otherwise the meta fields will not appear in the REST API.
+
+### Post Type Specific Meta
+WordPress 4.9.8 adds support for registering meta for a specific post type or taxonomy by using the `register_post_meta` and `register_term_meta` functions. They follow the same rules as `register_meta` but accept a post type or taxonomy as their first parameter instead of an object type. The following code would register the `my_meta_key` example above, but only for the `page` custom post type.
+
+```php
+$meta_args = array(
+    'type'         => 'string',
+    'description'  => 'A meta key associated with a string meta value.',
+    'single'       => true,
+    'show_in_rest' => true,
+);
+register_post_meta( 'page', 'my_meta_key', $meta_args );
+```
 
 
 ## Adding Links to the API Response
