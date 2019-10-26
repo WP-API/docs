@@ -36,34 +36,18 @@ You can also request specific deeply-nested properties within a complex meta obj
 ?_fields=meta.key_name.nested_prop.deeply_nested_prop,meta.key_name.other_nested_prop
 ```
 
-## `_jsonp`
 
-The API natively supports [JSONP](https://en.wikipedia.org/wiki/JSONP) responses to allow cross-domain requests for legacy browsers and clients. This parameter takes a JavaScript callback function which will be prepended to the data. This URL can then be loaded via a `<script>` tag.
+## `_embed`
 
-The callback function can contain any alphanumeric, `_` (underscore), or `.` (period) character. Callbacks which contain invalid characters will receive a HTTP 400 error response, and the callback will not be called.
+Most resources include links to related resources. For example, a post can link to the parent post, or to comments on the post. To reduce the number of HTTP requests required, clients may wish to fetch a resource as well as the linked resources. The `_embed` parameter indicates to the server that the response should include these embedded resources.
 
-[info]
-Modern browsers can use <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-Origin Resource Sharing (CORS)</a> preflight requests for cross-domain requests, but JSONP can be used to ensure support with all browsers.
+Embed mode is enabled if the `_embed` parameter is passed in the query string (GET parameter). This parameter does not require a value (i.e. `?_embed` is valid), however can be passed "1" as a value if required by a client library.
 
-<ul>
-  <li><a href="http://caniuse.com/#feat=cors">Browser Support</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">MDN Article on CORS</a></li>
-</ul>
-[/info]
+[info]For future compatibility, other values should not be passed.[/info]
 
-For example:
+Resources in embed mode will contain an additional `_embedded` key next to the `_links` key containing the linked resources. Only links with the `embeddable` parameter set to `true` will be embedded.
 
-```html
-<script>
-function receiveData( data ) {
-  // Do something with the data here.
-  // For demonstration purposes, we'll simply log it.
-  console.log( data );
-}
-</script>
-<script src="https://example.com/wp-json/?_jsonp=receiveData"></script>
-```
-
+For more about linking and embedding, see the [Linking and Embedding](https://developer.wordpress.org/rest-api/linking-and-embedding/) page.
 
 ## `_method` (or `X-HTTP-Method-Override` header)
 
@@ -84,7 +68,6 @@ POST /wp-json/wp/v2/posts/42 HTTP/1.1
 Host: example.com
 X-HTTP-Method-Override: DELETE
 ```
-
 
 ## `_envelope`
 
@@ -126,17 +109,30 @@ HTTP/1.1 200 OK
 }
 ```
 
+## `_jsonp`
 
-## `_embed`
+The API natively supports [JSONP](https://en.wikipedia.org/wiki/JSONP) responses to allow cross-domain requests for legacy browsers and clients. This parameter takes a JavaScript callback function which will be prepended to the data. This URL can then be loaded via a `<script>` tag.
 
-Most resources include links to related resources. For example, a post can link to the parent post, or to comments on the post. To reduce the number of HTTP requests required, clients may wish to fetch a resource as well as the linked resources. The `_embed` parameter indicates to the server that the response should include these embedded resources.
-
-Embed mode is enabled if the `_embed` parameter is passed in the query string (GET parameter). This parameter does not require a value (i.e. `?_embed` is valid), however can be passed "1" as a value if required by a client library.
+The callback function can contain any alphanumeric, `_` (underscore), or `.` (period) character. Callbacks which contain invalid characters will receive a HTTP 400 error response, and the callback will not be called.
 
 [info]
-For future compatibility, other values should not be passed.
+Modern browsers can use <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-Origin Resource Sharing (CORS)</a> preflight requests for cross-domain requests, but JSONP can be used to ensure support with all browsers.
+
+<ul>
+  <li><a href="http://caniuse.com/#feat=cors">Browser Support</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">MDN Article on CORS</a></li>
+</ul>
 [/info]
 
-Resources in embed mode will contain an additional `_embedded` key next to the `_links` key containing the linked resources. Only links with the `embeddable` parameter set to `true` will be embedded.
+For example:
 
-For more about linking and embedding, see the [Linking and Embedding](https://developer.wordpress.org/rest-api/linking-and-embedding/) page.
+```html
+<script>
+function receiveData( data ) {
+  // Do something with the data here.
+  // For demonstration purposes, we'll simply log it.
+  console.log( data );
+}
+</script>
+<script src="https://example.com/wp-json/?_jsonp=receiveData"></script>
+```
