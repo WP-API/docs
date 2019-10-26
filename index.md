@@ -1,19 +1,22 @@
 # REST API Handbook
 
-The WordPress REST API provides API endpoints for WordPress data types that allow developers to interact with sites remotely by sending and receiving [JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) objects. JSON is an open standard data format that is lightweight and human-readable, and looks like Objects do in JavaScript; hence the name. When you send content to or make a request to the API, the response will be returned in JSON. This enables developers to create, read and update WordPress content from client-side JavaScript or from external applications, even those written in languages beyond PHP.
+The WordPress REST API provides an interface for applications to interact with your WordPress site by sending and receiving data as [JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) objects. It is the foundation of the [WordPress Block Editor](https://developer.wordpress.org/block-editor/), and can likewise enable your theme, plugin or custom application to present new, powerful interfaces for managing and publishing your site content.
 
-[info]Looking for a list of the other APIs available within WordPress? You can find the <a href="https://codex.wordpress.org/WordPress_APIs">documentation here</a>.[/info]
+An API is an Application Programming Interface. REST, standing for "REpresentational State Transfer," is a set of concepts for modeling and accessing your application's data as interrelated objects and collections. The WordPress REST API provides REST endpoints (URLs) representing the posts, pages, taxonomies, and other built-in WordPress data types. Your application can send and receive JSON data to these endpoints to query, modify & create content on your site. JSON is an open standard data format that is lightweight and human-readable, and looks like Objects do in JavaScript. When you request content from or send content to the API, the response will also be returned in JSON. Because JSON is widely supported in many programming languages, developers can build WordPress applications in client-side JavaScript (like the block editor), as mobile apps, or as desktop or command line tools.
 
+[info]The REST API is just one of many APIs provided by WordPress. You can find the [documentation on these additional APIs here](https://codex.wordpress.org/WordPress_APIs).[/info]
 
 ## Why use the WordPress REST API
 
-The WordPress REST API makes it easier than ever to use WordPress in new and exciting ways, such as creating Single Page Applications on top of WordPress. You could create a plugin to provide an entirely new admin experiences for WordPress, or create a brand new interactive front-end experience.
+WordPress already provides a rich set of tools and interfaces for building sites, and you should not feel pressured to use the REST API if your site is already working the way you expect. You do not need to use the REST API to build a WordPress theme or plugin.
 
-You would not even have to write the applications in PHP: any programming language that can make HTTP requests and interpret JSON can interact with WordPress through the REST API, from Node.js to Java and beyond.
+However, if you do wish to write your theme, plugin, or external application as a client-side JavaScript application, or a standalone program in a language other than PHP, then your application will need a structured way to access content within your WordPress site. Any programming language which can make HTTP requests and interpret JSON can use the REST API to interact with WordPress, from PHP, Node.js, Go, and Java, to Swift, Kotlin, and beyond.
 
-The WordPress REST API can also serve as a strong replacement for the admin-ajax API in core. By using the REST API, you can more easily structure the way you want to get data into and out of WordPress. AJAX calls can be greatly simplified by using the REST API, enabling you to spend less time accessing the data you need and more time creating better user experiences.
+Using the WordPress REST API you can create a plugin to provide an entirely new admin experiences for WordPress, build a brand new interactive front-end experience, or bring your WordPress content into completely separate applications. Even if you're using vanilla JavaScript or jQuery within a theme or plugin the REST API provides a more predictable and structured way to interact with your site's content than [`admin-ajax`](https://codex.wordpress.org/AJAX_in_Plugins), enabling you to spend less time accessing the data you need and more time creating better user experiences.
 
-Our imagination is the only limit to what can be done with the WordPress REST API. The bottom line is, if you want a structured, extensible, and simple way to get data in and out of WordPress over HTTP, you probably want to use the REST API. For all of its simplicity the REST API can feel quite complex at first, and we will attempt to break it down into smaller components so that we can easily piece together the full puzzle.
+If you want a structured, extensible, and simple way to get data in and out of WordPress, you probably want to use the REST API.
+
+For all of its simplicity the REST API can feel quite complex at first, so in this handbook we will attempt to break it down into smaller components to explain each part of the full puzzle.
 
 
 ## Key Concepts
@@ -27,7 +30,6 @@ To get started with using the WordPress REST API we will break down some of the 
 * Controller Classes
 
 Each of these concepts play a crucial role in using and understanding the WordPress REST API. Let's briefly break them down so that we can later explore each in greater depth.
-
 
 ### Routes & Endpoints
 
