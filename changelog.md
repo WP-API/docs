@@ -2,6 +2,26 @@
 
 This document details changes to the WP REST API since its public release in version 4.7.0.
 
+## Version 5.0
+
+- New Routes & Endpoints
+  - Introduce `wp/v2/search` route implementing a new `WP_REST_Search_Controller`. Search types are handled by extending `WP_REST_Search_Handler`, and the active search type may be filtered using the `wp_rest_search_handlers` filter. [#39965](https://core.trac.wordpress.org/ticket/39965)
+  - Introduce `wp/v2/blocks` route to retrieve individual reusable blocks. Requires authentication. [#45098](https://core.trac.wordpress.org/ticket/45098)
+  - Introduce autosaves endpoints for all post types except `attachment`. Autosaves endpoints utilize the new `WP_REST_Autosaves_Controller` class, and saves only the `id`, `title`, `post_content` and `excerpt` for a post. Autosaves are enabled even for post types which do not support revisions. Requires authentication. [#43316](https://core.trac.wordpress.org/ticket/43316)
+  - Introduce `wp/v2/block-renderer/<name>` routes to return dynamically generated markup for server-rendered blocks. The `name` component of the URL is structured as `namespace/block-id`, _e.g._ `core/archives`. Requires authentication. [#45098](https://core.trac.wordpress.org/ticket/45098)
+  - Introduce `wp/v2/themes` endpoint to expose supported theme features to the block editor. This endpoint only returns data for the active theme. Requires authentication. [#45016](https://core.trac.wordpress.org/ticket/45016)
+  - Introduce `wp/v2/types/wp_block` endpoint to expose block labels and capabilities relating to the new hidden post type `wp_block`. [#45098](https://core.trac.wordpress.org/ticket/45098)
+- Additional Changes
+  - Custom taxonomies must specify `show_in_rest` as `true` to be visible in the block editor.
+  - Introduce `wp_is_json_request()` function to detemine if request is expecting a JSON response, and contextually silence PHP warnings if so. [r43730](https://core.trac.wordpress.org/changeset/43730)
+  - Requests to public, viewable post types specifying the `edit` context now return two additional properties, `permalink_temlate` and `generated_slug`. [r43720](https://core.trac.wordpress.org/changeset/43720)
+  - Respect the `?_fields=` filter when applying custom post properties with `register_rest_field`. [r43736](https://core.trac.wordpress.org/changeset/43736)
+  - Permit users with `read_private_posts` capability to query for private posts. [r43694](https://core.trac.wordpress.org/changeset/43694)
+  - Declare the `unfiltered_html` capability using JSON Hyper Schema `targetSchema`. [r43682](https://core.trac.wordpress.org/changeset/43682)
+  - Introduce `block_version` property on the post object to denote the presence and version of blocks within the post. [r43770](https://core.trac.wordpress.org/changeset/43770)
+  - Add new `rest_after_*` action hooks that fire after all write operations have completed. [r42864](https://core.trac.wordpress.org/changeset/42864)
+- See [The REST API in WordPress 5.0](https://make.wordpress.org/core/2018/12/06/the-rest-api-in-wordpress-5-0/) for further commentary.
+
 ## Version 4.9.8
 
 - Add an `object_subtype` argument to the `$args` parameter for `register_meta()`: this parameter allows developers to specify the object subtypes (_i.e._ specific post types or taxonomies) for which the registered meta will appear when `show_in_rest` is true. Introduce new wrapper methods `register_post_meta()` and `register_term_meta()` which are recommended instead of `register_meta` when working with post or term meta. [r43378](https://core.trac.wordpress.org/changeset/43378)

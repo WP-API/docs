@@ -18,7 +18,6 @@ If you want a structured, extensible, and simple way to get data in and out of W
 
 For all of its simplicity the REST API can feel quite complex at first, so in this handbook we will attempt to break it down into smaller components to explain each part of the full puzzle.
 
-
 ## Key Concepts
 
 To get started we will break down some of the key concepts and terms associated with the REST API: **Routes & Endpoints,** **Requests**, **Responses**, **Schema**, and **Controller Classes**. Each of these concepts play a crucial role in understanding, using, and extending the WordPress REST API, and each is explored in greater depth within this handbook.
@@ -54,7 +53,10 @@ Each endpoint requires a particular structure of input data, and returns data us
 
 Controller classes unify and coordinate all these various moving parts within a REST API response cycle. With a controller class you can manage the registration of routes & endpoints, handle requests, utilize schema, and generate API responses. A single class usually contains all of the logic for a given route, and a given route usually represents a specific type of data object within your WordPress site (like a custom post type or taxonomy).
 
-
 ## Next Steps
 
-For a comprehensive overview of the resources and routes available within the default WordPress REST API, review the [API reference](https://developer.wordpress.org/rest-api/reference/). To learn more about how to interact with API resources, you can read through the [Using the REST API section](https://developer.wordpress.org/rest-api/using-the-rest-api/). Once you're comfortable with the default workings of the default routes and methods you may also dive in to how to [extend the REST API](https://developer.wordpress.org/rest-api/extending-the-rest-api/) to expose new data or enhance and manipulate existing response objects.
+Learn more about how to interact with API resources and query for specific data in the [Using the REST API](https://developer.wordpress.org/rest-api/using-the-rest-api/) section.
+
+Once you're comfortable with the default workings of the default routes and methods, discover how to add new data to the API or enhance and manipulate existing response objects in the [Extending the REST API](https://developer.wordpress.org/rest-api/extending-the-rest-api/) section.
+
+For a comprehensive overview of the resources and routes available by default, review the [API reference](https://developer.wordpress.org/rest-api/reference/).
