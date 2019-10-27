@@ -24,6 +24,7 @@ This document details changes to the WP REST API since its public release in ver
 
 ## Version 4.9.8
 
+- Introduce [`?_fields=` global query parameter](https://developer.wordpress.org/rest-api/using-the-rest-api/global-parameters/#_fields) to limit the properties included in response objects to a specified subset. [#38131](https://core.trac.wordpress.org/ticket/38131)
 - Add an `object_subtype` argument to the `$args` parameter for `register_meta()`: this parameter allows developers to specify the object subtypes (_i.e._ specific post types or taxonomies) for which the registered meta will appear when `show_in_rest` is true. Introduce new wrapper methods `register_post_meta()` and `register_term_meta()` which are recommended instead of `register_meta` when working with post or term meta. [r43378](https://core.trac.wordpress.org/changeset/43378)
 
 
