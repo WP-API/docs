@@ -2,6 +2,17 @@
 
 This document details changes to the WP REST API since its public release in version 4.7.0.
 
+## Version 5.2
+- Fix undefined property notice when setting parent term to 0. [r44965](https://core.trac.wordpress.org/changeset/44965)
+- Remove unused `validate_user_can_query_private_statuses()` attachments controller method. [r44934](https://core.trac.wordpress.org/changeset/44934)
+- Ensure "Allow" header is returned for OPTIONS requests. [r44933](https://core.trac.wordpress.org/changeset/44933)
+- Always pass query arguments through `urlencode_deep()` in `get_items()` methods to ensure they are encoded correctly. [r45267](https://core.trac.wordpress.org/changeset/45267)
+
+## Version 5.1
+- Introduce `rest_post_search_query` filter to allow query arguments to be manipulated for a post search query. [r44482](https://core.trac.wordpress.org/changeset/44482)
+- Allow changing of letter casing in user email addresses. [r44641](https://core.trac.wordpress.org/changeset/44641)
+- Trigger a `_doing_it_wrong()` warning if `register_rest_route()` is called before the `rest_api_init` hook. [r44568](https://core.trac.wordpress.org/changeset/44568)
+
 ## Version 5.0
 
 - New Routes & Endpoints
@@ -84,4 +95,3 @@ This document details changes to the WP REST API since its public release in ver
 - Improve the `rest_*_collection_params` filter docs and fix the terms filter. [r39631](https://core.trac.wordpress.org/changeset/39631)
 - Allow schema `sanitization_callback` to be set to `null` to bypass built-in sanitization. [r39642](https://core.trac.wordpress.org/changeset/39642)
 - Change which users are shown in the users endpoint. [r39844](https://core.trac.wordpress.org/changeset/39844)
-
