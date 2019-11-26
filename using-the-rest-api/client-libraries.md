@@ -13,6 +13,8 @@ The [Backbone.js client](https://developer.wordpress.org/rest-api/backbone-javas
 
 [node-wpapi](http://wp-api.org/node-wpapi) is an isomorphic JavaScript client library for querying or writing to the REST API using an intuitive chaining syntax. It can be used with Node.js or with client-side JavaScript applications.
 
+[wp-headless/fetch](https://github.com/wp-headless/fetch) is another isomorphic JavaScript client library with cross-browser support, multiple transport layers and a tiny package footprint. Perfect for modern module based enviroments such as Webpack or Rollup.
+
 [ember-wordpress](https://github.com/oskarrough/ember-wordpress) provides a connection between Ember Data and the REST API
 
 
