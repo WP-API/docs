@@ -47,7 +47,7 @@ add_action( 'rest_api_init', 'prefix_register_my_comment_route' );
  */
 function prefix_get_comment_sample( $request ) {
 	$args = array(
-		'post_per_page' => 5,
+		'number' => 5,
 	);
 	$comments = get_comments( $args );
 
@@ -78,7 +78,7 @@ function prefix_rest_prepare_comment( $comment, $request ) {
 
 	// We are also renaming the fields to more understandable names.
 	if ( isset( $schema['properties']['id'] ) ) {
-		$comment_data['id'] = (int) $comment->comment_id;
+		$comment_data['id'] = (int) $comment->comment_ID;
 	}
 
 	if ( isset( $schema['properties']['author'] ) ) {
