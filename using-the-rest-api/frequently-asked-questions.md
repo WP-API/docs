@@ -36,6 +36,24 @@ $request->set_param( 'per_page', 20 );
 $response = rest_do_request( $request );
 ```
 
+## How do I use the _embed parameter on internal requests?
+
+Setting the `_embed` param on the request object won't work.
+
+```php
+$request = new WP_REST_Request( 'GET', '/wp/v2/posts' );
+$request->set_param( '_embed', 1 );
+$response = rest_do_request( $request );
+```
+
+Instead, manually call the [`WP_REST_Server::response_to_data`](https://developer.wordpress.org/reference/classes/wp_rest_server/) function.
+
+```php
+$request = new WP_REST_Request( 'GET', '/wp/v2/posts' );
+$response = rest_do_request( $req );
+$data = rest_get_server()->response_to_data( $response, true );
+var_dump( $data['_embedded'] );
+```
 
 ## What happened to the `?filter=` query parameter?
 
