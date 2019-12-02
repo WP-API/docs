@@ -20,5 +20,7 @@ The [Backbone.js client](https://developer.wordpress.org/rest-api/backbone-javas
 
 [wp-api-client](https://github.com/duncanjbrown/wp-api-client): a read-only REST API client written in Ruby.
 
+[wordpress_client](https://github.com/hemnet/wordpress_client): a super simple WordPress API client in Ruby
+
 ## C# / .NET
 [WordPressPCL](https://github.com/wp-net/WordPressPCL): a full REST API client written in C#.
