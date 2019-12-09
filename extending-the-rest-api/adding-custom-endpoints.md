@@ -358,7 +358,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    * Create one item from the collection
    *
    * @param WP_REST_Request $request Full data about the request.
-   * @return WP_Error|WP_REST_Request
+   * @return WP_Error|WP_REST_Response
    */
   public function create_item( $request ) {
     $item = $this->prepare_item_for_database( $request );
@@ -377,7 +377,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    * Update one item from the collection
    *
    * @param WP_REST_Request $request Full data about the request.
-   * @return WP_Error|WP_REST_Request
+   * @return WP_Error|WP_REST_Response
    */
   public function update_item( $request ) {
     $item = $this->prepare_item_for_database( $request );
@@ -396,7 +396,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
    * Delete one item from the collection
    *
    * @param WP_REST_Request $request Full data about the request.
-   * @return WP_Error|WP_REST_Request
+   * @return WP_Error|WP_REST_Response
    */
   public function delete_item( $request ) {
     $item = $this->prepare_item_for_database( $request );
