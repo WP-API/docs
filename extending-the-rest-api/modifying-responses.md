@@ -231,7 +231,7 @@ register_post_meta(
 ### Array Meta Type
 WordPress 5.3 also adds support for using the `array` [type](https://tools.ietf.org/html/draft-zyp-json-schema-04#section-3.5). Importantly `array` refers to a JSON array, this is equivalent to a numeric array in PHP.
 
-When registering `array` meta, setting the `type` to `array` is also not sufficient, you also need to inform WordPress of what the expected format is of the items in the array. This is done by writing a JSON Schema entry when registering the metadata.
+When registering `array` meta, setting the `type` to `array` is not sufficient, you need to inform WordPress of what the expected format is of the items in the array. This is done by writing a JSON Schema entry when registering the metadata.
 
 If you do not provide this value, `register_meta` will return false and issue the following warning: `When registering an "array" meta type to show in the REST API, you must specify the schema for each array item in "show_in_rest.schema.items".`
 
@@ -320,9 +320,9 @@ register_post_meta(
 
 ### Non-Single Metadata
 
-Non-single meta fields have an array of values per post, instead of one value per post. Each of those values is stored in a separate row in the postmeta table.
+Non-single meta fields have an array of values per object, instead of one value per object. Each of those values is stored in a separate row in the meta table.
 
-The `array` and `object` types can be used with non-single meta fields as well. For example, if the “release” meta key from earlier had single set to false, the following JSON data could be accepted.
+The `array` and `object` types can be used with non-single meta fields as well. For example, if the “release” meta key from earlier had `single` set to `false`, the following JSON data could be accepted.
 
 ```json
 {
@@ -341,9 +341,9 @@ The `array` and `object` types can be used with non-single meta fields as well. 
  }
  ```
  
-This would result in two postmeta database rows. The first containing `{ "version": "5.2", "artist": "Jaco" }` and the second containing `{ "version": "5.1", "artist": "Betty" }`.
+This would result in two meta database rows. The first containing `{ "version": "5.2", "artist": "Jaco" }` and the second containing `{ "version": "5.1", "artist": "Betty" }`.
 
-Similarly, the following data would be accepted for the “projects” example if it had set single to false.
+Similarly, the following data would be accepted for the “projects” example if it had set `single` to `false`.
 
 ```json
 {
@@ -361,7 +361,7 @@ Similarly, the following data would be accepted for the “projects” example i
  }
 ```
  
-This would result in two postmeta database rows. The first containing `[ "WordPress", "BuddyPress" ]` and the second containing `[ "bbPress" ]`.
+This would result in two meta database rows. The first containing `[ "WordPress", "BuddyPress" ]` and the second containing `[ "bbPress" ]`.
 
 ### Invalid Stored Values
 
