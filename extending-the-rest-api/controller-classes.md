@@ -106,7 +106,7 @@ class My_REST_Posts_Controller {
 			return rest_ensure_response( array() );
 		}
 
-		$response = prepare_item_for_response( $post );
+		$response = $this->prepare_item_for_response( $post, $request );
 
 		// Return all of our post response data.
 		return $response;
