@@ -2,6 +2,17 @@
 
 This document details changes to the WP REST API since its public release in version 4.7.0.
 
+## Version 5.3
+- Cache results of `get_item_schema` on controller instances for performance. [r45811](https://core.trac.wordpress.org/changeset/45811)
+- Permit embedding of the `self` link relation in the search endpoint. [r46434](https://core.trac.wordpress.org/changeset/46434)
+- Pass `null` as the post date property to reset post to initial "floating" date value. [r46249](https://core.trac.wordpress.org/changeset/46249)
+- Prevent deletion of post revisions. [r45812](https://core.trac.wordpress.org/changeset/45812)
+- Do not send response body if status is `204` or body is `null`. [r45809](https://core.trac.wordpress.org/changeset/45809)
+- Support `object` and `array` types in `register_meta()` schemas. [r45807](https://core.trac.wordpress.org/changeset/45807)
+- Support dot.nested hierarchical properties in `_fields` query parameter. [r46184](https://core.trac.wordpress.org/changeset/46184)
+- Return term resources in `edit` context after `PUT` or `POST` request. [r46098](https://core.trac.wordpress.org/changeset/46098)
+- Introduce `date_floating` property on status endpoint response objects. [r46252](https://core.trac.wordpress.org/changeset/46252)
+
 ## Version 5.2
 - Fix undefined property notice when setting parent term to 0. [r44965](https://core.trac.wordpress.org/changeset/44965)
 - Remove unused `validate_user_can_query_private_statuses()` attachments controller method. [r44934](https://core.trac.wordpress.org/changeset/44934)
