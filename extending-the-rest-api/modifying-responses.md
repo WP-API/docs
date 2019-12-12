@@ -160,26 +160,26 @@ For instance, the following code sample registers a post meta field called “re
 
 ```php
 register_post_meta(
-     'post',
-     'release',
-     array(
-         'single'       => true,
-         'type'         => 'object',
-         'show_in_rest' => array(
-             'schema' => array(
-                 'type'       => 'object',
-                 'properties' => array(
-                     'version' => array(
-                         'type' => 'string',
-                     ),
-                     'artist'  => array(
-                         'type' => 'string',
-                     ),
-                 ),
-             ),
-         ),
-     )
- );
+	'post',
+	'release',
+	array(
+		'single'       => true,
+		'type'         => 'object',
+		'show_in_rest' => array(
+			'schema' => array(
+				'type'       => 'object',
+				'properties' => array(
+					'version' => array(
+						'type' => 'string',
+					),
+					'artist'  => array(
+						'type' => 'string',
+					),
+				),
+			),
+		),
+	)
+);
 ```
 
 Notice that `show_in_rest` becomes an array instead of `true` and a Json Schema is specified for the `schema` key. Each property is then listed in the `properties` array. At a minimum, each property must specify a `type`, but any JSON Schema keyword that `rest_validate_value_from_schema` understands can be used as well.
@@ -187,44 +187,44 @@ Notice that `show_in_rest` becomes an array instead of `true` and a Json Schema 
 #### Additional Properties
 By default, the list of properties is a strict whitelist. If a property is sent in the request that is not listed, the REST API will return an error: `your_property is not a valid property of Object.`. If you don't know the property names ahead of time the `additionalProperties` keyword can be used. `additionalProperties` accepts a JSON Schema that is used to validate the unknown properties. For instance, to enforce that any additional properties are numbers, the following code can be used.
 
-```php
+```json
 {
-   "meta": {
-     "release": {
-       "version": "5.2",
-       "artist": "Jaco",
-       "unknown_field": 5.3
-     }
-   }
- }
- ```
+  "meta": {
+    "release": {
+      "version": "5.2",
+      "artist": "Jaco",
+      "unknown_field": 5.3
+    }
+  }
+}
+```
 
 ```php
 register_post_meta(
-     'post',
-     'version',
-     array(
-         'single'       => true,
-         'type'         => 'object',
-         'show_in_rest' => array(
-             'schema' => array(
-                 'type'       => 'object',
-                 'properties' => array(
-                     'version' => array(
-                         'type' => 'string',
-                     ),
-                     'artist'  => array(
-                         'type' => 'string',
-                     ),
-                 ),
-                 'additionalProperties' => array(
-                     'type' => 'number',
-                 ),
-             ),
-         ),
-     )
- );
- ```
+	'post',
+	'version',
+	array(
+		'single'       => true,
+		'type'         => 'object',
+		'show_in_rest' => array(
+			'schema' => array(
+				'type'                 => 'object',
+				'properties'           => array(
+					'version' => array(
+						'type' => 'string',
+					),
+					'artist'  => array(
+						'type' => 'string',
+					),
+				),
+				'additionalProperties' => array(
+					'type' => 'number',
+				),
+			),
+		),
+	)
+);
+```
  
 `additionalProperties` can be set to true to allow unknown properties of any format, but this is not recommended.
 
@@ -239,33 +239,33 @@ The following code sample registers a post meta field called “projects” that
 
 ```json
 {
-   "meta": {
-     "projects": [
-       "WordPress",
-       "BuddyPress"
-     ]
-   }
- }
- ```
+  "meta": {
+    "projects": [
+      "WordPress",
+      "BuddyPress"
+    ]
+  }
+}
+```
 
 ```php
 register_post_meta(
-     'post',
-     'projects',
-     array(
-         'single'       => true,
-         'type'         => 'array',
-         'show_in_rest' => array(
-             'schema' => array(
-                 'type'  => 'array',
-                 'items' => array(
-                     'type' => 'string',
-                 ),
-             ),
-         ),
-     )
- );
- ```
+	'post',
+	'projects',
+	array(
+		'single'       => true,
+		'type'         => 'array',
+		'show_in_rest' => array(
+			'schema' => array(
+				'type'  => 'array',
+				'items' => array(
+					'type' => 'string',
+				),
+			),
+		),
+	)
+);
+```
  
 Notice that again `show_in_rest` becomes an array instead of `true` and a JSON Schema is specified for the `schema` key.
 The `items` keyword is used to define the JSON schema to validate each array member against. It can be a scalar type like `string` or a complex type like `object`.
@@ -274,47 +274,47 @@ For instance, to accept the given JSON data, the following meta registration wou
 
 ```json
 {
-   "meta": {
-     "projects": [
-       {
-         "name": "WordPress",
-         "website": "https://wordpress.org"
-       },
-       {
-         "name": "BuddyPress",
-         "website": "https://buddypress.org"
-       }
-     ]
-   }
- }
+  "meta": {
+    "projects": [
+      {
+        "name": "WordPress",
+        "website": "https://wordpress.org"
+      },
+      {
+        "name": "BuddyPress",
+        "website": "https://buddypress.org"
+      }
+    ]
+  }
+}
 ```
 
 ```php
 register_post_meta(
-     'post',
-     'projects',
-     array(
-         'single'       => true,
-         'type'         => 'array',
-         'show_in_rest' => array(
-             'schema' => array(
-                 'items' => array(
-                     'type'       => 'object',
-                     'properties' => array(
-                         'name'    => array(
-                             'type' => 'string',
-                         ),
-                         'website' => array(
-                             'type'   => 'string',
-                             'format' => 'uri',
-                         ),
-                     ),
-                 ),
-             ),
-         ),
-     )
- );
- ```
+	'post',
+	'projects',
+	array(
+		'single'       => true,
+		'type'         => 'array',
+		'show_in_rest' => array(
+			'schema' => array(
+				'items' => array(
+					'type'       => 'object',
+					'properties' => array(
+						'name'    => array(
+							'type' => 'string',
+						),
+						'website' => array(
+							'type'   => 'string',
+							'format' => 'uri',
+						),
+					),
+				),
+			),
+		),
+	)
+);
+```
 
 [alert]The `array` type enforces that the array keys are sequential integers starting from 0. The array will be reindexed using `array_values`.[/alert]
 
@@ -326,20 +326,20 @@ The `array` and `object` types can be used with non-single meta fields as well. 
 
 ```json
 {
-   "meta": {
-     "release": [
-       {
-         "version": "5.2",
-         "artist": "Jaco"
-       },
-       {
-         "version": "5.1",
-         "artist": "Betty"
-       }
-     ]
-   }
- }
- ```
+  "meta": {
+    "release": [
+      {
+        "version": "5.2",
+        "artist": "Jaco"
+      },
+      {
+        "version": "5.1",
+        "artist": "Betty"
+      }
+    ]
+  }
+}
+```
  
 This would result in two meta database rows. The first containing `{ "version": "5.2", "artist": "Jaco" }` and the second containing `{ "version": "5.1", "artist": "Betty" }`.
 
@@ -347,18 +347,18 @@ Similarly, the following data would be accepted for the “projects” example i
 
 ```json
 {
-   "meta": {
-     "projects": [
-       [
-         "WordPress",
-         "BuddyPress"
-       ],
-       [
-         "bbPress"
-       ]
-     ]
-   }
- }
+  "meta": {
+    "projects": [
+      [
+        "WordPress",
+        "BuddyPress"
+      ],
+      [
+        "bbPress"
+      ]
+    ]
+  }
+}
 ```
  
 This would result in two meta database rows. The first containing `[ "WordPress", "BuddyPress" ]` and the second containing `[ "bbPress" ]`.
