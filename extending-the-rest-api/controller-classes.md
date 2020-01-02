@@ -169,7 +169,12 @@ class My_REST_Posts_Controller {
 	 * @param WP_REST_Request $request Current request.
 	 */
 	public function get_item_schema( $request ) {
-		$schema = array(
+		if ( $this->schema ) {
+			// Since WordPress 5.3, the schema can be cached in the $schema property.
+			return $this->schema;
+		}
+	
+		$this->schema = array(
 			// This tells the spec of JSON Schema we are using which is draft 4.
 			'$schema'              => 'http://json-schema.org/draft-04/schema#',
 			// The title property marks the identity of the resource.
@@ -190,7 +195,7 @@ class My_REST_Posts_Controller {
 			),
 		);
 
-		return $schema;
+		return $this->schema;
 	}
 
 	// Sets up the proper HTTP status code for authorization.
