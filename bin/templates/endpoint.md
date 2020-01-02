@@ -7,11 +7,6 @@
 	<div class="primary">
 		{{ include('reference-parts/schema.html') }}
 	</div>
-	<div class="secondary">
-		<h3>Example Request</h3>
-
-		<code>$ curl -X OPTIONS -i https://example.com/wp-json{{ attribute( routes | first, 'nicename' ) }}</code>
-	</div>
 </section>
 
 <div>

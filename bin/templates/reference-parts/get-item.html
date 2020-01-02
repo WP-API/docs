@@ -1,15 +1,16 @@
 <section class="route">
 	<div class="primary">
 		<h2>Retrieve a {{ name | capitalize }}</h2>
-		{{ include( 'reference-parts/args-list.html', { args: endpoint.args, link: false } ) }}
-	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
+
+		<h3>Definition & Example Request</h3>
 
 		<code>GET {{ route.nicename }}</code>
 
-		<h3>Example Request</h3>
+		<p>Query this endpoint to retrieve a specific {{ name }} record.</p>
 
 		<code>$ curl https://example.com/wp-json{{ route.nicename }}</code>
+	</div>
+	<div class="secondary">
+		{{ include( 'reference-parts/args-list.html', { args: endpoint.args, link: false } ) }}
 	</div>
 </section>
