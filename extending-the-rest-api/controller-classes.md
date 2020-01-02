@@ -1,14 +1,50 @@
 # Controller Classes
 
 ## Overview
-When writing endpoints it can be helpful to use a controller class to handle the functionality of an endpoint. Controller classes will provide a standard way to interact with the API and also a more maintainable way to interact with the API. WordPress's current minimum PHP version is 5.2, if you are developing endpoints that will be used by the WordPress ecosystem at large you should consider supporting WordPress's minimum requirements.
 
-PHP 5.2 does not have namespacing built into it. This means that every function you declare will be in the global scope. If you decide to use a common function name for endpoints like `get_items()` and another plugin also registers that function, PHP will fail with a fatal error. This is because the function `get_items()` is being declared twice. By wrapping our endpoints we can avoid these naming conflicts and also have a consistent way to interact with the API.
+When you register a new REST route you usually need to specify a number of callback methods to specify exactly how a request is fulfilled, how permissions checks are applied, and how the schema for your resource gets generated. While it is possible to declare all of these methods in an ordinary PHP file without any wrapping namespace or class, all functions declared in that manner coexist in the same global scope. If you decide to use a common function name for your endpoint logic like `get_items()` and another plugin (or another endpoint in your own plugin) also registers a function with that same name, PHP will fail with a fatal error because the function `get_items()` is being declared twice.
 
+You can avoid this issue by naming your callback functions using a unique prefix such as `myplugin_myendpoint_` to avoid any potential conflics:
+
+```php
+function myplugin_myendpoint_register_routes() { /* ... */ }
+function myplugin_myendpoint_get_item() { /* ... */ }
+function myplugin_myendpoint_get_item_schema() { /* ... */ }
+function myplugin_myendpoint_get_item_permissions_check() { /* ... */ }
+function myplugin_myendpoint_get_items() { /* ... */ }
+function myplugin_myendpoint_get_items_permissions_check() { /* ... */ }
+function myplugin_myendpoint_prepare_item_for_response() { /* ... */ }
+
+add_action( 'rest_api_init', 'myplugin_register_routes' );
+```
+
+You may already be familiar with this approach because it is commonly used within theme `functions.php` files. However these prefixes are unnecessarily verbose, and several better options exist to group and encapsulate your endpoint's logic in a more maintainable way.
+
+### Namespaces _vs_ Classes
+
+WordPress currently requires PHP 5.6 or greater. PHP 5.6 supports <a href="https://www.php.net/manual/en/language.namespaces.rationale.php">namespaces</a>, which provide an easy way to encapsulate your endpoint's functionality. By declaring a `namespace` at the top of your endpoint's PHP file, all methods within that namespace will be declared within that namespace and will no longer conflict with global functions. You may then use shorter, more-readable names for your endpoint callbacks:
+
+```php
+namespace MyPlugin\API\MyEndpoint;
+
+function register_routes() { /* ... */ }
+function get_item() { /* ... */ }
+function get_item_schema() { /* ... */ }
+function get_item_permissions_check() { /* ... */ }
+function get_items() { /* ... */ }
+function get_items_permissions_check() { /* ... */ }
+function prepare_item_for_response() { /* ... */ }
+
+add_action( 'rest_api_init', __NAMESPACE__ . '\\register_routes' );
+```
+
+Before WordPress required a version of PHP which supported namespaces, it was common to declare these related methods in a controller class. Namespaces and controller classes are both robust, maintainable ways to group your endpoint code, and neither is recommended above the other. You may use the approach that best matches the rest of your plugin's codebase.
+
+The remainder of this page details how to write your own controller class.
 
 ## Controllers
 
-Controllers typically do one thing; they receive input, and generate output. For the WordPress REST API our controllers will handle request input as `WP_REST_Request` objects and generate response output as `WP_REST_Response` objects. Let's look at an example controller class:
+Controllers typically do one thing: receive input, and generate output. For the WordPress REST API our controllers will handle request input as `WP_REST_Request` objects and generate response output as `WP_REST_Response` objects. Let's look at an example controller class:
 
 ```php
 class My_REST_Posts_Controller {
