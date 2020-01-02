@@ -8,33 +8,37 @@ This page provides solutions to some common questions and problems that may aris
 You should not disable the REST API, because doing so would break future WordPress Admin functionality that will depend on the API being active. However, you may use a filter to require that API consumers be authenticated, which effectively prevents anonymous external access. See below for more information.
 
 
-## Require Authentication for All Reque&#8203;sts
+## Require Authentication for All Requests
 
 You can require authentication for all REST API requests by adding an `is_user_logged_in` check to the [`rest_authentication_errors`](https://developer.wordpress.org/reference/hooks/rest_authentication_errors/) filter.
 
-Note: The incoming callback parameter can be either null, WP_Error or a boolean. The type of the parameter indicates the state of authentication:
+Note: The incoming callback parameter can be either `null`, a `WP_Error`, or a boolean. The type of the parameter indicates the state of authentication:
 
- * null: indicates another authentication method should check instead (implies no authentication was performed before)
- * boolean: indicates a previous authentication method check was performed. Boolean true would indicate successfully and the user is authenticated. Boolean false not.
- * WP_Error: Some kind of error was encountered.
+ * `null`: no authentication check has yet been performed, and the hook callback may apply custom authentication logic.
+ * boolean: indicates a previous authentication method check was performed. Boolean `true` indicates the request was successfully authenticated, and boolean `false` indicates authentication failed.
+ * `WP_Error`: Some kind of error was encountered.
 
 ```php
 add_filter( 'rest_authentication_errors', function( $result ) {
-   
-   // A previous authentication check has been performed.
-   // No need for us to do it again. Return incoming parameter and be done with it.
-   if ( true === $result || is_wp_error( $result ) ) {
+    // If a previous authentication check was applied,
+    // pass that result along without modification.
+    if ( true === $result || is_wp_error( $result ) ) {
         return $result;
-   }
+    }
 
-   // No authentication performed yet.
-   // Check if the user is NOT logged in and return an error
-   if ( ! is_user_logged_in() ) {
-        return new WP_Error( 'rest_not_logged_in', 'You are not currently logged in.', array( 'status' => 401 ) );
-   }
+    // No authentication has been performed yet.
+    // Return an error if user is not logged in.
+    if ( ! is_user_logged_in() ) {
+        return new WP_Error(
+            'rest_not_logged_in',
+            __( 'You are not currently logged in.' ),
+            array( 'status' => 401 )
+        );
+    }
 
-   return $result;
-   
+    // Our custom authentication check should have no effect
+    // on logged-in requests
+    return $result;
 });
 ```
 
