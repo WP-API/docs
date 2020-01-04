@@ -9,10 +9,20 @@
         "parent": null,
         "markdown_source": "https://github.com/WP-API/docs/blob/master/extending-the-rest-api.md"
     },
+    "frequently-asked-questions": {
+        "slug": "frequently-asked-questions",
+        "parent": null,
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/frequently-asked-questions.md"
+    },
     "index": {
         "slug": "index",
         "parent": null,
         "markdown_source": "https://github.com/WP-API/docs/blob/master/index.md"
+    },
+    "key-concepts": {
+        "slug": "key-concepts",
+        "parent": null,
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/key-concepts.md"
     },
     "reference": {
         "slug": "reference",
@@ -173,11 +183,6 @@
         "slug": "discovery",
         "parent": "using-the-rest-api",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/using-the-rest-api/discovery.md"
-    },
-    "using-the-rest-api/frequently-asked-questions": {
-        "slug": "frequently-asked-questions",
-        "parent": "using-the-rest-api",
-        "markdown_source": "https://github.com/WP-API/docs/blob/master/using-the-rest-api/frequently-asked-questions.md"
     },
     "using-the-rest-api/global-parameters": {
         "slug": "global-parameters",
