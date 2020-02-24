@@ -2,7 +2,7 @@
 
 The REST API includes a JavaScript/Backbone client library.
 
-The library provides an interface for the WP REST API by providing Backbone Models and Collections for all endpoints exposed the API Schema.
+The library provides an interface for the WP REST API by providing Backbone Models and Collections for all endpoints exposed through the API Schema.
 
 
 ## Using
