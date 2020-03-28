@@ -43,7 +43,7 @@ Most resources include links to related resources. For example, a post can link 
 
 Embed mode is enabled if the `_embed` parameter is passed in the query string (GET parameter). This parameter does not require a value (i.e. `?_embed` is valid), however can be passed "1" as a value if required by a client library.
 
-[info]For future compatibility, other values should not be passed.[/info]
+As of WordPress 5.4, the resources to embed can be limited by passing a list link relations to the `_embed` parameter. For example, `/wp/v2/posts?_embed=author,replies` will only embed the post's author and comments.
 
 Resources in embed mode will contain an additional `_embedded` key next to the `_links` key containing the linked resources. Only links with the `embeddable` parameter set to `true` will be embedded.
 
