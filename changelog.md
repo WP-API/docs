@@ -2,6 +2,24 @@
 
 This document details changes to the WP REST API since its public release in version 4.7.0.
 
+## Version 5.4
+- Introduce selective link embedding. [r47224](https://core.trac.wordpress.org/changeset/47224)
+- Fix PHP warning in the comments controller if the commented-upon post type does not exist. [r47036](https://core.trac.wordpress.org/changeset/47036]
+- Add `_doing_it_wrong` warning when registering an "array" setting without an items schema. [r47325](https://core.trac.wordpress.org/changeset/47325)
+- Correctly infer empty objects passed via query parameters. [r47362](https://core.trac.wordpress.org/changeset/47362)
+- Add a "tax_relation" parameter to the posts collection. [r46646](https://core.trac.wordpress.org/changeset/46646)
+- Allow meta to be set when creating a new media record via REST. [r47261](https://core.trac.wordpress.org/changeset/47261)
+- Permit access to the themes controller if the user can edit any post type. [r47361](https://core.trac.wordpress.org/changeset/47361).
+- Add support for the `REDIRECT_HTTP_AUTHORIZATION` header. [r47239](https://core.trac.wordpress.org/changeset/47239)
+- Add support for filtering the posts controller's schema. [r47265](https://core.trac.wordpress.org/changeset/47265)
+- Add `_doing_it_wrong` warning if a taxonomy's specified `rest_base` is already in use by a different resource. [r47037](https://core.trac.wordpress.org/changeset/47037)
+- Improve routing performance by matching REST API routes on namespace before performing regex checks. [r47260](https://core.trac.wordpress.org/changeset/47260)
+- Don't assume all item schemas have properties. [r47328](https://core.trac.wordpress.org/changeset/47328)
+- Imrove performance by reusing previously-generated embedded objects when building collection response. [r47138](https://core.trac.wordpress.org/changeset/47138)
+- List all core theme feature support details in `/themes` endpoint response. [r47258](https://core.trac.wordpress.org/changeset/47528)
+- Fix links format in `OPTIONS` requests for non-variable routes. [r47326](https://core.trac.wordpress.org/changeset/47326)
+- Apply all relevant block rendering filters when rendering block previews. [r47360](https://core.trac.wordpress.org/changeset/47360)
+
 ## Version 5.3
 - Cache results of `get_item_schema` on controller instances for performance. [r45811](https://core.trac.wordpress.org/changeset/45811)
 - Permit embedding of the `self` link relation in the search endpoint. [r46434](https://core.trac.wordpress.org/changeset/46434)
