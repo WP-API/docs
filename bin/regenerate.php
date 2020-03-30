@@ -33,6 +33,13 @@ function update_route( $route ) {
 	return $route;
 }
 
+/**
+ * Ingest a title string and ensure any kebab-casing or wp_-prefixing is removed.
+ */
+function cleanup_name( string $name ) : string {
+	return preg_replace( '/WP_/i', '', implode( ' ', explode( '-', $name ) ) );
+}
+
 function add_simple_schemas() {
 	$objects = [];
 
@@ -68,6 +75,12 @@ function add_simple_schemas() {
 				$plural = 'media';
 				break;
 			
+			case 'rendered-block':
+				$key = 'rendered-blocks';
+				$title = 'Rendered Block';
+				$plural = 'Rendered Blocks';
+				break;
+			
 			case 'settings':
 				$key = 'settings';
 				$title = 'Site Setting';
@@ -84,21 +97,21 @@ function add_simple_schemas() {
 				break;
 			
 			case 'wp_block':
-				$key = 'block';
+				$key = 'blocks';
 				$title = 'Editor Block';
 				$plural = 'Editor Blocks';
 				break;
 			
-			case 'rendered-block':
-				$key = 'rendered-block';
-				$title = 'Rendered Block';
-				$plural = 'Rendered Blocks';
+			case 'wp_block-revision':
+				$key = 'block-revisions';
+				$title = 'Block Revision';
+				$plural = 'Block Revisions';
 				break;
 
 			default:
-				// Convert hyphens to spaces ("kebab-case" to "kebab case").
-				// Remove WP_ prefixes.
-				$title = preg_replace( '/WP_/i', '', implode( ' ', explode( '-', $title ) ) );
+				// Fallback title cleaning logic, to remove kebab-casing, etcetera.
+				$title = cleanup_name( $title );
+				$plural = cleanup_name( $plural );
 		}
 
 		if ( ! isset( $objects[ $key ] ) ) {
@@ -108,6 +121,10 @@ function add_simple_schemas() {
 				'routes' => [ $route_nicename => update_route( $route ) ],
 				'schema' => $route['schema'],
 			];
+			print_r( "$key\n" );
+			if ( $key === 'block-revisions' ) {
+				print_r( array_merge( $objects[ $key ], [ 'routes' => null, 'schema' => null ] ) );
+			}
 		} else {
 			$objects[ $key ]['routes'][ $route_nicename ] = update_route( $route );
 		}
