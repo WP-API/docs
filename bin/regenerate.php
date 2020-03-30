@@ -121,10 +121,6 @@ function add_simple_schemas() {
 				'routes' => [ $route_nicename => update_route( $route ) ],
 				'schema' => $route['schema'],
 			];
-			print_r( "$key\n" );
-			if ( $key === 'block-revisions' ) {
-				print_r( array_merge( $objects[ $key ], [ 'routes' => null, 'schema' => null ] ) );
-			}
 		} else {
 			$objects[ $key ]['routes'][ $route_nicename ] = update_route( $route );
 		}
