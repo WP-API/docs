@@ -15,5 +15,5 @@ The reference section is created by parsing the output of a site's schema as ret
 - Create a local WordPress environment (always use the current or Release Candidate version of WordPress) using the local environment tool of your choice.
 - Edit `/etc/hosts` to map the domain `example.com` to the IP of that WordPress instance, and ensure the site is configured to run at `example.com`.
 - Run `composer install` in this project's root directory to install dependencies. 
-- Run `bin/regenerate.php` in this project's root directory to run the asset regeneration script.
+- Run `composer run-script regenerate` in this project's root directory to run the asset regeneration script.
 - Use `git status` and `git diff` to validate that the files were updated as expected.
