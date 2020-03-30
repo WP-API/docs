@@ -55,6 +55,9 @@ function add_simple_schemas() {
 		}
 		$key = $plural;
 
+		echo "\n";
+		print_r( $title );
+
 		# overrides
 		switch ( $title ) {
 			case 'attachment':
@@ -62,6 +65,12 @@ function add_simple_schemas() {
 				$title = 'Media Item';
 				$plural = 'media';
 				break;
+			
+			case 'settings':
+				$key = 'settings';
+				$title = 'Site Setting';
+				$plural = 'Site Settings';
+			break;
 
 			case 'status':
 				$plural = 'statuses';
@@ -71,11 +80,28 @@ function add_simple_schemas() {
 			case 'type':
 				$key = 'post-types';
 				break;
+			
+			case 'wp_block':
+				$key = 'block';
+				$title = 'Editor Block';
+				$plural = 'Editor Blocks';
+				break;
+			
+			case 'rendered-block':
+				$key = 'rendered-block';
+				$title = 'Rendered Block';
+				$plural = 'Rendered Blocks';
+				break;
+
+			default:
+				// Convert hyphens to spaces ("kebab-case" to "kebab case").
+				// Remove WP_ prefixes.
+				$title = preg_replace( '/WP_/i', '', implode( ' ', explode( '-', $title ) ) );
 		}
 
 		if ( ! isset( $objects[ $key ] ) ) {
 			$objects[ $key ] = [
-				'name' => $title,
+				'name'   => $title,
 				'plural' => $plural,
 				'routes' => [ $route_nicename => update_route( $route ) ],
 				'schema' => $route['schema'],
