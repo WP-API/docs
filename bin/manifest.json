@@ -74,6 +74,16 @@
         "parent": "extending-the-rest-api",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/extending-the-rest-api/schema.md"
     },
+    "reference/block-revisions": {
+        "slug": "block-revisions",
+        "parent": "reference",
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/block-revisions.md"
+    },
+    "reference/blocks": {
+        "slug": "blocks",
+        "parent": "reference",
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/blocks.md"
+    },
     "reference/categories": {
         "slug": "categories",
         "parent": "reference",
@@ -153,16 +163,6 @@
         "slug": "users",
         "parent": "reference",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/users.md"
-    },
-    "reference/wp_block-revisions": {
-        "slug": "wp_block-revisions",
-        "parent": "reference",
-        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/wp_block-revisions.md"
-    },
-    "reference/wp_blocks": {
-        "slug": "wp_blocks",
-        "parent": "reference",
-        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/wp_blocks.md"
     },
     "using-the-rest-api/authentication": {
         "slug": "authentication",

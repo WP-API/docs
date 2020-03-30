@@ -6,13 +6,13 @@
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist for an attachment object.</p>
+<p>The schema defines all the fields that exist within a Media Item record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
 <table class="attributes">
 			<tr id="schema-date">
 			<td>
 				<code>date</code><br />
 				<span class="type">
-					string,
+					Array,
 													datetime ([details](https://core.trac.wordpress.org/ticket/41032))
 										</span>
 			</td>
@@ -25,7 +25,7 @@
 			<td>
 				<code>date_gmt</code><br />
 				<span class="type">
-					string,
+					Array,
 													datetime ([details](https://core.trac.wordpress.org/ticket/41032))
 										</span>
 			</td>
@@ -322,19 +322,37 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
+			<tr id="schema-missing_image_sizes">
+			<td>
+				<code>missing_image_sizes</code><br />
+				<span class="type">
+					array				</span>
+			</td>
+			<td>
+				<p>List of the missing image sizes of the attachment.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
 	</table>
 
-	</div>
-	<div class="secondary">
-		<h3>Example Request</h3>
-
-		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/media</code>
 	</div>
 </section>
 
 <div><section class="route">
 	<div class="primary">
 		<h2>List Media</h2>
+		<p>Query this endpoint to retrieve a collection of media. The response you receive can be controlled and filtered using the URL query parameters below.</p>
+
+		<h3>Definition</h3>
+
+		<code>GET /wp/v2/media</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/media</code>
+	</div>
+	<div class="secondary">
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -500,7 +518,7 @@
 									</td>
 				<td>
 											<p>Limit result set to attachments of a particular media type.</p>
-																										<p>One of: <code>image</code>, <code>video</code>, <code>audio</code>, <code>application</code></p>
+																										<p>One of: <code>image</code>, <code>video</code>, <code>text</code>, <code>application</code>, <code>audio</code></p>
 									</td>
 			</tr>
 					<tr>
@@ -514,19 +532,10 @@
 			</table>
 
 	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/media</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/media</code>
-	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Create a Media item</h2>
+		<h2>Create a Media Item</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -655,7 +664,17 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Media item</h2>
+		<h2>Retrieve a Media Item</h2>
+
+		<h3>Definition & Example Request</h3>
+
+		<code>GET /wp/v2/media/&lt;id&gt;</code>
+
+		<p>Query this endpoint to retrieve a specific Media Item record.</p>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/media/&lt;id&gt;</code>
+	</div>
+	<div class="secondary">
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -681,19 +700,10 @@
 			</table>
 
 	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/media/&lt;id&gt;</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/media/&lt;id&gt;</code>
-	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Update a Media item</h2>
+		<h2>Update a Media Item</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -834,7 +844,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Delete a Media item</h2>
+		<h2>Delete a Media Item</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -850,7 +860,7 @@
 											<code>force</code><br />
 									</td>
 				<td>
-											<p>Whether to bypass trash and force deletion.</p>
+											<p>Whether to bypass Trash and force deletion.</p>
 																								</td>
 			</tr>
 			</table>

@@ -6,13 +6,13 @@
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist for a theme object.</p>
+<p>The schema defines all the fields that exist within a theme record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
 <table class="attributes">
 			<tr id="schema-theme_supports">
 			<td>
 				<code>theme_supports</code><br />
 				<span class="type">
-					array				</span>
+					object				</span>
 			</td>
 			<td>
 				<p>Features supported by this theme.</p>
@@ -23,16 +23,22 @@
 	</table>
 
 	</div>
-	<div class="secondary">
-		<h3>Example Request</h3>
-
-		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/themes</code>
-	</div>
 </section>
 
 <div><section class="route">
 	<div class="primary">
 		<h2>List Themes</h2>
+		<p>Query this endpoint to retrieve a collection of themes. The response you receive can be controlled and filtered using the URL query parameters below.</p>
+
+		<h3>Definition</h3>
+
+		<code>GET /wp/v2/themes</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/themes</code>
+	</div>
+	<div class="secondary">
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -86,15 +92,6 @@
 			</tr>
 			</table>
 
-	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/themes</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/themes</code>
 	</div>
 </section>
 </div>

@@ -1,6 +1,11 @@
 {
+    "name": "wp-api/docs",
+    "description": "The WordPress REST API Handbook",
     "require": {
         "rmccue/requests": "^1.7",
-        "twig/twig": "~1.0"
+        "twig/twig": "^3.0"
+    },
+    "scripts": {
+        "regenerate": "php bin/regenerate.php"
     }
 }
