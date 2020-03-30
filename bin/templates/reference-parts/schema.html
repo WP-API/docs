@@ -1,5 +1,5 @@
 <h2>Schema</h2>
-<p>The schema defines all the fields that exist within a {{ schema.title }} record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
+<p>The schema defines all the fields that exist within a {{ name }} record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
 <table class="attributes">
 	{% for key, property in schema.properties %}
 		<tr id="schema-{{ key }}">

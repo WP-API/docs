@@ -1,7 +1,7 @@
 ---
 ---
 
-# {{ plural | capitalize }}
+# {{ plural | title }}
 
 <section class="route">
 	<div class="primary">
