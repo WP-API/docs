@@ -3,6 +3,11 @@
 
 require dirname( __DIR__ ) . '/vendor/autoload.php';
 
+// This assumes you have a local WP VM running the latest stable WP, mapped to
+// use the domain name example.com using /etc/hosts. http://demo.wp-api.org is
+// also available, though may be outdated.
+const SITE_URL = 'http://example.com';
+
 function update_route( $route ) {
 	foreach ( $route['endpoints'] as &$endpoint ) {
 		if ( in_array( 'POST', $endpoint['methods'] ) ) {
@@ -26,7 +31,8 @@ function update_route( $route ) {
 function add_simple_schemas() {
 	$objects = [];
 
-	$response = Requests::get( 'http://demo.wp-api.org/wp-json/?context=help' );
+	$response = Requests::get( SITE_URL . '?rest_route=/&context=help' );
+
 	$parsed_data = json_decode( $response->body, true );
 
 	foreach ( $parsed_data['routes'] as $key => $route ) {
@@ -83,7 +89,7 @@ function add_simple_schemas() {
 }
 
 function add_terms_schema() {
-	$response = Requests::options( 'http://demo.wp-api.org/wp-json/wp/v2/terms/category' );
+	$response = Requests::options( SITE_URL . '?rest_route=/wp/v2/terms/category' );
 	$file = fopen( '_data/terms.json', 'w' );
 	$parsed_data = json_decode( $response->body );
 
