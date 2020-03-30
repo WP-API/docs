@@ -1,6 +1,11 @@
 #!/usr/bin/env php
 <?php
 
+namespace WPAPI\Docs\Regenerate;
+
+use Requests;
+use Twig;
+
 require dirname( __DIR__ ) . '/vendor/autoload.php';
 
 // This assumes you have a local WP VM running the latest stable WP, mapped to
@@ -54,9 +59,6 @@ function add_simple_schemas() {
 			$plural = substr( $title, -1 ) === 'y' ? substr( $title, 0, -1 ) . 'ies' : $title . 's';
 		}
 		$key = $plural;
-
-		echo "\n";
-		print_r( $title );
 
 		# overrides
 		switch ( $title ) {
@@ -130,12 +132,11 @@ function twig() {
 		return $twig;
 	}
 
-	$loader = new Twig_Loader_Filesystem( __DIR__ . '/templates' );
+	$loader = new Twig\Loader\FilesystemLoader( __DIR__ . '/templates' );
 
-	$twig = new Twig_Environment( $loader, array(
+	$twig = new Twig\Environment( $loader, [
 	    'cache' => false,
-	    // 'cache' => __DIR__ . '/cache',
-	) );
+	] );
 	return $twig;
 }
 
