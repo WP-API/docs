@@ -1,12 +1,12 @@
 ---
 ---
 
-# Post-revisions
+# Post Revisions
 
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist for a post-revision object.</p>
+<p>The schema defines all the fields that exist within a post revision record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
 <table class="attributes">
 			<tr id="schema-author">
 			<td>
@@ -152,16 +152,22 @@
 	</table>
 
 	</div>
-	<div class="secondary">
-		<h3>Example Request</h3>
-
-		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/posts/&lt;parent&gt;/revisions</code>
-	</div>
 </section>
 
 <div><section class="route">
 	<div class="primary">
-		<h2>List Post-revisions</h2>
+		<h2>List Post Revisions</h2>
+		<p>Query this endpoint to retrieve a collection of post revisions. The response you receive can be controlled and filtered using the URL query parameters below.</p>
+
+		<h3>Definition</h3>
+
+		<code>GET /wp/v2/posts/&lt;parent&gt;/revisions</code>
+
+		<h3>Example Request</h3>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;parent&gt;/revisions</code>
+	</div>
+	<div class="secondary">
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -262,19 +268,20 @@
 			</table>
 
 	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/posts/&lt;parent&gt;/revisions</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;parent&gt;/revisions</code>
-	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Post-revision</h2>
+		<h2>Retrieve a Post Revision</h2>
+
+		<h3>Definition & Example Request</h3>
+
+		<code>GET /wp/v2/posts/&lt;parent&gt;/revisions/&lt;id&gt;</code>
+
+		<p>Query this endpoint to retrieve a specific post revision record.</p>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;parent&gt;/revisions/&lt;id&gt;</code>
+	</div>
+	<div class="secondary">
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -308,19 +315,10 @@
 			</table>
 
 	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/posts/&lt;parent&gt;/revisions/&lt;id&gt;</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;parent&gt;/revisions/&lt;id&gt;</code>
-	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Delete a Post-revision</h2>
+		<h2>Delete a Post Revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -362,7 +360,17 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Post-revision</h2>
+		<h2>Retrieve a Post Revision</h2>
+
+		<h3>Definition & Example Request</h3>
+
+		<code>GET /wp/v2/posts/&lt;id&gt;/autosaves</code>
+
+		<p>Query this endpoint to retrieve a specific post revision record.</p>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;id&gt;/autosaves</code>
+	</div>
+	<div class="secondary">
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -388,19 +396,10 @@
 			</table>
 
 	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/posts/&lt;id&gt;/autosaves</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;id&gt;/autosaves</code>
-	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Create a Post-revision</h2>
+		<h2>Create a Post Revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -570,7 +569,17 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Post-revision</h2>
+		<h2>Retrieve a Post Revision</h2>
+
+		<h3>Definition & Example Request</h3>
+
+		<code>GET /wp/v2/posts/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
+
+		<p>Query this endpoint to retrieve a specific post revision record.</p>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
+	</div>
+	<div class="secondary">
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -603,15 +612,6 @@
 			</tr>
 			</table>
 
-	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/posts/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
 	</div>
 </section>
 </div>

@@ -1,12 +1,12 @@
 ---
 ---
 
-# wp_block Revisions
+# Block Revisions
 
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist for a wp_block-revision object.</p>
+<p>The schema defines all the fields that exist within a Block Revision record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
 <table class="attributes">
 			<tr id="schema-author">
 			<td>
@@ -155,16 +155,21 @@
 	</table>
 
 	</div>
-	<div class="secondary">
-		<h3>Example Request</h3>
-
-		<code>$ curl -X OPTIONS -i https://example.com/wp-json/wp/v2/blocks/&lt;id&gt;/autosaves</code>
-	</div>
 </section>
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a wp_block-revision</h2>
+		<h2>Retrieve a Block Revision</h2>
+
+		<h3>Definition & Example Request</h3>
+
+		<code>GET /wp/v2/blocks/&lt;id&gt;/autosaves</code>
+
+		<p>Query this endpoint to retrieve a specific Block Revision record.</p>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;id&gt;/autosaves</code>
+	</div>
+	<div class="secondary">
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -190,19 +195,10 @@
 			</table>
 
 	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/blocks/&lt;id&gt;/autosaves</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;id&gt;/autosaves</code>
-	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Create a wp_block-revision</h2>
+		<h2>Create a Block Revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -289,7 +285,17 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a wp_block-revision</h2>
+		<h2>Retrieve a Block Revision</h2>
+
+		<h3>Definition & Example Request</h3>
+
+		<code>GET /wp/v2/blocks/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
+
+		<p>Query this endpoint to retrieve a specific Block Revision record.</p>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
+	</div>
+	<div class="secondary">
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -322,15 +328,6 @@
 			</tr>
 			</table>
 
-	</div>
-	<div class="secondary">
-		<h3>Definition</h3>
-
-		<code>GET /wp/v2/blocks/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
-
-		<h3>Example Request</h3>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
 	</div>
 </section>
 </div>
