@@ -74,13 +74,13 @@ function add_simple_schemas() {
 				$title = 'Media Item';
 				$plural = 'media';
 				break;
-			
+
 			case 'rendered-block':
 				$key = 'rendered-blocks';
 				$title = 'Rendered Block';
 				$plural = 'Rendered Blocks';
 				break;
-			
+
 			case 'settings':
 				$key = 'settings';
 				$title = 'Site Setting';
@@ -95,13 +95,13 @@ function add_simple_schemas() {
 			case 'type':
 				$key = 'post-types';
 				break;
-			
+
 			case 'wp_block':
 				$key = 'blocks';
 				$title = 'Editor Block';
 				$plural = 'Editor Blocks';
 				break;
-			
+
 			case 'wp_block-revision':
 				$key = 'block-revisions';
 				$title = 'Block Revision';
