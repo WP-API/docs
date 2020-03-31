@@ -12,7 +12,7 @@ These articles explore the basic structure of the WordPress REST API.
 
 [Authentication](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/): authorize your REST API requests so that you can create, update and delete your data
 
-[Frequently Asked Questions](https://developer.wordpress.org/rest-api/using-the-rest-api/frequently-asked-questions/): see some of the most frequent inquiries about the REST API and learn how to solve common problems
+[Frequently Asked Questions](https://developer.wordpress.org/rest-api/frequently-asked-questions/): see some of the most frequent inquiries about the REST API and learn how to solve common problems
 
 
 ## Resources & Utilities
