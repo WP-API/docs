@@ -14,6 +14,11 @@
         "parent": null,
         "markdown_source": "https://github.com/WP-API/docs/blob/master/frequently-asked-questions.md"
     },
+    "glossary": {
+        "slug": "glossary",
+        "parent": null,
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/glossary.md"
+    },
     "index": {
         "slug": "index",
         "parent": null,
@@ -53,11 +58,6 @@
         "slug": "controller-classes",
         "parent": "extending-the-rest-api",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/extending-the-rest-api/controller-classes.md"
-    },
-    "extending-the-rest-api/glossary": {
-        "slug": "glossary",
-        "parent": "extending-the-rest-api",
-        "markdown_source": "https://github.com/WP-API/docs/blob/master/extending-the-rest-api/glossary.md"
     },
     "extending-the-rest-api/modifying-responses": {
         "slug": "modifying-responses",

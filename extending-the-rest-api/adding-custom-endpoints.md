@@ -45,7 +45,7 @@ add_action( 'rest_api_init', function () {
 } );
 ```
 
-Right now, we're only registering the one endpoint for the route. The term "route" refers to the URL, whereas "endpoint" refers to the function behind it that corresponds to a method *and* a URL (for more information, see the [Glossary](https://developer.wordpress.org/rest-api/extending-the-rest-api/glossary/)).
+Right now, we're only registering the one endpoint for the route. The term "route" refers to the URL, whereas "endpoint" refers to the function behind it that corresponds to a method *and* a URL (for more information, see the [Glossary](https://developer.wordpress.org/rest-api/glossary/)).
 
 For example, if your site domain is `example.com` and you've kept the API path of `wp-json`, then the full URL would be `http://example.com/wp-json/myplugin/v1/author/(?P\d+)`.
 
