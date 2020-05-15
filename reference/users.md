@@ -498,6 +498,10 @@
 		<h3>Definition</h3>
 
 		<code>POST /wp/v2/users</code>
+
+		<h3>Example Request</h3>
+
+		<code>POST /wp/v2/users -d "username=username&name=myname&first_name=myfirstname&last_name=mylastname&email=user%40example.com&url=user.example.com&description=my%20description&locale=en_US&nickname=mynickname&slug=myslug&roles=subscriber&password=password1234"</code>
 	</div>
 </section>
 <section class="route">
