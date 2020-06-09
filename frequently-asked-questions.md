@@ -68,7 +68,7 @@ Instead, manually call the [`WP_REST_Server::response_to_data`](https://develope
 
 ```php
 $request = new WP_REST_Request( 'GET', '/wp/v2/posts' );
-$response = rest_do_request( $req );
+$response = rest_do_request( $request );
 $data = rest_get_server()->response_to_data( $response, true );
 var_dump( $data['_embedded'] );
 ```
