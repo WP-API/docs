@@ -26,22 +26,12 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Rendered Block</h2>
-
-		<h3>Definition & Example Request</h3>
-
-		<code>GET /wp/v2/block-renderer/&lt;name&gt;</code>
-
-		<p>Query this endpoint to retrieve a specific Rendered Block record.</p>
-
-		<code>$ curl https://example.com/wp-json/wp/v2/block-renderer/&lt;name&gt;</code>
-	</div>
-	<div class="secondary">
+		<h2>Create a Rendered Block</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
 				<td>
-											<code>name</code><br />
+											<code><a href="#schema-name">name</a></code><br />
 									</td>
 				<td>
 											<p>Unique registered name for the block.</p>
@@ -49,7 +39,7 @@
 			</tr>
 					<tr>
 				<td>
-											<code>context</code><br />
+											<code><a href="#schema-context">context</a></code><br />
 									</td>
 				<td>
 											<p>Scope under which the request is made; determines fields present in response.</p>
@@ -61,15 +51,15 @@
 			</tr>
 					<tr>
 				<td>
-											<code>attributes</code><br />
+											<code><a href="#schema-attributes">attributes</a></code><br />
 									</td>
 				<td>
-											<p>Attributes for core/tag-cloud block</p>
+											<p>Attributes for the block</p>
 																								</td>
 			</tr>
 					<tr>
 				<td>
-											<code>post_id</code><br />
+											<code><a href="#schema-post_id">post_id</a></code><br />
 									</td>
 				<td>
 											<p>ID of the post context.</p>
@@ -77,6 +67,11 @@
 			</tr>
 			</table>
 
+	</div>
+	<div class="secondary">
+		<h3>Definition</h3>
+
+		<code>POST /wp/v2/block-renderer/&lt;name&gt;</code>
 	</div>
 </section>
 </div>

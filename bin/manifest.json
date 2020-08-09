@@ -74,10 +74,20 @@
         "parent": "extending-the-rest-api",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/extending-the-rest-api/schema.md"
     },
+    "reference/block-directory-items": {
+        "slug": "block-directory-items",
+        "parent": "reference",
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/block-directory-items.md"
+    },
     "reference/block-revisions": {
         "slug": "block-revisions",
         "parent": "reference",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/block-revisions.md"
+    },
+    "reference/block-types": {
+        "slug": "block-types",
+        "parent": "reference",
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/block-types.md"
     },
     "reference/blocks": {
         "slug": "blocks",
@@ -108,6 +118,11 @@
         "slug": "pages",
         "parent": "reference",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/pages.md"
+    },
+    "reference/plugins": {
+        "slug": "plugins",
+        "parent": "reference",
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/plugins.md"
     },
     "reference/post-revisions": {
         "slug": "post-revisions",

@@ -6,7 +6,7 @@
 			<td>
 				<code>{{ key }}</code><br />
 				<span class="type">
-					{{ property.type }}{% if property.format %},
+					{{ property.type | join(' or ') }}{% if property.format %},
 						{% if property.format == 'date-time' %}
 							datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
 						{% elseif property.format == 'uri' %}

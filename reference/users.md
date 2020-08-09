@@ -154,7 +154,7 @@
 				<code>registered_date</code><br />
 				<span class="type">
 					string,
-													datetime ([details](https://core.trac.wordpress.org/ticket/41032))
+													datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
 										</span>
 			</td>
 			<td>
