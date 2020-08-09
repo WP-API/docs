@@ -2,6 +2,37 @@
 
 This document details changes to the WP REST API since its public release in version 4.7.0.
 
+## Version 5.5
+- Introduce Block Types endpoint. [r48173](https://core.trac.wordpress.org/changeset/48173)
+- Introduce Plugins and Block Directory endpoints. [r48242](https://core.trac.wordpress.org/changeset/48242)
+- Introduce Image Editor endpoint. [r48291](https://core.trac.wordpress.org/changeset/48291)
+- Add additional fields to the Themes endpoint. [r47921](https://core.trac.wordpress.org/changeset/47921)
+- Introduce `register_theme_feature()` API for use in the Themes endpoint. [r48171](https://core.trac.wordpress.org/changeset/48171) 
+- Allow POST requests to the Block Renderer endpoint. [r47756](https://core.trac.wordpress.org/changeset/47756)
+- Register only a single Block Renderer endpoint shared by all block types. [r48069](https://core.trac.wordpress.org/changeset/48069)
+- Add support for classic embeds to the oEmbed endpoint. [r48135](https://core.trac.wordpress.org/changeset/48135)
+- Link to the REST route for the currently queried resource. [r48273](https://core.trac.wordpress.org/changeset/48273)
+- Introduce support for default metadata values. [r48402](https://core.trac.wordpress.org/changeset/48402)
+- Add the `Link` header to the list of exposed cors headers. [48112](https://core.trac.wordpress.org/changeset/48112)
+- Add `Content-Disposition`, `Content-MD5` and `X-WP-Nonce` as allowed cors headers. [r48452](https://core.trac.wordpress.org/changeset/48452)
+- Only validate the `format` keyword if the `type` is a `string`. [r48300](https://core.trac.wordpress.org/changeset/48300)
+- Support the `uuid` JSON Schema format. [47753](https://core.trac.wordpress.org/changeset/47753)
+- Support the `hex-color` JSON Schema format. [r47450](https://core.trac.wordpress.org/changeset/47450)
+- Support the `pattern` JSON Schema keyword. [r47810](https://core.trac.wordpress.org/changeset/47810)
+- Support the `minItems`, `maxItems`, and `uniqueItems` JSON Schema keywords. [r47923](https://core.trac.wordpress.org/changeset/47923) [r48357](https://core.trac.wordpress.org/changeset/48357)
+- Support the `minLength` and `maxLength` JSON Schema keywords. [r47627](https://core.trac.wordpress.org/changeset/47627)
+- Check required properties are provided when validating an object. [r47809](https://core.trac.wordpress.org/changeset/47809)
+- Support more JSON Schemas when filtering a response by context. [r47758](https://core.trac.wordpress.org/changeset/47758)
+- Handle parameter types consistently within `WP_REST_Request::set_param()`. [r47559](https://core.trac.wordpress.org/changeset/47559)
+- Deprecate back-filling of the `HTTP_RAW_POST_DATA` global variable. [r47926](https://core.trac.wordpress.org/changeset/47926)
+- Issue a `_doing_it_wrong` when registering a route without a `permission_callback`. [r48526](https://core.trac.wordpress.org/changeset/48526)
+- Issue a `_doing_it_wrong` when using the `wp_send_json()` family of functions during a REST API request. [r48361](https://core.trac.wordpress.org/changeset/48361)
+- Ensure `rest_ensure_response()` upgrades `WP_HTTP_Response` to `WP_REST_Response`. [r47849](https://core.trac.wordpress.org/changeset/47849)
+- Only force the main query to be `is_home()` during a REST API request. [r48053](https://core.trac.wordpress.org/changeset/48053)
+- Ensure all keywords supported by the JSON Schema validator are permitted by `WP_REST_Controller::get_endpoint_args_for_item_schema()`. [r47911](https://core.trac.wordpress.org/changeset/47911)
+- Ensure deprecation notices are triggered when preloading REST API data. [r48150](https://core.trac.wordpress.org/changeset/48150)
+- See [REST API changes in WordPress 5.5](https://make.wordpress.org/core/2020/07/22/rest-api-changes-in-wordpress-5-5/) for further commentary.
+
 ## Version 5.4
 - Introduce selective link embedding. [r47224](https://core.trac.wordpress.org/changeset/47224)
 - Fix PHP warning in the comments controller if the commented-upon post type does not exist. [r47036](https://core.trac.wordpress.org/changeset/47036]
