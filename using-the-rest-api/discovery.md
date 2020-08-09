@@ -153,3 +153,14 @@ This would add the `testplugin/v1` namespace to the index:
 }
 ```
 
+## Resource Discovery
+
+As of [WordPress 5.5](https://core.trac.wordpress.org/changeset/48273) the REST API also provides a discovery mechanism for identifying the REST API route equivalent of the current document. A link is added with a `rel` of `alternate` and a `type` of `alternate/json` that points to a REST API url. The link is added both as a [`Link` header](#link-header) and a [`<link>` element](#element).
+
+For instance, in the `<head>` section of this page, the following `<link>` appears.
+
+```html
+<link rel="alternate" type="application/json" href="https://developer.wordpress.org/wp-json/wp/v2/rest-api-handbook/23085">
+```
+
+Links are added for post, pages, and other custom post types, as well as terms and author pages. Links are not currently output for post archives or search results.

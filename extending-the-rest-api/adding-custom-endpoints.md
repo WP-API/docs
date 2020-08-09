@@ -257,6 +257,24 @@ add_action( 'rest_api_init', function () {
 } );
 ```
 
+### Discovery
+
+If you'd like to enable [Resource Discovery](https://developer.wordpress.org/rest-api/using-the-rest-api/discovery/#resource-discovery) for your custom endpoint, you can do so using the `rest_queried_resource_route` filter. For example, consider a [custom query var](https://developer.wordpress.org/reference/hooks/query_vars/) `my-route` that contains the id of your custom resource. The following code snippet would add a discovery link whenever the `my-route` query var is used.
+
+```php
+function my_plugin_rest_queried_resource_route( $route ) {
+    $id = get_query_var( 'my-route' );
+    if ( ! $route && $id ) {
+        $route = '/my-ns/v1/items/' . $id;
+    }
+
+    return $route;
+}
+add_filter( 'rest_queried_resource_route', 'my_plugin_rest_queried_resource_route' );
+```
+
+Note: If your endpoint is describing a custom post type or custom taxonomy you will most likely want to be using the `rest_route_for_post` or `rest_route_for_term` filters instead. 
+
 ## The Controller Pattern
 
 The controller pattern is a best practice for working with complex endpoints with the API.

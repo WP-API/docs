@@ -78,6 +78,18 @@ function my_book_cpt() {
 }
 ```
 
+If you are using a custom `rest_controller_class`, then the REST API is unable to automatically determine the route for a given post. In this case, you can use the `rest_route_for_post` filter to provide this information. This allows for your custom post type to be properly formatted in the Search endpoint and enables automated discovery links.
+
+```php
+function my_plugin_rest_route_for_post( $route, $post ) {
+    if ( $post->post_type === 'book' ) {
+        $route = '/wp/v2/books/' . $post->ID;
+    }
+ 
+    return $route;
+}
+add_filter( 'rest_route_for_post', 'my_plugin_rest_route_for_post', 10, 2 );
+``` 
 
 ## Registering A Custom Taxonomy With REST API Support
 
@@ -126,6 +138,19 @@ function my_book_taxonomy() {
 
 }
 ```
+
+If you are using a custom `rest_controller_class`, then the REST API is unable to automatically determine the route for a given term. In this case, you can use the `rest_route_for_term` filter to provide this information. This allows for your custom taxonomy to be properly formatted in the Search endpoint and enables automated discovery links.
+
+```php
+function my_plugin_rest_route_for_term( $route, $term ) {
+    if ( $term->taxonomy === 'genre' ) {
+        $route = '/wp/v2/genre/' . $term->term_id;
+    }
+ 
+    return $route;
+}
+add_filter( 'rest_route_for_term', 'my_plugin_rest_route_for_term', 10, 2 );
+``` 
 
 ## Adding REST API Support To Existing Content Types
 
