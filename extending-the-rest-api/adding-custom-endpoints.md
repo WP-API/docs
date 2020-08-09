@@ -204,6 +204,9 @@ $response->header( 'Location', 'http://example.com/' );
 
 When wrapping existing callbacks, you should always use `rest_ensure_response()` on the return value. This will take raw data returned from an endpoint and automatically turn it into a `WP_REST_Response` for you. (Note that `WP_Error` is not converted to a `WP_REST_Response` to allow proper error handling.)
 
+Importantly, a REST API route's callback should _always_ return data; it shouldn't attempt to send the response body itself. This ensures that the additional processing that the REST API server does, like handling linking/embedding, sending headers, etc… takes place. In other words, don't call `die( wp_json_encode( $data ) );` or `wp_send_json( $data )`. As of [WordPress 5.5](https://core.trac.wordpress.org/changeset/48361), a `_doing_it_wrong` notice is issued if the `wp_send_json()` family of functions is used during a REST API request.
+
+> Return a WP_REST_Response or WP_Error object from your callback when using the REST API.
 
 ### Permissions Callback
 
