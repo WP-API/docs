@@ -76,6 +76,10 @@ This API reference provides information on the specific endpoints available thro
     <td><code>/wp/v2/search</code></td>
   </tr>
   <tr>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/block-types/">Block Types</a></td>
+    <td><code>/wp/v2/block-types</code></td>
+  </tr>
+  <tr>
     <td><a href="https://developer.wordpress.org/rest-api/reference/wp_blocks/">Blocks</a></td>
     <td><code>/wp/v2/blocks</code></td>
   </tr>
@@ -86,6 +90,14 @@ This API reference provides information on the specific endpoints available thro
   <tr>
     <td><a href="https://developer.wordpress.org/rest-api/reference/rendered-blocks/">Block Renderer</a></td>
     <td><code>/wp/v2/block-renderer</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/block-directory-items/">Block Directory Items</a></td>
+    <td><code>/wp/v2/block-directory/search</code></td>
+  </tr>
+  <tr>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/plugins/">Plugins</a></td>
+    <td><code>/wp/v2/plugins</code></td>
   </tr>
 </table>
 
