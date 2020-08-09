@@ -367,6 +367,22 @@ This would result in two meta database rows. The first containing `[ "WordPress"
 
 If the existing value for a meta field does not validate against the registered type and schema, the value for that meta field will be returned as null. If that null value is passed back to the API when doing an update request, you'll receive a `rest_invalid_stored_value` error: `The %s property has an invalid stored value, and cannot be updated to null.`. To fix this, either update the meta key with a valid value or omit that property from your request.
 
+### Default Metadata Values
+
+WordPress 5.5 adds [official support](https://make.wordpress.org/core/2020/08/04/registering-default-values-for-meta-data/) for specifying a default value for metadata if no value is defined. For example, with this code snippet the `price` meta field will be set to `0.00` in the REST API response if a value is not yet.
+
+```php
+register_post_meta(
+     'product',
+     'price',
+     array(
+         'single'  => true,
+         'type'    => 'string',
+         'default' => '0.00',
+     )
+ );
+```
+
 ## Adding Links to the API Response
 WordPress generates a list of links associated with the queried resource to make it easier to navigate to related resources. 
 
