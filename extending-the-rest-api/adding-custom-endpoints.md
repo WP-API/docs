@@ -207,7 +207,7 @@ When wrapping existing callbacks, you should always use `rest_ensure_response()`
 
 ### Permissions Callback
 
-You can also register a permissions callback for the endpoint. This is a function that checks if the user can perform the action (reading, updating, etc) before the real callback is called. This allows the API to tell the client what actions they can perform on a given URL without needing to attempt the request first.
+You must also register a permissions callback for the endpoint. This is a function that checks if the user can perform the action (reading, updating, etc) before the real callback is called. This allows the API to tell the client what actions they can perform on a given URL without needing to attempt the request first.
 
 This callback can be registered as `permission_callback`, again in the endpoint options next to your `callback` option. This callback should return a boolean or a `WP_Error` instance. If this function returns true, the response will be processed. If it returns false, a default error message will be returned and the request will not proceed with processing. If it returns a `WP_Error`, that error will be returned to the client.
 
@@ -237,6 +237,22 @@ add_action( 'rest_api_init', function () {
 
 Note that the permission callback also receives the Request object as the first parameter, so you can do checks based on request arguments if you need to.
 
+As of [WordPress 5.5](https://core.trac.wordpress.org/changeset/48526), if a `permission_callback` is not provided, the REST API will issue a `_doing_it_wrong` notice.
+
+> The REST API route definition for myplugin/v1/author is missing the required permission_callback argument. For REST API routes that are intended to be public, use __return_true as the permission callback.
+
+If your REST API endpoint is public, you can use `__return_true` as the permission callback.
+
+```php
+<?php
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'myplugin/v1', '/author/(?P<id>\d+)', array(
+    'methods' => 'GET',
+    'callback' => 'my_awesome_func',
+    'permission_callback' => '__return_true',
+  ) );
+} );
+```
 
 ## The Controller Pattern
 
