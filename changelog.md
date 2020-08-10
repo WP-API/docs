@@ -15,6 +15,7 @@ This document details changes to the WP REST API since its public release in ver
 - Introduce support for default metadata values. [r48402](https://core.trac.wordpress.org/changeset/48402)
 - Add the `Link` header to the list of exposed cors headers. [48112](https://core.trac.wordpress.org/changeset/48112)
 - Add `Content-Disposition`, `Content-MD5` and `X-WP-Nonce` as allowed cors headers. [r48452](https://core.trac.wordpress.org/changeset/48452)
+- Improve multi-type JSON Schema support. [r48306](https://core.trac.wordpress.org/changeset/48306)
 - Only validate the `format` keyword if the `type` is a `string`. [r48300](https://core.trac.wordpress.org/changeset/48300)
 - Support the `uuid` JSON Schema format. [47753](https://core.trac.wordpress.org/changeset/47753)
 - Support the `hex-color` JSON Schema format. [r47450](https://core.trac.wordpress.org/changeset/47450)
