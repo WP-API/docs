@@ -364,6 +364,67 @@ array(
 );
 ```
 
+### Strings
+
+The `string` types supports three additional keywords.
+
+#### minLength and maxLength
+
+The `minLength` and `maxLength` keywords can be used to constrain the acceptable length of a string. Importantly multi-byte characters are counted as a single character and bounds are inclusive.
+
+For instance, given the following schema, `ab`, `abc`, and `abcd` are valid, while `a`, and `abcde` are invalid.
+
+```php
+array(
+    'type'      => 'string',
+    'minLength' => 2,
+    'maxLength' => 4,
+);
+```
+
+The `exclusiveMinimum` and `exclusiveMaximum` keywords do not apply, they are only valid for numbers.
+
+#### pattern
+
+The JSON Schema keyword `pattern` can be used to validate that a string field matches a regular expression.
+
+For instance, given the following schema, `#123` would be valid, but `#abc` would not.
+
+```php
+array(
+    'type'    => 'string',
+    'pattern' => '#[0-9]+',
+);
+```
+
+### Numbers
+
+The `number` and `integer` types support four additional keywords.
+
+#### minimum and maximum
+
+The `minimum` and `maximum` keyword allow constraining the range of acceptable numbers. For example, `2` would be valid according to this schema, but `0` and `4` would not be.
+
+```php
+array(
+    'type' => 'integer',
+    'minimum' => 1,
+    'maximum' => 3,
+);
+```
+
+JSON Schema also allows using the `exclusiveMinimum` and `exclusiveMaximum` keywords to denote that the value cannot equal the defined `minimum` or `maximum` respectively. For example, in this case only `2` would be an acceptable value.
+
+```php
+array(
+    'type'             => 'integer',
+    'minimum'          => 1,
+    'exclusiveMinimum' => true,
+    'maximum'          => 3,
+    'exclusiveMaximum' => true,
+);
+``` 
+
 ### Arrays
 
 Specifying a `type` of `array` requires data to be an array, but that is only half the validation story. You'll also want to enforce the format of each item in the array. This is done by specifying a JSON Schema that each array item must conform to using the `items` keyword.
@@ -721,67 +782,6 @@ While this would fail validation.
   },
   "secondary": "#fecc50"
 }
-```
-
-### Numbers
-
-The `number` and `integer` types support four additional keywords.
-
-#### minimum and maximum
-
-The `minimum` and `maximum` keyword allow constraining the range of acceptable numbers. For example, `2` would be valid according to this schema, but `0` and `4` would not be.
-
-```php
-array(
-    'type' => 'integer',
-    'minimum' => 1,
-    'maximum' => 3,
-);
-```
-
-JSON Schema also allows using the `exclusiveMinimum` and `exclusiveMaximum` keywords to denote that the value cannot equal the defined `minimum` or `maximum` respectively. For example, in this case only `2` would be an acceptable value.
-
-```php
-array(
-    'type'             => 'integer',
-    'minimum'          => 1,
-    'exclusiveMinimum' => true,
-    'maximum'          => 3,
-    'exclusiveMaximum' => true,
-);
-``` 
-
-### Strings
-
-The `string` types supports three additional keywords.
-
-#### minLength and maxLength
-
-The `minLength` and `maxLength` keywords can be used to constrain the acceptable length of a string. Importantly multi-byte characters are counted as a single character and bounds are inclusive.
-
-For instance, given the following schema, `ab`, `abc`, and `abcd` are valid, while `a`, and `abcde` are invalid.
-
-```php
-array(
-    'type'      => 'string',
-    'minLength' => 2,
-    'maxLength' => 4,
-);
-```
-
-The `exclusiveMinimum` and `exclusiveMaximum` keywords do not apply, they are only valid for numbers.
-
-#### pattern
-
-The JSON Schema keyword `pattern` can be used to validate that a string field matches a regular expression.
-
-For instance, given the following schema, `#123` would be valid, but `#abc` would not.
-
-```php
-array(
-    'type'    => 'string',
-    'pattern' => '#[0-9]+',
-);
 ```
 
 The regex is not automatically anchored. Regex flags, for instance `/i` to make the match case insensitive are not supported.
