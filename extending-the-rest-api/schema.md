@@ -789,12 +789,12 @@ The regex is not automatically anchored. Regex flags, for instance `/i` to make 
 The JSON Schema RFC recommends limiting yourself to the following regex features so the schema can be interoperable between as many different programming languages as possible.
 
 - individual Unicode characters, as defined by the JSON specification [RFC4627].
-- simple character classes ([abc]), range character classes ([a-z]).
-- complemented character classes ([^abc], [^a-z]).
-- simple quantifiers: "+" (one or more), "*" (zero or more), "?" (zero or one), and their lazy versions ("+?", "*?", "??").
-- range quantifiers: "{x}" (exactly x occurrences), "{x,y}" (at least x, at most y, occurrences), {x,} (x occurrences or more), and their lazy versions.
-- the beginning-of-input ("^") and end-of-input ("$") anchors.
-- simple grouping ("(...)") and alternation ("|").
+- simple character classes `[abc]`, range character classes `[a-z]`.
+- complemented character classes `[^abc]`, `[^a-z]`.
+- simple quantifiers: `+` (one or more), `*` (zero or more), `?` (zero or one), and their lazy versions `+?`, `*?`, `??`.
+- range quantifiers: `{x}` (exactly x occurrences), `{x,y}` (at least x, at most y, occurrences), `{x,}` (x occurrences or more), and their lazy versions.
+- the beginning-of-input `^` and end-of-input `$` anchors.
+- simple grouping `(...)` and alternation `|`.
 
 The pattern should be valid according to the ECMA 262 regex dialect.
 
