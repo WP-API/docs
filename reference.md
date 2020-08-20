@@ -80,11 +80,11 @@ This API reference provides information on the specific endpoints available thro
     <td><code>/wp/v2/block-types</code></td>
   </tr>
   <tr>
-    <td><a href="https://developer.wordpress.org/rest-api/reference/wp_blocks/">Blocks</a></td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/blocks/">Blocks</a></td>
     <td><code>/wp/v2/blocks</code></td>
   </tr>
   <tr>
-    <td><a href="https://developer.wordpress.org/rest-api/reference/wp_block-revisions/">Block Revisions</a></td>
+    <td><a href="https://developer.wordpress.org/rest-api/reference/block-revisions/">Block Revisions</a></td>
     <td><code>/wp/v2/blocks/&lt;id&gt;/autosaves/</code></td>
   </tr>
   <tr>
