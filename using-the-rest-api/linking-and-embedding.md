@@ -1,6 +1,6 @@
 # Linking and Embedding
 
-The WP REST API incorporates hyperlinking throughout the API to allow discoverability and browsability, as well as embedding related resources together in one response. While the REST API does not completely conform to the entire [HAL standard](http://stateless.co/hal_specification.html), it implements the `._links` and `._embedded` properties from that standard as described below.
+The WP REST API incorporates hyperlinking throughout the API to allow discoverability and browsability, as well as embedding related resources together in one response. While the REST API does not completely conform to the entire [HAL standard](https://en.wikipedia.org/wiki/Hypertext_Application_Language), it implements the `._links` and `._embedded` properties from that standard as described below.
 
 
 ## Links
