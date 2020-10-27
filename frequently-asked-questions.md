@@ -99,12 +99,20 @@ Adding `$is_args` (which will print a ? character if query arguments are found) 
 
 ## Why is Authentication not working?
 
-If you're finding that you are sending Authentication headers but the request is not being accepted, and you're using Apache in a CGI environment, Apache may be stripping the headers. Try adding this to a configuration file or .htaccess:
+If you're finding that you are sending Authentication headers but the request is not being accepted, and you are using a CGI environment, your webserver may be stripping the headers. Please try adding the appropriate configuration below to remedy this.
 
+### Apache
+Add the following to a configuration file or .htaccess:
 ```
 <IfModule mod_setenvif>
   SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 </IfModule>
+```
+
+### Nginx
+Add the following to your server configurations fastcgi section:
+```
+fastcgi_pass_header Authorization;
 ```
 
 ## Why is the REST API not verifying the incoming Origin header? Does this expose my site to CSRF attacks?
