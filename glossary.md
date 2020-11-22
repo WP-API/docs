@@ -5,7 +5,7 @@ New to REST APIs? Get up to speed with phrases used throughout our documentation
 
 <h2 id="controller">Controller</h2>
 
-[Model-View-Controller](http://en.wikipedia.org/wiki/Model-view-controller) is a standard pattern in software development. If you aren't already familiar it, you should do a bit of reading to get up to speed.
+[Model-View-Controller](http://en.wikipedia.org/wiki/Model-view-controller) is a standard pattern in software development. If you aren't already familiar with it, you should do a bit of reading to get up to speed.
 
 Within WP-API, we've adopted the controller concept to have a standard pattern for the classes representing our resource endpoints. All resource endpoints extend `WP_REST_Controller` to ensure they implement common methods.
 
