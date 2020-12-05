@@ -54,7 +54,7 @@
 											<code><a href="#schema-attributes">attributes</a></code><br />
 									</td>
 				<td>
-											<p>Attributes for the block</p>
+											<p>Attributes for the block.</p>
 																								</td>
 			</tr>
 					<tr>

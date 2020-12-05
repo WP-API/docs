@@ -12,7 +12,7 @@
 			<td>
 				<code>id</code><br />
 				<span class="type">
-					integer				</span>
+					integer or string				</span>
 			</td>
 			<td>
 				<p>Unique identifier for the object.</p>
@@ -56,7 +56,7 @@
 				<p>Object type.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code></p>
-									<p>One of: <code>post</code></p>
+									<p>One of: <code>post</code>, <code>term</code>, <code>post-format</code></p>
 							</td>
 		</tr>
 			<tr id="schema-subtype">
@@ -69,7 +69,7 @@
 				<p>Object subtype.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code></p>
-									<p>One of: <code>post</code>, <code>page</code></p>
+									<p>One of: <code>post</code>, <code>page</code>, <code>category</code>, <code>post_tag</code></p>
 							</td>
 		</tr>
 	</table>
@@ -144,7 +144,7 @@
 																					<p class="default">
 							Default: <code>post</code>
 						</p>
-																<p>One of: <code>post</code></p>
+																<p>One of: <code>post</code>, <code>term</code>, <code>post-format</code></p>
 									</td>
 			</tr>
 					<tr>

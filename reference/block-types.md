@@ -8,6 +8,18 @@
 		<h2>Schema</h2>
 <p>The schema defines all the fields that exist within a block type record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
 <table class="attributes">
+			<tr id="schema-api_version">
+			<td>
+				<code>api_version</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>Version of block API.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
 			<tr id="schema-title">
 			<td>
 				<code>title</code><br />
@@ -339,7 +351,7 @@
 											<code>name</code><br />
 									</td>
 				<td>
-											<p>Block name</p>
+											<p>Block name.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -347,7 +359,7 @@
 											<code>namespace</code><br />
 									</td>
 				<td>
-											<p>Block namespace</p>
+											<p>Block namespace.</p>
 																								</td>
 			</tr>
 					<tr>

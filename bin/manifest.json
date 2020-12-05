@@ -74,6 +74,11 @@
         "parent": "extending-the-rest-api",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/extending-the-rest-api/schema.md"
     },
+    "reference/application-passwords": {
+        "slug": "application-passwords",
+        "parent": "reference",
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/application-passwords.md"
+    },
     "reference/block-directory-items": {
         "slug": "block-directory-items",
         "parent": "reference",
