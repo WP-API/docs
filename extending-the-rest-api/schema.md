@@ -439,6 +439,28 @@ array(
 );
 ``` 
 
+#### multipleOf
+
+The `multipleOf` keyword allows for asserting an integer or number type is a multiple of the given number. For example, this schema will only accept even integers.
+
+```php
+array(
+    'type'       => 'integer',
+    'multipleOf' => 2,
+);
+```
+
+`multipleOf` also supports decimals. For example, this schema could be used to accept a percentage with a maximum of 1 decimal point.
+
+```php
+array(
+    'type'       => 'number',
+    'minimum'    => 0,
+    'maximum'    => 100,
+    'multipleOf' => 0.1,
+);
+```
+
 ### Arrays
 
 Specifying a `type` of `array` requires data to be an array, but that is only half the validation story. You'll also want to enforce the format of each item in the array. This is done by specifying a JSON Schema that each array item must conform to using the `items` keyword.
@@ -798,7 +820,148 @@ While this would fail validation.
 }
 ```
 
+#### patternProperties
+
+The `patternProperties` keyword is similar to the `additionalProperties` keyword, but allows for asserting the property matches a regex pattern. The keyword is an object where each property is a regex pattern and its value is the JSON Schema used to validate properties that match that pattern.
+
+For example, this schema requires that each value is a hex color and the property must only contain “word” characters.
+
+```php
+array(
+  'type'                 => 'object',
+  'patternProperties'    => array(
+    '^\\w+$' => array(
+      'type'   => 'string',
+      'format' => 'hex-color',
+    ),
+  ),
+  'additionalProperties' => false,
+);
+```
+
+This would pass validation.
+
+```json
+{
+  "primary": "#ff6d69",
+  "secondary": "#fecc50"
+}
+```
+
+While this would fail validation.
+
+```json
+{
+  "primary": "blue",
+  "$secondary": "#fecc50"
+}
+```
+
+When the REST API validates the `patternProperties` schema, if a property doesn’t match any of the patterns, the property will be allowed and not have any validation applied to its contents. While this may be confusing, it behaves the same as the `properties` keyword. If this logic isn’t desired, add `additionalProperties` to the schema to disallow non-matching properties.
+
+#### minProperties and maxProperties
+
+The `minItems` and `maxItems` keywords can be used for the `array` type. The `minProperties` and `maxProperties` introduces this same functionality for the `object` type. This can be helpful when using `additionalProperties` to have a list of objects with unique keys.
+
+```php
+array(
+  'type'                 => 'object',
+  'additionalProperties' => array(
+    'type'   => 'string',
+    'format' => 'hex-color',
+  ),
+  'minProperties'        => 1,
+  'maxProperties'        => 3,
+);
+```
+
+This would pass validation.
+
+```json
+{
+  "primary": "#52accc",
+  "secondary": "#096484"
+}
+```
+
+While this would fail validation.
+
+```json
+{
+  "primary": "#52accc",
+  "secondary": "#096484",
+  "tertiary": "#07526c"
+}
+```
+
+The `exclusiveMinimum` and `exclusiveMaximum` keywords do not apply, they are only valid for the `number` and `integer` types.
+
+### Type agnostic keywords
+
+#### oneOf and anyOf
+
+These are advanced keywords that allow for the JSON Schema validator to choose one of many schemas to use when validating a value. The `anyOf` keyword allows for a value to match at least one of the given schemas. Whereas, the `oneOf` keyword requires the value match _exactly_ one schema.
+
+For example, this schema allows for submitting an array of “operations” to an endpoint. Each operation can either be a “crop” or a “rotation”.
+
+```php
+array(
+	'type'  => 'array',
+	'items' => array(
+		'oneOf' => array(
+			array(
+				'title'      => 'Crop',
+				'type'       => 'object',
+				'properties' => array(
+					'operation' => array(
+						'type' => 'string',
+						'enum' => array(
+							'crop',
+						),
+					),
+					'x'         => array(
+						'type' => 'integer',
+					),
+					'y'         => array(
+						'type' => 'integer',
+					),
+				),
+			),
+			array(
+				'title'      => 'Rotation',
+				'type'       => 'object',
+				'properties' => array(
+					'operation' => array(
+						'type' => 'string',
+						'enum' => array(
+							'rotate',
+						),
+					),
+					'degrees'   => array(
+						'type'    => 'integer',
+						'minimum' => 0,
+						'maximum' => 360,
+					),
+				),
+			),
+		),
+	),
+);
+```
+
+The REST API will loop over each schema specified in the `oneOf` array and look for a match. If exactly one schema matches, then validation will succeed. If more than one schema matches, validation will fail. If no schemas match, then the validator will try to find the closest matching schema and return an appropriate error message.
+
+> operations[0] is not a valid Rotation. Reason: operations[0][degrees] must be between 0 (inclusive) and 360 (inclusive)
+
+To generate more helpful error messages, it is highly recommended to give each `oneOf` or `anyOf` schema a `title` property.
+
 ## Changelog
+
+### WordPress 5.6
+- Support the `multipleOf` JSON Schema keyword. [r49063](https://core.trac.wordpress.org/changeset/49063)
+- Support the `minProperties` and `maxProperties` JSON Schema keywords. [r49053](https://core.trac.wordpress.org/changeset/49053)
+- Support the `patternProperties` JSON Schema keyword. [r49082](https://core.trac.wordpress.org/changeset/49082)
+- Support the `anyOf` and `oneOf` JSON Schema keywords. [r49246](https://core.trac.wordpress.org/changeset/49246)
 
 ### WordPress 5.5
 - Improve multi-type JSON Schema support. [r48306](https://core.trac.wordpress.org/changeset/48306)
