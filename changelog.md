@@ -2,6 +2,26 @@
 
 This document details changes to the WP REST API since its public release in version 4.7.0.
 
+## Version 5.6
+- Introduce Application Passwords for API authentication. [r49109](https://core.trac.wordpress.org/changeset/49109)
+- Introduce Batch Requests. [r49252](https://core.trac.wordpress.org/changeset/49252)
+- Support a route-level validation callback. [r48945](https://core.trac.wordpress.org/changeset/48945)
+- Move Site Health async tests to the REST API. [r49154](https://core.trac.wordpress.org/changeset/49154)
+- Add a hook to fire once a post, its terms and meta update. [r49172](https://core.trac.wordpress.org/changeset/49172)
+- Introduce search term handler. [r49103](https://core.trac.wordpress.org/changeset/49103)
+- Introduce search post format handler. [r49132](https://core.trac.wordpress.org/changeset/49132)
+- Allow for string ids in the search controller. [r49088](https://core.trac.wordpress.org/changeset/49088)
+- Support a broader range of JSON media types. [r49329](https://core.trac.wordpress.org/changeset/49329)
+- Support the `multipleOf` JSON Schema keyword. [r49063](https://core.trac.wordpress.org/changeset/49063)
+- Support the `minProperties` and `maxProperties` JSON Schema keywords. [r49053](https://core.trac.wordpress.org/changeset/49053)
+- Support the `patternProperties` JSON Schema keyword. [r49082](https://core.trac.wordpress.org/changeset/49082)
+- Support the `anyOf` and `oneOf` JSON Schema keywords. [r49246](https://core.trac.wordpress.org/changeset/49246)
+- Make sure all supported JSON Schema keywords are output in the index. [r49257](https://core.trac.wordpress.org/changeset/49257)
+- Add HTTP/1.1 emulation to `wp.apiRequest`. [r49133](https://core.trac.wordpress.org/changeset/49133)
+- Include a JSON `Accept` header in `wp.apiRequest`. [r49716](https://core.trac.wordpress.org/changeset/49716)
+- Don't validate the post status if it hasn't changed. [r49302](https://core.trac.wordpress.org/changeset/49302)
+- Support generating comment up links to custom posts controllers. [r49299](https://core.trac.wordpress.org/changeset/49299)
+
 ## Version 5.5
 - Introduce Block Types endpoint. [r48173](https://core.trac.wordpress.org/changeset/48173)
 - Introduce Plugins and Block Directory endpoints. [r48242](https://core.trac.wordpress.org/changeset/48242)
