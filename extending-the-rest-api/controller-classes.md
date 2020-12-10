@@ -281,7 +281,7 @@ In most cases you will want to create a base controller class as either an `inte
 
 The WordPress REST API follows a deliberate design pattern for its internal classes, which may be categorized as either *infrastructure* or *endpoint* classes.
 
-Endpoint classes encapsulate the functional logic necessary to perform [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on WordPress resources. WordPress exposes many REST API endpoints (such as [`WP_REST_Posts_Controller`](https://developer.wordpress.org/reference/classes/wp_rest_controller/)), but as discussed above all endpoints extend from a common base controller class:
+Endpoint classes encapsulate the functional logic necessary to perform [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on WordPress resources. WordPress exposes many REST API endpoints (such as [`WP_REST_Posts_Controller`](https://developer.wordpress.org/reference/classes/wp_rest_posts_controller/)), but as discussed above all endpoints extend from a common base controller class:
 
 * [`WP_REST_Controller`](https://developer.wordpress.org/reference/classes/wp_rest_controller/): The base class for all WordPress core endpoints. This class is designed to represent a consistent pattern for manipulating WordPress resources. When interacting with an endpoint that implements `WP_REST_Controller`, a HTTP client can expect each endpoint to behave in a consistent way.
 
