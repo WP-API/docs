@@ -58,7 +58,7 @@ Note that you do not need to verify that the nonce is valid inside your custom e
 
 ## Authentication Plugins
 
-While cookie authentication is the only authentication mechanism available natively within WordPress, plugins may be added to support alternative modes of authentication that will work from remote applications. Some example plugins are [OAuth 1.0a Server](https://wordpress.org/plugins/rest-api-oauth1/), [Application Passwords](https://wordpress.org/plugins/application-passwords/), and [JSON Web Tokens](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/).
+While cookie authentication is the only authentication mechanism available natively within WordPress, plugins may be added to support alternative modes of authentication that will work from remote applications. Some example plugins are [OAuth 1.0a Server](https://wordpress.org/plugins/rest-api-oauth1/), [Application Passwords](https://wordpress.org/plugins/application-passwords/), and [JSON Web Tokens](https://wordpress.org/plugins/jwt-auth/).
 
 [info]
 
