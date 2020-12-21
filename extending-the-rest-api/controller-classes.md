@@ -194,9 +194,9 @@ class My_REST_Posts_Controller {
 	/**
 	 * Get our sample schema for a post.
 	 *
-	 * @param WP_REST_Request $request Current request.
+	 * @return array The sample schema for a post
 	 */
-	public function get_item_schema( $request ) {
+	public function get_item_schema() {
 		if ( $this->schema ) {
 			// Since WordPress 5.3, the schema can be cached in the $schema property.
 			return $this->schema;
