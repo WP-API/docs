@@ -1,6 +1,6 @@
 # Key Concepts
 
-In this page will break down some of the key concepts and terms associated with the REST API: **Routes & Endpoints,** **Requests**, **Responses**, **Schema**, and **Controller Classes**. Each of these concepts play a crucial role in understanding, using, and extending the WordPress REST API, and each is explored in greater depth within this handbook.
+In this page we'll break down some of the key concepts and terms associated with the REST API: **Routes & Endpoints,** **Requests**, **Responses**, **Schema**, and **Controller Classes**. Each of these concepts play a crucial role in understanding, using, and extending the WordPress REST API, and each is explored in greater depth within this handbook.
 
 ## Routes & Endpoints
 
