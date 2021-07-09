@@ -48,7 +48,7 @@ When making requests to the WordPress REST API, most of the additional data pass
 
 #### URL Params
 
-URL parameters are automatically generated in a `WP_REST_Request` from the path variables in the requested route. What does that mean? Let's look at this route, which grabs individual books by id: `/my-namespace/v1/books/(?P\d+)`. The odd looking `(?P\d+)` is a path variable. The name of the path variable is '`id`'.
+URL parameters are automatically generated in a `WP_REST_Request` from the path variables in the requested route. What does that mean? Let's look at this route, which grabs individual books by id: `/my-namespace/v1/books/(?P<id>\d+)`. The odd looking `(?P<id>\d+)` is a path variable. The name of the path variable is '`id`'.
 
 If we were to make a request like `GET https://ourawesomesite.com/wp-json/my-namespace/v1/books/5`, `5` will become the value for our `id` path variable. The `WP_REST_Request` object will automatically take that path variable and store it as a URL parameter. Now inside of our endpoint callbacks we can interact with that URL parameter really easily. Let's look at an example.
 
