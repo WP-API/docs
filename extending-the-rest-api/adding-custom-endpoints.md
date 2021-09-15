@@ -47,6 +47,8 @@ add_action( 'rest_api_init', function () {
 
 Right now, we're only registering the one endpoint for the route. The term "route" refers to the URL, whereas "endpoint" refers to the function behind it that corresponds to a method *and* a URL (for more information, see the [Glossary](https://developer.wordpress.org/rest-api/glossary/)).
 
+**Note:** enable permalinks within the WordPress settings (Settings -> Permalinks) for the API URLs to work.
+
 For example, if your site domain is `example.com` and you've kept the API path of `wp-json`, then the full URL would be `http://example.com/wp-json/myplugin/v1/author/(?P\d+)`.
 
 Each route can have any number of endpoints, and for each endpoint, you can define the HTTP methods allowed, a callback function for responding to the request and a permissions callback for creating custom permissions. In addition you can define allowed fields in the request and for each field specify a default value, a sanitization callback, a validation callback, and whether the field is required.
