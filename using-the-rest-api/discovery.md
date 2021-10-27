@@ -10,7 +10,7 @@ The first step of connecting to a site is finding out whether the site has the A
 
 ### Link Header
 
-The preferred way to handle discovery is to send a HEAD request to the supplied address. The REST API automatically adds a Link header to all front-end pages that looks like the following:
+The preferred way to handle discovery is to send a OPTIONS request to the supplied address. The REST API automatically adds a Link header to all front-end pages that looks like the following:
 
 	Link: <http://example.com/wp-json/>; rel="https://api.w.org/"
 
@@ -22,7 +22,7 @@ For sites without "pretty permalinks" enabled, `/wp-json/` isn't automatically h
 
 Clients should keep this variation in mind and ensure that both routes can be handled seamlessly.
 
-This auto-discovery can be applied to any URL served by a WordPress installation, so no pre-processing on user input needs to be added. Since this is a HEAD request, the request should be safe to send blindly to servers without worrying about causing side-effects.
+This auto-discovery can be applied to any URL served by a WordPress installation, so no pre-processing on user input needs to be added. Since this is a OPTIONS request, the request should be safe to send blindly to servers without worrying about causing side-effects.
 
 
 ### Element
