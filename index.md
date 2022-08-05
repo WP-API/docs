@@ -2,7 +2,7 @@
 
 The WordPress REST API provides an interface for applications to interact with your WordPress site by sending and receiving data as [JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) objects. It is the foundation of the [WordPress Block Editor](https://developer.wordpress.org/block-editor/), and can likewise enable your theme, plugin or custom application to present new, powerful interfaces for managing and publishing your site content.
 
-Using the WordPress REST API you can create a plugin to provide an entirely new admin experiences for WordPress, build a brand new interactive front-end experience, or bring your WordPress content into completely separate applications.
+Using the WordPress REST API you can create a plugin to provide an entirely new admin experience for WordPress, build a brand new interactive front-end experience, or bring your WordPress content into completely separate applications.
 
 The REST API is a developer-oriented feature of WordPress. It provides data access to the content of your site, and implements the same authentication restrictions -- content that is public on your site is generally publicly accessible via the REST API, while private content, password-protected content, internal users, custom post types, and metadata is only available with authentication or if you specifically set it to be so. If you are not a developer, the most important thing to understand about the API is that it enables the block editor and modern plugin interfaces without compromising the security or privacy of your site.
 
