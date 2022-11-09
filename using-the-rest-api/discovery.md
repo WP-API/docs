@@ -46,8 +46,7 @@ var link = Array.prototype.filter.call( links, function ( item ) {
 var api_root = link[0].href;
 ```
 
-For in-browser clients, or clients without access to HTTP headers, this may be a more usable way of discovering the API. This is similar to Atom/RSS feed discovery, so existing code for that purpose may also be automatically
-adapted instead.
+For in-browser clients, or clients without access to HTTP headers, this may be a more usable way of discovering the API. This is similar to Atom/RSS feed discovery, so existing code for that purpose may also be automatically adapted instead.
 
 
 ### RSD (Really Simple Discovery)
