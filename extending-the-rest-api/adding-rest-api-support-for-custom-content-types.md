@@ -177,7 +177,7 @@ function my_post_type_args( $args, $post_type ) {
 ```
 
 
-For custom taxnomies it is almost the same. You can use the `register_taxonomy_args` filter that exists since WordPress version 4.4.0. 
+For custom taxonomies it is almost the same. You can use the `register_taxonomy_args` filter that exists since WordPress version 4.4.0. 
 
 ```php
 /**
