@@ -122,7 +122,7 @@ class My_REST_Posts_Controller {
 	}
 
 	/**
-	 * Grabs the five most recent posts and outputs them as a rest response.
+	 * Gets post data of requested post id and outputs it as a rest response.
 	 *
 	 * @param WP_REST_Request $request Current request.
 	 */
