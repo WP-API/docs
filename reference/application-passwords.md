@@ -102,7 +102,6 @@
 		</tr>
 	</table>
 
-	</div>
 </section>
 
 <div>
