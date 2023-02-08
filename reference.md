@@ -104,5 +104,3 @@ This API reference provides information on the specific endpoints available thro
 ## A Distributed API
 
 Unlike many other REST APIs, the WordPress REST API is distributed and available individually on each site that supports it. This means there is no singular API root or base to contact; instead, we have [a discovery process](https://developer.wordpress.org/rest-api/discovery/) that allows interacting with sites without prior contact. The API also exposes self-documentation at the index endpoint, or via an `OPTIONS` request to any endpoint, allowing human- or machine-discovery of endpoint capabilities.
-
-A [demo installation](https://demo.wp-api.org/) of the API for testing purposes is available at `https://demo.wp-api.org/wp-json/`; this site supports auto-discovery, and provides read-only demo data.
