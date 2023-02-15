@@ -135,13 +135,13 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Type</h2>
+		<h2>List Types</h2>
 
 		<h3>Definition & Example Request</h3>
 
 		<code>GET /wp/v2/types</code>
 
-		<p>Query this endpoint to retrieve a specific type record.</p>
+		<p>Query this endpoint to retrieve a collection of type records. The response you receive can be controlled and filtered using the URL query parameters below.</p>
 
 		<code>$ curl https://example.com/wp-json/wp/v2/types</code>
 	</div>
