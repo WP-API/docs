@@ -278,6 +278,39 @@ If your endpoint is implemented using a [subclass of `WP_REST_Controller`](https
 
 If your endpoint does not follow the controller class pattern, args returned from `WP_REST_Controller::get_collection_params()`, or any other instance where callbacks are not specified, the `WP_REST_Request` object will apply sanitization and validation using the `rest_parse_request_arg` function. Importantly, this is only applied when the `sanitize_callback` is not defined. As such, if you specify a custom `sanitize_callback` for your argument definition, the built-in JSON Schema validation will not apply. If you need this validation, you should manually specify `rest_validate_request_arg` as the `validate_callback` in your argument definition.   
 
+### Caching Schema
+
+Schema may be complex, and can take time to generate. You should consider caching generated schema in your plugin's custom endpoints to avoid repeatedly generating the same schema object.
+
+If you are defining your endpoint using a a [subclass of `WP_REST_Controller`](https://developer.wordpress.org/rest-api/extending-the-rest-api/controller-classes/), that might look like this:
+
+```php
+
+	/**
+	 * Retrieves the attachment's schema, conforming to JSON Schema.
+	 *
+	 * @return array Item schema as an array.
+	 */
+	public function get_item_schema() {
+		// Returned cached copy whenever available.
+		if ( $this->schema ) {
+			return $this->add_additional_fields_schema( $this->schema );
+		}
+
+		$schema = parent::get_item_schema();
+		// Add endpoint-specific properties to Schema.
+		$schema['properties']['field_name'] = array( /* ... */ );
+		$schema['properties']['etcetera'] = array( /* ... */ );
+
+		// Cache generated schema on endpoint instance.
+		$this->schema = $schema;
+
+		return $this->add_additional_fields_schema( $this->schema );
+	}
+```
+
+This pattern was introduced into WordPress core in version 5.3 in [#47871](https://core.trac.wordpress.org/ticket/47871), and yielded up to 40% speed improvement when generating some API responses.
+
 ### Schema Documents
 
 A basic schema document consists of a few properties.
