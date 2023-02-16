@@ -244,7 +244,7 @@
 				<td>
 											<p>Limit result set to themes assigned one or more statuses.</p>
 																<p class="required">
-							Required: 1
+							Required: active
 						</p>
 																			</td>
 			</tr>
