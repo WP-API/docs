@@ -6,6 +6,11 @@ The API can be used from any application by sending basic HTTP requests; however
 
 [info]To perform authenticated requests from outside of the WordPress admin, themes, or plugins, a separate <a href="https://developer.wordpress.org/rest-api/authentication/#authentication-plugins">authentication plugin</a> is required.[/info]
 
+## PHP
+
+[Requests](https://github.com/WordPress/Requests) for PHP is a humble HTTP request library. While not specifically designed for the WordPress REST API, it is a great tool for interacting with any REST API.
+
+[WordPress-PHP-SDK](https://github.com/madeITBelgium/WordPress-PHP-SDK) is a PHP SDK for the WordPress REST API, which can be installed using [composer](https://getcomposer.org/).
 
 ## JavaScript
 
