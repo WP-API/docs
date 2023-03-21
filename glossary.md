@@ -21,7 +21,7 @@ If you're familiar with WordPress functions, a `GET` request is the equivalent o
 
 The phrase "HTTP Client" refers to the tool you use to interact with WP-API. You might use [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en) (Chrome) or [REST Easy](https://github.com/nathan-osman/REST-Easy) (Firefox) to test requests in your browser, or [httpie](https://github.com/jakubroztocil/httpie) to test requests at the commandline.
 
-WordPress itself provides a HTTP Client in the [`WP_HTTP` class](https://codex.wordpress.org/HTTP_API) and related functions (e.g. `wp_remote_get()`). This can be used to access one WordPress site from another.
+WordPress itself provides a HTTP Client in the [`WP_HTTP` class](https://developer.wordpress.org/plugins/http-api/) and related functions (e.g. `wp_remote_get()`). This can be used to access one WordPress site from another.
 
 
 <h2 id="resource">Resource</h2>
