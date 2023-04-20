@@ -11,7 +11,7 @@ require dirname( __DIR__ ) . '/vendor/autoload.php';
 // This assumes you have a local WP VM running the latest stable WP, mapped to
 // use the domain name example.com using /etc/hosts. http://demo.wp-api.org is
 // also available, though may be outdated.
-const SITE_URL = 'http://example.com';
+const SITE_URL = 'http://developer.local';
 
 function update_route( $route ) {
 	foreach ( $route['endpoints'] as &$endpoint ) {
@@ -43,7 +43,7 @@ function cleanup_name( string $name ) : string {
 function add_simple_schemas() {
 	$objects = [];
 
-	$response = Requests::get( SITE_URL . '?rest_route=/&context=help' );
+	$response = Requests::get( SITE_URL . '?rest_route=/buddyboss-app/learndash/v1/&context=help' );
 
 	$parsed_data = json_decode( $response->body, true );
 
@@ -55,7 +55,6 @@ function add_simple_schemas() {
 		# make a readable route name from the route regex
 		$route_nicename = preg_replace( '/\(\?P<(\w+?)>.*?\)/', '<\1>', $key );
 		$route['nicename'] = $route_nicename;
-
 		# group the objects by unique schema titles [ post => ..., term => ..., etc ]
 		$title = $route['schema']['title'];
 

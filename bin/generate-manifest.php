@@ -31,7 +31,7 @@ foreach ( $paths as $path ) {
 		$manifest[ $key ] = array(
 			'slug'            => $slug,
 			'parent'          => $parent,
-			'markdown_source' => sprintf( 'https://github.com/%s/blob/master/%s.md', $repo, $key ),
+			'markdown_source' => sprintf( 'https://github.com/%s/blob/UX-347/%s.md', $repo, $key ),
 		);
 	}
 }
