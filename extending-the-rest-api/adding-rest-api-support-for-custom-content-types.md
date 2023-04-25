@@ -11,7 +11,7 @@ When registering a custom post type, if you want it to be available via the REST
 /**
  * Register a book post type, with REST API support
  *
- * Based on example at: http://codex.wordpress.org/Function_Reference/register_post_type
+ * Based on example at: https://developer.wordpress.org/reference/functions/register_post_type
  */
 add_action( 'init', 'my_book_cpt' );
 function my_book_cpt() {
@@ -34,7 +34,7 @@ Here is an example of registering a post type, with full labels, support for the
 /**
  * Register a book post type, with REST API support
  *
- * Based on example at: http://codex.wordpress.org/Function_Reference/register_post_type
+ * Based on example at: https://developer.wordpress.org/reference/functions/register_post_type
  */
 add_action( 'init', 'my_book_cpt' );
 function my_book_cpt() {
@@ -103,7 +103,7 @@ Here is an example of how to register a custom taxonomy with REST API support:
 /**
  * Register a genre post type, with REST API support
  *
- * Based on example at: https://codex.wordpress.org/Function_Reference/register_taxonomy
+ * Based on example at: https://developer.wordpress.org/reference/functions/register_taxonomy/
  */
 add_action( 'init', 'my_book_taxonomy', 30 );
 function my_book_taxonomy() {
