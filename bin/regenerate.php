@@ -3,8 +3,8 @@
 
 namespace WPAPI\Docs\Regenerate;
 
-use Requests;
 use Twig;
+use WpOrg\Requests\Requests;
 
 require dirname( __DIR__ ) . '/vendor/autoload.php';
 

@@ -155,6 +155,39 @@
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
+			<tr id="schema-show_on_front">
+			<td>
+				<code>show_on_front</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>What to show on the front page</p>
+								<p class="context">Context: <code></code></p>
+							</td>
+		</tr>
+			<tr id="schema-page_on_front">
+			<td>
+				<code>page_on_front</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>The ID of the page that should be displayed on the front page</p>
+								<p class="context">Context: <code></code></p>
+							</td>
+		</tr>
+			<tr id="schema-page_for_posts">
+			<td>
+				<code>page_for_posts</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>The ID of the page that should display the latest posts</p>
+								<p class="context">Context: <code></code></p>
+							</td>
+		</tr>
 			<tr id="schema-default_ping_status">
 			<td>
 				<code>default_ping_status</code><br />
@@ -177,6 +210,28 @@
 				<p>Allow people to submit comments on new posts.</p>
 								<p class="context">Context: <code></code></p>
 									<p>One of: <code>open</code>, <code>closed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-site_logo">
+			<td>
+				<code>site_logo</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>Site logo.</p>
+								<p class="context">Context: <code></code></p>
+							</td>
+		</tr>
+			<tr id="schema-site_icon">
+			<td>
+				<code>site_icon</code><br />
+				<span class="type">
+					integer				</span>
+			</td>
+			<td>
+				<p>Site icon.</p>
+								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 	</table>
@@ -312,6 +367,30 @@
 			</tr>
 					<tr>
 				<td>
+											<code><a href="#schema-show_on_front">show_on_front</a></code><br />
+									</td>
+				<td>
+											<p>What to show on the front page</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-page_on_front">page_on_front</a></code><br />
+									</td>
+				<td>
+											<p>The ID of the page that should be displayed on the front page</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-page_for_posts">page_for_posts</a></code><br />
+									</td>
+				<td>
+											<p>The ID of the page that should display the latest posts</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
 											<code><a href="#schema-default_ping_status">default_ping_status</a></code><br />
 									</td>
 				<td>
@@ -327,6 +406,22 @@
 											<p>Allow people to submit comments on new posts.</p>
 																										<p>One of: <code>open</code>, <code>closed</code></p>
 									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-site_logo">site_logo</a></code><br />
+									</td>
+				<td>
+											<p>Site logo.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-site_icon">site_icon</a></code><br />
+									</td>
+				<td>
+											<p>Site icon.</p>
+																								</td>
 			</tr>
 			</table>
 

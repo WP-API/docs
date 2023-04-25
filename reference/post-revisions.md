@@ -15,7 +15,7 @@
 					integer				</span>
 			</td>
 			<td>
-				<p>The ID for the author of the object.</p>
+				<p>The ID for the author of the revision.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -28,7 +28,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was published, in the site&#039;s timezone.</p>
+				<p>The date the revision was published, in the site&#039;s timezone.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -41,7 +41,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was published, as GMT.</p>
+				<p>The date the revision was published, as GMT.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -52,7 +52,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The globally unique identifier for the object.</p>
+				<p>The globally unique identifier for the post.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -64,7 +64,7 @@
 					integer				</span>
 			</td>
 			<td>
-				<p>Unique identifier for the object.</p>
+				<p>Unique identifier for the revision.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -77,7 +77,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was last modified, in the site&#039;s timezone.</p>
+				<p>The date the revision was last modified, in the site&#039;s timezone.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -90,7 +90,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was last modified, as GMT.</p>
+				<p>The date the revision was last modified, as GMT.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -101,7 +101,7 @@
 					integer				</span>
 			</td>
 			<td>
-				<p>The ID for the parent of the object.</p>
+				<p>The ID for the parent of the revision.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -112,7 +112,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>An alphanumeric identifier for the object unique to its type.</p>
+				<p>An alphanumeric identifier for the revision unique to its type.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -123,7 +123,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The title for the object.</p>
+				<p>The title for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -134,7 +134,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The content for the object.</p>
+				<p>The content for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -145,7 +145,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The excerpt for the object.</p>
+				<p>The excerpt for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -175,7 +175,7 @@
 											<code>parent</code><br />
 									</td>
 				<td>
-											<p>The ID for the parent of the object.</p>
+											<p>The ID for the parent of the revision.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -289,7 +289,7 @@
 											<code>parent</code><br />
 									</td>
 				<td>
-											<p>The ID for the parent of the object.</p>
+											<p>The ID for the parent of the revision.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -297,7 +297,7 @@
 											<code>id</code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the revision.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -326,7 +326,7 @@
 											<code>parent</code><br />
 									</td>
 				<td>
-											<p>The ID for the parent of the object.</p>
+											<p>The ID for the parent of the revision.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -334,7 +334,7 @@
 											<code>id</code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the revision.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -378,7 +378,7 @@
 											<code>parent</code><br />
 									</td>
 				<td>
-											<p>The ID for the parent of the object.</p>
+											<p>The ID for the parent of the autosave.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -407,7 +407,7 @@
 											<code><a href="#schema-parent">parent</a></code><br />
 									</td>
 				<td>
-											<p>The ID for the parent of the object.</p>
+											<p>The ID for the parent of the autosave.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -415,7 +415,7 @@
 											<code><a href="#schema-date">date</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, in the site&#039;s timezone.</p>
+											<p>The date the post was published, in the site&#039;s timezone.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -423,7 +423,7 @@
 											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, as GMT.</p>
+											<p>The date the post was published, as GMT.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -431,7 +431,7 @@
 											<code><a href="#schema-slug">slug</a></code><br />
 									</td>
 				<td>
-											<p>An alphanumeric identifier for the object unique to its type.</p>
+											<p>An alphanumeric identifier for the post unique to its type.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -439,7 +439,7 @@
 											<code><a href="#schema-status">status</a></code><br />
 									</td>
 				<td>
-											<p>A named status for the object.</p>
+											<p>A named status for the post.</p>
 																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 									</td>
 			</tr>
@@ -456,7 +456,7 @@
 											<code><a href="#schema-title">title</a></code><br />
 									</td>
 				<td>
-											<p>The title for the object.</p>
+											<p>The title for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -464,7 +464,7 @@
 											<code><a href="#schema-content">content</a></code><br />
 									</td>
 				<td>
-											<p>The content for the object.</p>
+											<p>The content for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -472,7 +472,7 @@
 											<code><a href="#schema-author">author</a></code><br />
 									</td>
 				<td>
-											<p>The ID for the author of the object.</p>
+											<p>The ID for the author of the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -480,7 +480,7 @@
 											<code><a href="#schema-excerpt">excerpt</a></code><br />
 									</td>
 				<td>
-											<p>The excerpt for the object.</p>
+											<p>The excerpt for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -488,7 +488,7 @@
 											<code><a href="#schema-featured_media">featured_media</a></code><br />
 									</td>
 				<td>
-											<p>The ID of the featured media for the object.</p>
+											<p>The ID of the featured media for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -496,7 +496,7 @@
 											<code><a href="#schema-comment_status">comment_status</a></code><br />
 									</td>
 				<td>
-											<p>Whether or not comments are open on the object.</p>
+											<p>Whether or not comments are open on the post.</p>
 																										<p>One of: <code>open</code>, <code>closed</code></p>
 									</td>
 			</tr>
@@ -505,7 +505,7 @@
 											<code><a href="#schema-ping_status">ping_status</a></code><br />
 									</td>
 				<td>
-											<p>Whether or not the object can be pinged.</p>
+											<p>Whether or not the post can be pinged.</p>
 																										<p>One of: <code>open</code>, <code>closed</code></p>
 									</td>
 			</tr>
@@ -514,7 +514,7 @@
 											<code><a href="#schema-format">format</a></code><br />
 									</td>
 				<td>
-											<p>The format for the object.</p>
+											<p>The format for the post.</p>
 																										<p>One of: <code>standard</code>, <code>aside</code>, <code>chat</code>, <code>gallery</code>, <code>link</code>, <code>image</code>, <code>quote</code>, <code>status</code>, <code>video</code>, <code>audio</code></p>
 									</td>
 			</tr>
@@ -531,7 +531,7 @@
 											<code><a href="#schema-sticky">sticky</a></code><br />
 									</td>
 				<td>
-											<p>Whether or not the object should be treated as sticky.</p>
+											<p>Whether or not the post should be treated as sticky.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -539,7 +539,7 @@
 											<code><a href="#schema-template">template</a></code><br />
 									</td>
 				<td>
-											<p>The theme file to use to display the object.</p>
+											<p>The theme file to use to display the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -547,7 +547,7 @@
 											<code><a href="#schema-categories">categories</a></code><br />
 									</td>
 				<td>
-											<p>The terms assigned to the object in the category taxonomy.</p>
+											<p>The terms assigned to the post in the category taxonomy.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -555,7 +555,7 @@
 											<code><a href="#schema-tags">tags</a></code><br />
 									</td>
 				<td>
-											<p>The terms assigned to the object in the post_tag taxonomy.</p>
+											<p>The terms assigned to the post in the post_tag taxonomy.</p>
 																								</td>
 			</tr>
 			</table>
@@ -587,7 +587,7 @@
 											<code>parent</code><br />
 									</td>
 				<td>
-											<p>The ID for the parent of the object.</p>
+											<p>The ID for the parent of the autosave.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -595,7 +595,7 @@
 											<code>id</code><br />
 									</td>
 				<td>
-											<p>The ID for the object.</p>
+											<p>The ID for the autosave.</p>
 																								</td>
 			</tr>
 					<tr>

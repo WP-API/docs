@@ -15,7 +15,7 @@
 					integer				</span>
 			</td>
 			<td>
-				<p>Unique identifier for the object.</p>
+				<p>Unique identifier for the comment.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -40,7 +40,7 @@
 									</span>
 			</td>
 			<td>
-				<p>Email address for the object author.</p>
+				<p>Email address for the comment author.</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
@@ -53,7 +53,7 @@
 									</span>
 			</td>
 			<td>
-				<p>IP address for the object author.</p>
+				<p>IP address for the comment author.</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
@@ -64,7 +64,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>Display name for the object author.</p>
+				<p>Display name for the comment author.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -77,7 +77,7 @@
 										</span>
 			</td>
 			<td>
-				<p>URL for the object author.</p>
+				<p>URL for the comment author.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -88,7 +88,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>User agent for the object author.</p>
+				<p>User agent for the comment author.</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
@@ -99,7 +99,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The content for the object.</p>
+				<p>The content for the comment.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -112,7 +112,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was published, in the site&#039;s timezone.</p>
+				<p>The date the comment was published, in the site&#039;s timezone.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -125,7 +125,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was published, as GMT.</p>
+				<p>The date the comment was published, as GMT.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -138,7 +138,7 @@
 										</span>
 			</td>
 			<td>
-				<p>URL to the object.</p>
+				<p>URL to the comment.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -150,7 +150,7 @@
 					integer				</span>
 			</td>
 			<td>
-				<p>The ID for the parent of the object.</p>
+				<p>The ID for the parent of the comment.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -172,7 +172,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>State of the object.</p>
+				<p>State of the comment.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -183,7 +183,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>Type of Comment for the object.</p>
+				<p>Type of the comment.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -195,7 +195,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>Avatar URLs for the object author.</p>
+				<p>Avatar URLs for the comment author.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -355,7 +355,7 @@
 											<code>orderby</code><br />
 									</td>
 				<td>
-											<p>Sort collection by object attribute.</p>
+											<p>Sort collection by comment attribute.</p>
 																					<p class="default">
 							Default: <code>date_gmt</code>
 						</p>
@@ -438,7 +438,7 @@
 											<code><a href="#schema-author_email">author_email</a></code><br />
 									</td>
 				<td>
-											<p>Email address for the object author.</p>
+											<p>Email address for the comment author.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -446,7 +446,7 @@
 											<code><a href="#schema-author_ip">author_ip</a></code><br />
 									</td>
 				<td>
-											<p>IP address for the object author.</p>
+											<p>IP address for the comment author.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -454,7 +454,7 @@
 											<code><a href="#schema-author_name">author_name</a></code><br />
 									</td>
 				<td>
-											<p>Display name for the object author.</p>
+											<p>Display name for the comment author.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -462,7 +462,7 @@
 											<code><a href="#schema-author_url">author_url</a></code><br />
 									</td>
 				<td>
-											<p>URL for the object author.</p>
+											<p>URL for the comment author.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -470,7 +470,7 @@
 											<code><a href="#schema-author_user_agent">author_user_agent</a></code><br />
 									</td>
 				<td>
-											<p>User agent for the object author.</p>
+											<p>User agent for the comment author.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -478,7 +478,7 @@
 											<code><a href="#schema-content">content</a></code><br />
 									</td>
 				<td>
-											<p>The content for the object.</p>
+											<p>The content for the comment.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -486,7 +486,7 @@
 											<code><a href="#schema-date">date</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, in the site&#039;s timezone.</p>
+											<p>The date the comment was published, in the site&#039;s timezone.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -494,7 +494,7 @@
 											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, as GMT.</p>
+											<p>The date the comment was published, as GMT.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -502,7 +502,7 @@
 											<code><a href="#schema-parent">parent</a></code><br />
 									</td>
 				<td>
-											<p>The ID for the parent of the object.</p>
+											<p>The ID for the parent of the comment.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -518,7 +518,7 @@
 											<code><a href="#schema-status">status</a></code><br />
 									</td>
 				<td>
-											<p>State of the object.</p>
+											<p>State of the comment.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -558,7 +558,7 @@
 											<code>id</code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the comment.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -595,7 +595,7 @@
 											<code><a href="#schema-id">id</a></code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the comment.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -611,7 +611,7 @@
 											<code><a href="#schema-author_email">author_email</a></code><br />
 									</td>
 				<td>
-											<p>Email address for the object author.</p>
+											<p>Email address for the comment author.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -619,7 +619,7 @@
 											<code><a href="#schema-author_ip">author_ip</a></code><br />
 									</td>
 				<td>
-											<p>IP address for the object author.</p>
+											<p>IP address for the comment author.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -627,7 +627,7 @@
 											<code><a href="#schema-author_name">author_name</a></code><br />
 									</td>
 				<td>
-											<p>Display name for the object author.</p>
+											<p>Display name for the comment author.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -635,7 +635,7 @@
 											<code><a href="#schema-author_url">author_url</a></code><br />
 									</td>
 				<td>
-											<p>URL for the object author.</p>
+											<p>URL for the comment author.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -643,7 +643,7 @@
 											<code><a href="#schema-author_user_agent">author_user_agent</a></code><br />
 									</td>
 				<td>
-											<p>User agent for the object author.</p>
+											<p>User agent for the comment author.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -651,7 +651,7 @@
 											<code><a href="#schema-content">content</a></code><br />
 									</td>
 				<td>
-											<p>The content for the object.</p>
+											<p>The content for the comment.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -659,7 +659,7 @@
 											<code><a href="#schema-date">date</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, in the site&#039;s timezone.</p>
+											<p>The date the comment was published, in the site&#039;s timezone.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -667,7 +667,7 @@
 											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, as GMT.</p>
+											<p>The date the comment was published, as GMT.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -675,7 +675,7 @@
 											<code><a href="#schema-parent">parent</a></code><br />
 									</td>
 				<td>
-											<p>The ID for the parent of the object.</p>
+											<p>The ID for the parent of the comment.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -691,7 +691,7 @@
 											<code><a href="#schema-status">status</a></code><br />
 									</td>
 				<td>
-											<p>State of the object.</p>
+											<p>State of the comment.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -725,7 +725,7 @@
 											<code>id</code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the comment.</p>
 																								</td>
 			</tr>
 					<tr>

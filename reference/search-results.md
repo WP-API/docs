@@ -158,6 +158,22 @@
 						</p>
 														</td>
 			</tr>
+					<tr>
+				<td>
+											<code>exclude</code><br />
+									</td>
+				<td>
+											<p>Ensure result set excludes specific IDs.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>include</code><br />
+									</td>
+				<td>
+											<p>Limit result set to specific IDs.</p>
+																								</td>
+			</tr>
 			</table>
 
 	</div>

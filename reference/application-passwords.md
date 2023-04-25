@@ -31,7 +31,7 @@
 									</span>
 			</td>
 			<td>
-				<p>A uuid provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.</p>
+				<p>A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -146,7 +146,7 @@
 											<code><a href="#schema-app_id">app_id</a></code><br />
 									</td>
 				<td>
-											<p>A uuid provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.</p>
+											<p>A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -191,6 +191,37 @@
 
 		<h3>Definition & Example Request</h3>
 
+		<code>GET /wp/v2/users/&lt;user_id&gt;)/application-passwords/introspect</code>
+
+		<p>Query this endpoint to retrieve a specific application password record.</p>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;)/application-passwords/introspect</code>
+	</div>
+	<div class="secondary">
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>context</code><br />
+									</td>
+				<td>
+											<p>Scope under which the request is made; determines fields present in response.</p>
+																					<p class="default">
+							Default: <code>view</code>
+						</p>
+																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
+									</td>
+			</tr>
+			</table>
+
+	</div>
+</section>
+<section class="route">
+	<div class="primary">
+		<h2>Retrieve a Application Password</h2>
+
+		<h3>Definition & Example Request</h3>
+
 		<code>GET /wp/v2/users/&lt;user_id&gt;)/application-passwords/&lt;uuid&gt;</code>
 
 		<p>Query this endpoint to retrieve a specific application password record.</p>
@@ -226,7 +257,7 @@
 											<code><a href="#schema-app_id">app_id</a></code><br />
 									</td>
 				<td>
-											<p>A uuid provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.</p>
+											<p>A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.</p>
 																								</td>
 			</tr>
 					<tr>

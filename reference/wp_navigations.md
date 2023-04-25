@@ -1,12 +1,12 @@
 ---
 ---
 
-# Media
+# Navigations
 
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist within a Media Item record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
+<p>The schema defines all the fields that exist within a navigation record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
 <table class="attributes">
 			<tr id="schema-date">
 			<td>
@@ -135,27 +135,14 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
-			<tr id="schema-permalink_template">
+			<tr id="schema-password">
 			<td>
-				<code>permalink_template</code><br />
+				<code>password</code><br />
 				<span class="type">
 					string				</span>
 			</td>
 			<td>
-				<p>Permalink template for the post.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>edit</code></p>
-							</td>
-		</tr>
-			<tr id="schema-generated_slug">
-			<td>
-				<code>generated_slug</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Slug automatically generated from the post title.</p>
-									<p class="read-only">Read only</p>
+				<p>A password to protect access to the content and excerpt.</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
@@ -170,49 +157,14 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
-			<tr id="schema-author">
+			<tr id="schema-content">
 			<td>
-				<code>author</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The ID for the author of the post.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-comment_status">
-			<td>
-				<code>comment_status</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Whether or not comments are open on the post.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-									<p>One of: <code>open</code>, <code>closed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-ping_status">
-			<td>
-				<code>ping_status</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Whether or not the post can be pinged.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-									<p>One of: <code>open</code>, <code>closed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-meta">
-			<td>
-				<code>meta</code><br />
+				<code>content</code><br />
 				<span class="type">
 					object				</span>
 			</td>
 			<td>
-				<p>Meta fields.</p>
+				<p>The content for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -227,113 +179,6 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
-			<tr id="schema-alt_text">
-			<td>
-				<code>alt_text</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Alternative text to display when attachment is not displayed.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-caption">
-			<td>
-				<code>caption</code><br />
-				<span class="type">
-					object				</span>
-			</td>
-			<td>
-				<p>The attachment caption.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-description">
-			<td>
-				<code>description</code><br />
-				<span class="type">
-					object				</span>
-			</td>
-			<td>
-				<p>The attachment description.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-							</td>
-		</tr>
-			<tr id="schema-media_type">
-			<td>
-				<code>media_type</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Attachment type.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-									<p>One of: <code>image</code>, <code>file</code></p>
-							</td>
-		</tr>
-			<tr id="schema-mime_type">
-			<td>
-				<code>mime_type</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The attachment MIME type.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-media_details">
-			<td>
-				<code>media_details</code><br />
-				<span class="type">
-					object				</span>
-			</td>
-			<td>
-				<p>Details about the media file, specific to its type.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-post">
-			<td>
-				<code>post</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The ID for the associated post of the attachment.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-							</td>
-		</tr>
-			<tr id="schema-source_url">
-			<td>
-				<code>source_url</code><br />
-				<span class="type">
-					string,
-													uri
-										</span>
-			</td>
-			<td>
-				<p>URL to the original attachment file.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-							</td>
-		</tr>
-			<tr id="schema-missing_image_sizes">
-			<td>
-				<code>missing_image_sizes</code><br />
-				<span class="type">
-					array				</span>
-			</td>
-			<td>
-				<p>List of the missing image sizes of the attachment.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>edit</code></p>
-							</td>
-		</tr>
 	</table>
 
 	</div>
@@ -341,16 +186,16 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>List Media</h2>
-		<p>Query this endpoint to retrieve a collection of media. The response you receive can be controlled and filtered using the URL query parameters below.</p>
+		<h2>List Navigations</h2>
+		<p>Query this endpoint to retrieve a collection of navigations. The response you receive can be controlled and filtered using the URL query parameters below.</p>
 
 		<h3>Definition</h3>
 
-		<code>GET /wp/v2/media</code>
+		<code>GET /wp/v2/navigation</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/media</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/navigation</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>
@@ -411,22 +256,6 @@
 									</td>
 				<td>
 											<p>Limit response to posts modified after a given ISO8601 compliant date.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>author</code><br />
-									</td>
-				<td>
-											<p>Limit result set to posts assigned to specific authors.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>author_exclude</code><br />
-									</td>
-				<td>
-											<p>Ensure result set excludes posts assigned to specific authors.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -495,22 +324,6 @@
 			</tr>
 					<tr>
 				<td>
-											<code>parent</code><br />
-									</td>
-				<td>
-											<p>Limit result set to items with particular parent IDs.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>parent_exclude</code><br />
-									</td>
-				<td>
-											<p>Limit result set to all items except those of a particular parent ID.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
 											<code>search_columns</code><br />
 									</td>
 				<td>
@@ -532,26 +345,9 @@
 				<td>
 											<p>Limit result set to posts assigned one or more statuses.</p>
 																					<p class="default">
-							Default: <code>inherit</code>
+							Default: <code>publish</code>
 						</p>
 														</td>
-			</tr>
-					<tr>
-				<td>
-											<code>media_type</code><br />
-									</td>
-				<td>
-											<p>Limit result set to attachments of a particular media type.</p>
-																										<p>One of: <code>image</code>, <code>video</code>, <code>text</code>, <code>application</code>, <code>audio</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code>mime_type</code><br />
-									</td>
-				<td>
-											<p>Limit result set to attachments of a particular MIME type.</p>
-																								</td>
 			</tr>
 			</table>
 
@@ -559,7 +355,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Create a Media Item</h2>
+		<h2>Create a Navigation</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -597,6 +393,14 @@
 			</tr>
 					<tr>
 				<td>
+											<code><a href="#schema-password">password</a></code><br />
+									</td>
+				<td>
+											<p>A password to protect access to the content and excerpt.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
 											<code><a href="#schema-title">title</a></code><br />
 									</td>
 				<td>
@@ -605,36 +409,10 @@
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-author">author</a></code><br />
+											<code><a href="#schema-content">content</a></code><br />
 									</td>
 				<td>
-											<p>The ID for the author of the post.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-comment_status">comment_status</a></code><br />
-									</td>
-				<td>
-											<p>Whether or not comments are open on the post.</p>
-																										<p>One of: <code>open</code>, <code>closed</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-ping_status">ping_status</a></code><br />
-									</td>
-				<td>
-											<p>Whether or not the post can be pinged.</p>
-																										<p>One of: <code>open</code>, <code>closed</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-meta">meta</a></code><br />
-									</td>
-				<td>
-											<p>Meta fields.</p>
+											<p>The content for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -645,58 +423,26 @@
 											<p>The theme file to use to display the post.</p>
 																								</td>
 			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-alt_text">alt_text</a></code><br />
-									</td>
-				<td>
-											<p>Alternative text to display when attachment is not displayed.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-caption">caption</a></code><br />
-									</td>
-				<td>
-											<p>The attachment caption.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-description">description</a></code><br />
-									</td>
-				<td>
-											<p>The attachment description.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-post">post</a></code><br />
-									</td>
-				<td>
-											<p>The ID for the associated post of the attachment.</p>
-																								</td>
-			</tr>
 			</table>
 
 	</div>
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>POST /wp/v2/media</code>
+		<code>POST /wp/v2/navigation</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Media Item</h2>
+		<h2>Retrieve a Navigation</h2>
 
 		<h3>Definition & Example Request</h3>
 
-		<code>GET /wp/v2/media/&lt;id&gt;</code>
+		<code>GET /wp/v2/navigation/&lt;id&gt;</code>
 
-		<p>Query this endpoint to retrieve a specific Media Item record.</p>
+		<p>Query this endpoint to retrieve a specific navigation record.</p>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/media/&lt;id&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/navigation/&lt;id&gt;</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>
@@ -721,13 +467,21 @@
 																<p>One of: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 									</td>
 			</tr>
+					<tr>
+				<td>
+											<code>password</code><br />
+									</td>
+				<td>
+											<p>The password for the post if it is password protected.</p>
+																								</td>
+			</tr>
 			</table>
 
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Update a Media Item</h2>
+		<h2>Update a Navigation</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -773,6 +527,14 @@
 			</tr>
 					<tr>
 				<td>
+											<code><a href="#schema-password">password</a></code><br />
+									</td>
+				<td>
+											<p>A password to protect access to the content and excerpt.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
 											<code><a href="#schema-title">title</a></code><br />
 									</td>
 				<td>
@@ -781,36 +543,10 @@
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-author">author</a></code><br />
+											<code><a href="#schema-content">content</a></code><br />
 									</td>
 				<td>
-											<p>The ID for the author of the post.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-comment_status">comment_status</a></code><br />
-									</td>
-				<td>
-											<p>Whether or not comments are open on the post.</p>
-																										<p>One of: <code>open</code>, <code>closed</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-ping_status">ping_status</a></code><br />
-									</td>
-				<td>
-											<p>Whether or not the post can be pinged.</p>
-																										<p>One of: <code>open</code>, <code>closed</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-meta">meta</a></code><br />
-									</td>
-				<td>
-											<p>Meta fields.</p>
+											<p>The content for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -821,45 +557,13 @@
 											<p>The theme file to use to display the post.</p>
 																								</td>
 			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-alt_text">alt_text</a></code><br />
-									</td>
-				<td>
-											<p>Alternative text to display when attachment is not displayed.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-caption">caption</a></code><br />
-									</td>
-				<td>
-											<p>The attachment caption.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-description">description</a></code><br />
-									</td>
-				<td>
-											<p>The attachment description.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-post">post</a></code><br />
-									</td>
-				<td>
-											<p>The ID for the associated post of the attachment.</p>
-																								</td>
-			</tr>
 			</table>
 
 	</div>
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>POST /wp/v2/media/&lt;id&gt;</code>
+		<code>POST /wp/v2/navigation/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
@@ -868,7 +572,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Delete a Media Item</h2>
+		<h2>Delete a Navigation</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -893,11 +597,11 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>DELETE /wp/v2/media/&lt;id&gt;</code>
+		<code>DELETE /wp/v2/navigation/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/media/&lt;id&gt;</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/navigation/&lt;id&gt;</code>
 	</div>
 </section>
 </div>

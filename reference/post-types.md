@@ -104,6 +104,18 @@
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
+			<tr id="schema-has_archive">
+			<td>
+				<code>has_archive</code><br />
+				<span class="type">
+					string or boolean				</span>
+			</td>
+			<td>
+				<p>If the value is a string, the value will be used as the archive slug. If the value is false the post type has no archive.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
 			<tr id="schema-taxonomies">
 			<td>
 				<code>taxonomies</code><br />
@@ -124,6 +136,42 @@
 			</td>
 			<td>
 				<p>REST base route for the post type.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-rest_namespace">
+			<td>
+				<code>rest_namespace</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>REST route&#039;s namespace for the post type.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-visibility">
+			<td>
+				<code>visibility</code><br />
+				<span class="type">
+					object				</span>
+			</td>
+			<td>
+				<p>The visibility settings for the post type.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-icon">
+			<td>
+				<code>icon</code><br />
+				<span class="type">
+					string or null				</span>
+			</td>
+			<td>
+				<p>The icon for the post type.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>

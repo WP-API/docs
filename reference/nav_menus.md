@@ -1,12 +1,12 @@
 ---
 ---
 
-# Tags
+# Nav_Menus
 
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist within a tag record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
+<p>The schema defines all the fields that exist within a nav_menu record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
 <table class="attributes">
 			<tr id="schema-id">
 			<td>
@@ -20,18 +20,6 @@
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 							</td>
 		</tr>
-			<tr id="schema-count">
-			<td>
-				<code>count</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>Number of published posts for the term.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-							</td>
-		</tr>
 			<tr id="schema-description">
 			<td>
 				<code>description</code><br />
@@ -41,20 +29,6 @@
 			<td>
 				<p>HTML description of the term.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
-							</td>
-		</tr>
-			<tr id="schema-link">
-			<td>
-				<code>link</code><br />
-				<span class="type">
-					string,
-													uri
-										</span>
-			</td>
-			<td>
-				<p>URL of the term.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-name">
@@ -79,19 +53,6 @@
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 							</td>
 		</tr>
-			<tr id="schema-taxonomy">
-			<td>
-				<code>taxonomy</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Type attribution for the term.</p>
-									<p class="read-only">Read only</p>
-								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
-									<p>One of: <code>post_tag</code></p>
-							</td>
-		</tr>
 			<tr id="schema-meta">
 			<td>
 				<code>meta</code><br />
@@ -103,6 +64,28 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
+			<tr id="schema-locations">
+			<td>
+				<code>locations</code><br />
+				<span class="type">
+					array				</span>
+			</td>
+			<td>
+				<p>The locations assigned to the menu.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-auto_add">
+			<td>
+				<code>auto_add</code><br />
+				<span class="type">
+					boolean				</span>
+			</td>
+			<td>
+				<p>Whether to automatically add top level pages to this menu.</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
 	</table>
 
 	</div>
@@ -110,16 +93,16 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>List Tags</h2>
-		<p>Query this endpoint to retrieve a collection of tags. The response you receive can be controlled and filtered using the URL query parameters below.</p>
+		<h2>List Nav_Menus</h2>
+		<p>Query this endpoint to retrieve a collection of nav_menus. The response you receive can be controlled and filtered using the URL query parameters below.</p>
 
 		<h3>Definition</h3>
 
-		<code>GET /wp/v2/tags</code>
+		<code>GET /wp/v2/menus</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/tags</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/menus</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>
@@ -244,7 +227,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Create a Tag</h2>
+		<h2>Create a Nav_Menu</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -282,26 +265,42 @@
 											<p>Meta fields.</p>
 																								</td>
 			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-locations">locations</a></code><br />
+									</td>
+				<td>
+											<p>The locations assigned to the menu.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-auto_add">auto_add</a></code><br />
+									</td>
+				<td>
+											<p>Whether to automatically add top level pages to this menu.</p>
+																								</td>
+			</tr>
 			</table>
 
 	</div>
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>POST /wp/v2/tags</code>
+		<code>POST /wp/v2/menus</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Tag</h2>
+		<h2>Retrieve a Nav_Menu</h2>
 
 		<h3>Definition & Example Request</h3>
 
-		<code>GET /wp/v2/tags/&lt;id&gt;</code>
+		<code>GET /wp/v2/menus/&lt;id&gt;</code>
 
-		<p>Query this endpoint to retrieve a specific tag record.</p>
+		<p>Query this endpoint to retrieve a specific nav_menu record.</p>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/tags/&lt;id&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/menus/&lt;id&gt;</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>
@@ -332,7 +331,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Update a Tag</h2>
+		<h2>Update a Nav_Menu</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -375,13 +374,29 @@
 											<p>Meta fields.</p>
 																								</td>
 			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-locations">locations</a></code><br />
+									</td>
+				<td>
+											<p>The locations assigned to the menu.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-auto_add">auto_add</a></code><br />
+									</td>
+				<td>
+											<p>Whether to automatically add top level pages to this menu.</p>
+																								</td>
+			</tr>
 			</table>
 
 	</div>
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>POST /wp/v2/tags/&lt;id&gt;</code>
+		<code>POST /wp/v2/menus/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
@@ -390,7 +405,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Delete a Tag</h2>
+		<h2>Delete a Nav_Menu</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -415,11 +430,11 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>DELETE /wp/v2/tags/&lt;id&gt;</code>
+		<code>DELETE /wp/v2/menus/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/tags/&lt;id&gt;</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/menus/&lt;id&gt;</code>
 	</div>
 </section>
 </div>

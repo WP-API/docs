@@ -1,12 +1,12 @@
 ---
 ---
 
-# Block Revisions
+# Template Revisions
 
 <section class="route">
 	<div class="primary">
 		<h2>Schema</h2>
-<p>The schema defines all the fields that exist within a Block Revision record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
+<p>The schema defines all the fields that exist within a template revision record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
 <table class="attributes">
 			<tr id="schema-author">
 			<td>
@@ -49,11 +49,10 @@
 			<td>
 				<code>guid</code><br />
 				<span class="type">
-					object				</span>
+					string				</span>
 			</td>
 			<td>
-				<p>The globally unique identifier for the post.</p>
-									<p class="read-only">Read only</p>
+				<p>GUID for the revision, as it exists in the database.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -120,22 +119,22 @@
 			<td>
 				<code>title</code><br />
 				<span class="type">
-					object				</span>
+					object or string				</span>
 			</td>
 			<td>
-				<p>The title for the post.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+				<p>Title of template.</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-content">
 			<td>
 				<code>content</code><br />
 				<span class="type">
-					object				</span>
+					object or string				</span>
 			</td>
 			<td>
-				<p>The content for the post.</p>
-								<p class="context">Context: <code>view</code>, <code>edit</code></p>
+				<p>Content of template.</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 	</table>
@@ -145,16 +144,16 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>List Block Revisions</h2>
-		<p>Query this endpoint to retrieve a collection of Block Revisions. The response you receive can be controlled and filtered using the URL query parameters below.</p>
+		<h2>List Template Revisions</h2>
+		<p>Query this endpoint to retrieve a collection of template revisions. The response you receive can be controlled and filtered using the URL query parameters below.</p>
 
 		<h3>Definition</h3>
 
-		<code>GET /wp/v2/blocks/&lt;parent&gt;/revisions</code>
+		<code>GET /wp/v2/templates/&lt;parent&gt;/revisions</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;parent&gt;/revisions</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/templates/&lt;parent&gt;/revisions</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>
@@ -260,15 +259,15 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Block Revision</h2>
+		<h2>Retrieve a Template Revision</h2>
 
 		<h3>Definition & Example Request</h3>
 
-		<code>GET /wp/v2/blocks/&lt;parent&gt;/revisions/&lt;id&gt;</code>
+		<code>GET /wp/v2/templates/&lt;parent&gt;/revisions/&lt;id&gt;</code>
 
-		<p>Query this endpoint to retrieve a specific Block Revision record.</p>
+		<p>Query this endpoint to retrieve a specific template revision record.</p>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;parent&gt;/revisions/&lt;id&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/templates/&lt;parent&gt;/revisions/&lt;id&gt;</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>
@@ -307,7 +306,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Delete a Block Revision</h2>
+		<h2>Delete a Template Revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -340,24 +339,24 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>DELETE /wp/v2/blocks/&lt;parent&gt;/revisions/&lt;id&gt;</code>
+		<code>DELETE /wp/v2/templates/&lt;parent&gt;/revisions/&lt;id&gt;</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/blocks/&lt;parent&gt;/revisions/&lt;id&gt;</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/templates/&lt;parent&gt;/revisions/&lt;id&gt;</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Block Revision</h2>
+		<h2>Retrieve a Template Revision</h2>
 
 		<h3>Definition & Example Request</h3>
 
-		<code>GET /wp/v2/blocks/&lt;id&gt;/autosaves</code>
+		<code>GET /wp/v2/templates/&lt;id&gt;/autosaves</code>
 
-		<p>Query this endpoint to retrieve a specific Block Revision record.</p>
+		<p>Query this endpoint to retrieve a specific template revision record.</p>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;id&gt;/autosaves</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/templates/&lt;id&gt;/autosaves</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>
@@ -388,7 +387,7 @@
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Create a Block Revision</h2>
+		<h2>Create a Template Revision</h2>
 			<h3>Arguments</h3>
 	<table class="arguments">
 					<tr>
@@ -401,51 +400,26 @@
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-date">date</a></code><br />
-									</td>
-				<td>
-											<p>The date the post was published, in the site&#039;s timezone.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
-									</td>
-				<td>
-											<p>The date the post was published, as GMT.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
 											<code><a href="#schema-slug">slug</a></code><br />
 									</td>
 				<td>
-											<p>An alphanumeric identifier for the post unique to its type.</p>
+											<p>Unique slug identifying the template.</p>
 																								</td>
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-status">status</a></code><br />
+											<code><a href="#schema-theme">theme</a></code><br />
 									</td>
 				<td>
-											<p>A named status for the post.</p>
-																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
-									</td>
-			</tr>
-					<tr>
-				<td>
-											<code><a href="#schema-password">password</a></code><br />
-									</td>
-				<td>
-											<p>A password to protect access to the content and excerpt.</p>
+											<p>Theme identifier for the template.</p>
 																								</td>
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-title">title</a></code><br />
+											<code><a href="#schema-type">type</a></code><br />
 									</td>
 				<td>
-											<p>The title for the post.</p>
+											<p>Type of template.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -453,15 +427,40 @@
 											<code><a href="#schema-content">content</a></code><br />
 									</td>
 				<td>
-											<p>The content for the post.</p>
+											<p>Content of template.</p>
 																								</td>
 			</tr>
 					<tr>
 				<td>
-											<code><a href="#schema-template">template</a></code><br />
+											<code><a href="#schema-title">title</a></code><br />
 									</td>
 				<td>
-											<p>The theme file to use to display the post.</p>
+											<p>Title of template.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-description">description</a></code><br />
+									</td>
+				<td>
+											<p>Description of template.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-status">status</a></code><br />
+									</td>
+				<td>
+											<p>Status of template.</p>
+																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
+									</td>
+			</tr>
+					<tr>
+				<td>
+											<code><a href="#schema-author">author</a></code><br />
+									</td>
+				<td>
+											<p>The ID for the author of the template.</p>
 																								</td>
 			</tr>
 			</table>
@@ -470,20 +469,20 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>POST /wp/v2/blocks/&lt;id&gt;/autosaves</code>
+		<code>POST /wp/v2/templates/&lt;id&gt;/autosaves</code>
 	</div>
 </section>
 <section class="route">
 	<div class="primary">
-		<h2>Retrieve a Block Revision</h2>
+		<h2>Retrieve a Template Revision</h2>
 
 		<h3>Definition & Example Request</h3>
 
-		<code>GET /wp/v2/blocks/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
+		<code>GET /wp/v2/templates/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
 
-		<p>Query this endpoint to retrieve a specific Block Revision record.</p>
+		<p>Query this endpoint to retrieve a specific template revision record.</p>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/blocks/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/templates/&lt;parent&gt;/autosaves/&lt;id&gt;</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>

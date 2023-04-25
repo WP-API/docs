@@ -124,7 +124,7 @@
 			<td>
 				<p>Locale for the user.</p>
 								<p class="context">Context: <code>edit</code></p>
-									<p>One of: <code></code>, <code>en_US</code></p>
+									<p>One of: <code></code>, <code>en_US</code>, <code>de_DE</code></p>
 							</td>
 		</tr>
 			<tr id="schema-nickname">
@@ -336,7 +336,7 @@
 											<code>orderby</code><br />
 									</td>
 				<td>
-											<p>Sort collection by object attribute.</p>
+											<p>Sort collection by user attribute.</p>
 																					<p class="default">
 							Default: <code>name</code>
 						</p>
@@ -361,12 +361,28 @@
 			</tr>
 					<tr>
 				<td>
+											<code>capabilities</code><br />
+									</td>
+				<td>
+											<p>Limit result set to users matching at least one specific capability provided. Accepts csv list or single capability.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
 											<code>who</code><br />
 									</td>
 				<td>
 											<p>Limit result set to users who are considered authors.</p>
 																										<p>One of: <code>authors</code></p>
 									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>has_published_posts</code><br />
+									</td>
+				<td>
+											<p>Limit result set to users who have published posts.</p>
+																								</td>
 			</tr>
 			</table>
 
@@ -445,7 +461,7 @@
 									</td>
 				<td>
 											<p>Locale for the user.</p>
-																										<p>One of: <code></code>, <code>en_US</code></p>
+																										<p>One of: <code></code>, <code>en_US</code>, <code>de_DE</code></p>
 									</td>
 			</tr>
 					<tr>
@@ -614,7 +630,7 @@
 									</td>
 				<td>
 											<p>Locale for the user.</p>
-																										<p>One of: <code></code>, <code>en_US</code></p>
+																										<p>One of: <code></code>, <code>en_US</code>, <code>de_DE</code></p>
 									</td>
 			</tr>
 					<tr>
@@ -813,7 +829,7 @@
 									</td>
 				<td>
 											<p>Locale for the user.</p>
-																										<p>One of: <code></code>, <code>en_US</code></p>
+																										<p>One of: <code></code>, <code>en_US</code>, <code>de_DE</code></p>
 									</td>
 			</tr>
 					<tr>
