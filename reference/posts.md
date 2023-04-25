@@ -17,7 +17,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was published, in the site&#039;s timezone.</p>
+				<p>The date the post was published, in the site&#039;s timezone.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -30,7 +30,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was published, as GMT.</p>
+				<p>The date the post was published, as GMT.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -41,7 +41,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The globally unique identifier for the object.</p>
+				<p>The globally unique identifier for the post.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -53,7 +53,7 @@
 					integer				</span>
 			</td>
 			<td>
-				<p>Unique identifier for the object.</p>
+				<p>Unique identifier for the post.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -67,7 +67,7 @@
 										</span>
 			</td>
 			<td>
-				<p>URL to the object.</p>
+				<p>URL to the post.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -81,7 +81,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was last modified, in the site&#039;s timezone.</p>
+				<p>The date the post was last modified, in the site&#039;s timezone.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -95,7 +95,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was last modified, as GMT.</p>
+				<p>The date the post was last modified, as GMT.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -107,7 +107,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>An alphanumeric identifier for the object unique to its type.</p>
+				<p>An alphanumeric identifier for the post unique to its type.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -118,7 +118,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>A named status for the object.</p>
+				<p>A named status for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 									<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 							</td>
@@ -130,7 +130,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>Type of Post for the object.</p>
+				<p>Type of post.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -153,7 +153,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>Permalink template for the object.</p>
+				<p>Permalink template for the post.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
@@ -165,7 +165,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>Slug automatically generated from the object title.</p>
+				<p>Slug automatically generated from the post title.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
@@ -177,7 +177,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The title for the object.</p>
+				<p>The title for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -188,7 +188,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The content for the object.</p>
+				<p>The content for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -199,7 +199,7 @@
 					integer				</span>
 			</td>
 			<td>
-				<p>The ID for the author of the object.</p>
+				<p>The ID for the author of the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -210,7 +210,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The excerpt for the object.</p>
+				<p>The excerpt for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -221,7 +221,7 @@
 					integer				</span>
 			</td>
 			<td>
-				<p>The ID of the featured media for the object.</p>
+				<p>The ID of the featured media for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -232,7 +232,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>Whether or not comments are open on the object.</p>
+				<p>Whether or not comments are open on the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 									<p>One of: <code>open</code>, <code>closed</code></p>
 							</td>
@@ -244,7 +244,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>Whether or not the object can be pinged.</p>
+				<p>Whether or not the post can be pinged.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 									<p>One of: <code>open</code>, <code>closed</code></p>
 							</td>
@@ -256,7 +256,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>The format for the object.</p>
+				<p>The format for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 									<p>One of: <code>standard</code>, <code>aside</code>, <code>chat</code>, <code>gallery</code>, <code>link</code>, <code>image</code>, <code>quote</code>, <code>status</code>, <code>video</code>, <code>audio</code></p>
 							</td>
@@ -279,7 +279,7 @@
 					boolean				</span>
 			</td>
 			<td>
-				<p>Whether or not the object should be treated as sticky.</p>
+				<p>Whether or not the post should be treated as sticky.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -290,7 +290,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>The theme file to use to display the object.</p>
+				<p>The theme file to use to display the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -301,7 +301,7 @@
 					array				</span>
 			</td>
 			<td>
-				<p>The terms assigned to the object in the category taxonomy.</p>
+				<p>The terms assigned to the post in the category taxonomy.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -312,7 +312,7 @@
 					array				</span>
 			</td>
 			<td>
-				<p>The terms assigned to the object in the post_tag taxonomy.</p>
+				<p>The terms assigned to the post in the post_tag taxonomy.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -389,6 +389,14 @@
 			</tr>
 					<tr>
 				<td>
+											<code>modified_after</code><br />
+									</td>
+				<td>
+											<p>Limit response to posts modified after a given ISO8601 compliant date.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
 											<code>author</code><br />
 									</td>
 				<td>
@@ -409,6 +417,14 @@
 									</td>
 				<td>
 											<p>Limit response to posts published before a given ISO8601 compliant date.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>modified_before</code><br />
+									</td>
+				<td>
+											<p>Limit response to posts modified before a given ISO8601 compliant date.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -452,12 +468,20 @@
 											<code>orderby</code><br />
 									</td>
 				<td>
-											<p>Sort collection by object attribute.</p>
+											<p>Sort collection by post attribute.</p>
 																					<p class="default">
 							Default: <code>date</code>
 						</p>
 																<p>One of: <code>author</code>, <code>date</code>, <code>id</code>, <code>include</code>, <code>modified</code>, <code>parent</code>, <code>relevance</code>, <code>slug</code>, <code>include_slugs</code>, <code>title</code></p>
 									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>search_columns</code><br />
+									</td>
+				<td>
+											<p>Array of column names to be searched.</p>
+																								</td>
 			</tr>
 					<tr>
 				<td>
@@ -492,7 +516,7 @@
 											<code>categories</code><br />
 									</td>
 				<td>
-											<p>Limit result set to all items that have the specified term assigned in the categories taxonomy.</p>
+											<p>Limit result set to items with specific terms assigned in the categories taxonomy.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -500,7 +524,7 @@
 											<code>categories_exclude</code><br />
 									</td>
 				<td>
-											<p>Limit result set to all items except those that have the specified term assigned in the categories taxonomy.</p>
+											<p>Limit result set to items except those with specific terms assigned in the categories taxonomy.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -508,7 +532,7 @@
 											<code>tags</code><br />
 									</td>
 				<td>
-											<p>Limit result set to all items that have the specified term assigned in the tags taxonomy.</p>
+											<p>Limit result set to items with specific terms assigned in the tags taxonomy.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -516,7 +540,7 @@
 											<code>tags_exclude</code><br />
 									</td>
 				<td>
-											<p>Limit result set to all items except those that have the specified term assigned in the tags taxonomy.</p>
+											<p>Limit result set to items except those with specific terms assigned in the tags taxonomy.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -541,7 +565,7 @@
 											<code><a href="#schema-date">date</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, in the site&#039;s timezone.</p>
+											<p>The date the post was published, in the site&#039;s timezone.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -549,7 +573,7 @@
 											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, as GMT.</p>
+											<p>The date the post was published, as GMT.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -557,7 +581,7 @@
 											<code><a href="#schema-slug">slug</a></code><br />
 									</td>
 				<td>
-											<p>An alphanumeric identifier for the object unique to its type.</p>
+											<p>An alphanumeric identifier for the post unique to its type.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -565,7 +589,7 @@
 											<code><a href="#schema-status">status</a></code><br />
 									</td>
 				<td>
-											<p>A named status for the object.</p>
+											<p>A named status for the post.</p>
 																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 									</td>
 			</tr>
@@ -582,7 +606,7 @@
 											<code><a href="#schema-title">title</a></code><br />
 									</td>
 				<td>
-											<p>The title for the object.</p>
+											<p>The title for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -590,7 +614,7 @@
 											<code><a href="#schema-content">content</a></code><br />
 									</td>
 				<td>
-											<p>The content for the object.</p>
+											<p>The content for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -598,7 +622,7 @@
 											<code><a href="#schema-author">author</a></code><br />
 									</td>
 				<td>
-											<p>The ID for the author of the object.</p>
+											<p>The ID for the author of the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -606,7 +630,7 @@
 											<code><a href="#schema-excerpt">excerpt</a></code><br />
 									</td>
 				<td>
-											<p>The excerpt for the object.</p>
+											<p>The excerpt for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -614,7 +638,7 @@
 											<code><a href="#schema-featured_media">featured_media</a></code><br />
 									</td>
 				<td>
-											<p>The ID of the featured media for the object.</p>
+											<p>The ID of the featured media for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -622,7 +646,7 @@
 											<code><a href="#schema-comment_status">comment_status</a></code><br />
 									</td>
 				<td>
-											<p>Whether or not comments are open on the object.</p>
+											<p>Whether or not comments are open on the post.</p>
 																										<p>One of: <code>open</code>, <code>closed</code></p>
 									</td>
 			</tr>
@@ -631,7 +655,7 @@
 											<code><a href="#schema-ping_status">ping_status</a></code><br />
 									</td>
 				<td>
-											<p>Whether or not the object can be pinged.</p>
+											<p>Whether or not the post can be pinged.</p>
 																										<p>One of: <code>open</code>, <code>closed</code></p>
 									</td>
 			</tr>
@@ -640,7 +664,7 @@
 											<code><a href="#schema-format">format</a></code><br />
 									</td>
 				<td>
-											<p>The format for the object.</p>
+											<p>The format for the post.</p>
 																										<p>One of: <code>standard</code>, <code>aside</code>, <code>chat</code>, <code>gallery</code>, <code>link</code>, <code>image</code>, <code>quote</code>, <code>status</code>, <code>video</code>, <code>audio</code></p>
 									</td>
 			</tr>
@@ -657,7 +681,7 @@
 											<code><a href="#schema-sticky">sticky</a></code><br />
 									</td>
 				<td>
-											<p>Whether or not the object should be treated as sticky.</p>
+											<p>Whether or not the post should be treated as sticky.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -665,7 +689,7 @@
 											<code><a href="#schema-template">template</a></code><br />
 									</td>
 				<td>
-											<p>The theme file to use to display the object.</p>
+											<p>The theme file to use to display the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -673,7 +697,7 @@
 											<code><a href="#schema-categories">categories</a></code><br />
 									</td>
 				<td>
-											<p>The terms assigned to the object in the category taxonomy.</p>
+											<p>The terms assigned to the post in the category taxonomy.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -681,7 +705,7 @@
 											<code><a href="#schema-tags">tags</a></code><br />
 									</td>
 				<td>
-											<p>The terms assigned to the object in the post_tag taxonomy.</p>
+											<p>The terms assigned to the post in the post_tag taxonomy.</p>
 																								</td>
 			</tr>
 			</table>
@@ -713,7 +737,7 @@
 											<code>id</code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -750,7 +774,7 @@
 											<code><a href="#schema-id">id</a></code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -758,7 +782,7 @@
 											<code><a href="#schema-date">date</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, in the site&#039;s timezone.</p>
+											<p>The date the post was published, in the site&#039;s timezone.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -766,7 +790,7 @@
 											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, as GMT.</p>
+											<p>The date the post was published, as GMT.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -774,7 +798,7 @@
 											<code><a href="#schema-slug">slug</a></code><br />
 									</td>
 				<td>
-											<p>An alphanumeric identifier for the object unique to its type.</p>
+											<p>An alphanumeric identifier for the post unique to its type.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -782,7 +806,7 @@
 											<code><a href="#schema-status">status</a></code><br />
 									</td>
 				<td>
-											<p>A named status for the object.</p>
+											<p>A named status for the post.</p>
 																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 									</td>
 			</tr>
@@ -799,7 +823,7 @@
 											<code><a href="#schema-title">title</a></code><br />
 									</td>
 				<td>
-											<p>The title for the object.</p>
+											<p>The title for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -807,7 +831,7 @@
 											<code><a href="#schema-content">content</a></code><br />
 									</td>
 				<td>
-											<p>The content for the object.</p>
+											<p>The content for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -815,7 +839,7 @@
 											<code><a href="#schema-author">author</a></code><br />
 									</td>
 				<td>
-											<p>The ID for the author of the object.</p>
+											<p>The ID for the author of the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -823,7 +847,7 @@
 											<code><a href="#schema-excerpt">excerpt</a></code><br />
 									</td>
 				<td>
-											<p>The excerpt for the object.</p>
+											<p>The excerpt for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -831,7 +855,7 @@
 											<code><a href="#schema-featured_media">featured_media</a></code><br />
 									</td>
 				<td>
-											<p>The ID of the featured media for the object.</p>
+											<p>The ID of the featured media for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -839,7 +863,7 @@
 											<code><a href="#schema-comment_status">comment_status</a></code><br />
 									</td>
 				<td>
-											<p>Whether or not comments are open on the object.</p>
+											<p>Whether or not comments are open on the post.</p>
 																										<p>One of: <code>open</code>, <code>closed</code></p>
 									</td>
 			</tr>
@@ -848,7 +872,7 @@
 											<code><a href="#schema-ping_status">ping_status</a></code><br />
 									</td>
 				<td>
-											<p>Whether or not the object can be pinged.</p>
+											<p>Whether or not the post can be pinged.</p>
 																										<p>One of: <code>open</code>, <code>closed</code></p>
 									</td>
 			</tr>
@@ -857,7 +881,7 @@
 											<code><a href="#schema-format">format</a></code><br />
 									</td>
 				<td>
-											<p>The format for the object.</p>
+											<p>The format for the post.</p>
 																										<p>One of: <code>standard</code>, <code>aside</code>, <code>chat</code>, <code>gallery</code>, <code>link</code>, <code>image</code>, <code>quote</code>, <code>status</code>, <code>video</code>, <code>audio</code></p>
 									</td>
 			</tr>
@@ -874,7 +898,7 @@
 											<code><a href="#schema-sticky">sticky</a></code><br />
 									</td>
 				<td>
-											<p>Whether or not the object should be treated as sticky.</p>
+											<p>Whether or not the post should be treated as sticky.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -882,7 +906,7 @@
 											<code><a href="#schema-template">template</a></code><br />
 									</td>
 				<td>
-											<p>The theme file to use to display the object.</p>
+											<p>The theme file to use to display the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -890,7 +914,7 @@
 											<code><a href="#schema-categories">categories</a></code><br />
 									</td>
 				<td>
-											<p>The terms assigned to the object in the category taxonomy.</p>
+											<p>The terms assigned to the post in the category taxonomy.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -898,7 +922,7 @@
 											<code><a href="#schema-tags">tags</a></code><br />
 									</td>
 				<td>
-											<p>The terms assigned to the object in the post_tag taxonomy.</p>
+											<p>The terms assigned to the post in the post_tag taxonomy.</p>
 																								</td>
 			</tr>
 			</table>
@@ -925,7 +949,7 @@
 											<code>id</code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the post.</p>
 																								</td>
 			</tr>
 					<tr>

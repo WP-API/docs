@@ -17,7 +17,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was published, in the site&#039;s timezone.</p>
+				<p>The date the post was published, in the site&#039;s timezone.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -30,7 +30,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was published, as GMT.</p>
+				<p>The date the post was published, as GMT.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -41,7 +41,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The globally unique identifier for the object.</p>
+				<p>The globally unique identifier for the post.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -53,7 +53,7 @@
 					integer				</span>
 			</td>
 			<td>
-				<p>Unique identifier for the object.</p>
+				<p>Unique identifier for the post.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -67,7 +67,7 @@
 										</span>
 			</td>
 			<td>
-				<p>URL to the object.</p>
+				<p>URL to the post.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -81,7 +81,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was last modified, in the site&#039;s timezone.</p>
+				<p>The date the post was last modified, in the site&#039;s timezone.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -95,7 +95,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date the object was last modified, as GMT.</p>
+				<p>The date the post was last modified, as GMT.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -107,7 +107,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>An alphanumeric identifier for the object unique to its type.</p>
+				<p>An alphanumeric identifier for the post unique to its type.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -118,7 +118,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>A named status for the object.</p>
+				<p>A named status for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 									<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 							</td>
@@ -130,7 +130,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>Type of Post for the object.</p>
+				<p>Type of post.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -153,7 +153,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The title for the object.</p>
+				<p>The title for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
@@ -164,7 +164,7 @@
 					object				</span>
 			</td>
 			<td>
-				<p>The content for the object.</p>
+				<p>The content for the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -175,7 +175,7 @@
 					string				</span>
 			</td>
 			<td>
-				<p>The theme file to use to display the object.</p>
+				<p>The theme file to use to display the post.</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
@@ -252,10 +252,26 @@
 			</tr>
 					<tr>
 				<td>
+											<code>modified_after</code><br />
+									</td>
+				<td>
+											<p>Limit response to posts modified after a given ISO8601 compliant date.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
 											<code>before</code><br />
 									</td>
 				<td>
 											<p>Limit response to posts published before a given ISO8601 compliant date.</p>
+																								</td>
+			</tr>
+					<tr>
+				<td>
+											<code>modified_before</code><br />
+									</td>
+				<td>
+											<p>Limit response to posts modified before a given ISO8601 compliant date.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -299,12 +315,20 @@
 											<code>orderby</code><br />
 									</td>
 				<td>
-											<p>Sort collection by object attribute.</p>
+											<p>Sort collection by post attribute.</p>
 																					<p class="default">
 							Default: <code>date</code>
 						</p>
 																<p>One of: <code>author</code>, <code>date</code>, <code>id</code>, <code>include</code>, <code>modified</code>, <code>parent</code>, <code>relevance</code>, <code>slug</code>, <code>include_slugs</code>, <code>title</code></p>
 									</td>
+			</tr>
+					<tr>
+				<td>
+											<code>search_columns</code><br />
+									</td>
+				<td>
+											<p>Array of column names to be searched.</p>
+																								</td>
 			</tr>
 					<tr>
 				<td>
@@ -339,7 +363,7 @@
 											<code><a href="#schema-date">date</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, in the site&#039;s timezone.</p>
+											<p>The date the post was published, in the site&#039;s timezone.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -347,7 +371,7 @@
 											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, as GMT.</p>
+											<p>The date the post was published, as GMT.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -355,7 +379,7 @@
 											<code><a href="#schema-slug">slug</a></code><br />
 									</td>
 				<td>
-											<p>An alphanumeric identifier for the object unique to its type.</p>
+											<p>An alphanumeric identifier for the post unique to its type.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -363,7 +387,7 @@
 											<code><a href="#schema-status">status</a></code><br />
 									</td>
 				<td>
-											<p>A named status for the object.</p>
+											<p>A named status for the post.</p>
 																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 									</td>
 			</tr>
@@ -380,7 +404,7 @@
 											<code><a href="#schema-title">title</a></code><br />
 									</td>
 				<td>
-											<p>The title for the object.</p>
+											<p>The title for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -388,7 +412,7 @@
 											<code><a href="#schema-content">content</a></code><br />
 									</td>
 				<td>
-											<p>The content for the object.</p>
+											<p>The content for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -396,7 +420,7 @@
 											<code><a href="#schema-template">template</a></code><br />
 									</td>
 				<td>
-											<p>The theme file to use to display the object.</p>
+											<p>The theme file to use to display the post.</p>
 																								</td>
 			</tr>
 			</table>
@@ -428,7 +452,7 @@
 											<code>id</code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -465,7 +489,7 @@
 											<code><a href="#schema-id">id</a></code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -473,7 +497,7 @@
 											<code><a href="#schema-date">date</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, in the site&#039;s timezone.</p>
+											<p>The date the post was published, in the site&#039;s timezone.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -481,7 +505,7 @@
 											<code><a href="#schema-date_gmt">date_gmt</a></code><br />
 									</td>
 				<td>
-											<p>The date the object was published, as GMT.</p>
+											<p>The date the post was published, as GMT.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -489,7 +513,7 @@
 											<code><a href="#schema-slug">slug</a></code><br />
 									</td>
 				<td>
-											<p>An alphanumeric identifier for the object unique to its type.</p>
+											<p>An alphanumeric identifier for the post unique to its type.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -497,7 +521,7 @@
 											<code><a href="#schema-status">status</a></code><br />
 									</td>
 				<td>
-											<p>A named status for the object.</p>
+											<p>A named status for the post.</p>
 																										<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 									</td>
 			</tr>
@@ -514,7 +538,7 @@
 											<code><a href="#schema-title">title</a></code><br />
 									</td>
 				<td>
-											<p>The title for the object.</p>
+											<p>The title for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -522,7 +546,7 @@
 											<code><a href="#schema-content">content</a></code><br />
 									</td>
 				<td>
-											<p>The content for the object.</p>
+											<p>The content for the post.</p>
 																								</td>
 			</tr>
 					<tr>
@@ -530,7 +554,7 @@
 											<code><a href="#schema-template">template</a></code><br />
 									</td>
 				<td>
-											<p>The theme file to use to display the object.</p>
+											<p>The theme file to use to display the post.</p>
 																								</td>
 			</tr>
 			</table>
@@ -556,7 +580,7 @@
 											<code>id</code><br />
 									</td>
 				<td>
-											<p>Unique identifier for the object.</p>
+											<p>Unique identifier for the post.</p>
 																								</td>
 			</tr>
 					<tr>

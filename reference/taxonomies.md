@@ -116,6 +116,18 @@
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
+			<tr id="schema-rest_namespace">
+			<td>
+				<code>rest_namespace</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>REST namespace route for the taxonomy.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
 			<tr id="schema-visibility">
 			<td>
 				<code>visibility</code><br />

@@ -89,7 +89,7 @@
 				<p>Type attribution for the term.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
-									<p>One of: <code>category</code>, <code>post_tag</code>, <code>nav_menu</code>, <code>link_category</code>, <code>post_format</code></p>
+									<p>One of: <code>category</code></p>
 							</td>
 		</tr>
 			<tr id="schema-parent">

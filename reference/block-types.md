@@ -140,50 +140,62 @@
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
-			<tr id="schema-editor_script">
+			<tr id="schema-editor_script_handles">
 			<td>
-				<code>editor_script</code><br />
+				<code>editor_script_handles</code><br />
 				<span class="type">
-					string or null				</span>
+					array				</span>
 			</td>
 			<td>
-				<p>Editor script handle.</p>
+				<p>Editor script handles.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
-			<tr id="schema-script">
+			<tr id="schema-script_handles">
 			<td>
-				<code>script</code><br />
+				<code>script_handles</code><br />
 				<span class="type">
-					string or null				</span>
+					array				</span>
 			</td>
 			<td>
-				<p>Public facing script handle.</p>
+				<p>Public facing and editor script handles.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
-			<tr id="schema-editor_style">
+			<tr id="schema-view_script_handles">
 			<td>
-				<code>editor_style</code><br />
+				<code>view_script_handles</code><br />
 				<span class="type">
-					string or null				</span>
+					array				</span>
 			</td>
 			<td>
-				<p>Editor style handle.</p>
+				<p>Public facing script handles.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
-			<tr id="schema-style">
+			<tr id="schema-editor_style_handles">
 			<td>
-				<code>style</code><br />
+				<code>editor_style_handles</code><br />
 				<span class="type">
-					string or null				</span>
+					array				</span>
 			</td>
 			<td>
-				<p>Public facing style handle.</p>
+				<p>Editor style handles.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-style_handles">
+			<td>
+				<code>style_handles</code><br />
+				<span class="type">
+					array				</span>
+			</td>
+			<td>
+				<p>Public facing and editor style handles.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -196,6 +208,18 @@
 			</td>
 			<td>
 				<p>Block style variations.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-variations">
+			<td>
+				<code>variations</code><br />
+				<span class="type">
+					array				</span>
+			</td>
+			<td>
+				<p>Block variations.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -224,6 +248,18 @@
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
+			<tr id="schema-ancestor">
+			<td>
+				<code>ancestor</code><br />
+				<span class="type">
+					array or null				</span>
+			</td>
+			<td>
+				<p>Ancestor blocks.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
 			<tr id="schema-keywords">
 			<td>
 				<code>keywords</code><br />
@@ -244,6 +280,66 @@
 			</td>
 			<td>
 				<p>Block example.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-editor_script">
+			<td>
+				<code>editor_script</code><br />
+				<span class="type">
+					string or null				</span>
+			</td>
+			<td>
+				<p>Editor script handle. DEPRECATED: Use `editor_script_handles` instead.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-script">
+			<td>
+				<code>script</code><br />
+				<span class="type">
+					string or null				</span>
+			</td>
+			<td>
+				<p>Public facing and editor script handle. DEPRECATED: Use `script_handles` instead.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-view_script">
+			<td>
+				<code>view_script</code><br />
+				<span class="type">
+					string or null				</span>
+			</td>
+			<td>
+				<p>Public facing script handle. DEPRECATED: Use `view_script_handles` instead.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-editor_style">
+			<td>
+				<code>editor_style</code><br />
+				<span class="type">
+					string or null				</span>
+			</td>
+			<td>
+				<p>Editor style handle. DEPRECATED: Use `editor_style_handles` instead.</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
+							</td>
+		</tr>
+			<tr id="schema-style">
+			<td>
+				<code>style</code><br />
+				<span class="type">
+					string or null				</span>
+			</td>
+			<td>
+				<p>Public facing and editor style handle. DEPRECATED: Use `style_handles` instead.</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>

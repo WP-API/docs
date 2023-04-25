@@ -56,7 +56,7 @@
 			<td>
 				<code>rating</code><br />
 				<span class="type">
-					integer				</span>
+					number				</span>
 			</td>
 			<td>
 				<p>The star rating of the block.</p>
@@ -78,7 +78,7 @@
 			<td>
 				<code>active_installs</code><br />
 				<span class="type">
-					string				</span>
+					integer				</span>
 			</td>
 			<td>
 				<p>The number sites that have activated this block.</p>
@@ -89,7 +89,7 @@
 			<td>
 				<code>author_block_rating</code><br />
 				<span class="type">
-					integer				</span>
+					number				</span>
 			</td>
 			<td>
 				<p>The average rating of blocks published by the same author.</p>
@@ -140,7 +140,7 @@
 										</span>
 			</td>
 			<td>
-				<p>The date when the block was last updated, in fuzzy human readable format.</p>
+				<p>The date when the block was last updated.</p>
 								<p class="context">Context: <code>view</code></p>
 							</td>
 		</tr>

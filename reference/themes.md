@@ -178,6 +178,18 @@
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
+			<tr id="schema-status">
+			<td>
+				<code>status</code><br />
+				<span class="type">
+					string				</span>
+			</td>
+			<td>
+				<p>A named status for the theme.</p>
+								<p class="context">Context: <code></code></p>
+									<p>One of: <code>inactive</code>, <code>active</code></p>
+							</td>
+		</tr>
 	</table>
 
 	</div>
@@ -185,14 +197,13 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>List Themes</h2>
-		<p>Query this endpoint to retrieve a collection of themes. The response you receive can be controlled and filtered using the URL query parameters below.</p>
+		<h2>Retrieve a Theme</h2>
 
-		<h3>Definition</h3>
+		<h3>Definition & Example Request</h3>
 
 		<code>GET /wp/v2/themes</code>
 
-		<h3>Example Request</h3>
+		<p>Query this endpoint to retrieve a specific theme record.</p>
 
 		<code>$ curl https://example.com/wp-json/wp/v2/themes</code>
 	</div>
@@ -201,52 +212,38 @@
 	<table class="arguments">
 					<tr>
 				<td>
-											<code>context</code><br />
-									</td>
-				<td>
-											<p>Scope under which the request is made; determines fields present in response.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
-											<code>page</code><br />
-									</td>
-				<td>
-											<p>Current page of the collection.</p>
-																					<p class="default">
-							Default: <code>1</code>
-						</p>
-														</td>
-			</tr>
-					<tr>
-				<td>
-											<code>per_page</code><br />
-									</td>
-				<td>
-											<p>Maximum number of items to be returned in result set.</p>
-																					<p class="default">
-							Default: <code>10</code>
-						</p>
-														</td>
-			</tr>
-					<tr>
-				<td>
-											<code>search</code><br />
-									</td>
-				<td>
-											<p>Limit results to those matching a string.</p>
-																								</td>
-			</tr>
-					<tr>
-				<td>
 											<code>status</code><br />
 									</td>
 				<td>
 											<p>Limit result set to themes assigned one or more statuses.</p>
-																<p class="required">
-							Required: 1
-						</p>
-																			</td>
+																								</td>
+			</tr>
+			</table>
+
+	</div>
+</section>
+<section class="route">
+	<div class="primary">
+		<h2>Retrieve a Theme</h2>
+
+		<h3>Definition & Example Request</h3>
+
+		<code>GET /wp/v2/themes/&lt;stylesheet&gt;?)</code>
+
+		<p>Query this endpoint to retrieve a specific theme record.</p>
+
+		<code>$ curl https://example.com/wp-json/wp/v2/themes/&lt;stylesheet&gt;?)</code>
+	</div>
+	<div class="secondary">
+			<h3>Arguments</h3>
+	<table class="arguments">
+					<tr>
+				<td>
+											<code>stylesheet</code><br />
+									</td>
+				<td>
+											<p>The theme&#039;s stylesheet. This uniquely identifies the theme.</p>
+																								</td>
 			</tr>
 			</table>
 
