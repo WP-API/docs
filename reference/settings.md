@@ -10,227 +10,227 @@
 <table class="attributes">
 			<tr id="schema-title">
 			<td>
-				<code>title</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Site title.</p>
+				<code>title</code>
+				</td>
+				<td>
+					<p>Site title.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Site tagline.</p>
+				<code>description</code>
+				</td>
+				<td>
+					<p>Site tagline.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-url">
 			<td>
-				<code>url</code><br />
-				<span class="type">
-					string,
-													uri
-										</span>
-			</td>
-			<td>
-				<p>Site URL.</p>
+				<code>url</code>
+				</td>
+				<td>
+					<p>Site URL.</p>
+					<p class="type">
+						JSON data type: string,
+													Format: uri
+										</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-email">
 			<td>
-				<code>email</code><br />
-				<span class="type">
-					string,
-													email
-									</span>
-			</td>
-			<td>
-				<p>This address is used for admin purposes, like new user notification.</p>
+				<code>email</code>
+				</td>
+				<td>
+					<p>This address is used for admin purposes, like new user notification.</p>
+					<p class="type">
+						JSON data type: string,
+													Format: email
+									</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-timezone">
 			<td>
-				<code>timezone</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>A city in the same timezone as you.</p>
+				<code>timezone</code>
+				</td>
+				<td>
+					<p>A city in the same timezone as you.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-date_format">
 			<td>
-				<code>date_format</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>A date format for all date strings.</p>
+				<code>date_format</code>
+				</td>
+				<td>
+					<p>A date format for all date strings.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-time_format">
 			<td>
-				<code>time_format</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>A time format for all time strings.</p>
+				<code>time_format</code>
+				</td>
+				<td>
+					<p>A time format for all time strings.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-start_of_week">
 			<td>
-				<code>start_of_week</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>A day number of the week that the week should start on.</p>
+				<code>start_of_week</code>
+				</td>
+				<td>
+					<p>A day number of the week that the week should start on.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-language">
 			<td>
-				<code>language</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>WordPress locale code.</p>
+				<code>language</code>
+				</td>
+				<td>
+					<p>WordPress locale code.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-use_smilies">
 			<td>
-				<code>use_smilies</code><br />
-				<span class="type">
-					boolean				</span>
-			</td>
-			<td>
-				<p>Convert emoticons like :-) and :-P to graphics on display.</p>
+				<code>use_smilies</code>
+				</td>
+				<td>
+					<p>Convert emoticons like :-) and :-P to graphics on display.</p>
+					<p class="type">
+						JSON data type: boolean				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-default_category">
 			<td>
-				<code>default_category</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>Default post category.</p>
+				<code>default_category</code>
+				</td>
+				<td>
+					<p>Default post category.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-default_post_format">
 			<td>
-				<code>default_post_format</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Default post format.</p>
+				<code>default_post_format</code>
+				</td>
+				<td>
+					<p>Default post format.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-posts_per_page">
 			<td>
-				<code>posts_per_page</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>Blog pages show at most.</p>
+				<code>posts_per_page</code>
+				</td>
+				<td>
+					<p>Blog pages show at most.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-show_on_front">
 			<td>
-				<code>show_on_front</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>What to show on the front page</p>
+				<code>show_on_front</code>
+				</td>
+				<td>
+					<p>What to show on the front page</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-page_on_front">
 			<td>
-				<code>page_on_front</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The ID of the page that should be displayed on the front page</p>
+				<code>page_on_front</code>
+				</td>
+				<td>
+					<p>The ID of the page that should be displayed on the front page</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-page_for_posts">
 			<td>
-				<code>page_for_posts</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The ID of the page that should display the latest posts</p>
+				<code>page_for_posts</code>
+				</td>
+				<td>
+					<p>The ID of the page that should display the latest posts</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-default_ping_status">
 			<td>
-				<code>default_ping_status</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.</p>
+				<code>default_ping_status</code>
+				</td>
+				<td>
+					<p>Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 									<p>One of: <code>open</code>, <code>closed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-default_comment_status">
 			<td>
-				<code>default_comment_status</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Allow people to submit comments on new posts.</p>
+				<code>default_comment_status</code>
+				</td>
+				<td>
+					<p>Allow people to submit comments on new posts.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 									<p>One of: <code>open</code>, <code>closed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-site_logo">
 			<td>
-				<code>site_logo</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>Site logo.</p>
+				<code>site_logo</code>
+				</td>
+				<td>
+					<p>Site logo.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-site_icon">
 			<td>
-				<code>site_icon</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>Site icon.</p>
+				<code>site_icon</code>
+				</td>
+				<td>
+					<p>Site icon.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>

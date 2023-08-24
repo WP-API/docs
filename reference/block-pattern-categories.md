@@ -10,36 +10,36 @@
 <table class="attributes">
 			<tr id="schema-name">
 			<td>
-				<code>name</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The category name.</p>
+				<code>name</code>
+				</td>
+				<td>
+					<p>The category name.</p>
+					<p class="type">
+						JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-label">
 			<td>
-				<code>label</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The category label, in human readable format.</p>
+				<code>label</code>
+				</td>
+				<td>
+					<p>The category label, in human readable format.</p>
+					<p class="type">
+						JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The category description, in human readable format.</p>
+				<code>description</code>
+				</td>
+				<td>
+					<p>The category description, in human readable format.</p>
+					<p class="type">
+						JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>

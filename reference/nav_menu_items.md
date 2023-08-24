@@ -10,207 +10,207 @@
 <table class="attributes">
 			<tr id="schema-title">
 			<td>
-				<code>title</code><br />
-				<span class="type">
-					string or object				</span>
-			</td>
-			<td>
-				<p>The title for the object.</p>
+				<code>title</code>
+				</td>
+				<td>
+					<p>The title for the object.</p>
+					<p class="type">
+						JSON data type: string or object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-id">
 			<td>
-				<code>id</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>Unique identifier for the object.</p>
+				<code>id</code>
+				</td>
+				<td>
+					<p>Unique identifier for the object.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-type_label">
 			<td>
-				<code>type_label</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The singular label used to describe this type of menu item.</p>
+				<code>type_label</code>
+				</td>
+				<td>
+					<p>The singular label used to describe this type of menu item.</p>
+					<p class="type">
+						JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-type">
 			<td>
-				<code>type</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The family of objects originally represented, such as &quot;post_type&quot; or &quot;taxonomy&quot;.</p>
+				<code>type</code>
+				</td>
+				<td>
+					<p>The family of objects originally represented, such as &quot;post_type&quot; or &quot;taxonomy&quot;.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 									<p>One of: <code>taxonomy</code>, <code>post_type</code>, <code>post_type_archive</code>, <code>custom</code></p>
 							</td>
 		</tr>
 			<tr id="schema-status">
 			<td>
-				<code>status</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>A named status for the object.</p>
+				<code>status</code>
+				</td>
+				<td>
+					<p>A named status for the object.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 									<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 							</td>
 		</tr>
 			<tr id="schema-parent">
 			<td>
-				<code>parent</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The ID for the parent of the object.</p>
+				<code>parent</code>
+				</td>
+				<td>
+					<p>The ID for the parent of the object.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-attr_title">
 			<td>
-				<code>attr_title</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>Text for the title attribute of the link element for this menu item.</p>
+				<code>attr_title</code>
+				</td>
+				<td>
+					<p>Text for the title attribute of the link element for this menu item.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-classes">
 			<td>
-				<code>classes</code><br />
-				<span class="type">
-					array				</span>
-			</td>
-			<td>
-				<p>Class names for the link element of this menu item.</p>
+				<code>classes</code>
+				</td>
+				<td>
+					<p>Class names for the link element of this menu item.</p>
+					<p class="type">
+						JSON data type: array				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The description of this menu item.</p>
+				<code>description</code>
+				</td>
+				<td>
+					<p>The description of this menu item.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-menu_order">
 			<td>
-				<code>menu_order</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The DB ID of the nav_menu_item that is this item&#039;s menu parent, if any, otherwise 0.</p>
+				<code>menu_order</code>
+				</td>
+				<td>
+					<p>The DB ID of the nav_menu_item that is this item&#039;s menu parent, if any, otherwise 0.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-object">
 			<td>
-				<code>object</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The type of object originally represented, such as &quot;category&quot;, &quot;post&quot;, or &quot;attachment&quot;.</p>
+				<code>object</code>
+				</td>
+				<td>
+					<p>The type of object originally represented, such as &quot;category&quot;, &quot;post&quot;, or &quot;attachment&quot;.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-object_id">
 			<td>
-				<code>object_id</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories.</p>
+				<code>object_id</code>
+				</td>
+				<td>
+					<p>The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-target">
 			<td>
-				<code>target</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The target attribute of the link element for this menu item.</p>
+				<code>target</code>
+				</td>
+				<td>
+					<p>The target attribute of the link element for this menu item.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 									<p>One of: <code>_blank</code>, <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-url">
 			<td>
-				<code>url</code><br />
-				<span class="type">
-					string,
-													uri
-										</span>
-			</td>
-			<td>
-				<p>The URL to which this menu item points.</p>
+				<code>url</code>
+				</td>
+				<td>
+					<p>The URL to which this menu item points.</p>
+					<p class="type">
+						JSON data type: string,
+													Format: uri
+										</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-xfn">
 			<td>
-				<code>xfn</code><br />
-				<span class="type">
-					array				</span>
-			</td>
-			<td>
-				<p>The XFN relationship expressed in the link of this menu item.</p>
+				<code>xfn</code>
+				</td>
+				<td>
+					<p>The XFN relationship expressed in the link of this menu item.</p>
+					<p class="type">
+						JSON data type: array				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-invalid">
 			<td>
-				<code>invalid</code><br />
-				<span class="type">
-					boolean				</span>
-			</td>
-			<td>
-				<p>Whether the menu item represents an object that no longer exists.</p>
+				<code>invalid</code>
+				</td>
+				<td>
+					<p>Whether the menu item represents an object that no longer exists.</p>
+					<p class="type">
+						JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-menus">
 			<td>
-				<code>menus</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The terms assigned to the object in the nav_menu taxonomy.</p>
+				<code>menus</code>
+				</td>
+				<td>
+					<p>The terms assigned to the object in the nav_menu taxonomy.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-meta">
 			<td>
-				<code>meta</code><br />
-				<span class="type">
-					object				</span>
-			</td>
-			<td>
-				<p>Meta fields.</p>
+				<code>meta</code>
+				</td>
+				<td>
+					<p>Meta fields.</p>
+					<p class="type">
+						JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>

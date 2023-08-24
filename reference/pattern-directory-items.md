@@ -10,89 +10,89 @@
 <table class="attributes">
 			<tr id="schema-id">
 			<td>
-				<code>id</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The pattern ID.</p>
+				<code>id</code>
+				</td>
+				<td>
+					<p>The pattern ID.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-title">
 			<td>
-				<code>title</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The pattern title, in human readable format.</p>
+				<code>title</code>
+				</td>
+				<td>
+					<p>The pattern title, in human readable format.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-content">
 			<td>
-				<code>content</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The pattern content.</p>
+				<code>content</code>
+				</td>
+				<td>
+					<p>The pattern content.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-categories">
 			<td>
-				<code>categories</code><br />
-				<span class="type">
-					array				</span>
-			</td>
-			<td>
-				<p>The pattern&#039;s category slugs.</p>
+				<code>categories</code>
+				</td>
+				<td>
+					<p>The pattern&#039;s category slugs.</p>
+					<p class="type">
+						JSON data type: array				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-keywords">
 			<td>
-				<code>keywords</code><br />
-				<span class="type">
-					array				</span>
-			</td>
-			<td>
-				<p>The pattern&#039;s keywords.</p>
+				<code>keywords</code>
+				</td>
+				<td>
+					<p>The pattern&#039;s keywords.</p>
+					<p class="type">
+						JSON data type: array				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>A description of the pattern.</p>
+				<code>description</code>
+				</td>
+				<td>
+					<p>A description of the pattern.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-viewport_width">
 			<td>
-				<code>viewport_width</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The preferred width of the viewport when previewing a pattern, in pixels.</p>
+				<code>viewport_width</code>
+				</td>
+				<td>
+					<p>The preferred width of the viewport when previewing a pattern, in pixels.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-block_types">
 			<td>
-				<code>block_types</code><br />
-				<span class="type">
-					array				</span>
-			</td>
-			<td>
-				<p>The block types which can use this pattern.</p>
+				<code>block_types</code>
+				</td>
+				<td>
+					<p>The block types which can use this pattern.</p>
+					<p class="type">
+						JSON data type: array				</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code></p>
 							</td>
 		</tr>

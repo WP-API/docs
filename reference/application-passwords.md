@@ -10,92 +10,92 @@
 <table class="attributes">
 			<tr id="schema-uuid">
 			<td>
-				<code>uuid</code><br />
-				<span class="type">
-					string,
-													uuid
-									</span>
-			</td>
-			<td>
-				<p>The unique identifier for the application password.</p>
+				<code>uuid</code>
+				</td>
+				<td>
+					<p>The unique identifier for the application password.</p>
+					<p class="type">
+						JSON data type: string,
+													Format: uuid
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-app_id">
 			<td>
-				<code>app_id</code><br />
-				<span class="type">
-					string,
-													uuid
-									</span>
-			</td>
-			<td>
-				<p>A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.</p>
+				<code>app_id</code>
+				</td>
+				<td>
+					<p>A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.</p>
+					<p class="type">
+						JSON data type: string,
+													Format: uuid
+									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-name">
 			<td>
-				<code>name</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The name of the application password.</p>
+				<code>name</code>
+				</td>
+				<td>
+					<p>The name of the application password.</p>
+					<p class="type">
+						JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-password">
 			<td>
-				<code>password</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The generated password. Only available after adding an application.</p>
+				<code>password</code>
+				</td>
+				<td>
+					<p>The generated password. Only available after adding an application.</p>
+					<p class="type">
+						JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-created">
 			<td>
-				<code>created</code><br />
-				<span class="type">
-					string,
-													datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</span>
-			</td>
-			<td>
-				<p>The GMT date the application password was created.</p>
+				<code>created</code>
+				</td>
+				<td>
+					<p>The GMT date the application password was created.</p>
+					<p class="type">
+						JSON data type: string,
+													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+										</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-last_used">
 			<td>
-				<code>last_used</code><br />
-				<span class="type">
-					string or null,
-													datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</span>
-			</td>
-			<td>
-				<p>The GMT date the application password was last used.</p>
+				<code>last_used</code>
+				</td>
+				<td>
+					<p>The GMT date the application password was last used.</p>
+					<p class="type">
+						JSON data type: string or null,
+													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+										</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-last_ip">
 			<td>
-				<code>last_ip</code><br />
-				<span class="type">
-					string or null,
-													ip
-									</span>
-			</td>
-			<td>
-				<p>The IP address the application password was last used by.</p>
+				<code>last_ip</code>
+				</td>
+				<td>
+					<p>The IP address the application password was last used by.</p>
+					<p class="type">
+						JSON data type: string or null,
+													Format: ip
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>

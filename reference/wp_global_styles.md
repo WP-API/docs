@@ -10,46 +10,46 @@
 <table class="attributes">
 			<tr id="schema-id">
 			<td>
-				<code>id</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>ID of global styles config.</p>
+				<code>id</code>
+				</td>
+				<td>
+					<p>ID of global styles config.</p>
+					<p class="type">
+						JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-styles">
 			<td>
-				<code>styles</code><br />
-				<span class="type">
-					object				</span>
-			</td>
-			<td>
-				<p>Global styles.</p>
+				<code>styles</code>
+				</td>
+				<td>
+					<p>Global styles.</p>
+					<p class="type">
+						JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-settings">
 			<td>
-				<code>settings</code><br />
-				<span class="type">
-					object				</span>
-			</td>
-			<td>
-				<p>Global settings.</p>
+				<code>settings</code>
+				</td>
+				<td>
+					<p>Global settings.</p>
+					<p class="type">
+						JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-title">
 			<td>
-				<code>title</code><br />
-				<span class="type">
-					object or string				</span>
-			</td>
-			<td>
-				<p>Title of the global styles variation.</p>
+				<code>title</code>
+				</td>
+				<td>
+					<p>Title of the global styles variation.</p>
+					<p class="type">
+						JSON data type: object or string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>

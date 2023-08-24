@@ -10,36 +10,36 @@
 <table class="attributes">
 			<tr id="schema-name">
 			<td>
-				<code>name</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The name of the menu location.</p>
+				<code>name</code>
+				</td>
+				<td>
+					<p>The name of the menu location.</p>
+					<p class="type">
+						JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
-			</td>
-			<td>
-				<p>The description of the menu location.</p>
+				<code>description</code>
+				</td>
+				<td>
+					<p>The description of the menu location.</p>
+					<p class="type">
+						JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-menu">
 			<td>
-				<code>menu</code><br />
-				<span class="type">
-					integer				</span>
-			</td>
-			<td>
-				<p>The ID of the assigned menu.</p>
+				<code>menu</code>
+				</td>
+				<td>
+					<p>The ID of the assigned menu.</p>
+					<p class="type">
+						JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
