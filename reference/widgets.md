@@ -10,80 +10,80 @@
 <table class="attributes">
 			<tr id="schema-id">
 			<td>
-				<code>id</code><br />
-				<span class="type">
-					string				</span>
+				<code>id</code>
 			</td>
 			<td>
 				<p>Unique identifier for the widget.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-id_base">
 			<td>
-				<code>id_base</code><br />
-				<span class="type">
-					string				</span>
+				<code>id_base</code>
 			</td>
 			<td>
 				<p>The type of the widget. Corresponds to ID in widget-types endpoint.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-sidebar">
 			<td>
-				<code>sidebar</code><br />
-				<span class="type">
-					string				</span>
+				<code>sidebar</code>
 			</td>
 			<td>
 				<p>The sidebar the widget belongs to.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-rendered">
 			<td>
-				<code>rendered</code><br />
-				<span class="type">
-					string				</span>
+				<code>rendered</code>
 			</td>
 			<td>
 				<p>HTML representation of the widget.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-rendered_form">
 			<td>
-				<code>rendered_form</code><br />
-				<span class="type">
-					string				</span>
+				<code>rendered_form</code>
 			</td>
 			<td>
 				<p>HTML representation of the widget admin form.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-instance">
 			<td>
-				<code>instance</code><br />
-				<span class="type">
-					object				</span>
+				<code>instance</code>
 			</td>
 			<td>
 				<p>Instance settings of the widget, if supported.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-form_data">
 			<td>
-				<code>form_data</code><br />
-				<span class="type">
-					string				</span>
+				<code>form_data</code>
 			</td>
 			<td>
 				<p>URL-encoded form data from the widget admin form. Used to update a widget that does not support instance. Write only.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>

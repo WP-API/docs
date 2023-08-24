@@ -10,134 +10,147 @@
 <table class="attributes">
 			<tr id="schema-name">
 			<td>
-				<code>name</code><br />
-				<span class="type">
-					string				</span>
+				<code>name</code>
 			</td>
 			<td>
 				<p>The pattern name.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-title">
 			<td>
-				<code>title</code><br />
-				<span class="type">
-					string				</span>
+				<code>title</code>
 			</td>
 			<td>
 				<p>The pattern title, in human readable format.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-content">
 			<td>
-				<code>content</code><br />
-				<span class="type">
-					string				</span>
+				<code>content</code>
 			</td>
 			<td>
 				<p>The pattern content.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
+				<code>description</code>
 			</td>
 			<td>
 				<p>The pattern detailed description.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-viewport_width">
 			<td>
-				<code>viewport_width</code><br />
-				<span class="type">
-					number				</span>
+				<code>viewport_width</code>
 			</td>
 			<td>
 				<p>The pattern viewport width for inserter preview.</p>
+				<p class="type">
+					JSON data type: number				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-inserter">
 			<td>
-				<code>inserter</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>inserter</code>
 			</td>
 			<td>
 				<p>Determines whether the pattern is visible in inserter.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-categories">
 			<td>
-				<code>categories</code><br />
-				<span class="type">
-					array				</span>
+				<code>categories</code>
 			</td>
 			<td>
 				<p>The pattern category slugs.</p>
+				<p class="type">
+					JSON data type: array				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-keywords">
 			<td>
-				<code>keywords</code><br />
-				<span class="type">
-					array				</span>
+				<code>keywords</code>
 			</td>
 			<td>
 				<p>The pattern keywords.</p>
+				<p class="type">
+					JSON data type: array				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-block_types">
 			<td>
-				<code>block_types</code><br />
-				<span class="type">
-					array				</span>
+				<code>block_types</code>
 			</td>
 			<td>
 				<p>Block types that the pattern is intended to be used with.</p>
+				<p class="type">
+					JSON data type: array				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-post_types">
 			<td>
-				<code>post_types</code><br />
-				<span class="type">
-					array				</span>
+				<code>post_types</code>
 			</td>
 			<td>
 				<p>An array of post types that the pattern is restricted to be used with.</p>
+				<p class="type">
+					JSON data type: array				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-template_types">
 			<td>
-				<code>template_types</code><br />
-				<span class="type">
-					array				</span>
+				<code>template_types</code>
 			</td>
 			<td>
 				<p>An array of template types where the pattern fits.</p>
+				<p class="type">
+					JSON data type: array				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-source">
+			<td>
+				<code>source</code>
+			</td>
+			<td>
+				<p>Where the pattern comes from e.g. core</p>
+				<p class="type">
+					JSON data type: string				</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+									<p>One of: <code>core</code>, <code>plugin</code>, <code>theme</code>, <code>pattern-directory/core</code>, <code>pattern-directory/theme</code>, <code>pattern-directory/featured</code></p>
 							</td>
 		</tr>
 	</table>

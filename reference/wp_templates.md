@@ -10,161 +10,175 @@
 <table class="attributes">
 			<tr id="schema-id">
 			<td>
-				<code>id</code><br />
-				<span class="type">
-					string				</span>
+				<code>id</code>
 			</td>
 			<td>
 				<p>ID of template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-slug">
 			<td>
-				<code>slug</code><br />
-				<span class="type">
-					string				</span>
+				<code>slug</code>
 			</td>
 			<td>
 				<p>Unique slug identifying the template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-theme">
 			<td>
-				<code>theme</code><br />
-				<span class="type">
-					string				</span>
+				<code>theme</code>
 			</td>
 			<td>
 				<p>Theme identifier for the template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-type">
 			<td>
-				<code>type</code><br />
-				<span class="type">
-					string				</span>
+				<code>type</code>
 			</td>
 			<td>
 				<p>Type of template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-source">
 			<td>
-				<code>source</code><br />
-				<span class="type">
-					string				</span>
+				<code>source</code>
 			</td>
 			<td>
 				<p>Source of template</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-origin">
 			<td>
-				<code>origin</code><br />
-				<span class="type">
-					string				</span>
+				<code>origin</code>
 			</td>
 			<td>
 				<p>Source of a customized template</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-content">
 			<td>
-				<code>content</code><br />
-				<span class="type">
-					object or string				</span>
+				<code>content</code>
 			</td>
 			<td>
 				<p>Content of template.</p>
+				<p class="type">
+					JSON data type: object or string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-title">
 			<td>
-				<code>title</code><br />
-				<span class="type">
-					object or string				</span>
+				<code>title</code>
 			</td>
 			<td>
 				<p>Title of template.</p>
+				<p class="type">
+					JSON data type: object or string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
+				<code>description</code>
 			</td>
 			<td>
 				<p>Description of template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-status">
 			<td>
-				<code>status</code><br />
-				<span class="type">
-					string				</span>
+				<code>status</code>
 			</td>
 			<td>
 				<p>Status of template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 									<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 							</td>
 		</tr>
 			<tr id="schema-wp_id">
 			<td>
-				<code>wp_id</code><br />
-				<span class="type">
-					integer				</span>
+				<code>wp_id</code>
 			</td>
 			<td>
 				<p>Post ID.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-has_theme_file">
 			<td>
-				<code>has_theme_file</code><br />
-				<span class="type">
-					bool				</span>
+				<code>has_theme_file</code>
 			</td>
 			<td>
 				<p>Theme file exists.</p>
+				<p class="type">
+					JSON data type: bool				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-author">
 			<td>
-				<code>author</code><br />
-				<span class="type">
-					integer				</span>
+				<code>author</code>
 			</td>
 			<td>
 				<p>The ID for the author of the template.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+							</td>
+		</tr>
+			<tr id="schema-modified">
+			<td>
+				<code>modified</code>
+			</td>
+			<td>
+				<p>The date the template was last modified, in the site&#039;s timezone.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-is_custom">
 			<td>
-				<code>is_custom</code><br />
-				<span class="type">
-					bool				</span>
+				<code>is_custom</code>
 			</td>
 			<td>
 				<p>Whether a template is a custom template.</p>
+				<p class="type">
+					JSON data type: bool				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>

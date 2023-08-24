@@ -4,20 +4,20 @@
 	{% for key, property in schema.properties %}
 		<tr id="schema-{{ key }}">
 			<td>
-				<code>{{ key }}</code><br />
-				<span class="type">
-					{{ property.type | join(' or ') }}{% if property.format %},
-						{% if property.format == 'date-time' %}
-							datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-						{% elseif property.format == 'uri' %}
-							uri
-						{% else %}
-							{{ property.format }}
-					{% endif %}{% endif %}
-				</span>
+				<code>{{ key }}</code>
 			</td>
 			<td>
 				<p>{{ property.description }}</p>
+				<p class="type">
+					JSON data type: {{ property.type | join(' or ') }}{% if property.format %},
+					{% if property.format == 'date-time' %}
+						Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+					{% elseif property.format == 'uri' %}
+						Format: uri
+					{% else %}
+						Format: {{ property.format }}
+					{% endif %}{% endif %}
+				</p>
 				{% if property.readonly %}
 					<p class="read-only">Read only</p>
 				{% endif %}

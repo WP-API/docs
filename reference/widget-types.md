@@ -10,59 +10,59 @@
 <table class="attributes">
 			<tr id="schema-id">
 			<td>
-				<code>id</code><br />
-				<span class="type">
-					string				</span>
+				<code>id</code>
 			</td>
 			<td>
 				<p>Unique slug identifying the widget type.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-name">
 			<td>
-				<code>name</code><br />
-				<span class="type">
-					string				</span>
+				<code>name</code>
 			</td>
 			<td>
 				<p>Human-readable name identifying the widget type.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
+				<code>description</code>
 			</td>
 			<td>
 				<p>Description of the widget.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-is_multi">
 			<td>
-				<code>is_multi</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>is_multi</code>
 			</td>
 			<td>
 				<p>Whether the widget supports multiple instances</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-classname">
 			<td>
-				<code>classname</code><br />
-				<span class="type">
-					string				</span>
+				<code>classname</code>
 			</td>
 			<td>
 				<p>Class name</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>

@@ -10,182 +10,194 @@
 <table class="attributes">
 			<tr id="schema-stylesheet">
 			<td>
-				<code>stylesheet</code><br />
-				<span class="type">
-					string				</span>
+				<code>stylesheet</code>
 			</td>
 			<td>
 				<p>The theme&#039;s stylesheet. This uniquely identifies the theme.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-template">
 			<td>
-				<code>template</code><br />
-				<span class="type">
-					string				</span>
+				<code>template</code>
 			</td>
 			<td>
 				<p>The theme&#039;s template. If this is a child theme, this refers to the parent theme, otherwise this is the same as the theme&#039;s stylesheet.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-author">
 			<td>
-				<code>author</code><br />
-				<span class="type">
-					object				</span>
+				<code>author</code>
 			</td>
 			<td>
 				<p>The theme author.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-author_uri">
 			<td>
-				<code>author_uri</code><br />
-				<span class="type">
-					object				</span>
+				<code>author_uri</code>
 			</td>
 			<td>
 				<p>The website of the theme author.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					object				</span>
+				<code>description</code>
 			</td>
 			<td>
 				<p>A description of the theme.</p>
+				<p class="type">
+					JSON data type: object				</p>
+									<p class="read-only">Read only</p>
+								<p class="context">Context: <code></code></p>
+							</td>
+		</tr>
+			<tr id="schema-is_block_theme">
+			<td>
+				<code>is_block_theme</code>
+			</td>
+			<td>
+				<p>Whether the theme is a block-based theme.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-name">
 			<td>
-				<code>name</code><br />
-				<span class="type">
-					object				</span>
+				<code>name</code>
 			</td>
 			<td>
 				<p>The name of the theme.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-requires_php">
 			<td>
-				<code>requires_php</code><br />
-				<span class="type">
-					string				</span>
+				<code>requires_php</code>
 			</td>
 			<td>
 				<p>The minimum PHP version required for the theme to work.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-requires_wp">
 			<td>
-				<code>requires_wp</code><br />
-				<span class="type">
-					string				</span>
+				<code>requires_wp</code>
 			</td>
 			<td>
 				<p>The minimum WordPress version required for the theme to work.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-screenshot">
 			<td>
-				<code>screenshot</code><br />
-				<span class="type">
-					string,
-													uri
-										</span>
+				<code>screenshot</code>
 			</td>
 			<td>
 				<p>The theme&#039;s screenshot URL.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uri
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-tags">
 			<td>
-				<code>tags</code><br />
-				<span class="type">
-					object				</span>
+				<code>tags</code>
 			</td>
 			<td>
 				<p>Tags indicating styles and features of the theme.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-textdomain">
 			<td>
-				<code>textdomain</code><br />
-				<span class="type">
-					string				</span>
+				<code>textdomain</code>
 			</td>
 			<td>
 				<p>The theme&#039;s text domain.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-theme_supports">
 			<td>
-				<code>theme_supports</code><br />
-				<span class="type">
-					object				</span>
+				<code>theme_supports</code>
 			</td>
 			<td>
 				<p>Features supported by this theme.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-theme_uri">
 			<td>
-				<code>theme_uri</code><br />
-				<span class="type">
-					object				</span>
+				<code>theme_uri</code>
 			</td>
 			<td>
 				<p>The URI of the theme&#039;s webpage.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-version">
 			<td>
-				<code>version</code><br />
-				<span class="type">
-					string				</span>
+				<code>version</code>
 			</td>
 			<td>
 				<p>The theme&#039;s current version.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-status">
 			<td>
-				<code>status</code><br />
-				<span class="type">
-					string				</span>
+				<code>status</code>
 			</td>
 			<td>
 				<p>A named status for the theme.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 									<p>One of: <code>inactive</code>, <code>active</code></p>
 							</td>

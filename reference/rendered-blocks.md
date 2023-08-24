@@ -10,12 +10,12 @@
 <table class="attributes">
 			<tr id="schema-rendered">
 			<td>
-				<code>rendered</code><br />
-				<span class="type">
-					string				</span>
+				<code>rendered</code>
 			</td>
 			<td>
 				<p>The rendered block.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>

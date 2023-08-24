@@ -10,148 +10,148 @@
 <table class="attributes">
 			<tr id="schema-plugin">
 			<td>
-				<code>plugin</code><br />
-				<span class="type">
-					string				</span>
+				<code>plugin</code>
 			</td>
 			<td>
 				<p>The plugin file.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-status">
 			<td>
-				<code>status</code><br />
-				<span class="type">
-					string				</span>
+				<code>status</code>
 			</td>
 			<td>
 				<p>The plugin activation status.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 									<p>One of: <code>inactive</code>, <code>active</code></p>
 							</td>
 		</tr>
 			<tr id="schema-name">
 			<td>
-				<code>name</code><br />
-				<span class="type">
-					string				</span>
+				<code>name</code>
 			</td>
 			<td>
 				<p>The plugin name.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-plugin_uri">
 			<td>
-				<code>plugin_uri</code><br />
-				<span class="type">
-					string,
-													uri
-										</span>
+				<code>plugin_uri</code>
 			</td>
 			<td>
 				<p>The plugin&#039;s website address.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uri
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-author">
 			<td>
-				<code>author</code><br />
-				<span class="type">
-					object				</span>
+				<code>author</code>
 			</td>
 			<td>
 				<p>The plugin author.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-author_uri">
 			<td>
-				<code>author_uri</code><br />
-				<span class="type">
-					string,
-													uri
-										</span>
+				<code>author_uri</code>
 			</td>
 			<td>
 				<p>Plugin author&#039;s website address.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uri
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					object				</span>
+				<code>description</code>
 			</td>
 			<td>
 				<p>The plugin description.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-version">
 			<td>
-				<code>version</code><br />
-				<span class="type">
-					string				</span>
+				<code>version</code>
 			</td>
 			<td>
 				<p>The plugin version number.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-network_only">
 			<td>
-				<code>network_only</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>network_only</code>
 			</td>
 			<td>
 				<p>Whether the plugin can only be activated network-wide.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-requires_wp">
 			<td>
-				<code>requires_wp</code><br />
-				<span class="type">
-					string				</span>
+				<code>requires_wp</code>
 			</td>
 			<td>
 				<p>Minimum required version of WordPress.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-requires_php">
 			<td>
-				<code>requires_php</code><br />
-				<span class="type">
-					string				</span>
+				<code>requires_php</code>
 			</td>
 			<td>
 				<p>Minimum required version of PHP.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-textdomain">
 			<td>
-				<code>textdomain</code><br />
-				<span class="type">
-					string				</span>
+				<code>textdomain</code>
 			</td>
 			<td>
 				<p>The plugin&#039;s text domain.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>

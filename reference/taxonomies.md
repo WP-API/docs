@@ -10,132 +10,132 @@
 <table class="attributes">
 			<tr id="schema-capabilities">
 			<td>
-				<code>capabilities</code><br />
-				<span class="type">
-					object				</span>
+				<code>capabilities</code>
 			</td>
 			<td>
 				<p>All capabilities used by the taxonomy.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
+				<code>description</code>
 			</td>
 			<td>
 				<p>A human-readable description of the taxonomy.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-hierarchical">
 			<td>
-				<code>hierarchical</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>hierarchical</code>
 			</td>
 			<td>
 				<p>Whether or not the taxonomy should have children.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-labels">
 			<td>
-				<code>labels</code><br />
-				<span class="type">
-					object				</span>
+				<code>labels</code>
 			</td>
 			<td>
 				<p>Human-readable labels for the taxonomy for various contexts.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-name">
 			<td>
-				<code>name</code><br />
-				<span class="type">
-					string				</span>
+				<code>name</code>
 			</td>
 			<td>
 				<p>The title for the taxonomy.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-slug">
 			<td>
-				<code>slug</code><br />
-				<span class="type">
-					string				</span>
+				<code>slug</code>
 			</td>
 			<td>
 				<p>An alphanumeric identifier for the taxonomy.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-show_cloud">
 			<td>
-				<code>show_cloud</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>show_cloud</code>
 			</td>
 			<td>
 				<p>Whether or not the term cloud should be displayed.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-types">
 			<td>
-				<code>types</code><br />
-				<span class="type">
-					array				</span>
+				<code>types</code>
 			</td>
 			<td>
 				<p>Types associated with the taxonomy.</p>
+				<p class="type">
+					JSON data type: array				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-rest_base">
 			<td>
-				<code>rest_base</code><br />
-				<span class="type">
-					string				</span>
+				<code>rest_base</code>
 			</td>
 			<td>
 				<p>REST base route for the taxonomy.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-rest_namespace">
 			<td>
-				<code>rest_namespace</code><br />
-				<span class="type">
-					string				</span>
+				<code>rest_namespace</code>
 			</td>
 			<td>
 				<p>REST namespace route for the taxonomy.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-visibility">
 			<td>
-				<code>visibility</code><br />
-				<span class="type">
-					object				</span>
+				<code>visibility</code>
 			</td>
 			<td>
 				<p>The visibility settings for the taxonomy.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>

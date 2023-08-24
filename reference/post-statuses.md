@@ -10,96 +10,96 @@
 <table class="attributes">
 			<tr id="schema-name">
 			<td>
-				<code>name</code><br />
-				<span class="type">
-					string				</span>
+				<code>name</code>
 			</td>
 			<td>
 				<p>The title for the status.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-private">
 			<td>
-				<code>private</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>private</code>
 			</td>
 			<td>
 				<p>Whether posts with this status should be private.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-protected">
 			<td>
-				<code>protected</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>protected</code>
 			</td>
 			<td>
 				<p>Whether posts with this status should be protected.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-public">
 			<td>
-				<code>public</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>public</code>
 			</td>
 			<td>
 				<p>Whether posts of this status should be shown in the front end of the site.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-queryable">
 			<td>
-				<code>queryable</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>queryable</code>
 			</td>
 			<td>
 				<p>Whether posts with this status should be publicly-queryable.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-show_in_list">
 			<td>
-				<code>show_in_list</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>show_in_list</code>
 			</td>
 			<td>
 				<p>Whether to include posts in the edit listing for their post type.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-slug">
 			<td>
-				<code>slug</code><br />
-				<span class="type">
-					string				</span>
+				<code>slug</code>
 			</td>
 			<td>
 				<p>An alphanumeric identifier for the status.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-date_floating">
 			<td>
-				<code>date_floating</code><br />
-				<span class="type">
-					boolean				</span>
+				<code>date_floating</code>
 			</td>
 			<td>
 				<p>Whether posts of this status may have floating published dates.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>

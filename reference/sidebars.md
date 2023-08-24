@@ -10,108 +10,108 @@
 <table class="attributes">
 			<tr id="schema-id">
 			<td>
-				<code>id</code><br />
-				<span class="type">
-					string				</span>
+				<code>id</code>
 			</td>
 			<td>
 				<p>ID of sidebar.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-name">
 			<td>
-				<code>name</code><br />
-				<span class="type">
-					string				</span>
+				<code>name</code>
 			</td>
 			<td>
 				<p>Unique name identifying the sidebar.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
+				<code>description</code>
 			</td>
 			<td>
 				<p>Description of sidebar.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-class">
 			<td>
-				<code>class</code><br />
-				<span class="type">
-					string				</span>
+				<code>class</code>
 			</td>
 			<td>
 				<p>Extra CSS class to assign to the sidebar in the Widgets interface.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-before_widget">
 			<td>
-				<code>before_widget</code><br />
-				<span class="type">
-					string				</span>
+				<code>before_widget</code>
 			</td>
 			<td>
 				<p>HTML content to prepend to each widget&#039;s HTML output when assigned to this sidebar. Default is an opening list item element.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-after_widget">
 			<td>
-				<code>after_widget</code><br />
-				<span class="type">
-					string				</span>
+				<code>after_widget</code>
 			</td>
 			<td>
 				<p>HTML content to append to each widget&#039;s HTML output when assigned to this sidebar. Default is a closing list item element.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-before_title">
 			<td>
-				<code>before_title</code><br />
-				<span class="type">
-					string				</span>
+				<code>before_title</code>
 			</td>
 			<td>
 				<p>HTML content to prepend to the sidebar title when displayed. Default is an opening h2 element.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-after_title">
 			<td>
-				<code>after_title</code><br />
-				<span class="type">
-					string				</span>
+				<code>after_title</code>
 			</td>
 			<td>
 				<p>HTML content to append to the sidebar title when displayed. Default is a closing h2 element.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-status">
 			<td>
-				<code>status</code><br />
-				<span class="type">
-					string				</span>
+				<code>status</code>
 			</td>
 			<td>
 				<p>Status of sidebar.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 									<p>One of: <code>active</code>, <code>inactive</code></p>
@@ -119,12 +119,12 @@
 		</tr>
 			<tr id="schema-widgets">
 			<td>
-				<code>widgets</code><br />
-				<span class="type">
-					array				</span>
+				<code>widgets</code>
 			</td>
 			<td>
 				<p>Nested widgets.</p>
+				<p class="type">
+					JSON data type: array				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>

@@ -10,36 +10,36 @@
 <table class="attributes">
 			<tr id="schema-test">
 			<td>
-				<code>test</code><br />
-				<span class="type">
-					string				</span>
+				<code>test</code>
 			</td>
 			<td>
 				<p>The name of the test being run.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-label">
 			<td>
-				<code>label</code><br />
-				<span class="type">
-					string				</span>
+				<code>label</code>
 			</td>
 			<td>
 				<p>A label describing the test.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-status">
 			<td>
-				<code>status</code><br />
-				<span class="type">
-					string				</span>
+				<code>status</code>
 			</td>
 			<td>
 				<p>The status of the test.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 									<p>One of: <code>good</code>, <code>recommended</code>, <code>critical</code></p>
@@ -47,36 +47,36 @@
 		</tr>
 			<tr id="schema-badge">
 			<td>
-				<code>badge</code><br />
-				<span class="type">
-					object				</span>
+				<code>badge</code>
 			</td>
 			<td>
 				<p>The category this test is grouped in.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
-				<code>description</code><br />
-				<span class="type">
-					string				</span>
+				<code>description</code>
 			</td>
 			<td>
 				<p>A more descriptive explanation of what the test looks for, and why it is important for the user.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-actions">
 			<td>
-				<code>actions</code><br />
-				<span class="type">
-					string				</span>
+				<code>actions</code>
 			</td>
 			<td>
 				<p>HTML containing an action to direct the user to where they can resolve the issue.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code></code></p>
 							</td>
