@@ -11,11 +11,11 @@
 			<tr id="schema-id">
 			<td>
 				<code>id</code>
-				</td>
-				<td>
-					<p>Unique identifier for the user.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>Unique identifier for the user.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -23,56 +23,56 @@
 			<tr id="schema-username">
 			<td>
 				<code>username</code>
-				</td>
-				<td>
-					<p>Login name for the user.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Login name for the user.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-name">
 			<td>
 				<code>name</code>
-				</td>
-				<td>
-					<p>Display name for the user.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Display name for the user.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-first_name">
 			<td>
 				<code>first_name</code>
-				</td>
-				<td>
-					<p>First name for the user.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>First name for the user.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-last_name">
 			<td>
 				<code>last_name</code>
-				</td>
-				<td>
-					<p>Last name for the user.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Last name for the user.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-email">
 			<td>
 				<code>email</code>
-				</td>
-				<td>
-					<p>The email address for the user.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: email
+			</td>
+			<td>
+				<p>The email address for the user.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: email
 									</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
@@ -80,37 +80,37 @@
 			<tr id="schema-url">
 			<td>
 				<code>url</code>
-				</td>
-				<td>
-					<p>URL of the user.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: uri
-										</p>
+			</td>
+			<td>
+				<p>URL of the user.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uri
+									</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
 				<code>description</code>
-				</td>
-				<td>
-					<p>Description of the user.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Description of the user.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-link">
 			<td>
 				<code>link</code>
-				</td>
-				<td>
-					<p>Author URL of the user.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: uri
-										</p>
+			</td>
+			<td>
+				<p>Author URL of the user.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uri
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -118,11 +118,11 @@
 			<tr id="schema-locale">
 			<td>
 				<code>locale</code>
-				</td>
-				<td>
-					<p>Locale for the user.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Locale for the user.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>edit</code></p>
 									<p>One of: <code></code>, <code>en_US</code></p>
 							</td>
@@ -130,35 +130,35 @@
 			<tr id="schema-nickname">
 			<td>
 				<code>nickname</code>
-				</td>
-				<td>
-					<p>The nickname for the user.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>The nickname for the user.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-slug">
 			<td>
 				<code>slug</code>
-				</td>
-				<td>
-					<p>An alphanumeric identifier for the user.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>An alphanumeric identifier for the user.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-registered_date">
 			<td>
 				<code>registered_date</code>
-				</td>
-				<td>
-					<p>Registration date for the user.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>Registration date for the user.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
@@ -166,33 +166,33 @@
 			<tr id="schema-roles">
 			<td>
 				<code>roles</code>
-				</td>
-				<td>
-					<p>Roles assigned to the user.</p>
-					<p class="type">
-						JSON data type: array				</p>
+			</td>
+			<td>
+				<p>Roles assigned to the user.</p>
+				<p class="type">
+					JSON data type: array				</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-password">
 			<td>
 				<code>password</code>
-				</td>
-				<td>
-					<p>Password for the user (never included).</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Password for the user (never included).</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code></code></p>
 							</td>
 		</tr>
 			<tr id="schema-capabilities">
 			<td>
 				<code>capabilities</code>
-				</td>
-				<td>
-					<p>All capabilities assigned to the user.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>All capabilities assigned to the user.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
@@ -200,11 +200,11 @@
 			<tr id="schema-extra_capabilities">
 			<td>
 				<code>extra_capabilities</code>
-				</td>
-				<td>
-					<p>Any extra capabilities assigned to the user.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>Any extra capabilities assigned to the user.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
@@ -212,11 +212,11 @@
 			<tr id="schema-avatar_urls">
 			<td>
 				<code>avatar_urls</code>
-				</td>
-				<td>
-					<p>Avatar URLs for the user.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>Avatar URLs for the user.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -224,11 +224,11 @@
 			<tr id="schema-meta">
 			<td>
 				<code>meta</code>
-				</td>
-				<td>
-					<p>Meta fields.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>Meta fields.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>

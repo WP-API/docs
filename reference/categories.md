@@ -11,11 +11,11 @@
 			<tr id="schema-id">
 			<td>
 				<code>id</code>
-				</td>
-				<td>
-					<p>Unique identifier for the term.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>Unique identifier for the term.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 							</td>
@@ -23,11 +23,11 @@
 			<tr id="schema-count">
 			<td>
 				<code>count</code>
-				</td>
-				<td>
-					<p>Number of published posts for the term.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>Number of published posts for the term.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -35,24 +35,24 @@
 			<tr id="schema-description">
 			<td>
 				<code>description</code>
-				</td>
-				<td>
-					<p>HTML description of the term.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>HTML description of the term.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-link">
 			<td>
 				<code>link</code>
-				</td>
-				<td>
-					<p>URL of the term.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: uri
-										</p>
+			</td>
+			<td>
+				<p>URL of the term.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uri
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 							</td>
@@ -60,33 +60,33 @@
 			<tr id="schema-name">
 			<td>
 				<code>name</code>
-				</td>
-				<td>
-					<p>HTML title for the term.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>HTML title for the term.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-slug">
 			<td>
 				<code>slug</code>
-				</td>
-				<td>
-					<p>An alphanumeric identifier for the term unique to its type.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>An alphanumeric identifier for the term unique to its type.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-taxonomy">
 			<td>
 				<code>taxonomy</code>
-				</td>
-				<td>
-					<p>Type attribution for the term.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Type attribution for the term.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 									<p>One of: <code>category</code></p>
@@ -95,22 +95,22 @@
 			<tr id="schema-parent">
 			<td>
 				<code>parent</code>
-				</td>
-				<td>
-					<p>The parent term ID.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>The parent term ID.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-meta">
 			<td>
 				<code>meta</code>
-				</td>
-				<td>
-					<p>Meta fields.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>Meta fields.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>

@@ -11,12 +11,12 @@
 			<tr id="schema-uuid">
 			<td>
 				<code>uuid</code>
-				</td>
-				<td>
-					<p>The unique identifier for the application password.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: uuid
+			</td>
+			<td>
+				<p>The unique identifier for the application password.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uuid
 									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
@@ -25,12 +25,12 @@
 			<tr id="schema-app_id">
 			<td>
 				<code>app_id</code>
-				</td>
-				<td>
-					<p>A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: uuid
+			</td>
+			<td>
+				<p>A UUID provided by the application to uniquely identify it. It is recommended to use an UUID v5 with the URL or DNS namespace.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uuid
 									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -38,22 +38,22 @@
 			<tr id="schema-name">
 			<td>
 				<code>name</code>
-				</td>
-				<td>
-					<p>The name of the application password.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>The name of the application password.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-password">
 			<td>
 				<code>password</code>
-				</td>
-				<td>
-					<p>The generated password. Only available after adding an application.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>The generated password. Only available after adding an application.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
@@ -61,13 +61,13 @@
 			<tr id="schema-created">
 			<td>
 				<code>created</code>
-				</td>
-				<td>
-					<p>The GMT date the application password was created.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The GMT date the application password was created.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -75,13 +75,13 @@
 			<tr id="schema-last_used">
 			<td>
 				<code>last_used</code>
-				</td>
-				<td>
-					<p>The GMT date the application password was last used.</p>
-					<p class="type">
-						JSON data type: string or null,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The GMT date the application password was last used.</p>
+				<p class="type">
+					JSON data type: string or null,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -89,12 +89,12 @@
 			<tr id="schema-last_ip">
 			<td>
 				<code>last_ip</code>
-				</td>
-				<td>
-					<p>The IP address the application password was last used by.</p>
-					<p class="type">
-						JSON data type: string or null,
-													Format: ip
+			</td>
+			<td>
+				<p>The IP address the application password was last used by.</p>
+				<p class="type">
+					JSON data type: string or null,
+											Format: ip
 									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>

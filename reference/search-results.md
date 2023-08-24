@@ -11,11 +11,11 @@
 			<tr id="schema-id">
 			<td>
 				<code>id</code>
-				</td>
-				<td>
-					<p>Unique identifier for the object.</p>
-					<p class="type">
-						JSON data type: integer or string				</p>
+			</td>
+			<td>
+				<p>Unique identifier for the object.</p>
+				<p class="type">
+					JSON data type: integer or string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code></p>
 							</td>
@@ -23,11 +23,11 @@
 			<tr id="schema-title">
 			<td>
 				<code>title</code>
-				</td>
-				<td>
-					<p>The title for the object.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>The title for the object.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code></p>
 							</td>
@@ -35,13 +35,13 @@
 			<tr id="schema-url">
 			<td>
 				<code>url</code>
-				</td>
-				<td>
-					<p>URL to the object.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: uri
-										</p>
+			</td>
+			<td>
+				<p>URL to the object.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uri
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code></p>
 							</td>
@@ -49,11 +49,11 @@
 			<tr id="schema-type">
 			<td>
 				<code>type</code>
-				</td>
-				<td>
-					<p>Object type.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Object type.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code></p>
 									<p>One of: <code>post</code>, <code>term</code>, <code>post-format</code></p>
@@ -62,11 +62,11 @@
 			<tr id="schema-subtype">
 			<td>
 				<code>subtype</code>
-				</td>
-				<td>
-					<p>Object subtype.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Object subtype.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code></p>
 									<p>One of: <code>post</code>, <code>page</code>, <code>category</code>, <code>post_tag</code></p>

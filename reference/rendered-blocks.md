@@ -11,11 +11,11 @@
 			<tr id="schema-rendered">
 			<td>
 				<code>rendered</code>
-				</td>
-				<td>
-					<p>The rendered block.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>The rendered block.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>

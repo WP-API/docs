@@ -11,11 +11,11 @@
 			<tr id="schema-id">
 			<td>
 				<code>id</code>
-				</td>
-				<td>
-					<p>Unique identifier for the comment.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>Unique identifier for the comment.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -23,23 +23,23 @@
 			<tr id="schema-author">
 			<td>
 				<code>author</code>
-				</td>
-				<td>
-					<p>The ID of the user object, if author was a user.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>The ID of the user object, if author was a user.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-author_email">
 			<td>
 				<code>author_email</code>
-				</td>
-				<td>
-					<p>Email address for the comment author.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: email
+			</td>
+			<td>
+				<p>Email address for the comment author.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: email
 									</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
@@ -47,12 +47,12 @@
 			<tr id="schema-author_ip">
 			<td>
 				<code>author_ip</code>
-				</td>
-				<td>
-					<p>IP address for the comment author.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: ip
+			</td>
+			<td>
+				<p>IP address for the comment author.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: ip
 									</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
@@ -60,85 +60,85 @@
 			<tr id="schema-author_name">
 			<td>
 				<code>author_name</code>
-				</td>
-				<td>
-					<p>Display name for the comment author.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Display name for the comment author.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-author_url">
 			<td>
 				<code>author_url</code>
-				</td>
-				<td>
-					<p>URL for the comment author.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: uri
-										</p>
+			</td>
+			<td>
+				<p>URL for the comment author.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uri
+									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-author_user_agent">
 			<td>
 				<code>author_user_agent</code>
-				</td>
-				<td>
-					<p>User agent for the comment author.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>User agent for the comment author.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-content">
 			<td>
 				<code>content</code>
-				</td>
-				<td>
-					<p>The content for the comment.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>The content for the comment.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-date">
 			<td>
 				<code>date</code>
-				</td>
-				<td>
-					<p>The date the comment was published, in the site&#039;s timezone.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the comment was published, in the site&#039;s timezone.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-date_gmt">
 			<td>
 				<code>date_gmt</code>
-				</td>
-				<td>
-					<p>The date the comment was published, as GMT.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the comment was published, as GMT.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-link">
 			<td>
 				<code>link</code>
-				</td>
-				<td>
-					<p>URL to the comment.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: uri
-										</p>
+			</td>
+			<td>
+				<p>URL to the comment.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uri
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -146,44 +146,44 @@
 			<tr id="schema-parent">
 			<td>
 				<code>parent</code>
-				</td>
-				<td>
-					<p>The ID for the parent of the comment.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>The ID for the parent of the comment.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-post">
 			<td>
 				<code>post</code>
-				</td>
-				<td>
-					<p>The ID of the associated post object.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>The ID of the associated post object.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-status">
 			<td>
 				<code>status</code>
-				</td>
-				<td>
-					<p>State of the comment.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>State of the comment.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-type">
 			<td>
 				<code>type</code>
-				</td>
-				<td>
-					<p>Type of the comment.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Type of the comment.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -191,11 +191,11 @@
 			<tr id="schema-author_avatar_urls">
 			<td>
 				<code>author_avatar_urls</code>
-				</td>
-				<td>
-					<p>Avatar URLs for the comment author.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>Avatar URLs for the comment author.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -203,11 +203,11 @@
 			<tr id="schema-meta">
 			<td>
 				<code>meta</code>
-				</td>
-				<td>
-					<p>Meta fields.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>Meta fields.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>

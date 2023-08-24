@@ -11,11 +11,11 @@
 			<tr id="schema-id">
 			<td>
 				<code>id</code>
-				</td>
-				<td>
-					<p>The unique identifier for the Navigation Menu.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>The unique identifier for the Navigation Menu.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>

@@ -11,107 +11,107 @@
 			<tr id="schema-author">
 			<td>
 				<code>author</code>
-				</td>
-				<td>
-					<p>The ID for the author of the revision.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>The ID for the author of the revision.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-date">
 			<td>
 				<code>date</code>
-				</td>
-				<td>
-					<p>The date the revision was published, in the site&#039;s timezone.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the revision was published, in the site&#039;s timezone.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-date_gmt">
 			<td>
 				<code>date_gmt</code>
-				</td>
-				<td>
-					<p>The date the revision was published, as GMT.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the revision was published, as GMT.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-id">
 			<td>
 				<code>id</code>
-				</td>
-				<td>
-					<p>Unique identifier for the revision.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>Unique identifier for the revision.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-modified">
 			<td>
 				<code>modified</code>
-				</td>
-				<td>
-					<p>The date the revision was last modified, in the site&#039;s timezone.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the revision was last modified, in the site&#039;s timezone.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-modified_gmt">
 			<td>
 				<code>modified_gmt</code>
-				</td>
-				<td>
-					<p>The date the revision was last modified, as GMT.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the revision was last modified, as GMT.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-parent">
 			<td>
 				<code>parent</code>
-				</td>
-				<td>
-					<p>The ID for the parent of the revision.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>The ID for the parent of the revision.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-styles">
 			<td>
 				<code>styles</code>
-				</td>
-				<td>
-					<p>Global styles.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>Global styles.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-settings">
 			<td>
 				<code>settings</code>
-				</td>
-				<td>
-					<p>Global settings.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>Global settings.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>

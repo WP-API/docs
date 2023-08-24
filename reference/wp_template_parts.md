@@ -11,11 +11,11 @@
 			<tr id="schema-id">
 			<td>
 				<code>id</code>
-				</td>
-				<td>
-					<p>ID of template.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>ID of template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -23,44 +23,44 @@
 			<tr id="schema-slug">
 			<td>
 				<code>slug</code>
-				</td>
-				<td>
-					<p>Unique slug identifying the template.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Unique slug identifying the template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-theme">
 			<td>
 				<code>theme</code>
-				</td>
-				<td>
-					<p>Theme identifier for the template.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Theme identifier for the template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-type">
 			<td>
 				<code>type</code>
-				</td>
-				<td>
-					<p>Type of template.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Type of template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-source">
 			<td>
 				<code>source</code>
-				</td>
-				<td>
-					<p>Source of template</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Source of template</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -68,11 +68,11 @@
 			<tr id="schema-origin">
 			<td>
 				<code>origin</code>
-				</td>
-				<td>
-					<p>Source of a customized template</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Source of a customized template</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -80,44 +80,44 @@
 			<tr id="schema-content">
 			<td>
 				<code>content</code>
-				</td>
-				<td>
-					<p>Content of template.</p>
-					<p class="type">
-						JSON data type: object or string				</p>
+			</td>
+			<td>
+				<p>Content of template.</p>
+				<p class="type">
+					JSON data type: object or string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-title">
 			<td>
 				<code>title</code>
-				</td>
-				<td>
-					<p>Title of template.</p>
-					<p class="type">
-						JSON data type: object or string				</p>
+			</td>
+			<td>
+				<p>Title of template.</p>
+				<p class="type">
+					JSON data type: object or string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-description">
 			<td>
 				<code>description</code>
-				</td>
-				<td>
-					<p>Description of template.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Description of template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-status">
 			<td>
 				<code>status</code>
-				</td>
-				<td>
-					<p>Status of template.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Status of template.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 									<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 							</td>
@@ -125,11 +125,11 @@
 			<tr id="schema-wp_id">
 			<td>
 				<code>wp_id</code>
-				</td>
-				<td>
-					<p>Post ID.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>Post ID.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -137,11 +137,11 @@
 			<tr id="schema-has_theme_file">
 			<td>
 				<code>has_theme_file</code>
-				</td>
-				<td>
-					<p>Theme file exists.</p>
-					<p class="type">
-						JSON data type: bool				</p>
+			</td>
+			<td>
+				<p>Theme file exists.</p>
+				<p class="type">
+					JSON data type: bool				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -149,24 +149,24 @@
 			<tr id="schema-author">
 			<td>
 				<code>author</code>
-				</td>
-				<td>
-					<p>The ID for the author of the template.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>The ID for the author of the template.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-modified">
 			<td>
 				<code>modified</code>
-				</td>
-				<td>
-					<p>The date the template was last modified, in the site&#039;s timezone.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the template was last modified, in the site&#039;s timezone.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -174,11 +174,11 @@
 			<tr id="schema-area">
 			<td>
 				<code>area</code>
-				</td>
-				<td>
-					<p>Where the template part is intended for use (header, footer, etc.)</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Where the template part is intended for use (header, footer, etc.)</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>

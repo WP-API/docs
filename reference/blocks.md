@@ -11,37 +11,37 @@
 			<tr id="schema-date">
 			<td>
 				<code>date</code>
-				</td>
-				<td>
-					<p>The date the post was published, in the site&#039;s timezone.</p>
-					<p class="type">
-						JSON data type: string or null,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the post was published, in the site&#039;s timezone.</p>
+				<p class="type">
+					JSON data type: string or null,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-date_gmt">
 			<td>
 				<code>date_gmt</code>
-				</td>
-				<td>
-					<p>The date the post was published, as GMT.</p>
-					<p class="type">
-						JSON data type: string or null,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the post was published, as GMT.</p>
+				<p class="type">
+					JSON data type: string or null,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-guid">
 			<td>
 				<code>guid</code>
-				</td>
-				<td>
-					<p>The globally unique identifier for the post.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>The globally unique identifier for the post.</p>
+				<p class="type">
+					JSON data type: object				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -49,11 +49,11 @@
 			<tr id="schema-id">
 			<td>
 				<code>id</code>
-				</td>
-				<td>
-					<p>Unique identifier for the post.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>Unique identifier for the post.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -61,13 +61,13 @@
 			<tr id="schema-link">
 			<td>
 				<code>link</code>
-				</td>
-				<td>
-					<p>URL to the post.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: uri
-										</p>
+			</td>
+			<td>
+				<p>URL to the post.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: uri
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -75,13 +75,13 @@
 			<tr id="schema-modified">
 			<td>
 				<code>modified</code>
-				</td>
-				<td>
-					<p>The date the post was last modified, in the site&#039;s timezone.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the post was last modified, in the site&#039;s timezone.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -89,13 +89,13 @@
 			<tr id="schema-modified_gmt">
 			<td>
 				<code>modified_gmt</code>
-				</td>
-				<td>
-					<p>The date the post was last modified, as GMT.</p>
-					<p class="type">
-						JSON data type: string,
-													Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
-										</p>
+			</td>
+			<td>
+				<p>The date the post was last modified, as GMT.</p>
+				<p class="type">
+					JSON data type: string,
+											Format: datetime (<a href="https://core.trac.wordpress.org/ticket/41032">details</a>)
+									</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
@@ -103,22 +103,22 @@
 			<tr id="schema-slug">
 			<td>
 				<code>slug</code>
-				</td>
-				<td>
-					<p>An alphanumeric identifier for the post unique to its type.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>An alphanumeric identifier for the post unique to its type.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-status">
 			<td>
 				<code>status</code>
-				</td>
-				<td>
-					<p>A named status for the post.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>A named status for the post.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 									<p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
 							</td>
@@ -126,11 +126,11 @@
 			<tr id="schema-type">
 			<td>
 				<code>type</code>
-				</td>
-				<td>
-					<p>Type of post.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Type of post.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
@@ -138,55 +138,55 @@
 			<tr id="schema-password">
 			<td>
 				<code>password</code>
-				</td>
-				<td>
-					<p>A password to protect access to the content and excerpt.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>A password to protect access to the content and excerpt.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-title">
 			<td>
 				<code>title</code>
-				</td>
-				<td>
-					<p>The title for the post.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>The title for the post.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
 							</td>
 		</tr>
 			<tr id="schema-content">
 			<td>
 				<code>content</code>
-				</td>
-				<td>
-					<p>The content for the post.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>The content for the post.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-meta">
 			<td>
 				<code>meta</code>
-				</td>
-				<td>
-					<p>Meta fields.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>Meta fields.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-template">
 			<td>
 				<code>template</code>
-				</td>
-				<td>
-					<p>The theme file to use to display the post.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>The theme file to use to display the post.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>

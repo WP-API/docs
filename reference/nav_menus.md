@@ -11,11 +11,11 @@
 			<tr id="schema-id">
 			<td>
 				<code>id</code>
-				</td>
-				<td>
-					<p>Unique identifier for the term.</p>
-					<p class="type">
-						JSON data type: integer				</p>
+			</td>
+			<td>
+				<p>Unique identifier for the term.</p>
+				<p class="type">
+					JSON data type: integer				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 							</td>
@@ -23,66 +23,66 @@
 			<tr id="schema-description">
 			<td>
 				<code>description</code>
-				</td>
-				<td>
-					<p>HTML description of the term.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>HTML description of the term.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-name">
 			<td>
 				<code>name</code>
-				</td>
-				<td>
-					<p>HTML title for the term.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>HTML title for the term.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-slug">
 			<td>
 				<code>slug</code>
-				</td>
-				<td>
-					<p>An alphanumeric identifier for the term unique to its type.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>An alphanumeric identifier for the term unique to its type.</p>
+				<p class="type">
+					JSON data type: string				</p>
 								<p class="context">Context: <code>view</code>, <code>embed</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-meta">
 			<td>
 				<code>meta</code>
-				</td>
-				<td>
-					<p>Meta fields.</p>
-					<p class="type">
-						JSON data type: object				</p>
+			</td>
+			<td>
+				<p>Meta fields.</p>
+				<p class="type">
+					JSON data type: object				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-locations">
 			<td>
 				<code>locations</code>
-				</td>
-				<td>
-					<p>The locations assigned to the menu.</p>
-					<p class="type">
-						JSON data type: array				</p>
+			</td>
+			<td>
+				<p>The locations assigned to the menu.</p>
+				<p class="type">
+					JSON data type: array				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
 			<tr id="schema-auto_add">
 			<td>
 				<code>auto_add</code>
-				</td>
-				<td>
-					<p>Whether to automatically add top level pages to this menu.</p>
-					<p class="type">
-						JSON data type: boolean				</p>
+			</td>
+			<td>
+				<p>Whether to automatically add top level pages to this menu.</p>
+				<p class="type">
+					JSON data type: boolean				</p>
 								<p class="context">Context: <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>

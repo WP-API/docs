@@ -11,11 +11,11 @@
 			<tr id="schema-id">
 			<td>
 				<code>id</code>
-				</td>
-				<td>
-					<p>ID of sidebar.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>ID of sidebar.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -23,11 +23,11 @@
 			<tr id="schema-name">
 			<td>
 				<code>name</code>
-				</td>
-				<td>
-					<p>Unique name identifying the sidebar.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Unique name identifying the sidebar.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -35,11 +35,11 @@
 			<tr id="schema-description">
 			<td>
 				<code>description</code>
-				</td>
-				<td>
-					<p>Description of sidebar.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Description of sidebar.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -47,11 +47,11 @@
 			<tr id="schema-class">
 			<td>
 				<code>class</code>
-				</td>
-				<td>
-					<p>Extra CSS class to assign to the sidebar in the Widgets interface.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Extra CSS class to assign to the sidebar in the Widgets interface.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -59,11 +59,11 @@
 			<tr id="schema-before_widget">
 			<td>
 				<code>before_widget</code>
-				</td>
-				<td>
-					<p>HTML content to prepend to each widget&#039;s HTML output when assigned to this sidebar. Default is an opening list item element.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>HTML content to prepend to each widget&#039;s HTML output when assigned to this sidebar. Default is an opening list item element.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -71,11 +71,11 @@
 			<tr id="schema-after_widget">
 			<td>
 				<code>after_widget</code>
-				</td>
-				<td>
-					<p>HTML content to append to each widget&#039;s HTML output when assigned to this sidebar. Default is a closing list item element.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>HTML content to append to each widget&#039;s HTML output when assigned to this sidebar. Default is a closing list item element.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -83,11 +83,11 @@
 			<tr id="schema-before_title">
 			<td>
 				<code>before_title</code>
-				</td>
-				<td>
-					<p>HTML content to prepend to the sidebar title when displayed. Default is an opening h2 element.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>HTML content to prepend to the sidebar title when displayed. Default is an opening h2 element.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -95,11 +95,11 @@
 			<tr id="schema-after_title">
 			<td>
 				<code>after_title</code>
-				</td>
-				<td>
-					<p>HTML content to append to the sidebar title when displayed. Default is a closing h2 element.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>HTML content to append to the sidebar title when displayed. Default is a closing h2 element.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
@@ -107,11 +107,11 @@
 			<tr id="schema-status">
 			<td>
 				<code>status</code>
-				</td>
-				<td>
-					<p>Status of sidebar.</p>
-					<p class="type">
-						JSON data type: string				</p>
+			</td>
+			<td>
+				<p>Status of sidebar.</p>
+				<p class="type">
+					JSON data type: string				</p>
 									<p class="read-only">Read only</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 									<p>One of: <code>active</code>, <code>inactive</code></p>
@@ -120,11 +120,11 @@
 			<tr id="schema-widgets">
 			<td>
 				<code>widgets</code>
-				</td>
-				<td>
-					<p>Nested widgets.</p>
-					<p class="type">
-						JSON data type: array				</p>
+			</td>
+			<td>
+				<p>Nested widgets.</p>
+				<p class="type">
+					JSON data type: array				</p>
 								<p class="context">Context: <code>embed</code>, <code>view</code>, <code>edit</code></p>
 							</td>
 		</tr>
