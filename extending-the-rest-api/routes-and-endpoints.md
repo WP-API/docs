@@ -516,7 +516,7 @@ function prefix_data_arg_validate_callback( $value, $request, $param ) {
  * @param  mixed            $value   Value of the 'filter' argument.
  * @param  WP_REST_Request  $request The current request object.
  * @param  string           $param   Key of the parameter. In this case it is 'filter'.
- * @return WP_Error|boolean
+ * @return string
  */
 function prefix_data_arg_sanitize_callback( $value, $request, $param ) {
     // It is as simple as returning the sanitized value.
