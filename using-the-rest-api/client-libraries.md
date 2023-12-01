@@ -12,6 +12,8 @@ The API can be used from any application by sending basic HTTP requests; however
 
 [WordPress-PHP-SDK](https://github.com/madeITBelgium/WordPress-PHP-SDK) is a PHP SDK for the WordPress REST API, which can be installed using [composer](https://getcomposer.org/).
 
+[WordPress-SDK](https://github.com/storipress/wordpress-sdk) is a Laravel package for the WordPress REST API, which can be installed using [composer](https://getcomposer.org).
+
 ## JavaScript
 
 The [Backbone.js client](https://developer.wordpress.org/rest-api/backbone-javascript-client/) is built in to WordPress core and provides Backbone.js models &amp; collections for working with REST API resources.
