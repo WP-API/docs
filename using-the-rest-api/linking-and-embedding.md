@@ -5,7 +5,18 @@ The WP REST API incorporates hyperlinking throughout the API to allow discoverab
 
 ## Links
 
-The `_links` property of the response object contains a map of links to other API resources, grouped by "relation." The relation specifies how the linked resource relates to the primary resource. (Examples include "author," describing a relationship between a resource and its author, or "wp:term," describing the relationship between a post and its tags or categories.) The relation is either a [standardized relation](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1), a URI relation (like `https://api.w.org/term`) or a Compact URI relation (like `wp:term`). (Compact URI relations can be normalized to full URI relations to ensure full compatibility if required.) This is similar to HTML `<link>` tags, or `<a rel="">` links.
+The `_links` property of the response object contains a map of links to other API resources, grouped by "relation." The relation specifies how the linked resource relates to the primary resource. 
+
+Examples include: 
+- `author` - describing a relationship between a resource and its author
+- `wp:term` - describing the relationship between a post and its tags or categories 
+
+The relation is either a 
+- [standardized relation](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1)
+- a `URI relation` - like `https://api.w.org/term`
+- or a `Compact URI relation` - like `wp:term`
+
+ Compact URI relations can be normalized to full URI relations to ensure full compatibility if required. This is similar to HTML `<link>` tags, or `<a rel="">` links.
 
 The links are an object containing a `href` property with an absolute URL to the resource, as well as other optional properties. These include content types, disambiguation information, and data on actions that can be taken with the link.
 
