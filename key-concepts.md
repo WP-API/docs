@@ -6,7 +6,7 @@ In this page we'll break down some of the key concepts and terms associated with
 
 In the context of the WordPress REST API a **route** is a URI which can be mapped to different HTTP methods. The mapping of an individual HTTP method to a route is known as an **endpoint**.
 
-As an example, if we make a `GET` request to the URI `http://oursite.com/wp-json/` we are returned a JSON response showing what routes are available, and what endpoints are available within each route. 
+As an example, if we make a `GET` request to the URI <code>http://oursite.com/wp-json/</code> we are returned a JSON response showing what routes are available, and what endpoints are available within each route. 
 
 `/wp-json/` is a route, and when that route receives a `GET` request then that request is handled by the endpoint which displays what is known as the index for the WordPress REST API. 
 
@@ -14,9 +14,9 @@ The route `wp-json/wp/v2/posts` by contrast has a `GET` endpoint which returns a
 
 We will learn how to register our own routes and endpoints in the following sections.
 
-[info]If you are using [non-pretty permalinks](https://wordpress.org/support/article/using-permalinks/), you should pass the REST API route as a query string parameter. The route `http://oursite.com/wp-json/` in the example above would hence be `http://oursite.com/?rest_route=/`.[/info]
+[info]If you are using [non-pretty permalinks](https://wordpress.org/support/article/using-permalinks/), you should pass the REST API route as a query string parameter. The route <code>http://oursite.com/wp-json/</code> in the example above would hence be <code>http://oursite.com/?rest_route=/</code>.[/info]
 
-If you get a `404` error when trying to access `http://oursite.com/wp-json/`, consider enabling pretty permalinks or try using the `rest_route` parameter instead.
+If you get a `404` error when trying to access <code>http://oursite.com/wp-json/</code>, consider enabling pretty permalinks or try using the `rest_route` parameter instead.
 
 ## Requests
 
