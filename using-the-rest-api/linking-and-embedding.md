@@ -13,7 +13,7 @@ Examples include:
 
 The relation is either a 
 - [standardized relation](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1)
-- a `URI relation` - like `https://api.w.org/term`
+- a `URI relation` - like <code>https://api.w.org/term</code>
 - or a `Compact URI relation` - like `wp:term`
 
  Compact URI relations can be normalized to full URI relations to ensure full compatibility if required. This is similar to HTML `<link>` tags, or `<a rel="">` links.
