@@ -7,7 +7,7 @@ A schema is metadata that tells us how our data is structured. Most databases im
 
 ### JSON
 
-First, let's talk about JSON a bit. JSON is a human readable data format that resembles JavaScript objects. JSON stands for JavaScript Object Notation. JSON is growing wildly in popularity and seems to be taking the world of data structure by storm. The WordPress REST API uses a special specification for JSON known as JSON schema. To learn more about JSON Schema please check out the [JSON Schema website](http://json-schema.org/) and this [easier to understand introduction to JSON Schema](https://spacetelescope.github.io/understanding-json-schema/index.html). Schema affords us many benefits: improved testing, discoverability, and overall better structure. Let's look at a JSON blob of data.
+First, let's talk about JSON a bit. JSON is a human readable data format that resembles JavaScript objects. JSON stands for JavaScript Object Notation. JSON is growing wildly in popularity and seems to be taking the world of data structure by storm. The WordPress REST API uses a special specification for JSON known as JSON schema. To learn more about JSON Schema please check out the [JSON Schema website](http://json-schema.org/) and this [easier to understand introduction to JSON Schema](https://json-schema.org/understanding-json-schema). Schema affords us many benefits: improved testing, discoverability, and overall better structure. Let's look at a JSON blob of data.
 
 ```js
 {
