@@ -47,6 +47,8 @@ As of WordPress 5.4, the resources to embed can be limited by passing a list of 
 
 Resources in embed mode will contain an additional `_embedded` key next to the `_links` key containing the linked resources. Only links with the `embeddable` parameter set to `true` will be embedded.
 
+In order to use `_embed` together with `_fields`, add `_embedded` as well as `_links` to the fields, for instance, `/wp-json/wp/v2/posts/_embed=author,wp:term&_fields=title,author,_links,_embedded`.
+
 For more about linking and embedding, see the [Linking and Embedding](https://developer.wordpress.org/rest-api/linking-and-embedding/) page.
 
 ## `_method` (or `X-HTTP-Method-Override` header)
