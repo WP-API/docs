@@ -715,6 +715,10 @@
 		<h3>Definition</h3>
 
 		<code>POST /wp/v2/posts</code>
+
+        <h3>Example Request</h3>
+
+		<code>$ curl -X POST --user "myApplicationUser:myPassword" -d '{"title": "Some title"}' http://example.com/wp-json/wp/v2/posts
 	</div>
 </section>
 <section class="route">
@@ -935,7 +939,7 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X POST https://example.com/wp-json/wp/v2/posts/&lt;id&gt; -d '{"title":"My New Title"}'
+		<code>$ curl -X POST --user "myApplicationUser:myPassword" https://example.com/wp-json/wp/v2/posts/&lt;id&gt; -d '{"title":"My New Title"}'
 </code>
 	</div>
 </section>
