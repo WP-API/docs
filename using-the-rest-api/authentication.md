@@ -59,7 +59,7 @@ Note that you do not need to verify that the nonce is valid inside your custom e
 
 As of 5.6, WordPress has shipped with [Application Passwords](https://make.wordpress.org/core/2020/11/05/application-passwords-integration-guide/), which can be generated from an Edit User page (wp-admin -> Users -> Edit User). 
 
-The credentials can be passed along to REST API requests served over https:// using [Basic Auth](https://ec.haxx.se/http/http-auth) / [RFC 7617](https://tools.ietf.org/html/rfc7617) — [here’s the documentation for how to use it with cURL](https://ec.haxx.se/http/http-auth).
+The credentials can be passed along to REST API requests served over https:// using [Basic Auth](https://ec.haxx.se/http/auth.html) / [RFC 7617](https://tools.ietf.org/html/rfc7617) — [here’s the documentation for how to use it with cURL](https://ec.haxx.se/http/auth.html).
 
 For a simple command-line script example, just swap out USERNAME, PASSWORD, and HOSTNAME in this with their respective values:
 
