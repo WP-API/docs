@@ -147,13 +147,13 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Taxonomy</h2>
+		<h2>Retrieve Taxonomies</h2>
 
 		<h3>Definition & Example Request</h3>
 
 		<code>GET /wp/v2/taxonomies</code>
 
-		<p>Query this endpoint to retrieve a specific taxonomy record.</p>
+		<p>Query this endpoint to retrieve taxonomy records.</p>
 
 		<code>$ curl https://example.com/wp-json/wp/v2/taxonomies</code>
 	</div>
