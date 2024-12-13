@@ -49,25 +49,23 @@ class My_REST_Posts_Controller {
 
 	// Register our routes.
 	public function register_routes() {
+		// Here we register the readable endpoint for collections.
 		register_rest_route( $this->namespace, '/' . $this->resource_name, array(
-			// Here we register the readable endpoint for collections.
 			array(
 				'methods'   => 'GET',
 				'callback'  => array( $this, 'get_items' ),
 				'permission_callback' => array( $this, 'get_items_permissions_check' ),
+				'schema' => array( $this, 'get_item_schema' ),
 			),
-			// Register our schema callback.
-			'schema' => array( $this, 'get_item_schema' ),
 		) );
+		// Here we register the readable endpoint for an item by id.
 		register_rest_route( $this->namespace, '/' . $this->resource_name . '/(?P<id>[\d]+)', array(
-			// Notice how we are registering multiple endpoints the 'schema' equates to an OPTIONS request.
 			array(
 				'methods'   => 'GET',
 				'callback'  => array( $this, 'get_item' ),
 				'permission_callback' => array( $this, 'get_item_permissions_check' ),
+				'schema' => array( $this, 'get_item_schema' ),
 			),
-			// Register our schema callback.
-			'schema' => array( $this, 'get_item_schema' ),
 		) );
 	}
 
