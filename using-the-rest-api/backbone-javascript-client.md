@@ -69,7 +69,7 @@ Each model and collection includes a reference to its default values, for exampl
 * date: null
 * date_gmt: null
 * excerpt: null
-* featured_image: null
+* featured_media: null
 * format: null
 * modified: null
 * modified_gmt: null
