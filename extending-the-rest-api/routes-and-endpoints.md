@@ -369,7 +369,7 @@ function prefix_register_example_routes() {
         'methods'  => WP_REST_Server::READABLE,
         // Here we register our callback. The callback is fired when this endpoint is matched by the WP_REST_Server class.
         'callback' => 'prefix_get_colors',
-        // Here we register our permissions callback. The callback is fired before the main callback to check if the current user can access the endpoint.
+        // Here we specify an arguments method to run in conjunction with the endpoint registration. The method dictates what extra parameters can be attached to the endpoint in order to change the response.
         'args' => prefix_get_color_arguments(),
     ) );
 }
