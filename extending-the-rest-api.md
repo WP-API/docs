@@ -6,7 +6,7 @@
 
 [Adding Endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/): create custom REST API endpoints for your plugin or application
 
-[Working with Custom Content Types](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-rest-api-support-for-custom-content-types/): learn how to interact with your [custom post types](https://developer.wordpress.org/plugins/post-types/) and [custom taxonomies](https://developer.wordpress.org/plugins/post-types/) through the REST API
+[Working with Custom Content Types](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-rest-api-support-for-custom-content-types/): learn how to interact with your [custom post types](https://developer.wordpress.org/plugins/post-types/) and [custom taxonomies](https://developer.wordpress.org/plugins/taxonomies/) through the REST API
 
 
 ## Resources
