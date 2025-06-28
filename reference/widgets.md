@@ -94,14 +94,15 @@
 
 <div><section class="route">
 	<div class="primary">
-		<h2>Retrieve a Widget</h2>
+		<h2>List Widgets</h2>
+		<p>Query this endpoint to retrieve a collection of widgets. The response you receive can be controlled and filtered using the URL query parameters below.</p>
 
-		<h3>Definition & Example Request</h3>
+		<h3>Definition</h3>
 
 		<code>GET /wp/v2/widgets</code>
-
-		<p>Query this endpoint to retrieve a specific widget record.</p>
-
+		
+  		<h3>Example Request</h3>
+    
 		<code>$ curl https://example.com/wp-json/wp/v2/widgets</code>
 	</div>
 	<div class="secondary">
