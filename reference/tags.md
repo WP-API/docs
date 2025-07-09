@@ -423,3 +423,11 @@
 	</div>
 </section>
 </div>
+<div>
+    <section class="route">
+	    <div class="primary">
+		    <h2>Custom Taxonomies</h2>
+            <p>The <code>tags</code> endpoint only deals with tags/terms in the <code>post_tag</code> taxonomy. To work with terms in a custom taxonomy, read about <a href="../extending-the-rest-api/adding-rest-api-support-for-custom-content-types/#registering-a-custom-taxonomy-with-rest-api-support">registering a custom taxonomy with REST API support</a>.</p>
+        </div>
+    </section>
+</div>
