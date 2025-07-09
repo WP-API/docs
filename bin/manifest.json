@@ -144,6 +144,11 @@
         "parent": "reference",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/nav_menus.md"
     },
+    "reference/navigation-fallbacks": {
+        "slug": "navigation-fallbacks",
+        "parent": "reference",
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/navigation-fallbacks.md"
+    },
     "reference/page-revisions": {
         "slug": "page-revisions",
         "parent": "reference",
@@ -239,6 +244,11 @@
         "parent": "reference",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/wp-site-health-tests.md"
     },
+    "reference/wp_global_styles-revisions": {
+        "slug": "wp_global_styles-revisions",
+        "parent": "reference",
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/reference/wp_global_styles-revisions.md"
+    },
     "reference/wp_global_styles": {
         "slug": "wp_global_styles",
         "parent": "reference",
@@ -293,6 +303,11 @@
         "slug": "discovery",
         "parent": "using-the-rest-api",
         "markdown_source": "https://github.com/WP-API/docs/blob/master/using-the-rest-api/discovery.md"
+    },
+    "using-the-rest-api/examples": {
+        "slug": "examples",
+        "parent": "using-the-rest-api",
+        "markdown_source": "https://github.com/WP-API/docs/blob/master/using-the-rest-api/examples.md"
     },
     "using-the-rest-api/global-parameters": {
         "slug": "global-parameters",
