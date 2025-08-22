@@ -120,7 +120,7 @@ Arguments are defined as a map in the key `args` for each endpoint (next to your
 
 * `default`: Used as the default value for the argument, if none is supplied.
 * `required`: If defined as true, and no value is passed for that argument, an error will be returned. No effect if a default value is set, as the argument will always have a value.
-* `validate_callback`: Used to pass a function that will be passed the value of the argument. That function should return true if the value is valid, and false if not.
+* `validate_callback`: Used to pass a function that will be passed the value of the argument. That function should return true if the value is valid, and false if not. Alternatively, a `WP_Error` object can be returned, which will add messages to the params and details properties of the response.
 * `sanitize_callback`: Used to pass a function that is used to sanitize the value of the argument before passing it to the main callback.
 
 Using `sanitize_callback` and `validate_callback` allows the main callback to act only to process the request, and prepare data to be returned using the `WP_REST_Response` class. By using these two callbacks, you will be able to safely assume your inputs are valid and safe when processing.
@@ -145,6 +145,8 @@ add_action( 'rest_api_init', function () {
 ```
 
 You could also pass in a function name to `validate_callback`, but passing certain functions like `is_numeric` directly will not only throw a warning about having extra parameters passed to it, but will also return `NULL` causing the callback function to be called with invalid data. We hope to [eventually solve this problem in WordPress core](https://core.trac.wordpress.org/ticket/34659).
+
+Besides that, keep in mind that `validate_callback` recognizes falsy values other than `false`(e.g. `''`, `0`, and `null` ) as valid. Because `WP_REST_Request` class [checks invalid values](https://github.com/WordPress/WordPress/blob/master/wp-includes/rest-api/class-wp-rest-request.php#L911-L923) with strict equality operator `if ( false === $valid_check ) {}`, a function that returns falsy values may result in unintended validation behavior. For example, `return preg_match( '/\d{4}-\d{2}-\d{2}/', $date );` will be always recognized valid, because it returns 1 for a match, 0 for a mismatch, and false for an error.
 
 We could also use something like `'sanitize_callback' => 'absint'` instead, but validation will throw an error, allowing clients to understand what they're doing wrong. Sanitization is useful when you would rather change the data being input rather than throwing an error (such as invalid HTML).
 
