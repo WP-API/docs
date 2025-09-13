@@ -67,6 +67,8 @@ For a simple command-line script example, just swap out USERNAME, PASSWORD, and 
 curl --user "USERNAME:PASSWORD" https://HOSTNAME/wp-json/wp/v2/users?context=edit
 ```
 
+Note: The `USERNAME` is your user's username; NOT the `name` of the Application Password.
+
 ## Authentication Plugins
 
 Plugins may be added to support alternative modes of authentication that will work from remote applications. Some example plugins are [OAuth 1.0a Server](https://wordpress.org/plugins/rest-api-oauth1/) and [JSON Web Tokens](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/).
