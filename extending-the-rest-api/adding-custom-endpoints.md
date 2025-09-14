@@ -4,7 +4,6 @@ The WordPress REST API is more than just a set of default routes. It is also a t
 
 This document details how to create a new and completely custom route with its own endpoints. We'll first work through a short example and then expand it out to the full controller pattern as used internally.
 
-
 ## Bare Basics
 
 So you want to add custom endpoints to the API? Fantastic! Let's get started with a simple example.
@@ -45,7 +44,7 @@ add_action( 'rest_api_init', function () {
 } );
 ```
 
-Right now, we're only registering the one endpoint for the route. The term "route" refers to the URL, whereas "endpoint" refers to the function behind it that corresponds to a method *and* a URL (for more information, see the [Glossary](https://developer.wordpress.org/rest-api/glossary/)).
+Right now, we're only registering the one endpoint for the route. The term "route" refers to the URL, whereas "endpoint" refers to the function behind it that corresponds to a method _and_ a URL (for more information, see the [Glossary](https://developer.wordpress.org/rest-api/glossary/)).
 
 For example, if your site domain is `example.com` and you've kept the API path of `wp-json`, then the full URL would be `http://example.com/wp-json/myplugin/v1/author/(?P\d+)`.
 
@@ -54,7 +53,6 @@ On sites without pretty permalinks, the route is instead added to the URL as the
 [/alert]
 
 Each route can have any number of endpoints, and for each endpoint, you can define the HTTP methods allowed, a callback function for responding to the request and a permissions callback for creating custom permissions. In addition you can define allowed fields in the request and for each field specify a default value, a sanitization callback, a validation callback, and whether the field is required.
-
 
 ### Namespacing
 
@@ -118,10 +116,10 @@ If the request has the `Content-type: application/json` header set and valid JSO
 
 Arguments are defined as a map in the key `args` for each endpoint (next to your `callback` option). This map uses the name of the argument of the key, with the value being a map of options for that argument. This array can contain a key for `default`, `required`, `sanitize_callback` and `validate_callback`.
 
-* `default`: Used as the default value for the argument, if none is supplied.
-* `required`: If defined as true, and no value is passed for that argument, an error will be returned. No effect if a default value is set, as the argument will always have a value.
-* `validate_callback`: Used to pass a function that will be passed the value of the argument. That function should return true if the value is valid, and false if not.
-* `sanitize_callback`: Used to pass a function that is used to sanitize the value of the argument before passing it to the main callback.
+- `default`: Used as the default value for the argument, if none is supplied.
+- `required`: If defined as true, and no value is passed for that argument, an error will be returned. No effect if a default value is set, as the argument will always have a value.
+- `validate_callback`: Used to pass a function that will be passed the value of the argument. That function should return true if the value is valid, and false if not.
+- `sanitize_callback`: Used to pass a function that is used to sanitize the value of the argument before passing it to the main callback.
 
 Using `sanitize_callback` and `validate_callback` allows the main callback to act only to process the request, and prepare data to be returned using the `WP_REST_Response` class. By using these two callbacks, you will be able to safely assume your inputs are valid and safe when processing.
 
@@ -147,7 +145,6 @@ add_action( 'rest_api_init', function () {
 You could also pass in a function name to `validate_callback`, but passing certain functions like `is_numeric` directly will not only throw a warning about having extra parameters passed to it, but will also return `NULL` causing the callback function to be called with invalid data. We hope to [eventually solve this problem in WordPress core](https://core.trac.wordpress.org/ticket/34659).
 
 We could also use something like `'sanitize_callback' => 'absint'` instead, but validation will throw an error, allowing clients to understand what they're doing wrong. Sanitization is useful when you would rather change the data being input rather than throwing an error (such as invalid HTML).
-
 
 ### Return Value
 
@@ -246,7 +243,7 @@ Note that the permission callback also receives the Request object as the first 
 
 As of [WordPress 5.5](https://core.trac.wordpress.org/changeset/48526), if a `permission_callback` is not provided, the REST API will issue a `_doing_it_wrong` notice.
 
-> The REST API route definition for myplugin/v1/author is missing the required permission_callback argument. For REST API routes that are intended to be public, use __return_true as the permission callback.
+> The REST API route definition for myplugin/v1/author is missing the required permission_callback argument. For REST API routes that are intended to be public, use \_\_return_true as the permission callback.
 
 If your REST API endpoint is public, you can use `__return_true` as the permission callback.
 
@@ -277,7 +274,7 @@ function my_plugin_rest_queried_resource_route( $route ) {
 add_filter( 'rest_queried_resource_route', 'my_plugin_rest_queried_resource_route' );
 ```
 
-Note: If your endpoint is describing a custom post type or custom taxonomy you will most likely want to be using the `rest_route_for_post` or `rest_route_for_term` filters instead. 
+Note: If your endpoint is describing a custom post type or custom taxonomy you will most likely want to be using the `rest_route_for_post` or `rest_route_for_term` filters instead.
 
 ## The Controller Pattern
 
@@ -290,7 +287,6 @@ At their core, controllers are nothing more than a set of commonly named methods
 To use controllers, you first need to subclass the base controller. This gives you a base set of methods, ready for you to add your own behaviour into.
 
 Once we've subclassed the controller, we need to instantiate the class to get it working. This should be done inside of a callback hooked into `rest_api_init`, which ensures we only instantiate the class when we need to. The normal controller pattern is to call `$controller->register_routes()` inside this callback, where the class can then register its endpoints.
-
 
 ## Examples
 
@@ -313,15 +309,13 @@ class Slug_Custom_Route extends WP_REST_Controller {
         'methods'             => WP_REST_Server::READABLE,
         'callback'            => array( $this, 'get_items' ),
         'permission_callback' => array( $this, 'get_items_permissions_check' ),
-        'args'                => array(
-
-        ),
+        'args'                => array(),
       ),
       array(
         'methods'             => WP_REST_Server::CREATABLE,
         'callback'            => array( $this, 'create_item' ),
         'permission_callback' => array( $this, 'create_item_permissions_check' ),
-        'args'                => $this->get_endpoint_args_for_item_schema( true ),
+        'args'                => $this->get_endpoint_args_for_item_schema( WP_REST_Server::CREATABLE ),
       ),
     ) );
     register_rest_route( $namespace, '/' . $base . '/(?P<id>[\d]+)', array(
@@ -339,7 +333,7 @@ class Slug_Custom_Route extends WP_REST_Controller {
         'methods'             => WP_REST_Server::EDITABLE,
         'callback'            => array( $this, 'update_item' ),
         'permission_callback' => array( $this, 'update_item_permissions_check' ),
-        'args'                => $this->get_endpoint_args_for_item_schema( false ),
+        'args'                => $this->get_endpoint_args_for_item_schema( WP_REST_Server::EDITABLE ),
       ),
       array(
         'methods'             => WP_REST_Server::DELETABLE,
