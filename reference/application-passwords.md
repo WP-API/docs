@@ -111,11 +111,11 @@
 
 		<h3>Definition & Example Request</h3>
 
-		<code>GET /wp/v2/users/&lt;user_id&gt;)/application-passwords</code>
+		<code>GET /wp/v2/users/&lt;user_id&gt;/application-passwords</code>
 
 		<p>Query this endpoint to retrieve a specific application password record.</p>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;)/application-passwords</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;/application-passwords</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>
@@ -166,7 +166,7 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>POST /wp/v2/users/&lt;user_id&gt;)/application-passwords</code>
+		<code>POST /wp/v2/users/&lt;user_id&gt;/application-passwords</code>
 	</div>
 </section>
 <section class="route">
@@ -178,11 +178,11 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>DELETE /wp/v2/users/&lt;user_id&gt;)/application-passwords</code>
+		<code>DELETE /wp/v2/users/&lt;user_id&gt;/application-passwords</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;)/application-passwords</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;/application-passwords</code>
 	</div>
 </section>
 <section class="route">
@@ -191,11 +191,11 @@
 
 		<h3>Definition & Example Request</h3>
 
-		<code>GET /wp/v2/users/&lt;user_id&gt;)/application-passwords/introspect</code>
+		<code>GET /wp/v2/users/&lt;user_id&gt;/application-passwords/introspect</code>
 
 		<p>Query this endpoint to retrieve a specific application password record.</p>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;)/application-passwords/introspect</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;/application-passwords/introspect</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>
@@ -222,11 +222,11 @@
 
 		<h3>Definition & Example Request</h3>
 
-		<code>GET /wp/v2/users/&lt;user_id&gt;)/application-passwords/&lt;uuid&gt;</code>
+		<code>GET /wp/v2/users/&lt;user_id&gt;/application-passwords/&lt;uuid&gt;</code>
 
 		<p>Query this endpoint to retrieve a specific application password record.</p>
 
-		<code>$ curl https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;)/application-passwords/&lt;uuid&gt;</code>
+		<code>$ curl https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;/application-passwords/&lt;uuid&gt;</code>
 	</div>
 	<div class="secondary">
 			<h3>Arguments</h3>
@@ -274,7 +274,7 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>POST /wp/v2/users/&lt;user_id&gt;)/application-passwords/&lt;uuid&gt;</code>
+		<code>POST /wp/v2/users/&lt;user_id&gt;/application-passwords/&lt;uuid&gt;</code>
 
 		<h3>Example Request</h3>
 
@@ -290,11 +290,11 @@
 	<div class="secondary">
 		<h3>Definition</h3>
 
-		<code>DELETE /wp/v2/users/&lt;user_id&gt;)/application-passwords/&lt;uuid&gt;</code>
+		<code>DELETE /wp/v2/users/&lt;user_id&gt;/application-passwords/&lt;uuid&gt;</code>
 
 		<h3>Example Request</h3>
 
-		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;)/application-passwords/&lt;uuid&gt;</code>
+		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/users/&lt;user_id&gt;/application-passwords/&lt;uuid&gt;</code>
 	</div>
 </section>
 </div>
