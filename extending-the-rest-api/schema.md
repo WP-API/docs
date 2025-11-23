@@ -362,7 +362,20 @@ Because the WordPress REST API accepts [URL form encoded](https://en.wikipedia.o
 
 When using multiple types, types will be evaluated in the order they are specified. This can have an impact on the sanitized data received by your REST API endpoint. For instance, in the previous example, if the value submitted was `"1"`, it would be sanitized to the boolean `true` value. However, if the order was flipped, the value would remain as the string `"1"`.
 
-[info]The JSON Schema specification allows for defining schemas without a `type` field. The WordPress implementation however requires a `type` to be defined, and will issue a `_doing_it_wrong` notice if a type is ommitted.[/info]
+[info]The JSON Schema specification allows for defining schemas without a `type` field. The WordPress implementation however requires a `type` to be defined, and will issue a `_doing_it_wrong` notice if a type is omitted.[/info]
+
+#### Resetting Values
+
+The WordPress REST API uses the value `null` (as in a properly typed `null` sent using JSON) to reset a value to the default for its type. This is accomplished by allowing parameters with a value of `null` to bypass validation. `null` is converted to the following values depending on the type:
+
+- `string` An empty string.
+- `number` The value `0.0`.
+- `integer` The value `0`.
+- `boolean` The value `false`.
+- `array` An empty native PHP array.
+- `object` An empty native PHP array.
+
+When using multiple types, `null` will not be converted to any value by the sanitization function.
 
 ### Format
 

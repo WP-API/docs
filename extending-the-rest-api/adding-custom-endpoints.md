@@ -120,7 +120,7 @@ Arguments are defined as a map in the key `args` for each endpoint (next to your
 
 * `default`: Used as the default value for the argument, if none is supplied.
 * `required`: If defined as true, and no value is passed for that argument, an error will be returned. No effect if a default value is set, as the argument will always have a value.
-* `validate_callback`: Used to pass a function that will be passed the value of the argument. That function should return true if the value is valid, and false if not.
+* `validate_callback`: Used to pass a function that will be passed the value of the argument. That function should return true if the value is valid, and false if not. Note that `null` values bypass validation.
 * `sanitize_callback`: Used to pass a function that is used to sanitize the value of the argument before passing it to the main callback.
 
 Using `sanitize_callback` and `validate_callback` allows the main callback to act only to process the request, and prepare data to be returned using the `WP_REST_Response` class. By using these two callbacks, you will be able to safely assume your inputs are valid and safe when processing.
