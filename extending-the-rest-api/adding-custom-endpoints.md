@@ -119,7 +119,7 @@ If the request has the `Content-type: application/json` header set and valid JSO
 Arguments are defined as a map in the key `args` for each endpoint (next to your `callback` option). This map uses the name of the argument of the key, with the value being a map of options for that argument. This array can contain a key for `default`, `required`, `sanitize_callback` and `validate_callback`.
 
 * `default`: Used as the default value for the argument, if none is supplied.
-* `required`: If defined as true, and no value is passed for that argument, an error will be returned. No effect if a default value is set, as the argument will always have a value.
+* `required`: If defined as true, and no value is passed for that argument, an error will be returned. No effect if a default value is set, as the argument will always have a value. Note: this will be valid if the argument is empty. To ensure empty values are not allowed, use something like `'minLength' => 1` and `'type' => 'string'`, or use appropriate logic in `validate_callback`.
 * `validate_callback`: Used to pass a function that will be passed the value of the argument. That function should return true if the value is valid, and false if not.
 * `sanitize_callback`: Used to pass a function that is used to sanitize the value of the argument before passing it to the main callback.
 
