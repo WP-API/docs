@@ -1,6 +1,6 @@
 # Using the REST API
 
-These articles explore the basic structure of the WordPress REST API.
+These articles explore the basic structure and uses of the WordPress REST API.
 
 [Global Parameters](https://developer.wordpress.org/rest-api/using-the-rest-api/global-parameters/): learn about the global REST API query parameters that apply to every endpoint
 
