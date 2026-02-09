@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-This page provides solutions to some common questions and problems that may arise while using the API. If your question is not explained here it may have been answered in the [WordPress support forums](https://wordpress.org/support/topic-tag/rest-api).
+This page provides solutions to some common questions and problems that may arise while using the API. If your question is not explained here it may have been answered in the [WordPress support forums](https://wordpress.org/support/search/rest%20api/).
 
 
 ## Can I disable the REST API?
