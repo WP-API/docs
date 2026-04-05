@@ -22,6 +22,9 @@ The [Backbone.js client](https://developer.wordpress.org/rest-api/backbone-javas
 
 [ember-wordpress](https://github.com/oskarrough/ember-wordpress) provides a connection between Ember Data and the REST API
 
+## Java
+
+The [wordpress-api-client-java](https://github.com/wtx-labs/wordpress-api-client-java) is a lightweight REST API client written in Java, designed to simplify integration with the WordPress REST API from external Java applications. The library provides typed operations for common resources such as posts, pages, users, and media, and handles HTTP requests and JSON serialization internally, reducing the need to build low‑level HTTP calls manually.
 
 ## Ruby
 
