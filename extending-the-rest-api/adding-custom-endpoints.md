@@ -123,6 +123,33 @@ Arguments are defined as a map in the key `args` for each endpoint (next to your
 * `validate_callback`: Used to pass a function that will be passed the value of the argument. That function should return true if the value is valid, and false if not.
 * `sanitize_callback`: Used to pass a function that is used to sanitize the value of the argument before passing it to the main callback.
 
+Other allowed options are:
+* `title`
+* `description`
+* `default`
+* `type`
+* `format`
+* `enum`
+* `items`
+* `properties`
+* `additionalProperties`
+* `patternProperties`
+* `minProperties`
+* `maxProperties`
+* `minimum`
+* `maximum`
+* `exclusiveMinimum`
+* `exclusiveMaximum`
+* `multipleOf`
+* `minLength`
+* `maxLength`
+* `pattern`
+* `minItems`
+* `maxItems`
+* `uniqueItems`
+* `anyOf`
+* `oneOf`
+
 Using `sanitize_callback` and `validate_callback` allows the main callback to act only to process the request, and prepare data to be returned using the `WP_REST_Response` class. By using these two callbacks, you will be able to safely assume your inputs are valid and safe when processing.
 
 Taking our previous example, we can ensure the parameter passed in is always a number:
