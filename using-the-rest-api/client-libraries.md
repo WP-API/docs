@@ -22,6 +22,8 @@ The [Backbone.js client](https://developer.wordpress.org/rest-api/backbone-javas
 
 [ember-wordpress](https://github.com/oskarrough/ember-wordpress) provides a connection between Ember Data and the REST API
 
+[wordpress-rest-sdk](https://github.com/Fredobumma/wordpress-rest-sdk) is a TypeScript client whose types are generated from the REST API's own schemas, including a site's custom post types, registered meta and plugin routes. It can be used with Node.js, browsers, Deno, Bun and Cloudflare Workers.
+
 
 ## Ruby
 
